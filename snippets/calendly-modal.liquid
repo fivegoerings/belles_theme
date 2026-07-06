@@ -189,8 +189,9 @@
     var isPreloaded = false;
     var isOpen = false;
 
-    // Preload the default Calendly URL in the background after page load
-    // so the first click shows instantly instead of waiting for the iframe
+    // Preload the default Calendly URL in the background on first sign of intent
+    // (hover/touch/focus on a trigger) so the click shows instantly without
+    // paying the ~2.5MB Calendly bundle cost on every single page view.
     function preloadCalendly() {
       if (isPreloaded || !iframe) return;
       isPreloaded = true;
@@ -200,12 +201,6 @@
         if (loading) loading.style.display = 'none';
         if (iframe) iframe.style.display = 'block';
       }, { once: true });
-    }
-    // Preload as soon as DOM is ready — snippet is in the footer so page is already rendered
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', preloadCalendly);
-    } else {
-      preloadCalendly();
     }
 
     // Open modal
@@ -316,9 +311,11 @@
           trigger.dataset.calendlyUrl = trigger.getAttribute('href');
         }
 
-        // Hover/touch preload — start loading before the click fires
+        // Hover/touch/focus preload — start loading before the click fires,
+        // so by the time the user actually clicks, Calendly is already warm.
         trigger.addEventListener('pointerenter', preloadCalendly, { once: true });
         trigger.addEventListener('touchstart', preloadCalendly, { once: true, passive: true });
+        trigger.addEventListener('focus', preloadCalendly, { once: true });
 
         // Remove existing click handlers and add our handler
         trigger.addEventListener('click', openModal);
