@@ -13,4 +13,4 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run Shopify Theme Check
-        uses: Shopify/theme-check-action@v3
+        uses: Shopify/theme-check-action@v2.2.0
