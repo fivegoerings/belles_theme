@@ -155,11 +155,16 @@
 }
 </style>
 
-{% if section.settings.hero_image != blank %}
-  <div class="belle-hero belle-hero--photo" style="background-image: url('{{ hero_image_url }}');">
-{% else %}
-  <div class="belle-hero belle-hero--gradient">
-{% endif %}
+{%- liquid
+  if section.settings.hero_image != blank
+    assign hero_class = 'belle-hero belle-hero--photo'
+    assign hero_style = 'background-image: url(' | append: "'" | append: hero_image_url | append: "');"
+  else
+    assign hero_class = 'belle-hero belle-hero--gradient'
+    assign hero_style = ''
+  endif
+-%}
+<div class="{{ hero_class }}" style="{{ hero_style }}">
 
   <div class="belle-hero-content">
     {% if section.settings.eyebrow != blank %}

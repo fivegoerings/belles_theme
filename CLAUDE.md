@@ -13,11 +13,11 @@ A full theme export zip (`theme_export__...zip`) sits at the repo root as a back
 There's no npm/build pipeline in this repo. Standard Shopify theme workflows apply if the Shopify CLI is installed:
 
 - `shopify theme dev` — serve the theme locally with hot reload against a connected dev store
-- `shopify theme check` — lint Liquid/JSON against Shopify's Theme Check rules (no `.theme-check.yml` is present, so it runs with defaults)
+- `shopify theme check` — lint Liquid/JSON against Shopify's Theme Check rules, configured via `.theme-check.yml` (extends the default rule set)
 - `shopify theme push` / `shopify theme pull` — sync with a Shopify store's theme library
 - `shopify theme package` — produce a distributable zip like the one already at the repo root
 
-There is no automated test suite. Verifying changes means running `theme dev` and checking pages/sections in the browser (and in the Shopify theme editor for schema/settings changes).
+There is no automated test suite, but `.github/workflows/theme-check.yml` runs Theme Check on every push/PR to `main` via Shopify's `theme-check-action`. Verifying changes locally means running `theme dev` and checking pages/sections in the browser (and in the Shopify theme editor for schema/settings changes).
 
 ## Architecture
 

@@ -476,7 +476,8 @@
         <div class="belle-gallery-item" onclick="openLightbox('{{ block.settings.image | image_url: width: 1600 }}', '{{ block.settings.title | escape }}', '{{ block.settings.description | escape }}')" {{ block.shopify_attributes }}>
           <div class="belle-gallery-item-image">
             {% if block.settings.image != blank %}
-              <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.title | default: 'Gallery photo' }}" loading="lazy">
+              {%- assign gallery_image_alt = block.settings.title | default: 'Gallery photo' -%}
+              {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', alt: gallery_image_alt }}
             {% else %}
               <div style="width:100%;height:100%;background:#eee;display:flex;align-items:center;justify-content:center;color:#999;">No Image</div>
             {% endif %}
@@ -521,7 +522,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
   </button>
   <div class="belle-lightbox-content">
-    <img id="belleLightboxImg" src="" alt="">
+    <img id="belleLightboxImg" src="" alt="" width="1600" height="1600">
     <div class="belle-lightbox-caption">
       <p class="belle-lightbox-caption-title" id="belleLightboxTitle"></p>
       <p class="belle-lightbox-caption-desc" id="belleLightboxDesc"></p>
