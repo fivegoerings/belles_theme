@@ -20,9 +20,16 @@
     <link rel="dns-prefetch" href="https://calendly.com">
     {% # theme-check-enable RemoteAsset %}
 
-    {%- comment -%} Self-hosted fonts - preload woff2 files, synchronous CSS registered before content_for_header {%- endcomment -%}
+    {%- comment -%}
+      Self-hosted fonts - preload woff2 files, synchronous CSS registered before content_for_header.
+      All four weights are preloaded (not just regular) because the hero section uses the 600/700
+      weights for headings and CTAs; leaving them unpreloaded let them arrive after first paint,
+      causing a full-hero layout shift when the swap happened (see belles-fonts.css for weights used).
+    {%- endcomment -%}
     {{ 'bebas-neue-v16-latin-regular.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: true }}
     {{ 'source-sans-3-v19-latin-regular.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: true }}
+    {{ 'source-sans-3-v19-latin-600.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: true }}
+    {{ 'source-sans-3-v19-latin-700.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: true }}
     <link rel="stylesheet" href="{{ 'belles-fonts.css' | asset_url }}">
 
     <title>
