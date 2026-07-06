@@ -251,7 +251,7 @@
             {%- endfor -%}
           {%- else -%}
             {%- comment -%} Fallback links if no menu is selected {%- endcomment -%}
-            <li><a href="/">Home</a></li>
+            <li><a href="{{ routes.root_url }}">Home</a></li>
             <li><a href="#" data-calendly-modal="true">Schedule</a></li>
             <li><a href="/pages/racquet-stringing-prices-kansas-city-northland">Pricing</a></li>
             {%- if section.settings.show_gallery_link -%}

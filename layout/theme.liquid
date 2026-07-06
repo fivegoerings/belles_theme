@@ -15,27 +15,15 @@
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
 
+    {%- comment -%} theme-check-disable RemoteAsset: Calendly is a third-party booking widget used across the site (see snippets/calendly-modal.liquid); dns-prefetch is an intentional performance optimization for it, not a themeable asset. {%- endcomment -%}
+    {% # theme-check-disable RemoteAsset %}
     <link rel="dns-prefetch" href="https://calendly.com">
+    {% # theme-check-enable RemoteAsset %}
 
     {%- comment -%} Self-hosted fonts - preload woff2 files, synchronous CSS registered before content_for_header {%- endcomment -%}
-    <link
-      rel="preload"
-      href="{{ 'bebas-neue-v16-latin-regular.woff2' | asset_url }}"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    >
-    <link
-      rel="preload"
-      href="{{ 'source-sans-3-v19-latin-regular.woff2' | asset_url }}"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    >
+    {{ 'bebas-neue-v16-latin-regular.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: true }}
+    {{ 'source-sans-3-v19-latin-regular.woff2' | asset_url | preload_tag: as: 'font', type: 'font/woff2', crossorigin: true }}
     <link rel="stylesheet" href="{{ 'belles-fonts.css' | asset_url }}">
-
-    {%- comment -%} Preload critical CSS {%- endcomment -%}
-    <link rel="preload" href="{{ 'base.css' | asset_url }}" as="style">
 
     <title>
       {{ page_title }}
@@ -101,6 +89,7 @@
       {{ body_font_bold_italic | font_face: font_display: 'swap' }}
       {{ settings.type_header_font | font_face: font_display: 'swap' }}
 
+      {% assign scheme_classes = '' %}
       {% for scheme in settings.color_schemes -%}
         {% assign scheme_classes = scheme_classes | append: ', .color-' | append: scheme.id %}
         {% if forloop.index == 1 -%}
@@ -301,7 +290,7 @@
       }
     {% endstyle %}
 
-    {{ 'base.css' | asset_url | stylesheet_tag }}
+    {{ 'base.css' | asset_url | stylesheet_tag: preload: true }}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
     {%- if settings.cart_type == 'drawer' -%}

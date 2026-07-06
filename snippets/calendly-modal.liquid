@@ -4,8 +4,11 @@
   Or use any link with href containing calendly.com (auto-converted)
 {% endcomment %}
 
+{%- comment -%} Calendly is a third-party booking widget; preconnect is an intentional performance optimization, not a themeable asset {%- endcomment -%}
+{% # theme-check-disable RemoteAsset %}
 <link rel="preconnect" href="https://assets.calendly.com" crossorigin>
 <link rel="preconnect" href="https://calendly.com" crossorigin>
+{% # theme-check-enable RemoteAsset %}
 <style>
   .calendly-modal-overlay {
     display: none;

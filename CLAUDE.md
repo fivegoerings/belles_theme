@@ -19,6 +19,8 @@ There's no npm/build pipeline in this repo. Standard Shopify theme workflows app
 
 There is no automated test suite, but `.github/workflows/theme-check.yml` runs Theme Check on every push/PR to `main` via Shopify's `theme-check-action`. Verifying changes locally means running `theme dev` and checking pages/sections in the browser (and in the Shopify theme editor for schema/settings changes).
 
+Theme Check currently passes clean (0 offenses). A few `{% # theme-check-disable ... %}` / `theme-check-enable` comment pairs are in place for known false positives rather than real bugs — e.g. `RemoteAsset` around the intentional Calendly `preconnect`/`dns-prefetch` links and the JS-populated empty-`src` lightbox `<img>`s, `UndefinedObject` around the valid `offset: continue` pagination keyword in `main-product.liquid`, and `UnclosedHTMLElement` around the cross-loop-iteration category grouping in `belle-gallery-section.liquid` (its div open/close pairs span loop iterations in a way Theme Check's HTML parser can't statically verify, even though the rendered markup is balanced). Don't "fix" these by removing the suppressions without re-verifying the underlying pattern is actually still a false positive.
+
 ## Architecture
 
 Standard Shopify theme structure:

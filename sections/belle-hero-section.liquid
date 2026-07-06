@@ -495,17 +495,6 @@
       }
 </style>
 
-{% if section.settings.bg_image != blank %}
-  <link
-    rel="preload"
-    as="image"
-    href="{{ section.settings.bg_image | image_url: width: 1600 }}"
-    imagesrcset="{{ section.settings.bg_image | image_url: width: 800 }} 800w, {{ section.settings.bg_image | image_url: width: 1200 }} 1200w, {{ section.settings.bg_image | image_url: width: 1600 }} 1600w"
-    imagesizes="100vw"
-    fetchpriority="high"
-  >
-{% endif %}
-
 <section class="belle-hero-v2">
   <!-- Top Contact Bar -->
   <div class="belle-topbar">
@@ -540,6 +529,7 @@
           bg_image
           | image_url: width: 1600
           | image_tag:
+            preload: true,
             loading: 'eager',
             fetchpriority: 'high',
             alt: bg_image.alt,

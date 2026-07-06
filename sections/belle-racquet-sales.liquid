@@ -220,7 +220,10 @@
 
 <div class="brs-lightbox" id="brs-lightbox-{{ section.id }}" role="dialog" aria-modal="true" aria-label="Zoomed product image">
   <button class="brs-lightbox__close" data-lb-close aria-label="Close zoom">&#x2715;</button>
+  {%- comment -%} Empty src is populated by openLightbox() in belle-racquet-sales.js with the clicked image's Shopify CDN URL, not a remote asset {%- endcomment -%}
+  {% # theme-check-disable RemoteAsset %}
   <img id="brs-lightbox-img-{{ section.id }}" src="" alt="" width="1600" height="1600">
+  {% # theme-check-enable RemoteAsset %}
 </div>
 
 <div class="brs-toast" id="brs-toast-{{ section.id }}" role="status" aria-live="polite"></div>

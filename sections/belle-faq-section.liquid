@@ -18,8 +18,7 @@
 
     <!-- FAQ Categories -->
     {% assign categories = section.blocks | where: "type", "category" %}
-    {% assign questions = section.blocks | where: "type", "question" %}
-    
+
     {% if categories.size > 0 %}
       <!-- Categorized FAQs -->
       {% for category in categories %}
