@@ -495,6 +495,26 @@
       }
 </style>
 
+{% if section.settings.bg_image != blank %}
+  {%- comment -%}
+    image_tag's preload: true argument (used further below) doesn't emit a
+    <link rel=preload> when called from a section — content_for_header has
+    already been flushed by the time this section renders in the body. A
+    real preload link is required for the browser to fetch this LCP image
+    ahead of everything else, so it's added manually here instead.
+  {%- endcomment -%}
+  {% # theme-check-disable AssetPreload %}
+  <link
+    rel="preload"
+    as="image"
+    href="{{ section.settings.bg_image | image_url: width: 1600 }}"
+    imagesrcset="{{ section.settings.bg_image | image_url: width: 800 }} 800w, {{ section.settings.bg_image | image_url: width: 1200 }} 1200w, {{ section.settings.bg_image | image_url: width: 1600 }} 1600w"
+    imagesizes="100vw"
+    fetchpriority="high"
+  >
+  {% # theme-check-enable AssetPreload %}
+{% endif %}
+
 <section class="belle-hero-v2">
   <!-- Top Contact Bar -->
   <div class="belle-topbar">
@@ -529,7 +549,6 @@
           bg_image
           | image_url: width: 1600
           | image_tag:
-            preload: true,
             loading: 'eager',
             fetchpriority: 'high',
             alt: bg_image.alt,
