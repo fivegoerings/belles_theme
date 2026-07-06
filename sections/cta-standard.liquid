@@ -1,0 +1,175 @@
+<!-- sections/cta-standard.liquid -->
+<div class="cta-section-standard">
+  <div class="cta-container-standard">
+    <h2 class="cta-heading-standard">{{ section.settings.cta_heading }}</h2>
+    
+    {% if section.settings.cta_description != blank %}
+      <p class="cta-description-standard">{{ section.settings.cta_description }}</p>
+    {% endif %}
+    
+    <div class="cta-buttons-standard">
+      {% if section.settings.schedule_button_text != blank %}
+        <a href="{{ section.settings.schedule_link }}" data-calendly-modal="true" class="cta-button cta-button-primary">
+          <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/>
+          </svg>
+          {{ section.settings.schedule_button_text }}
+        </a>
+      {% endif %}
+      
+
+    </div>
+  </div>
+</div>
+
+<style>
+.cta-section-standard {
+  background: linear-gradient(135deg, #1a3c2a 0%, #2a5a3a 100%);
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  margin: 30px auto;
+  max-width: 900px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section-standard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #c8a951;
+}
+
+.cta-container-standard {
+  max-width: 700px;
+  text-align: center;
+  width: 100%;
+}
+
+.cta-heading-standard {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+  line-height: 1.2;
+  letter-spacing: 1px;
+}
+
+.cta-description-standard {
+  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  margin: 0 0 24px 0;
+  line-height: 1.5;
+}
+
+.cta-buttons-standard {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.cta-button-primary {
+  background-color: #f4b942;
+  color: #1a3c2a;
+  border-color: #f4b942;
+}
+
+.cta-button-primary:hover {
+  background-color: #f7c755;
+  transform: translateY(-2px);
+}
+
+
+.button-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .cta-section-standard {
+    padding: 30px 20px;
+    margin: 20px 16px;
+  }
+  
+  .cta-heading-standard {
+    font-size: 24px;
+  }
+  
+  .cta-description-standard {
+    font-size: 15px;
+  }
+  
+  .cta-buttons-standard {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "CTA Standard",
+  "settings": [
+    {
+      "type": "text",
+      "id": "cta_heading",
+      "label": "Heading",
+      "default": "Ready to Get Your Racquet Strung?"
+    },
+    {
+      "type": "textarea",
+      "id": "cta_description",
+      "label": "Description",
+      "default": "Schedule your appointment or call to check rush service availability."
+    },
+    {
+      "type": "text",
+      "id": "schedule_button_text",
+      "label": "Schedule Button Text",
+      "default": "Book Your Restring"
+    },
+    {
+      "type": "text",
+      "id": "schedule_link",
+      "label": "Schedule Link",
+      "default": "https://calendly.com/bellesperformancetennis-sales/racquet_service"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CTA Standard"
+    }
+  ]
+}
+{% endschema %}

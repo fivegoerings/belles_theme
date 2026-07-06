@@ -1,0 +1,357 @@
+{% comment %}
+  Calendly Modal Popup
+  Usage: Add data-calendly-modal="true" to any button/link
+  Or use any link with href containing calendly.com (auto-converted)
+{% endcomment %}
+
+<link rel="preconnect" href="https://assets.calendly.com" crossorigin>
+<link rel="preconnect" href="https://calendly.com" crossorigin>
+<style>
+  .calendly-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 9998;
+    animation: fadeIn 0.15s ease;
+  }
+
+  .calendly-modal-overlay.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .calendly-modal-container {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    height: 90vh;
+    max-height: 800px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    animation: slideUp 0.15s ease;
+  }
+
+  .calendly-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+  }
+
+  .calendly-modal-close:hover {
+    background: #f5f5f5;
+    transform: scale(1.1);
+  }
+
+  .calendly-modal-close svg {
+    width: 20px;
+    height: 20px;
+    fill: #333;
+  }
+
+  .calendly-modal-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .calendly-modal-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .calendly-modal-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #1e4d2b;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 16px;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @media (max-width: 768px) {
+    .calendly-modal-container {
+      width: 95%;
+      height: 95vh;
+      border-radius: 12px;
+    }
+
+    .calendly-modal-close {
+      top: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+    }
+  }
+
+  /* Hide body scroll when modal is open */
+  body.calendly-modal-open {
+    overflow: hidden;
+  }
+</style>
+
+<!-- Modal HTML -->
+<div class="calendly-modal-overlay" id="calendlyModal">
+  <div class="calendly-modal-container">
+    <button class="calendly-modal-close" id="calendlyCloseBtn" aria-label="Close scheduling modal">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+      </svg>
+    </button>
+    <div class="calendly-modal-loading" id="calendlyLoading">
+      <div class="calendly-modal-spinner"></div>
+      <p style="color: #666; font-size: 14px;">Loading scheduling...</p>
+    </div>
+    <iframe
+      class="calendly-modal-iframe"
+      id="calendlyIframe"
+      frameborder="0"
+      allow="geolocation; microphone; camera"
+    ></iframe>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const DEFAULT_CALENDLY_URL =
+      'https://calendly.com/bellesperformancetennis-sales/racquet_service';
+    const EMBED_PARAMS = '?embed_domain=www.bellesperformancetennis.com&embed_type=Inline';
+
+    const modal = document.getElementById('calendlyModal');
+    const iframe = document.getElementById('calendlyIframe');
+    const loading = document.getElementById('calendlyLoading');
+    const closeBtn = document.getElementById('calendlyCloseBtn');
+
+    let currentCalendlyUrl = '';
+
+    // Function to hide loading and show iframe
+    function showIframe() {
+      if (loading) loading.style.display = 'none';
+      if (iframe) iframe.style.display = 'block';
+    }
+
+    // Build the embed URL from a Calendly link
+    function buildEmbedUrl(href) {
+      if (href && href.indexOf('calendly.com') !== -1) {
+        // Strip any existing query params and add embed params
+        var base = href.split('?')[0];
+        return base + EMBED_PARAMS;
+      }
+      return DEFAULT_CALENDLY_URL + EMBED_PARAMS;
+    }
+
+    var isPreloaded = false;
+    var isOpen = false;
+
+    // Preload the default Calendly URL in the background after page load
+    // so the first click shows instantly instead of waiting for the iframe
+    function preloadCalendly() {
+      if (isPreloaded || !iframe) return;
+      isPreloaded = true;
+      iframe.src = DEFAULT_CALENDLY_URL + EMBED_PARAMS;
+      currentCalendlyUrl = DEFAULT_CALENDLY_URL + EMBED_PARAMS;
+      iframe.addEventListener('load', function() {
+        if (loading) loading.style.display = 'none';
+        if (iframe) iframe.style.display = 'block';
+      }, { once: true });
+    }
+    // Preload as soon as DOM is ready — snippet is in the footer so page is already rendered
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', preloadCalendly);
+    } else {
+      preloadCalendly();
+    }
+
+    // Open modal
+    function openModal(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+
+      if (!modal || isOpen) return;
+      isOpen = true;
+
+      // Visual feedback on the clicked button
+      if (e && e.currentTarget) {
+        var btn = e.currentTarget;
+        var originalText = btn.textContent || btn.innerText;
+        btn.style.opacity = '0.7';
+        btn.style.pointerEvents = 'none';
+        setTimeout(function() {
+          btn.style.opacity = '';
+          btn.style.pointerEvents = '';
+        }, 3000);
+      }
+
+      // Get the Calendly URL from the clicked element's original href
+      var targetUrl = DEFAULT_CALENDLY_URL;
+      if (e && e.currentTarget && e.currentTarget.dataset.calendlyUrl) {
+        targetUrl = e.currentTarget.dataset.calendlyUrl;
+      }
+      var embedUrl = buildEmbedUrl(targetUrl);
+
+      modal.classList.add('active');
+      document.body.classList.add('calendly-modal-open');
+
+      if (iframe) {
+        // If we already preloaded this URL, show immediately
+        if (currentCalendlyUrl === embedUrl && isPreloaded) {
+          if (loading) loading.style.display = 'none';
+          iframe.style.display = 'block';
+        } else {
+          // Different URL or not yet preloaded — load now with spinner
+          if (loading) loading.style.display = 'block';
+          iframe.style.display = 'none';
+          iframe.src = embedUrl;
+          currentCalendlyUrl = embedUrl;
+          iframe.addEventListener('load', showIframe, { once: true });
+          setTimeout(showIframe, 3000);
+        }
+      }
+    }
+
+    // Close modal
+    function closeModal() {
+      if (!modal) return;
+      modal.classList.remove('active');
+      document.body.classList.remove('calendly-modal-open');
+      isOpen = false;
+    }
+
+    // Close button click
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeModal);
+    }
+
+    // Click outside modal to close
+    if (modal) {
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+    }
+
+    // Escape key to close
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
+    // Listen for Calendly events
+    // Listen for Calendly events
+    window.addEventListener('message', function (e) {
+      if (e.data && e.data.event && typeof e.data.event === 'string' && e.data.event.indexOf('calendly') === 0) {
+        if (e.data.event === 'calendly.page_height' || e.data.event === 'calendly.event_type_viewed') {
+          showIframe();
+        }
+        if (e.data.event === 'calendly.event_scheduled') {
+          setTimeout(closeModal, 2000);
+        }
+      }
+    });
+
+    // Function to attach click handlers to calendly triggers
+    function attachCalendlyTriggers() {
+      // Find all links that either have the data attribute OR contain calendly.com in href
+      const triggers = document.querySelectorAll('[data-calendly-modal="true"], a[href*="calendly.com"]');
+
+      triggers.forEach(function (trigger) {
+        // Skip if already processed
+        if (trigger.dataset.calendlyProcessed) return;
+
+        // Mark as processed
+        trigger.dataset.calendlyProcessed = 'true';
+
+        // Preserve the original Calendly URL before overwriting href
+        if (trigger.tagName === 'A' && trigger.getAttribute('href') && trigger.getAttribute('href').indexOf('calendly.com') !== -1) {
+          trigger.dataset.calendlyUrl = trigger.getAttribute('href');
+        }
+
+        // Hover/touch preload — start loading before the click fires
+        trigger.addEventListener('pointerenter', preloadCalendly, { once: true });
+        trigger.addEventListener('touchstart', preloadCalendly, { once: true, passive: true });
+
+        // Remove existing click handlers and add our handler
+        trigger.addEventListener('click', openModal);
+
+        // Ensure the link doesn't navigate away
+        if (trigger.tagName === 'A') {
+          trigger.setAttribute('href', trigger.dataset.calendlyUrl);
+        }
+      });
+    }
+
+    // Run when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', attachCalendlyTriggers);
+    } else {
+      attachCalendlyTriggers();
+    }
+
+    // Also run after a short delay to catch any dynamically added elements
+    setTimeout(attachCalendlyTriggers, 500);
+
+    // And observe for new elements being added to the DOM
+    if (typeof MutationObserver !== 'undefined') {
+      const observer = new MutationObserver(function (mutations) {
+        let shouldReattach = false;
+        mutations.forEach(function (mutation) {
+          if (mutation.addedNodes.length > 0) {
+            shouldReattach = true;
+          }
+        });
+        if (shouldReattach) {
+          attachCalendlyTriggers();
+        }
+      });
+
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
+  })();
+</script>

@@ -1,0 +1,470 @@
+{% comment %}
+  Belle's Performance Tennis - Events Section
+  Version: 3.0 | May 2026
+
+  Purpose: List local KC Northland tennis events so players know to book
+  stringing before they compete. Belle's is not affiliated with, sponsored
+  by, or endorsed by any listed events.
+
+  Standard page stack (page.events.json):
+    1. belle-city-hero  (page header)
+    2. belle-events-section  (this file)
+    3. cta-inline  (booking CTA)
+
+  Managing events: Theme editor > Events section > Add block.
+{% endcomment %}
+
+<style>
+.belle-events-section {
+  --belle-green: #1a3c2a;
+  --belle-gold: #c8a951;
+  --belle-gold-dim: #a08838;
+  --belle-cream: #faf9f6;
+  background: var(--belle-cream);
+  padding: 52px 24px 60px;
+}
+
+.belle-events-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.belle-events-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.belle-events-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  color: var(--belle-green);
+  margin: 0 0 8px;
+  letter-spacing: 1.5px;
+}
+
+.belle-events-header p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Event grid ── */
+.belle-events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+/* ── Event card ── */
+.belle-event-card {
+  background: #fff;
+  border-radius: 6px;
+  padding: 24px 22px 20px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+  border-top: 3px solid var(--belle-green);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.belle-event-card[data-url] {
+  cursor: pointer;
+}
+
+.belle-event-card-date {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--belle-gold-dim);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.belle-event-card h3 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--belle-green);
+  margin: 0 0 14px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.belle-event-card h3 a {
+  color: var(--belle-green);
+  text-decoration: none;
+}
+
+.belle-event-card h3 a:hover { color: var(--belle-gold-dim); }
+
+.belle-event-card-location {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 13px;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.belle-event-card-desc {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+  color: #444;
+  line-height: 1.65;
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+.belle-event-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid rgba(26,60,42,0.1);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.belle-event-tag {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid rgba(26,60,42,0.15);
+  border-radius: 3px;
+}
+
+.belle-event-tag--tournament { background: #eef4f0; color: var(--belle-green); border-color: rgba(26,60,42,0.15); }
+.belle-event-tag--clinic     { background: #fdf6e3; color: var(--belle-gold-dim); border-color: rgba(160,136,56,0.2); }
+.belle-event-tag--social     { background: #eef2ff; color: #3b4fcf; border-color: rgba(59,79,207,0.15); }
+
+.belle-event-card-link {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--belle-green);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s;
+}
+
+.belle-event-card-link:hover { color: var(--belle-gold-dim); }
+
+/* ── Empty state ── */
+.belle-events-empty {
+  text-align: center;
+  padding: 48px 24px;
+  color: #999;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+}
+
+/* ── Disclaimer ── */
+.belle-events-disclaimer {
+  margin-top: 40px;
+  padding: 16px 20px;
+  border: 1px solid rgba(26,60,42,0.1);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.belle-events-disclaimer p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  color: #888;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.belle-events-disclaimer strong { color: #555; }
+
+@media (max-width: 768px) {
+  .belle-events-section { padding: 36px 16px 48px; }
+  .belle-events-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<div class="belle-events-section">
+  <div class="belle-events-container">
+
+    <div class="belle-events-header">
+      <h2>{{ section.settings.section_title }}</h2>
+      {%- if section.settings.section_subtitle != blank -%}
+        <p>{{ section.settings.section_subtitle }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="belle-events-grid">
+        {%- for block in section.blocks -%}
+
+          {%- assign tag_class = 'tournament' -%}
+          {%- if block.settings.event_type == 'Clinic' -%}{%- assign tag_class = 'clinic' -%}{%- endif -%}
+          {%- if block.settings.event_type == 'Social' -%}{%- assign tag_class = 'social' -%}{%- endif -%}
+
+          <div class="belle-event-card"
+            {%- if block.settings.event_url != blank %} data-url="{{ block.settings.event_url }}"{% endif %}
+            {{ block.shopify_attributes }}>
+
+            {%- if block.settings.date != blank -%}
+              <div class="belle-event-card-date">
+                {{- block.settings.date -}}
+                {%- if block.settings.end_date != blank %} &ndash; {{ block.settings.end_date }}{%- endif -%}
+              </div>
+            {%- endif -%}
+
+            <h3>
+              {%- if block.settings.event_url != blank -%}
+                <a href="{{ block.settings.event_url }}" target="_blank" rel="noopener noreferrer">
+                  {{- block.settings.title }} &#8599;
+                </a>
+              {%- else -%}
+                {{- block.settings.title -}}
+              {%- endif -%}
+            </h3>
+
+            {%- if block.settings.location != blank -%}
+              <div class="belle-event-card-location">&#128205; {{ block.settings.location }}</div>
+            {%- endif -%}
+
+            {%- if block.settings.description != blank -%}
+              <p class="belle-event-card-desc">{{ block.settings.description }}</p>
+            {%- endif -%}
+
+            <div class="belle-event-card-footer">
+              <span class="belle-event-tag belle-event-tag--{{ tag_class }}">{{ block.settings.event_type }}</span>
+              {%- if block.settings.event_url != blank -%}
+                <a href="{{ block.settings.event_url }}" target="_blank" rel="noopener noreferrer" class="belle-event-card-link">
+                  Details &rarr;
+                </a>
+              {%- endif -%}
+            </div>
+
+          </div>
+
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <div class="belle-events-empty">No events listed yet. Add events using the theme editor.</div>
+    {%- endif -%}
+
+    <div class="belle-events-disclaimer">
+      <p>
+        <strong>Note:</strong> Belle's Performance Tennis Shop is not affiliated with, sponsored by, or endorsed by any events listed on this page. Event details are provided as a courtesy to local players. Contact event organizers directly for registration, schedules, and official information.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.belle-event-card[data-url]').forEach(function(card) {
+    card.addEventListener('click', function(e) {
+      if (e.target.closest('a')) return;
+      window.open(card.dataset.url, '_blank', 'noopener,noreferrer');
+    });
+  });
+</script>
+
+{% comment %}
+  SportsEvent JSON-LD
+  Enables Google rich event results in search.
+  Addresses all non-critical issues flagged in Search Console:
+  eventStatus, organizer, offers, image, performer.
+  Updated: May 2026
+{% endcomment %}
+{% if section.blocks.size > 0 %}
+  {% for block in section.blocks %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsEvent",
+      "name": {{ block.settings.title | json }},
+      "sport": "Tennis",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "startDate": "{{ block.settings.date | date: '%Y-%m-%d' }}",
+      {% if block.settings.end_date != blank %}"endDate": "{{ block.settings.end_date | date: '%Y-%m-%d' }}",{% endif %}
+      "location": {
+        "@type": "Place",
+        "name": {{ block.settings.location | default: "Kansas City, MO" | json }},
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Kansas City",
+          "addressRegion": "MO",
+          "addressCountry": "US"
+        }
+      },
+      "description": {{ block.settings.description | default: block.settings.title | json }},
+      "image": "https://www.bellesperformancetennis.com/cdn/shop/files/belles_logo_text_white_e9eebce4-5eb3-482c-9033-dbfe346a5f9f.png",
+      "organizer": {
+        "@type": "Organization",
+        "name": "KC Summer Slam Series",
+        "url": "https://sites.google.com/a/lsr7.net/kc-summer-slam-series"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "validFrom": "{{ block.settings.date | date: '%Y-%m-%d' }}",
+        "url": {% if block.settings.event_url != blank %}{{ block.settings.event_url | json }}{% else %}"https://sites.google.com/a/lsr7.net/kc-summer-slam-series"{% endif %},
+        "availability": "https://schema.org/InStock"
+      },
+      "performer": {
+        "@type": "SportsTeam",
+        "name": "KC Northland High School Tennis Players"
+      }
+    }
+    </script>
+  {% endfor %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Events",
+  "tag": "section",
+  "class": "section-belle-events",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "KC Northland Tennis Events"
+    },
+    {
+      "type": "text",
+      "id": "section_subtitle",
+      "label": "Section Subtitle",
+      "default": "If you are competing in a local event, get your racquet strung before you play."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "event",
+      "name": "Event",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Event Title",
+          "info": "Required."
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Start Date",
+          "info": "e.g. Jun 2, 2026"
+        },
+        {
+          "type": "text",
+          "id": "end_date",
+          "label": "End Date",
+          "info": "e.g. Jun 4, 2026. Leave blank for single-day events."
+        },
+        {
+          "type": "text",
+          "id": "location",
+          "label": "Location"
+        },
+        {
+          "type": "select",
+          "id": "event_type",
+          "label": "Event Type",
+          "options": [
+            { "value": "Tournament", "label": "Tournament" },
+            { "value": "Clinic",     "label": "Clinic" },
+            { "value": "Social",     "label": "Social" }
+          ],
+          "default": "Tournament"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "url",
+          "id": "event_url",
+          "label": "Event URL",
+          "info": "Link to the official event page. Leave blank if none."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Events",
+      "blocks": [
+        {
+          "type": "event",
+          "settings": {
+            "title": "KC Summer Slam — Hornet Slam",
+            "date": "Jun 2, 2026",
+            "end_date": "Jun 4, 2026",
+            "location": "Liberty High School & Staley High School, Liberty, MO",
+            "event_type": "Tournament",
+            "description": "Opening event of the 2026 KC Summer Slam Series. Youth high school tennis — Varsity, JV, and Novice singles and doubles. Playing in it? Book your stringing appointment before Tuesday.",
+            "event_url": "https://sites.google.com/a/lsr7.net/kc-summer-slam-series"
+          }
+        },
+        {
+          "type": "event",
+          "settings": {
+            "title": "KC Summer Slam — Tiger Slam",
+            "date": "Jun 9, 2026",
+            "end_date": "Jun 11, 2026",
+            "location": "Warrensburg (boys) / Sedalia (girls)",
+            "event_type": "Tournament",
+            "description": "New addition to the 2026 KC Summer Slam Series. Youth high school tournament — Varsity, JV, and Novice divisions.",
+            "event_url": "https://sites.google.com/a/lsr7.net/kc-summer-slam-series"
+          }
+        },
+        {
+          "type": "event",
+          "settings": {
+            "title": "KC Summer Slam — Liberty Slam",
+            "date": "Jun 16, 2026",
+            "end_date": "Jun 18, 2026",
+            "location": "Liberty High School & Staley High School, Liberty, MO",
+            "event_type": "Tournament",
+            "description": "Mid-summer stop on the KC Summer Slam Series. Youth high school tournament — Varsity, JV, and Novice singles and doubles.",
+            "event_url": "https://sites.google.com/a/lsr7.net/kc-summer-slam-series"
+          }
+        },
+        {
+          "type": "event",
+          "settings": {
+            "title": "KC Summer Slam — Summit Slam",
+            "date": "Jul 7, 2026",
+            "end_date": "Jul 9, 2026",
+            "location": "Lee's Summit R7 Schools, Lee's Summit, MO",
+            "event_type": "Tournament",
+            "description": "Lee's Summit stop on the KC Summer Slam Series. Youth high school tournament — Varsity, JV, and Novice singles and doubles.",
+            "event_url": "https://sites.google.com/a/lsr7.net/kc-summer-slam-series"
+          }
+        },
+        {
+          "type": "event",
+          "settings": {
+            "title": "KC Summer Slam — Jaguar Slam",
+            "date": "Jul 21, 2026",
+            "end_date": "Jul 23, 2026",
+            "location": "Blue Springs South / Lee's Summit North / Grain Valley",
+            "event_type": "Tournament",
+            "description": "Final stop of the 2026 KC Summer Slam Series. Youth high school tournament — Varsity, JV, and Novice singles and doubles.",
+            "event_url": "https://sites.google.com/a/lsr7.net/kc-summer-slam-series"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

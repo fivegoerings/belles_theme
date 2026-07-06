@@ -1,0 +1,57 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "177152656932e4c6fb": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_all_reviews_page_8Q3wLn": {
+          "type": "shopify://apps/judge-me-reviews/blocks/all_reviews_page/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "max_width": 700,
+            "review_source": "store",
+            "show_all_reviews_in_same_tab": true,
+            "show_first": "product",
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_all_reviews_page_8Q3wLn"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "cta_inline_tTqAbN": {
+      "type": "cta-inline",
+      "name": "CTA Inline",
+      "settings": {
+        "cta_heading": "Book a Northland Drop-Off",
+        "cta_description": "Choose a Northland QuikTrip location and time. Most racquets are ready in 2–3 days.",
+        "schedule_button_text": "Book Racquet Stringing",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=reviews_bottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "177152656932e4c6fb",
+    "cta_inline_tTqAbN"
+  ]
+}

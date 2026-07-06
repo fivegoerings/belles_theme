@@ -1,0 +1,368 @@
+{% comment %}
+  Belle's Performance Tennis - How It Works Section
+  
+  Purpose: Eliminate the #1 confusion point for first-time visitors —
+  "How does a mobile stringing service actually work?"
+  
+  Strategy doc: Priority 1 action item.
+  Placement: index.json between hero section and Why Belle's section.
+  
+  LOCKED: Do not modify without customer feedback showing confusion persists.
+{% endcomment %}
+
+<style>
+.belle-hiw {
+  --belle-green: #1a3c2a;
+  --belle-green-light: #2a5a3a;
+  --belle-gold: #c8a951;
+  --belle-gold-light: #d4b96a;
+  --belle-cream: #faf9f6;
+  --belle-charcoal: #2d2d2d;
+
+  background: var(--belle-cream);
+  padding: 60px 24px 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background texture */
+.belle-hiw::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse at 15% 80%, rgba(26, 71, 42, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 20%, rgba(201, 162, 39, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.belle-hiw-container {
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Header */
+.belle-hiw-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.belle-hiw-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
+  color: var(--belle-green);
+  margin: 0 0 10px 0;
+  letter-spacing: 1.5px;
+  line-height: 1.1;
+}
+
+.belle-hiw-header p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 17px;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Steps Grid */
+.belle-hiw-steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  position: relative;
+}
+
+/* Connector line between steps */
+.belle-hiw-steps::before {
+  content: '';
+  position: absolute;
+  top: 52px;
+  left: calc(16.67% + 20px);
+  right: calc(16.67% + 20px);
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--belle-gold) 0%,
+    rgba(201, 162, 39, 0.3) 45%,
+    rgba(201, 162, 39, 0.3) 55%,
+    var(--belle-gold) 100%
+  );
+  z-index: 0;
+}
+
+/* Individual Step */
+.belle-hiw-step {
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Step Number Circle */
+.belle-hiw-number {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, var(--belle-green) 0%, var(--belle-green-light) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 4px 16px rgba(26, 71, 42, 0.25),
+    0 0 0 4px var(--belle-cream),
+    0 0 0 6px rgba(201, 162, 39, 0.3);
+  position: relative;
+}
+
+.belle-hiw-number span {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: var(--belle-gold);
+  line-height: 1;
+  letter-spacing: 0.5px;
+}
+
+/* Step Icon (below number) */
+.belle-hiw-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 14px;
+}
+
+.belle-hiw-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--belle-gold);
+  opacity: 0.7;
+}
+
+/* Step Title */
+.belle-hiw-step h3 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--belle-green);
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+/* Step Description */
+.belle-hiw-step p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+  color: #666;
+  margin: 0;
+  line-height: 1.55;
+  max-width: 260px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 768px) {
+  .belle-hiw {
+    padding: 48px 20px 56px;
+  }
+
+  .belle-hiw-header h2 {
+    font-size: 32px;
+  }
+
+  .belle-hiw-header {
+    margin-bottom: 36px;
+  }
+
+  .belle-hiw-steps {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  /* Hide horizontal connector on mobile */
+  .belle-hiw-steps::before {
+    display: none;
+  }
+
+  .belle-hiw-step {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    grid-template-rows: auto auto;
+    gap: 0 20px;
+    text-align: left;
+    padding: 16px 0;
+    position: relative;
+  }
+
+  /* Vertical connector on mobile */
+  .belle-hiw-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 32px;
+    top: 80px;
+    bottom: -8px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--belle-gold), rgba(201, 162, 39, 0.15));
+  }
+
+  .belle-hiw-number {
+    grid-row: 1 / 3;
+    grid-column: 1;
+    margin: 0;
+    width: 56px;
+    height: 56px;
+    align-self: center;
+  }
+
+  .belle-hiw-number span {
+    font-size: 24px;
+  }
+
+  .belle-hiw-icon {
+    display: none;
+  }
+
+  .belle-hiw-step h3 {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    margin-bottom: 4px;
+    font-size: 17px;
+  }
+
+  .belle-hiw-step p {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    max-width: none;
+    font-size: 14px;
+  }
+}
+</style>
+
+<section class="belle-hiw">
+  <div class="belle-hiw-container">
+
+    <div class="belle-hiw-header">
+      <h2>{{ section.settings.title }}</h2>
+      {% if section.settings.subtitle != blank %}
+        <p>{{ section.settings.subtitle }}</p>
+      {% endif %}
+    </div>
+
+    <div class="belle-hiw-steps">
+
+      <!-- Step 1: Book -->
+      <div class="belle-hiw-step">
+        <div class="belle-hiw-number"><span>1</span></div>
+        <div class="belle-hiw-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/></svg>
+        </div>
+        <h3>{{ section.settings.step_1_title }}</h3>
+        <p>{{ section.settings.step_1_text }}</p>
+      </div>
+
+      <!-- Step 2: Drop Off -->
+      <div class="belle-hiw-step">
+        <div class="belle-hiw-number"><span>2</span></div>
+        <div class="belle-hiw-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </div>
+        <h3>{{ section.settings.step_2_title }}</h3>
+        <p>{{ section.settings.step_2_text }}</p>
+      </div>
+
+      <!-- Step 3: Pick Up -->
+      <div class="belle-hiw-step">
+        <div class="belle-hiw-number"><span>3</span></div>
+        <div class="belle-hiw-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+        </div>
+        <h3>{{ section.settings.step_3_title }}</h3>
+        <p>{{ section.settings.step_3_text }}</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "How It Works",
+  "tag": "section",
+  "class": "section-belle-hiw",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "How It Works"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Three steps. No confusion. Your racquet comes back strung right."
+    },
+    {
+      "type": "header",
+      "content": "Step 1"
+    },
+    {
+      "type": "text",
+      "id": "step_1_title",
+      "label": "Step 1 Title",
+      "default": "Book Online"
+    },
+    {
+      "type": "textarea",
+      "id": "step_1_text",
+      "label": "Step 1 Description",
+      "default": "Pick a time that works for you and choose a convenient Northland drop-off location."
+    },
+    {
+      "type": "header",
+      "content": "Step 2"
+    },
+    {
+      "type": "text",
+      "id": "step_2_title",
+      "label": "Step 2 Title",
+      "default": "Meet & Drop Off"
+    },
+    {
+      "type": "textarea",
+      "id": "step_2_text",
+      "label": "Step 2 Description",
+      "default": "We meet at your chosen spot — QuikTrip, library, or school. Hand off your racquet and grab a free Solinco demo."
+    },
+    {
+      "type": "header",
+      "content": "Step 3"
+    },
+    {
+      "type": "text",
+      "id": "step_3_title",
+      "label": "Step 3 Title",
+      "default": "Pick Up & Play"
+    },
+    {
+      "type": "textarea",
+      "id": "step_3_text",
+      "label": "Step 3 Description",
+      "default": "Your racquet is strung, labeled, and ready. We arrange pickup and you're back on court."
+    }
+  ],
+  "presets": [
+    {
+      "name": "How It Works"
+    }
+  ]
+}
+{% endschema %}

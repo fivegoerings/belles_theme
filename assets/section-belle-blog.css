@@ -1,0 +1,399 @@
+/* Belle's Performance Tennis - Blog Section Styles */
+
+.belle-blog {
+  --belle-green: #1a3c2a;
+  --belle-gold: #c8a951;
+  --belle-cream: #faf9f6;
+  --belle-charcoal: #2d2d2d;
+  --belle-light: #f8f8f8;
+  --belle-border: #e0e0e0;
+
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 60px 20px;
+  background: linear-gradient(180deg, var(--belle-cream) 0%, #fff 100%);
+}
+
+.belle-blog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.belle-blog-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.belle-blog-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  color: var(--belle-green);
+  margin: 0 0 12px 0;
+  letter-spacing: 2px;
+}
+
+.belle-blog-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Blog Grid */
+.belle-blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 30px;
+}
+
+/* Blog Card */
+.belle-blog-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.belle-blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Image */
+.belle-blog-card-image {
+  position: relative;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: var(--belle-light);
+  display: block;
+}
+
+.belle-blog-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.belle-blog-card:hover .belle-blog-card-image img {
+  transform: scale(1.05);
+}
+
+.belle-blog-card-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.belle-blog-card-placeholder svg {
+  width: 64px;
+  height: 64px;
+  fill: #ccc;
+}
+
+.belle-blog-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(26, 71, 42, 0.8) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.belle-blog-card:hover .belle-blog-card-overlay {
+  opacity: 1;
+}
+
+.belle-blog-read-more {
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  background: var(--belle-gold);
+  border-radius: 6px;
+  transform: translateY(10px);
+  transition: transform 0.3s ease;
+}
+
+.belle-blog-card:hover .belle-blog-read-more {
+  transform: translateY(0);
+}
+
+/* Card Content */
+.belle-blog-card-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-top: 4px solid var(--belle-gold);
+}
+
+.belle-blog-card-meta {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.belle-blog-card-meta time {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.belle-blog-card-author::before {
+  content: '•';
+  margin-right: 8px;
+}
+
+.belle-blog-card-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  color: var(--belle-green);
+  margin: 0 0 12px 0;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+.belle-blog-card-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.belle-blog-card-title a:hover {
+  color: var(--belle-gold);
+}
+
+.belle-blog-card-excerpt {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+  flex: 1;
+}
+
+/* Tags */
+.belle-blog-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.belle-blog-tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--belle-green);
+  background: rgba(26, 71, 42, 0.08);
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.belle-blog-tag:hover {
+  background: var(--belle-green);
+  color: white;
+}
+
+/* Read More Link */
+.belle-blog-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--belle-green);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  margin-top: auto;
+}
+
+.belle-blog-card-link svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.belle-blog-card-link:hover {
+  color: var(--belle-gold);
+}
+
+.belle-blog-card-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* Pagination */
+.belle-blog-pagination {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.belle-blog-pagination-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.belle-blog-pagination-prev,
+.belle-blog-pagination-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--belle-green);
+  text-decoration: none;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.belle-blog-pagination-prev:hover,
+.belle-blog-pagination-next:hover {
+  background: var(--belle-green);
+  color: white;
+}
+
+.belle-blog-pagination-prev svg,
+.belle-blog-pagination-next svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.belle-blog-pagination-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--belle-charcoal);
+  text-decoration: none;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+}
+
+.belle-blog-pagination-number:hover {
+  background: var(--belle-light);
+}
+
+.belle-blog-pagination-current {
+  background: var(--belle-green);
+  color: white;
+}
+
+.belle-blog-pagination-current:hover {
+  background: var(--belle-green);
+}
+
+.belle-blog-pagination-ellipsis {
+  color: #888;
+  padding: 0 8px;
+}
+
+/* Empty State */
+.belle-blog-empty {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.belle-blog-empty svg {
+  width: 80px;
+  height: 80px;
+  fill: #ccc;
+  margin-bottom: 20px;
+}
+
+.belle-blog-empty h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: var(--belle-green);
+  margin: 0 0 8px 0;
+}
+
+.belle-blog-empty p {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .belle-blog {
+    padding: 40px 16px;
+  }
+
+  .belle-blog-title {
+    font-size: 36px;
+  }
+
+  .belle-blog-subtitle {
+    font-size: 16px;
+  }
+
+  .belle-blog-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .belle-blog-card-content {
+    padding: 20px;
+  }
+
+  .belle-blog-card-title {
+    font-size: 22px;
+  }
+
+  .belle-blog-pagination-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .belle-blog-pagination-prev,
+  .belle-blog-pagination-next {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .belle-blog-pagination-number {
+    width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .belle-blog-grid {
+    grid-template-columns: 1fr;
+  }
+}

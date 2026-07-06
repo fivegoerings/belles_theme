@@ -1,0 +1,134 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "belle-faq-section",
+      "blocks": {
+        "q1": {
+          "type": "question",
+          "settings": {
+            "question": "How long does stringing take?",
+            "answer": "<p>Most stringing jobs are completed within 2\u20133 days. Same-day and next-day service may be available, contact us to check. When you drop off your racquet, you're welcome to borrow a free Solinco demo racquet so you can keep playing while yours is being strung.</p>",
+            "category": ""
+          }
+        },
+        "question_j8fz4g": {
+          "type": "question",
+          "settings": {
+            "question": "Do you recommend changing string or tension?",
+            "answer": "<p>Not unless there's a reason. If you liked how your racquet played before, our goal is to make it play that way again with fresh strings. Changes are only suggested when there's discomfort, breakage issues, or performance problems. Most high school players don't need a consultation or setup change \u2014 they just need consistent restringing.</p>",
+            "category": ""
+          }
+        },
+        "question_djYiVA": {
+          "type": "question",
+          "settings": {
+            "question": "What is your pricing?",
+            "answer": "<p>You can find <a href=\"/pages/racquet-stringing-prices-kansas-city-northland\" target=\"_blank\" title=\"Pricing\">Our Pricing here</a></p>",
+            "category": ""
+          }
+        },
+        "question_YyMPMb": {
+          "type": "question",
+          "settings": {
+            "question": "Do I need to know what string I want?",
+            "answer": "<p>No. If your current setup works, I can stay close to it. If you want to change, I can explain the practical difference between synthetic gut, multifilament, polyester, and hybrid options.</p>",
+            "category": ""
+          }
+        },
+        "question_9dCcMR": {
+          "type": "question",
+          "settings": {
+            "question": "Why are your stringing prices different from clubs, big-box stores, and other tennis shops?",
+            "answer": "<p>Clubs, big-box stores, and retail tennis shops often have storefront, staffing, or club overhead built into the price.</p><p>Belle\u2019s is different. I string racquets by appointment for Kansas City Northland players, without a retail counter or club pro shop markup.</p><p>Your service includes:</p><ul><li>Direct scheduling and communication</li><li>Northland drop-off by appointment</li><li>String included unless you bring your own</li><li>String, tension, and racquet notes saved for future restrings</li><li>Stringing on a Gamma Progression II ELS electronic machine</li><li>Help choosing a string and tension based on how you play</li></ul><p>You get a clear process, local drop-off, and your setup logged for next time.</p>",
+            "category": ""
+          }
+        },
+        "question_PzqtgK": {
+          "type": "question",
+          "settings": {
+            "question": "Why are your stringing prices different from Facebook Marketplace or local listings?",
+            "answer": "<p>Marketplace listings are often labor-only. You may get the racquet strung, but the string, tension, and setup notes usually are not saved for next time.</p><p>Belle\u2019s includes more than labor:</p><ul><li>Stringing on a Gamma Progression II ELS electronic machine</li><li>Your racquet, string, tension, and notes saved for future restrings</li><li>Appointment-based scheduling with direct communication</li><li>A Solinco demo racquet available to use while yours is being strung, when available</li><li>Help choosing a string and tension based on how you play</li></ul><p>You are not just paying for someone to install strings. You are paying for a repeatable setup, local communication, and a record of what worked.</p>",
+            "category": ""
+          }
+        },
+        "q2": {
+          "type": "question",
+          "settings": {
+            "question": "What strings do you offer?",
+            "answer": "<p>Belle\u2019s keeps common tennis strings on hand from Solinco, Gosen, Wilson, and Head, including options like Solinco Hyper-G, Confidential, Tour Bite, Gosen OG-Sheep Micro, Wilson synthetic gut, and Wilson multifilament strings. Other strings may be available by request if you already know what you use.</p><p>Not sure what to choose? Most players do best by staying close to the same type of string they are used to. If you want to change, I can explain the practical differences and help you pick an option that is already in stock.</p>",
+            "category": ""
+          }
+        },
+        "q3": {
+          "type": "question",
+          "settings": {
+            "question": "Do you offer pickup and delivery?",
+            "answer": "<p>Yes,  with a quick meetup. When you book, you choose a convenient QuikTrip location in the Northland and a time that works for you. We meet there, you hand off your racquet, and we arrange pickup at the same spot when it's ready. No driving to a shop. No shipping. Just a 5-minute stop at a location you're probably already passing.</p>",
+            "category": ""
+          }
+        },
+        "q4": {
+          "type": "question",
+          "settings": {
+            "question": "What is your demo racquet program?",
+            "answer": "<p>When you drop off a racquet for stringing, you can borrow one of our Solinco demo racquets at no charge. This way you never have to skip practice or a match while waiting for your racquet. It's also a great opportunity to try a new racquet before you buy.</p>",
+            "category": ""
+          }
+        },
+        "q5": {
+          "type": "question",
+          "settings": {
+            "question": "How do I schedule an appointment?",
+            "answer": "<p>You can schedule using the booking link below.</p>",
+            "category": ""
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "question_j8fz4g",
+        "question_djYiVA",
+        "question_YyMPMb",
+        "question_9dCcMR",
+        "question_PzqtgK",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "settings": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "Find answers to common questions about our racquet stringing services",
+        "open_first": true,
+        "show_contact_cta": false,
+        "contact_title": "Still Have Questions?",
+        "contact_text": "Send a message before you book.",
+        "contact_link": "",
+        "phone": "816-938-7622"
+      }
+    },
+    "cta_inline_8JgFhG": {
+      "type": "cta-inline",
+      "name": "CTA Inline",
+      "settings": {
+        "cta_heading": "Book a Northland Drop-Off",
+        "cta_description": "Choose a QuikTrip location and time. Most racquets are ready in 2\u20133 days.",
+        "schedule_button_text": "Book Racquet Stringing",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=faq_bottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cta_inline_8JgFhG"
+  ]
+}

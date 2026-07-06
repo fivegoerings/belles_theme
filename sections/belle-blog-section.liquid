@@ -1,0 +1,210 @@
+{% comment %}
+  Belle's Performance Tennis - Blog Section
+  Custom styled blog listing matching Belle's brand
+{% endcomment %}
+
+{{ 'section-belle-blog.css' | asset_url | stylesheet_tag }}
+
+<div class="belle-blog" id="belle-blog-{{ section.id }}">
+  <div class="belle-blog-container">
+    
+    <!-- Header -->
+    <div class="belle-blog-header">
+      <h1 class="belle-blog-title">{{ section.settings.title | default: blog.title }}</h1>
+      {% if section.settings.subtitle != blank %}
+      <p class="belle-blog-subtitle">{{ section.settings.subtitle }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Blog Posts Grid -->
+    {%- paginate blog.articles by section.settings.posts_per_page -%}
+    
+      {% if blog.articles.size > 0 %}
+      <div class="belle-blog-grid">
+        {% for article in blog.articles %}
+        <article class="belle-blog-card">
+          {% if article.image %}
+          <a href="{{ article.url }}" class="belle-blog-card-image">
+            <img 
+              src="{{ article.image | image_url: width: 800 }}" 
+              alt="{{ article.image.alt | escape | default: article.title }}"
+              loading="lazy"
+              width="800"
+              height="{{ 800 | divided_by: article.image.aspect_ratio | round }}"
+            >
+            <div class="belle-blog-card-overlay">
+              <span class="belle-blog-read-more">Read Article</span>
+            </div>
+          </a>
+          {% else %}
+          <a href="{{ article.url }}" class="belle-blog-card-image belle-blog-card-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4.86 8.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"/>
+            </svg>
+            <div class="belle-blog-card-overlay">
+              <span class="belle-blog-read-more">Read Article</span>
+            </div>
+          </a>
+          {% endif %}
+          
+          <div class="belle-blog-card-content">
+            <div class="belle-blog-card-meta">
+              {% if section.settings.show_date %}
+              <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+                {{ article.published_at | date: '%B %d, %Y' }}
+              </time>
+              {% endif %}
+              {% if section.settings.show_author and article.author != blank %}
+              <span class="belle-blog-card-author">by {{ article.author }}</span>
+              {% endif %}
+            </div>
+            
+            <h2 class="belle-blog-card-title">
+              <a href="{{ article.url }}">{{ article.title }}</a>
+            </h2>
+            
+            {% if section.settings.show_excerpt and article.excerpt_or_content != blank %}
+            <p class="belle-blog-card-excerpt">
+              {{ article.excerpt_or_content | strip_html | truncatewords: 25 }}
+            </p>
+            {% endif %}
+            
+            {% if article.tags.size > 0 and section.settings.show_tags %}
+            <div class="belle-blog-card-tags">
+              {% for tag in article.tags limit: 3 %}
+              <a href="{{ blog.url }}/tagged/{{ tag | handle }}" class="belle-blog-tag">{{ tag }}</a>
+              {% endfor %}
+            </div>
+            {% endif %}
+            
+            <a href="{{ article.url }}" class="belle-blog-card-link">
+              Read More
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            </a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+      
+      <!-- Pagination -->
+      {% if paginate.pages > 1 %}
+      <nav class="belle-blog-pagination" aria-label="Blog pagination">
+        <ul class="belle-blog-pagination-list">
+          {% if paginate.previous %}
+          <li>
+            <a href="{{ paginate.previous.url }}" class="belle-blog-pagination-prev" aria-label="Previous page">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+              Previous
+            </a>
+          </li>
+          {% endif %}
+          
+          {% for part in paginate.parts %}
+            {% if part.is_link %}
+            <li>
+              <a href="{{ part.url }}" class="belle-blog-pagination-number">{{ part.title }}</a>
+            </li>
+            {% else %}
+              {% if part.title == paginate.current_page %}
+              <li>
+                <span class="belle-blog-pagination-number belle-blog-pagination-current" aria-current="page">{{ part.title }}</span>
+              </li>
+              {% else %}
+              <li>
+                <span class="belle-blog-pagination-ellipsis">{{ part.title }}</span>
+              </li>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+          
+          {% if paginate.next %}
+          <li>
+            <a href="{{ paginate.next.url }}" class="belle-blog-pagination-next" aria-label="Next page">
+              Next
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+      {% endif %}
+      
+      {% else %}
+      <!-- No Articles -->
+      <div class="belle-blog-empty">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
+        </svg>
+        <h3>No articles yet</h3>
+        <p>Check back soon for tips, news, and updates!</p>
+      </div>
+      {% endif %}
+      
+    {%- endpaginate -%}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Belle's Blog",
+  "tag": "section",
+  "class": "belle-blog-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "info": "Leave blank to use blog title"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Tips, news, and updates from Belle's Performance Tennis"
+    },
+    {
+      "type": "range",
+      "id": "posts_per_page",
+      "min": 3,
+      "max": 12,
+      "step": 3,
+      "default": 6,
+      "label": "Posts per page"
+    },
+    {
+      "type": "header",
+      "content": "Card Display"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "Show date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "Show author",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_excerpt",
+      "label": "Show excerpt",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "label": "Show tags",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Belle's Blog"
+    }
+  ]
+}
+{% endschema %}

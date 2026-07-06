@@ -1,0 +1,23 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "belle-404",
+      "settings": {
+        "heading": "This One Sailed Out",
+        "message": "The page you're looking for isn't here \u2014 it may have moved or the link might be outdated. Let's get you back on court."
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

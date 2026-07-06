@@ -1,0 +1,306 @@
+{% comment %}
+  Belle's Performance Tennis - FAQ Section
+  Frequently Asked Questions with accordion-style expandable answers
+{% endcomment %}
+
+{{ 'section-belle-faq.css' | asset_url | stylesheet_tag }}
+
+<div class="belle-faq" id="belle-faq-{{ section.id }}">
+  <div class="belle-faq-container">
+    
+    <!-- Header -->
+    <div class="belle-faq-header">
+      <h1 class="belle-faq-title">{{ section.settings.title | default: 'Frequently Asked Questions' }}</h1>
+      {% if section.settings.subtitle != blank %}
+      <p class="belle-faq-subtitle">{{ section.settings.subtitle }}</p>
+      {% endif %}
+    </div>
+
+    <!-- FAQ Categories -->
+    {% assign categories = section.blocks | where: "type", "category" %}
+    {% assign questions = section.blocks | where: "type", "question" %}
+    
+    {% if categories.size > 0 %}
+      <!-- Categorized FAQs -->
+      {% for category in categories %}
+        <div class="belle-faq-category" {{ category.shopify_attributes }}>
+          <h2 class="belle-faq-category-title">
+            <span class="belle-faq-category-icon">
+              {% case category.settings.icon %}
+                {% when 'racquet' %}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                {% when 'clock' %}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                {% when 'money' %}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+                {% when 'string' %}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg>
+                {% when 'location' %}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                {% when 'demo' %}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                {% else %}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+              {% endcase %}
+            </span>
+            {{ category.settings.title | default: 'Category' }}
+          </h2>
+          
+          {% assign category_questions = section.blocks | where: "type", "question" %}
+          {% for question in category_questions %}
+            {% if question.settings.category == category.settings.title %}
+            <div class="belle-faq-item" {{ question.shopify_attributes }}>
+              <details class="belle-faq-details">
+                <summary class="belle-faq-question">
+                  <span class="belle-faq-question-text">{{ question.settings.question }}</span>
+                  <span class="belle-faq-icon">
+                    <svg class="belle-faq-icon-plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    <svg class="belle-faq-icon-minus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13H5v-2h14v2z"/></svg>
+                  </span>
+                </summary>
+                <div class="belle-faq-answer">
+                  {{ question.settings.answer }}
+                </div>
+              </details>
+            </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endfor %}
+      
+    {% else %}
+      <!-- Uncategorized FAQs -->
+      <div class="belle-faq-list">
+        {% for block in section.blocks %}
+          {% if block.type == 'question' %}
+          <div class="belle-faq-item" {{ block.shopify_attributes }}>
+            <details class="belle-faq-details"{% if section.settings.open_first and forloop.first %} open{% endif %}>
+              <summary class="belle-faq-question">
+                <span class="belle-faq-question-text">{{ block.settings.question }}</span>
+                <span class="belle-faq-icon">
+                  <svg class="belle-faq-icon-plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                  <svg class="belle-faq-icon-minus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13H5v-2h14v2z"/></svg>
+                </span>
+              </summary>
+              <div class="belle-faq-answer">
+                {{ block.settings.answer }}
+              </div>
+            </details>
+          </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <!-- Contact CTA -->
+    {% if section.settings.show_contact_cta %}
+    <div class="belle-faq-contact">
+      <div class="belle-faq-contact-content">
+        <h3 class="belle-faq-contact-title">{{ section.settings.contact_title | default: "Still Have Questions?" }}</h3>
+        <p class="belle-faq-contact-text">{{ section.settings.contact_text | default: "We're here to help! Reach out and we'll get back to you as soon as possible." }}</p>
+        <div class="belle-faq-contact-buttons">
+          {% if section.settings.contact_link != blank %}
+          <a href="{{ section.settings.contact_link }}" class="belle-faq-btn belle-faq-btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            Contact Us
+          </a>
+          {% endif %}
+          {% if section.settings.phone != blank %}
+          <a href="tel:{{ section.settings.phone | remove: '-' | remove: ' ' | remove: '(' | remove: ')' }}" class="belle-faq-btn belle-faq-btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            {{ section.settings.phone }}
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+  </div>
+</div>
+
+{% comment %}
+  FAQPage JSON-LD
+  Enables Google FAQ rich results (accordion Q&A directly in search results).
+  Reads from section blocks automatically — no separate admin maintenance required.
+  Handles both categorized and uncategorized question layouts.
+  strip_html removes richtext formatting before output so JSON stays valid.
+  Updated: May 2026
+{% endcomment %}
+{%- assign faq_questions = section.blocks | where: "type", "question" -%}
+{% if faq_questions.size > 0 %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for block in faq_questions %}
+    {
+      "@type": "Question",
+      "name": {{ block.settings.question | json }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ block.settings.answer | strip_html | strip | json }}
+      }
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Belle's FAQ",
+  "tag": "section",
+  "class": "belle-faq-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Find answers to common questions about our racquet stringing services"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first",
+      "label": "Open first question by default",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Contact Section"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_contact_cta",
+      "label": "Show contact section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "contact_title",
+      "label": "Contact Title",
+      "default": "Still Have Questions?"
+    },
+    {
+      "type": "textarea",
+      "id": "contact_text",
+      "label": "Contact Text",
+      "default": "We're here to help! Reach out and we'll get back to you as soon as possible."
+    },
+    {
+      "type": "url",
+      "id": "contact_link",
+      "label": "Contact Page Link"
+    },
+    {
+      "type": "text",
+      "id": "phone",
+      "label": "Phone Number",
+      "default": "816-938-7622"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "FAQ Category",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Category Title",
+          "default": "General Questions"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "question", "label": "Question Mark" },
+            { "value": "racquet", "label": "Racquet/Check" },
+            { "value": "clock", "label": "Clock/Time" },
+            { "value": "money", "label": "Money/Pricing" },
+            { "value": "string", "label": "String/Materials" },
+            { "value": "location", "label": "Location" },
+            { "value": "demo", "label": "Demo/Service" }
+          ],
+          "default": "question"
+        }
+      ]
+    },
+    {
+      "type": "question",
+      "name": "FAQ Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "What is your question?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Your answer goes here. You can include formatting, links, and more.</p>"
+        },
+        {
+          "type": "text",
+          "id": "category",
+          "label": "Category (optional)",
+          "info": "Enter the consistent category title to group this question"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Belle's FAQ",
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "How long does stringing take?",
+            "answer": "<p>Most stringing jobs are completed within 2–3 days. For same-day service, please contact us to check availability.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What strings do you offer?",
+            "answer": "<p>We offer a wide selection of premium strings from Solinco and other top brands. We can help you choose the right string for your playing style.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "Do you offer pickup and delivery?",
+            "answer": "<p>Yes! We offer convenient pickup and delivery service throughout the Kansas City Northland area. Contact us to arrange a time.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What is your demo racquet program?",
+            "answer": "<p>When you bring in a racquet for stringing, you can borrow one of our Solinco demo racquets to use while yours is being serviced. It's a great way to try new equipment!</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "How do I schedule an appointment?",
+            "answer": "<p>You can schedule an appointment through our website or give us a call. We operate by appointment to ensure personalized service for every customer.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

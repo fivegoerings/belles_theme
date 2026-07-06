@@ -1,0 +1,320 @@
+{% comment %}
+  Belle's Performance Tennis — Pricing Add-Ons Section
+  v2.0 — May 2026
+  Changes from v1.x:
+    - Removed gradient backgrounds
+    - Removed drop shadows
+    - Consolidated all disclaimers into one note bar at bottom
+    - Removed "all prices subject to change" — creates doubt at booking stage
+    - Hybrid setup moved here from main pricing section (it's an add-on, not a base price)
+    - "Cost +" language clarified with descriptor text
+    - Turnaround info merged into add-ons flow, not a separate card
+{% endcomment %}
+
+<style>
+  .bp-addons {
+    --bp-green: #1a3c2a;
+    --bp-gold: #c8a951;
+    --bp-border: #e5e5e5;
+    --bp-text: #1a1a1a;
+    --bp-muted: #666;
+    --bp-bg: #faf9f6;
+    --bp-white: #ffffff;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 0 20px 48px;
+    background: var(--bp-bg);
+  }
+
+  .bp-addons-container {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .bp-addons-section-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--bp-muted);
+    margin: 0 0 12px;
+  }
+
+  /* Add-ons grid */
+  .bp-addons-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+
+  .bp-addon-card {
+    background: var(--bp-white);
+    border: 1px solid var(--bp-border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .bp-addon-card.full-width {
+    grid-column: span 2;
+  }
+
+  .bp-addon-card.highlight {
+    border-color: var(--bp-gold);
+    background: #fefcf4;
+  }
+
+  .bp-addon-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--bp-text);
+    margin: 0 0 3px;
+  }
+
+  .bp-addon-desc {
+    font-size: 12px;
+    color: var(--bp-muted);
+    margin: 0;
+  }
+
+  .bp-addon-price {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--bp-green);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .bp-addon-price.free {
+    color: var(--bp-gold);
+  }
+
+  /* CTA button — mid page */
+  .bp-cta {
+    display: block;
+    background: var(--bp-green);
+    color: var(--bp-gold);
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    margin-bottom: 32px;
+    transition: opacity 0.15s;
+  }
+
+  .bp-cta:hover {
+    opacity: 0.88;
+    color: var(--bp-gold);
+  }
+
+  /* Team callout */
+  .bp-team-callout {
+    background: var(--bp-green);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .bp-team-callout h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    color: var(--bp-gold);
+    letter-spacing: 1px;
+    margin: 0 0 8px;
+  }
+
+  .bp-team-callout p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.9);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* String recommendation box */
+  .bp-info-box {
+    background: var(--bp-white);
+    border: 1px solid var(--bp-border);
+    border-left: 4px solid var(--bp-gold);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 24px;
+  }
+
+  .bp-info-box h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--bp-text);
+    margin: 0 0 6px;
+  }
+
+  .bp-info-box p {
+    font-size: 14px;
+    color: var(--bp-muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* Consolidated note bar */
+  .bp-note-bar {
+    background: #f4f4f2;
+    border: 1px solid var(--bp-border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 13px;
+    color: var(--bp-muted);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .bp-note-bar p {
+    margin: 0 0 6px;
+  }
+
+  .bp-note-bar p:last-child {
+    margin: 0;
+  }
+
+  /* Contact */
+  .bp-contact {
+    text-align: center;
+    font-size: 15px;
+    color: var(--bp-muted);
+  }
+
+  .bp-contact a {
+    color: var(--bp-green);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .bp-contact a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 640px) {
+    .bp-addons-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .bp-addon-card.full-width {
+      grid-column: span 1;
+    }
+  }
+</style>
+
+<div class="bp-addons">
+  <div class="bp-addons-container">
+
+    <p class="bp-addons-section-label">Add-ons</p>
+
+    <div class="bp-addons-grid">
+
+      <div class="bp-addon-card highlight">
+        <div>
+          <p class="bp-addon-name">Stenciling</p>
+          <p class="bp-addon-desc">Standard ink colors. Free when we supply the string.</p>
+        </div>
+        <span class="bp-addon-price free">$5 / free</span>
+      </div>
+
+      <div class="bp-addon-card">
+        <div>
+          <p class="bp-addon-name">Hybrid setup</p>
+          <p class="bp-addon-desc">Two different strings, two-piece install</p>
+        </div>
+        <span class="bp-addon-price">+$10</span>
+      </div>
+
+      <div class="bp-addon-card">
+        <div>
+          <p class="bp-addon-name">Overgrip replacement</p>
+          <p class="bp-addon-desc">Grip cost + install labor</p>
+        </div>
+        <span class="bp-addon-price">cost +$5</span>
+      </div>
+
+      <div class="bp-addon-card">
+        <div>
+          <p class="bp-addon-name">Replacement grip</p>
+          <p class="bp-addon-desc">Grip cost + install labor</p>
+        </div>
+        <span class="bp-addon-price">cost +$10</span>
+      </div>
+
+      <div class="bp-addon-card">
+        <div>
+          <p class="bp-addon-name">Grip build-up</p>
+          <p class="bp-addon-desc">Heat shrink sleeve, increases handle size</p>
+        </div>
+        <span class="bp-addon-price">cost +$12</span>
+      </div>
+
+      <div class="bp-addon-card">
+        <div>
+          <p class="bp-addon-name">Grommet replacement</p>
+          <p class="bp-addon-desc">Full grommet set</p>
+        </div>
+        <span class="bp-addon-price">cost +$20</span>
+      </div>
+
+    </div>
+
+    <a href="https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=pricing_mid" class="bp-cta">
+      Book Your Drop-Off
+    </a>
+
+    <!-- Team callout 
+    <div class="bp-team-callout">
+      <h3>Team &amp; League Players</h3>
+      <p>High school teams, USTA leagues, and club groups can save with volume pricing. Contact us for team rates and multi-racquet discounts.</p>
+    </div>
+    -->
+
+    <!-- String recommendation -->
+    <div class="bp-info-box">
+      <h4>Not sure what string you need?</h4>
+      <p>We carry Solinco polyester, synthetic gut, multifilament, and natural gut. We'll recommend based on your playing style and budget — or if you liked how your racquet played before, we can match your existing setup consistently.</p>
+    </div>
+
+    <!-- Consolidated disclaimers — one place, end of page -->
+    <div class="bp-note-bar">
+      <p>Rush service is subject to availability. Contact us before booking to confirm same-day service is open.</p>
+      <p>Natural gut and other delicate strings require special handling. Replacement of customer-supplied strings damaged during installation is not guaranteed.</p>
+    </div>
+
+    <p class="bp-contact">Questions? Email <a href="mailto:{{ section.settings.email | default: 'sales@bellesperformancetennis.com' }}">{{ section.settings.email | default: 'sales@bellesperformancetennis.com' }}</a></p>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Belle's Pricing Add-Ons",
+  "tag": "section",
+  "class": "belle-pricing-addons-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Contact Information"
+    },
+    {
+      "type": "text",
+      "id": "email",
+      "label": "Email",
+      "default": "sales@bellesperformancetennis.com"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Belle's Pricing Add-Ons"
+    }
+  ]
+}
+{% endschema %}

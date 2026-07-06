@@ -1,0 +1,39 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "belle-blog-section",
+      "settings": {
+        "title": "",
+        "subtitle": "Tips, news, and updates from Belle's Performance Tennis",
+        "posts_per_page": 6,
+        "show_date": true,
+        "show_author": false,
+        "show_excerpt": true,
+        "show_tags": true
+      }
+    },
+    "cta_inline_Ni76jk": {
+      "type": "cta-inline",
+      "name": "CTA Inline",
+      "settings": {
+        "cta_heading": "Ready to Hit With Confidence?",
+        "cta_description": "Book a Northland QuikTrip drop-off. Most racquets are ready in 2\u20133 days, and your setup notes are saved for next time.",
+        "schedule_button_text": "Book Racquet Stringing",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=blog_bottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cta_inline_Ni76jk"
+  ]
+}

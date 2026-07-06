@@ -1,0 +1,129 @@
+<!-- sections/cta-inline.liquid -->
+<div class="cta-section-inline">
+  <div class="cta-container-inline">
+    {% if section.settings.cta_heading != blank %}
+      <h2 class="cta-heading-inline">{{ section.settings.cta_heading }}</h2>
+    {% endif %}
+    {% if section.settings.cta_description != blank %}
+      <p class="cta-description-inline">{{ section.settings.cta_description }}</p>
+    {% endif %}
+    {% if section.settings.schedule_button_text != blank %}
+      <a href="{{ section.settings.schedule_link }}" data-calendly-modal="true" class="cta-button-inline">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/>
+        </svg>
+        {{ section.settings.schedule_button_text }}
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+.cta-section-inline {
+  padding: 28px 20px;
+  text-align: center;
+  border-top: 2px solid #c8a951;
+  border-bottom: 2px solid #c8a951;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.cta-container-inline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.cta-heading-inline {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #1a3c2a;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.cta-description-inline {
+  color: #444;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 560px;
+}
+
+.cta-button-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 28px;
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-decoration: none;
+  border-radius: 8px;
+  background-color: #c8a951;
+  color: #1a3c2a;
+  border: 2px solid #c8a951;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.cta-button-inline:hover {
+  background-color: #d4b96a;
+  border-color: #d4b96a;
+  transform: translateY(-1px);
+}
+
+.cta-button-inline svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .cta-button-inline {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "CTA Inline",
+  "settings": [
+    {
+      "type": "text",
+      "id": "cta_heading",
+      "label": "Heading",
+      "default": "Ready for Fresh Strings?"
+    },
+    {
+      "type": "text",
+      "id": "cta_description",
+      "label": "Description",
+      "default": "Book your appointment in seconds. We handle the rest."
+    },
+    {
+      "type": "text",
+      "id": "schedule_button_text",
+      "label": "Button Text",
+      "default": "Book Your Appointment"
+    },
+    {
+      "type": "text",
+      "id": "schedule_link",
+      "label": "Schedule Link",
+      "default": "https://calendly.com/bellesperformancetennis-sales/racquet_service"
+    }
+  ],
+  "presets": [
+    {
+      "name": "CTA Inline"
+    }
+  ]
+}
+{% endschema %}

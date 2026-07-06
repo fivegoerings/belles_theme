@@ -1,0 +1,107 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "city_hero": {
+      "type": "belle-city-hero",
+      "settings": {
+        "city_name": "Smithville",
+        "eyebrow": "Smithville, MO",
+        "headline": "Racquet Stringing for Smithville Tennis Players",
+        "intro": "Smithville players can book a QuikTrip drop-off on 169 Highway. Most racquets are ready in 2\u20133 days. No drive south required.",
+        "cta_text": "Book Racquet Stringing",
+        "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_smithville_hero",
+        "hero_image_alt": ""
+      }
+    },
+    "city_community": {
+      "type": "belle-city-community",
+      "settings": {
+        "community_heading": "",
+        "community_text": ""
+      }
+    },
+    "how_it_works": {
+      "type": "belle-how-it-works",
+      "settings": {
+        "title": "How It Works",
+        "subtitle": "Three steps. Your racquet comes back strung right.",
+        "step_1_title": "Book Online",
+        "step_1_text": "Pick a time. Your meetup is the QuikTrip on 169 Highway in Smithville.",
+        "step_2_title": "Meet & Drop Off",
+        "step_2_text": "We meet you there. Hand off your racquet and grab a free Solinco demo if needed.",
+        "step_3_title": "Pick Up & Play",
+        "step_3_text": "Strung, logged, labeled. Back to you in 2\u20133 days."
+      }
+    },
+    "city_landing": {
+      "type": "belle-city-landing",
+      "settings": {
+        "city_name": "Smithville",
+        "values_heading": "What Smithville Players Get",
+        "value_1_title": "Tracked Setup",
+        "value_1_text": "We log your string, tension, and preferences every time. We already know your setup next visit.",
+        "value_2_title": "Free Solinco Demo Racquet",
+        "value_2_text": "Borrow a Solinco demo while yours is being strung. No charge.",
+        "value_3_title": "Pricing",
+        "value_3_text": "Most restrings $40\u2013$55 total, string included. See the pricing page for the full breakdown.",
+        "value_4_title": "Gamma Progression II ELS",
+        "value_4_text": "Strung on a Gamma Progression II electronic constant-pull machine. consistent tension every time.",
+        "local_heading": "",
+        "local_paragraph_1": "",
+        "local_paragraph_2": "",
+        "local_paragraph_3": "",
+        "testimonial_text": "",
+        "testimonial_author": "",
+        "meetup_heading": "Find a Drop-Off Near You",
+        "meetup_description": "",
+        "meetup_maps_url": "",
+        "faq_heading": "Smithville Stringing FAQ",
+        "faq_1_question": "Where do we meet near Smithville?",
+        "faq_1_answer": "We meet at the QuikTrip on 169 Highway in Smithville. Pick your time when you book online.",
+        "faq_2_question": "Do you serve Smithville High School players?",
+        "faq_2_answer": "Yes. High school players, adult recreational players, and USTA league players, coaches are welcome.",
+        "faq_3_question": "How fast do you turn it around?",
+        "faq_3_answer": "Most jobs completed in 2\u20133 days. Need it faster? Ask when you book.",
+        "nearby_1_label": "Kearney",
+        "nearby_1_url": "/pages/racquet-stringing-kearney",
+        "nearby_2_label": "Liberty",
+        "nearby_2_url": "/pages/racquet-stringing-liberty",
+        "nearby_3_label": "Gladstone",
+        "nearby_3_url": "/pages/racquet-stringing-gladstone",
+        "nearby_4_label": "Staley / KC North",
+        "nearby_4_url": "/pages/racquet-stringing-staley-kansas-city-north",
+        "nearby_5_label": "North Kansas City",
+        "nearby_5_url": "/pages/racquet-stringing-north-kansas-city",
+        "nearby_6_label": "Platte City",
+        "nearby_6_url": "/pages/tennis-stringing-platte-city-mo",
+        "nearby_7_label": "Winnetonka",
+        "nearby_7_url": "/pages/racquet-stringing-winnetonka"
+      }
+    },
+    "cta_inline_mid": {
+      "type": "cta-inline",
+      "name": "CTA Inline",
+      "settings": {
+        "cta_heading": "Book a Smithville Drop-Off",
+        "cta_description": "Smithville players can drop off at the QuikTrip on 169 Highway. Most racquets are ready in 2\u20133 days, and your setup is logged for next time.",
+        "schedule_button_text": "Book Racquet Stringing",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_smithville_bottom"
+      }
+    }
+  },
+  "order": [
+    "city_hero",
+    "city_community",
+    "how_it_works",
+    "city_landing",
+    "cta_inline_mid"
+  ]
+}

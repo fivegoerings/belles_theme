@@ -1,0 +1,107 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "city_hero": {
+      "type": "belle-city-hero",
+      "settings": {
+        "city_name": "Park Hill",
+        "eyebrow": "Park Hill, MO",
+        "headline": "Racquet Stringing for Park Hill Tennis Players",
+        "intro": "Park Hill players can book a Northland QuikTrip drop-off. Most racquets are ready in 2\u20133 days. No drive south of the river.",
+        "cta_text": "Book Racquet Stringing",
+        "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_parkhill_hero",
+        "hero_image_alt": ""
+      }
+    },
+    "city_community": {
+      "type": "belle-city-community",
+      "settings": {
+        "community_heading": "",
+        "community_text": ""
+      }
+    },
+    "how_it_works": {
+      "type": "belle-how-it-works",
+      "settings": {
+        "title": "How It Works",
+        "subtitle": "Three steps. Your racquet comes back strung right.",
+        "step_1_title": "Book Online",
+        "step_1_text": "Pick a time and a drop-off spot in the Park Hill area.",
+        "step_2_title": "Meet & Drop Off",
+        "step_2_text": "We meet you there. Hand off your racquet.",
+        "step_3_title": "Pick Up & Play",
+        "step_3_text": "Strung, logged, labeled. Back to you in 2\u20133 days."
+      }
+    },
+    "city_landing": {
+      "type": "belle-city-landing",
+      "settings": {
+        "city_name": "Park Hill",
+        "values_heading": "What Park Hill Players Get",
+        "value_1_title": "Tracked Setup",
+        "value_1_text": "We log your string, tension, and preferences every time.",
+        "value_2_title": "Free Solinco Demo Racquet",
+        "value_2_text": "Borrow a Solinco while yours is being strung. No charge.",
+        "value_3_title": "Pricing",
+        "value_3_text": "Most restrings $40-$55 total, string included. See the pricing page for the full breakdown.",
+        "value_4_title": "Gamma Progression II ELS",
+        "value_4_text": "Strung on a Gamma Progression II electronic constant-pull machine.",
+        "local_heading": "Stringing for Park Hill Players",
+        "local_paragraph_1": "Belle\u2019s serves Park Hill, Park Hill South, and nearby Northland players with appointment-based QuikTrip drop-off. Most racquets are ready in 2\u20133 days, and your setup is logged for next time.",
+        "local_paragraph_2": "We serve the whole Park Hill corridor. Whether you're coming off a match at a local park or prepping for a high school season, the process is the same. Book online, meet at a nearby QuikTrip, pick it up ready to play.",
+        "local_paragraph_3": "Same-day and next-day service available on request if you're up against a match or a tournament.",
+        "testimonial_text": "",
+        "testimonial_author": "",
+        "meetup_heading": "Find a Drop-Off Near You",
+        "meetup_description": "",
+        "meetup_maps_url": "",
+        "faq_heading": "Park Hill Stringing FAQ",
+        "faq_1_question": "Where do we meet near Park Hill?",
+        "faq_1_answer": "We meet at QuikTrip locations in the Park Hill area. Pick your spot when you book online.",
+        "faq_2_question": "Do you work with Park Hill High School players?",
+        "faq_2_answer": "Yes. High school, USTA league, and recreational players. High school, USTA league, and recreational players are all welcome.",
+        "faq_3_question": "How fast do you turn it around?",
+        "faq_3_answer": "Most jobs ready in 2\u20133 days. Need it faster? Ask when you book.",
+        "nearby_1_label": "Gladstone",
+        "nearby_1_url": "/pages/racquet-stringing-gladstone",
+        "nearby_2_label": "Parkville",
+        "nearby_2_url": "/pages/tennis-racquet-stringing-parkville-mo",
+        "nearby_3_label": "North Kansas City",
+        "nearby_3_url": "/pages/racquet-stringing-north-kansas-city",
+        "nearby_4_label": "Staley / KC North",
+        "nearby_4_url": "/pages/racquet-stringing-staley-kansas-city-north",
+        "nearby_5_label": "Liberty",
+        "nearby_5_url": "/pages/racquet-stringing-liberty",
+        "nearby_6_label": "Platte City",
+        "nearby_6_url": "/pages/tennis-stringing-platte-city-mo",
+        "nearby_7_label": "Winnetonka",
+        "nearby_7_url": "/pages/racquet-stringing-winnetonka"
+      }
+    },
+    "cta_inline_mid": {
+      "type": "cta-inline",
+      "name": "CTA Inline",
+      "settings": {
+        "cta_heading": "Book a Park Hill Drop-Off",
+        "cta_description": "Park Hill players can book a drop-off in the Park Hill area. Most racquets are ready in 2\u20133 days, and your string and tension notes are saved for future restrings.",
+        "schedule_button_text": "Book Racquet Stringing",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_parkhill_bottom"
+      }
+    }
+  },
+  "order": [
+    "city_hero",
+    "city_community",
+    "how_it_works",
+    "city_landing",
+    "cta_inline_mid"
+  ]
+}

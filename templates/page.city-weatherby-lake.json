@@ -1,0 +1,108 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "city_hero": {
+      "type": "belle-city-hero",
+      "settings": {
+        "city_name": "Weatherby Lake",
+        "eyebrow": "Weatherby Lake, MO",
+        "headline": "Racquet Stringing for Weatherby Lake Tennis Players",
+        "intro": "Weatherby Lake players can drop off their racquet at the QuikTrip at 8601 MO-45 in Parkville. Most racquets are ready in 2\u20133 days. Next-day and same-day options may be available when the schedule allows.",
+        "cta_text": "Book Racquet Stringing",
+        "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_weatherbylake_hero",
+        "hero_image_alt": ""
+      }
+    },
+    "city_community": {
+      "type": "belle-city-community",
+      "disabled": true,
+      "settings": {
+        "community_heading": "TIGHT COMMUNITY. WORD TRAVELS.",
+        "community_text": "Weatherby Lake players are recreational, USTA league, and everything in between. Weatherby Lake players can use the Parkville QuikTrip drop-off at 8601 MO-45. Most racquets are ready in 2\u20133 days, with string and tension notes saved for next time."
+      }
+    },
+    "how_it_works": {
+      "type": "belle-how-it-works",
+      "settings": {
+        "title": "How It Works",
+        "subtitle": "Three steps. No confusion. Your racquet comes back strung right.",
+        "step_1_title": "Book Online",
+        "step_1_text": "Pick a time. Your meetup is the QuikTrip at 8601 MO-45 in Parkville.",
+        "step_2_title": "Quick Handoff",
+        "step_2_text": "We meet you there. Drop off your racquet and grab a free demo if needed.",
+        "step_3_title": "Pick Up & Play",
+        "step_3_text": "Strung to your specs, logged, ready in 2\u20133 days."
+      }
+    },
+    "city_landing": {
+      "type": "belle-city-landing",
+      "settings": {
+        "city_name": "Weatherby Lake",
+        "values_heading": "What Weatherby Lake Players Get",
+        "value_1_title": "Every Job Logged",
+        "value_1_text": "We record your string, tension, and preferences each time. Already know your setup next visit.",
+        "value_2_title": "Free Loaner Racquet",
+        "value_2_text": "Borrow a Solinco demo at no charge while yours is on the machine.",
+        "value_3_title": "Hybrid Setups",
+        "value_3_text": "Mains and crosses at different tensions or different strings. Dial in consistently what your game needs.",
+        "value_4_title": "Consistent Tension",
+        "value_4_text": "We string on a Gamma Progression II electronic constant-pull machine. consistent tension every time.",
+        "local_heading": "",
+        "local_paragraph_1": "",
+        "local_paragraph_2": "",
+        "local_paragraph_3": "",
+        "testimonial_text": "Owner was quick to respond and met me in my town for pick up and drop off. Very detail oriented and knowledgeable. Communication was great and would recommend to anyone looking for restringing.",
+        "testimonial_author": "Tara M. \u2014 Google Review",
+        "meetup_heading": "Find a Drop-Off Near You",
+        "meetup_description": "",
+        "meetup_maps_url": "",
+        "faq_heading": "Weatherby Lake Stringing FAQ",
+        "faq_1_question": "Where do we meet near Weatherby Lake?",
+        "faq_1_answer": "Weatherby Lake players can drop off at the QuikTrip at 8601 MO-45 in Parkville. Most racquets are ready in 2\u20133 days. Next-day and same-day options may be available when the schedule allows",
+        "faq_2_question": "How fast do you turn it around?",
+        "faq_2_answer": "Most jobs completed in 2\u20133 days. If you have a match coming up, mention it when you book.",
+        "faq_3_question": "Do you string for recreational players or just competitive?",
+        "faq_3_answer": "Both. Recreational, USTA league, competitive juniors. String choice and tension advice is part of the service either way.",
+        "nearby_1_label": "Parkville",
+        "nearby_1_url": "/pages/tennis-racquet-stringing-parkville-mo",
+        "nearby_2_label": "Platte City",
+        "nearby_2_url": "/pages/tennis-stringing-platte-city-mo",
+        "nearby_3_label": "Gladstone",
+        "nearby_3_url": "/pages/racquet-stringing-gladstone",
+        "nearby_4_label": "Riverside",
+        "nearby_4_url": "/pages/racquet-stringing-north-kansas-city",
+        "nearby_5_label": "Liberty",
+        "nearby_5_url": "/pages/racquet-stringing-liberty",
+        "nearby_6_label": "Smithville",
+        "nearby_6_url": "/pages/racquet-stringing-smithville",
+        "nearby_7_label": "Kearney",
+        "nearby_7_url": "/pages/racquet-stringing-kearney"
+      }
+    },
+    "cta_inline_mid": {
+      "type": "cta-inline",
+      "name": "CTA Inline",
+      "settings": {
+        "cta_heading": "Book a Weatherby Lake Drop-Off",
+        "cta_description": "Weatherby Lake players can drop off at the QuikTrip at 8601 MO-45 in Parkville. Most racquets are ready in 2\u20133 days, and your racquet, string, and tension notes are saved.",
+        "schedule_button_text": "Book Racquet Stringing",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_weatherbylake_bottom"
+      }
+    }
+  },
+  "order": [
+    "city_hero",
+    "city_community",
+    "how_it_works",
+    "city_landing",
+    "cta_inline_mid"
+  ]
+}

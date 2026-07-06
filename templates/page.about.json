@@ -1,0 +1,96 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "belle-about-section",
+      "blocks": {
+        "member_randy": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/Randy.jpg",
+            "name": "Randy",
+            "role": "Owner & USRSA Member",
+            "bio": "When Isabelle joined the Staley High School tennis team, I started looking for someone to string her racquet in the Northland. The options weren't great. So I became a USRSA member, bought a Gamma Progression II ELS electronic stringing machine, and opened Belle's."
+          }
+        },
+        "member_isabelle": {
+          "type": "team_member",
+          "settings": {
+            "image": "shopify://shop_images/forehand.png",
+            "name": "Isabelle",
+            "role": "Racquet Tester & Setup Feedback",
+            "bio": "Staley Falcons tennis player. She tests strings and checks every finished racquet. If it doesn't look right to a competitive player, it doesn't go out."
+          }
+        },
+        "value_local": {
+          "type": "value",
+          "settings": {
+            "icon": "location",
+            "title": "QuikTrip Drop-Off",
+            "text": "We meet at a Northland QuikTrip. Well-lit, on a main road.  You know consistently where you're going."
+          }
+        },
+        "value_quality": {
+          "type": "value",
+          "settings": {
+            "icon": "star",
+            "title": "Gamma Progression II ELS",
+            "text": "Electronic constant-pull machine. It pulls each string to the requested tension and keeps the job consistent from first main to last cross."
+          }
+        },
+        "value_fast": {
+          "type": "value",
+          "settings": {
+            "icon": "clock",
+            "title": "Quick Turnaround",
+            "text": "Most racquets ready in 2\u20133 days"
+          }
+        },
+        "value_personal": {
+          "type": "value",
+          "settings": {
+            "icon": "heart",
+            "title": "One Person Start to Finish",
+            "text": "You deal with one person from drop-off to pickup. No handoffs. No wondering who touched your racquet."
+          }
+        }
+      },
+      "block_order": [
+        "member_randy",
+        "member_isabelle",
+        "value_local",
+        "value_quality",
+        "value_fast",
+        "value_personal"
+      ],
+      "settings": {
+        "title": "Our Story",
+        "subtitle": "How a Staley tennis family started a stringing business",
+        "story_title": "Our Story",
+        "story_content": "<p><strong>Belle\u2019s Performance Tennis Shop is a local Kansas City Northland, appointment-only tennis stringing service.</strong></p><p>I did not start Belle\u2019s Performance Tennis Shop because I was looking for another job. I had already retired from IT. After decades of systems, software, databases, deadlines, meetings, and corporate life, I was not looking to build something complicated again. Then Isabelle started playing tennis at Staley her freshman year. At first, I was just a dad watching his daughter try something new. I watched her learn the game, miss shots, make shots, get frustrated, improve, and slowly start to care about tennis in a deeper way. By the end of that first season, I had an idea. One day I asked her, \u201cWould you want to start a tennis business together?\u201d She was excited. That was enough for me. Not because we had a full business plan figured out. Not because we knew consistently where it would go. But because I saw a chance to build something around her interest, her work ethic, and our community.</p><p>We live in the <strong>Kansas City Northland</strong>. If you play tennis up here and need a racquet restrung, the options are not great.</p><p>You can ship it off. You can drive 35 minutes south into Kansas. You can drop it at a big box store and hope the person stringing it knows what they are doing. Or you can just keep playing with dead strings because it feels like too much hassle. That did not make sense to me. The Northland has high school players, club players, recreational players, parents, coaches, and families who care about tennis. They should not have to wonder where to go, who is touching their racquet, or whether the job was done carefully. So we decided to fix that.</p><p>I joined the USRSA. I bought a Gamma Progression II ELS, a professional electronic constant-pull stringing machine like the kind used by serious stringers and club pros. I started studying racquets, strings, tensions, patterns, knots, stiffness readings, and all the details most players never see but feel every time they hit a ball.</p><p>The name was the easy part. Belle\u2019s is named after Isabelle. The bee in the logo is her too. Before tennis, Isabelle got deeply interested in bees. Not honeybees. Solitary bees. Mason bees. Leafcutter bees. The kind that do not make honey and do not get much attention, but quietly do important work by pollinating. She set up bee houses on our fence and took it seriously. She learned about them, watched them, cared for them, and paid attention to the small details. That same focus shows up in tennis now.</p><p>So when it came time to design a logo, it could not just be a racquet. It had to be a bee with a racquet. That logo is not just branding. It tells the story. A daughter learning tennis. A dad wanting to build something with her. A local community that needed a better option. A small shop built on care, detail, and consistency. Belle\u2019s is not a big-box store. It is not a faceless drop-off counter. It is not a mystery machine in the back room.</p><p>When you bring me your racquet, I record your setup every time. String type. Tension. Pattern. Date. Notes. What worked. What did not. So when you come back, I already know what you had before. If you liked it, we can repeat it. Same string. Same tension. Fresh install. No guessing. And I only suggest changes when there is a real reason. Arm discomfort. Strings breaking too quickly. Loss of control. Lack of power. A player growing into a different style of game. Otherwise, I am not trying to sell you something you do not need. You deal with one person from start to finish. No upsell. No handoff. No confusion. No wondering who actually strung your racquet. Just careful work, honest recommendations, and a setup you can trust when you step back on court.</p><p>That is why Belle\u2019s exists. It started with Isabelle. It started with one season of high school tennis. It started with a simple question from a dad to his daughter. And now it is here for Northland players who want their racquets done right.</p><p>Randy</p>"
+      }
+    },
+    "cta_inline_xYVwi6": {
+      "type": "cta-inline",
+      "name": "CTA Inline",
+      "settings": {
+        "cta_heading": "Book a Northland Drop-Off",
+        "cta_description": "Choose a Northland QuikTrip location and time. Most racquets are ready in 2\u20133 days.",
+        "schedule_button_text": "Book Racquet Stringing",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=about_bottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cta_inline_xYVwi6"
+  ]
+}

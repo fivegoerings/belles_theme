@@ -1,0 +1,227 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "belle-demo-racquets-section",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "Browse the Frames",
+            "description": "Look through our demo racquets below. Pick one (or two) you want to try."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "Book a Demo Meetup",
+            "description": "Schedule a time and pick a Kansas City Northland QuikTrip. We'll bring the demo racquet  to you."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "title": "Hit With It",
+            "description": "Take it to your next practice or hitting session. Keep it for up to a week. Completely free."
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "title": "Decide on Your Terms",
+            "description": "Love it? We can order one and string it to your specs. Not for you? Just bring it back. No pressure."
+          }
+        },
+        "racquet_whiteout305": {
+          "type": "racquet",
+          "settings": {
+            "image": "shopify://shop_images/20250414_SOL_Web_Racquet_Whiteout-V2_305_18x20_BGR_GRY_01_63c4972e-23a0-48a6-a5b9-d018b13ba91b.jpg",
+            "badge_text": "FREE DEMO",
+            "brand": "Solinco",
+            "name": "Whiteout 305",
+            "tagline": "Control and feel with more free power than you'd expect. Solinco's flagship precision frame, comparable to the Wilson Blade and Babolat Pure Strike.",
+            "head_size": "98 sq. in.",
+            "weight": "305g (10.8 oz)",
+            "pattern": "16\u00d719",
+            "length": "27 in.",
+            "balance": "320 mm",
+            "beam": "21.7 mm",
+            "best_for": "Intermediate to advanced players who want spin, control, and precision without sacrificing power.",
+            "retail_price": "$229.99"
+          }
+        },
+        "racquet_whiteout290": {
+          "type": "racquet",
+          "settings": {
+            "image": "shopify://shop_images/20241209_SOL_Racquet_Whiteout-V2_305_3-4_BGR_TRN_01-2-768x768_337d456f-4a95-4977-a3b0-ff472e7963f0.jpg",
+            "badge_text": "FREE DEMO",
+            "brand": "Solinco",
+            "name": "Whiteout 290",
+            "tagline": "Same precision frame, lighter swing. Easier to maneuver for faster hands at the net and quicker swing speed from the baseline.",
+            "head_size": "98 sq. in.",
+            "weight": "290g (10.2 oz)",
+            "pattern": "16\u00d719",
+            "length": "27 in.",
+            "balance": "325 mm",
+            "beam": "21.7 mm",
+            "best_for": "All-level players who want the Whiteout feel with a lighter, more maneuverable swing.",
+            "retail_price": "$229.99"
+          }
+        },
+        "racquet_whiteoutxtd": {
+          "type": "racquet",
+          "disabled": true,
+          "settings": {
+            "badge_text": "FREE DEMO",
+            "brand": "Solinco",
+            "name": "Whiteout 305 XTD",
+            "tagline": "Extended-length control frame with extra reach and serve power. The extra half-inch delivers more pop without going full oversized.",
+            "head_size": "98 sq. in.",
+            "weight": "305g (10.8 oz)",
+            "pattern": "16\u00d719",
+            "length": "27.5 in.",
+            "balance": "320 mm",
+            "beam": "21.7 mm",
+            "best_for": "Advanced players wanting extra reach and serve power. Great for two-handed backhand players.",
+            "retail_price": "$229.99"
+          }
+        },
+        "racquet_blackout300": {
+          "type": "racquet",
+          "disabled": true,
+          "settings": {
+            "badge_text": "FREE DEMO",
+            "brand": "Solinco",
+            "name": "Blackout 300",
+            "tagline": "Easy power and heavy spin in a surprisingly comfortable package. Solinco's power frame. Explosive off the baseline with a plush, arm-friendly feel.",
+            "head_size": "100 sq. in.",
+            "weight": "300g (10.6 oz)",
+            "pattern": "16\u00d719",
+            "length": "27 in.",
+            "balance": "315 mm",
+            "beam": "24/26/22 mm",
+            "best_for": "All-level players who want easy power and spin. Great for baseline players who like to hit big.",
+            "retail_price": "$239.99"
+          }
+        },
+        "detail_cost": {
+          "type": "detail",
+          "settings": {
+            "question": "What does it cost?",
+            "answer": "Nothing. The demo itself is completely free. We do require a signed demo agreement and a credit card authorization hold for the retail value of the racquet, which is released as soon as you return it."
+          }
+        },
+        "detail_waiver": {
+          "type": "detail",
+          "settings": {
+            "question": "Do I need to sign anything?",
+            "answer": "Yes. We ask everyone to sign a short demo agreement and liability waiver at pickup. It covers the basics: return timeline, responsibility for damage or loss, and a standard liability release. Takes about two minutes."
+          }
+        },
+        "detail_cardhold": {
+          "type": "detail",
+          "settings": {
+            "question": "What about the card hold?",
+            "answer": "We place a temporary hold on a credit or debit card for the racquet's retail value. It's an authorization only, not a charge, and it's released the moment you return the racquet. This is standard for any demo program and protects the equipment so we can keep offering it for free."
+          }
+        },
+        "detail_duration": {
+          "type": "detail",
+          "settings": {
+            "question": "How long can I keep it?",
+            "answer": "Up to one week. That gives you time to hit with it in a real practice session or match, not just a five-minute swing in a store."
+          }
+        },
+        "detail_strings": {
+          "type": "detail",
+          "settings": {
+            "question": "What strings are on the demo racquets?",
+            "answer": "Each demo is strung with Solinco string at a mid-range tension so you can feel what the frame actually plays like. If you want to try a specific string or tension, let us know when you book."
+          }
+        },
+        "detail_loaner": {
+          "type": "detail",
+          "settings": {
+            "question": "Can I demo while my racquet is being strung?",
+            "answer": "Absolutely. That's one of the main reasons the program exists. Drop off your racquet for stringing and borrow a demo so you never miss practice."
+          }
+        },
+        "detail_buy": {
+          "type": "detail",
+          "settings": {
+            "question": "What if I want to buy one?",
+            "answer": "I can order Solinco racquets through my wholesale account and string them before pickup. Same Northland meetup process."
+          }
+        },
+        "detail_location": {
+          "type": "detail",
+          "settings": {
+            "question": "Where do I pick up / return the demo?",
+            "answer": "Same as our stringing meetups, at a convenient QuikTrip or public location in the Kansas City Northland. We serve Liberty, Smithville, Platte City, Kearney, Park Hill, Gladstone, Staley, and surrounding areas. We'll coordinate a time and spot that works for you."
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4",
+        "racquet_whiteout305",
+        "racquet_whiteout290",
+        "racquet_whiteoutxtd",
+        "racquet_blackout300",
+        "detail_cost",
+        "detail_waiver",
+        "detail_cardhold",
+        "detail_duration",
+        "detail_strings",
+        "detail_loaner",
+        "detail_buy",
+        "detail_location"
+      ],
+      "settings": {
+        "badge_text": "FREE PROGRAM",
+        "title": "Demo Tennis Racquet Program",
+        "subtitle": "Borrow a Solinco demo tennis racquet at a Kansas City Northland meetup location. No cost, no obligation.",
+        "intro_content": "<p><strong>Why demo a tennis racquet before you buy?</strong> Because specs on a screen don't tell you how a frame actually feels in your hand. The weight, the balance, the way it responds when you swing. You have to hit with it to know.</p><p>Our demo program is simple: borrow a Solinco frame at one of our Kansas City Northland meetup locations, take it to practice or a hitting session, and see for yourself. No sales pitch, no pressure. If you like it, we can order one for you. If you don't, just bring it back.</p><p>Every demo racquet is freshly strung with Solinco string so you're feeling the frame at its best, not with dead strings someone left on six months ago.</p>",
+        "steps_title": "How It Works",
+        "racquets_title": "Available Demo Racquets",
+        "racquets_desc": "Each frame is freshly strung and ready to borrow",
+        "details_title": "Program Details"
+      }
+    },
+    "cta_standard_demo": {
+      "type": "cta-standard",
+      "disabled": true,
+      "settings": {
+        "cta_heading": "Book a Demo Meetup",
+        "cta_description": "Choose a Northland QuikTrip location and time. I\u2019ll bring the demo racquet.",
+        "schedule_button_text": "Book a Demo Meetup",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet-pick-up-clone"
+      }
+    },
+    "cta_inline_6rFQKx": {
+      "type": "cta-inline",
+      "name": "CTA Inline",
+      "settings": {
+        "cta_heading": "Book a Demo Meetup",
+        "cta_description": "Choose a Northland QuikTrip location and time. I\u2019ll bring the demo racquet.",
+        "schedule_button_text": "Book a Demo Meetup",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet-pick-up-clone?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=demo_bottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cta_standard_demo",
+    "cta_inline_6rFQKx"
+  ]
+}

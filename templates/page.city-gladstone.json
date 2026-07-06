@@ -1,0 +1,107 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "city_hero": {
+      "type": "belle-city-hero",
+      "settings": {
+        "city_name": "Gladstone",
+        "eyebrow": "Gladstone, MO",
+        "headline": "Racquet Stringing for Gladstone Tennis Players",
+        "intro": "Gladstone players can book a Northland QuikTrip drop-off near North Oak and Highway 169. Most racquets are ready in 2\u20133 days. Next-day and same-day options may be available when the schedule allows.",
+        "cta_text": "Book Racquet Stringing",
+        "cta_url": "https://calendly.com/bellesperformancetennis-sales/gladstone-racquet-service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_gladstone_hero",
+        "hero_image_alt": "Racquet stringing service in Gladstone Missouri"
+      }
+    },
+    "city_community": {
+      "type": "belle-city-community",
+      "settings": {
+        "community_heading": "GLADSTONE. YOUR STRINGER IS HERE.",
+        "community_text": "Gladstone players have been driving south or shipping racquets for stringing. Belle's is local, meets near North Oak and Highway 169, and gets you back on the court in 2\u20133 days."
+      }
+    },
+    "how_it_works": {
+      "type": "belle-how-it-works",
+      "settings": {
+        "title": "How It Works",
+        "subtitle": "Three steps. No confusion. Your racquet comes back strung right.",
+        "step_1_title": "Book Online",
+        "step_1_text": "Pick a time and a QuikTrip drop-off spot near Gladstone. North Oak Trafficway and Highway 169 area locations are available.",
+        "step_2_title": "Meet & Drop Off",
+        "step_2_text": "We meet you at your chosen QuikTrip location. Hand off your racquet and borrow a free Solinco demo if you need one for practice.",
+        "step_3_title": "Pick Up & Play",
+        "step_3_text": "Strung, labeled, and logged. Back to you at the same spot. Standard turnaround is 2\u20133 days. Next-day and same-day available when you book."
+      }
+    },
+    "city_landing": {
+      "type": "belle-city-landing",
+      "settings": {
+        "city_name": "Gladstone",
+        "values_heading": "What Gladstone Players Get",
+        "value_1_title": "Every Job Logged",
+        "value_1_text": "We record your string, tension, and preferences each time. Next visit, we already know your setup and whether you want to change anything.",
+        "value_2_title": "Free Loaner Racquet",
+        "value_2_text": "Borrow a Solinco demo at no charge while yours is on the machine. Useful if you have practice the same day you drop off.",
+        "value_3_title": "Pricing",
+        "value_3_text": "Most restrings run $40-$55 total, string included. See the pricing page for the full breakdown.",
+        "value_4_title": "Consistent Tension",
+        "value_4_text": "Strung on a Gamma Progression II electronic constant-pull machine. Holds consistent tension from the first string to the last. That consistency matters when you're competing.",
+        "local_heading": "Stringing for Gladstone Players",
+        "local_paragraph_1": "Happy Rock Park at NE 76th and Antioch has four lighted tennis courts and is one of the most active public tennis spots in the Northland. If you're playing there regularly, your strings are working harder than you think. Most players are overdue for a restring by the time they notice a difference in feel.",
+        "local_paragraph_2": "Belle's meets at QuikTrip locations along North Oak Trafficway near Highway 169. Drop off before work, before practice, or whenever works. Standard turnaround is 2\u20133 days. Need it faster? Next-day and same-day service are available when you book.",
+        "local_paragraph_3": "Oak Park players in the North Kansas City School District are welcome. Same service, same pricing, same turnaround as everyone else in the Northland.",
+        "testimonial_text": "He was readily available and was able to make accommodations based on my pickup location. You can also get your mains and crosses strung to specific tensions. Definitely recommend his services.",
+        "testimonial_author": "Jayden S. \u2014 Google Review",
+        "meetup_heading": "Drop-Off Near Oak Park High School",
+        "meetup_description": "Four QuikTrip locations within a mile of Oak Park High School. Pick the one that works best for you.",
+        "meetup_maps_url": "https://www.google.com/maps/search/quiktrip/@39.2335613,-94.608011,13z/data=!3m1!4b1!4m7!2m6!3m5!2sOak+Park+High+School,+825+NE+79th+Terrace,+Kansas+City,+MO+64118!3s0x87c0580686a6b999:0x721e2d2c0d396c86!4m2!1d-94.5700655!2d39.2368485?entry=ttu&g_ep=EgoyMDI2MDQxOS4wIKXMDSoASAFQAw%3D%3D",
+        "faq_heading": "Gladstone Stringing FAQ",
+        "faq_1_question": "Where do we meet near Gladstone?",
+        "faq_1_answer": "We meet at QuikTrip locations along North Oak Trafficway near Highway 169. You pick the consistent spot and time when you book online.",
+        "faq_2_question": "Do you work with high school tennis players?",
+        "faq_2_answer": "Yes. High school players, club players, USTA league players, and recreational players are all welcome. If you need team stringing coordinated, send a message before booking.",
+        "faq_3_question": "How fast can I get my racquet back?",
+        "faq_3_answer": "Standard turnaround is 2\u20133 days. Next-day and same-day service are available. Mention your timeline when you book and we'll work with you.",
+        "nearby_1_label": "Staley / KC North",
+        "nearby_1_url": "/pages/racquet-stringing-staley-kansas-city-north",
+        "nearby_2_label": "Park Hill",
+        "nearby_2_url": "/pages/racquet-stringing-park-hill",
+        "nearby_3_label": "Liberty",
+        "nearby_3_url": "/pages/racquet-stringing-liberty",
+        "nearby_4_label": "North Kansas City",
+        "nearby_4_url": "/pages/racquet-stringing-north-kansas-city",
+        "nearby_5_label": "Pleasant Valley",
+        "nearby_5_url": "/pages/tennis-stringing-pleasant-valley-mo",
+        "nearby_6_label": "Winnetonka",
+        "nearby_6_url": "/pages/racquet-stringing-winnetonka",
+        "nearby_7_label": "Kearney",
+        "nearby_7_url": "/pages/racquet-stringing-kearney"
+      }
+    },
+    "cta_inline_mid": {
+      "type": "cta-inline",
+      "name": "CTA Inline",
+      "settings": {
+        "cta_heading": "Book a Gladstone Drop-Off",
+        "cta_description": "Gladstone players can drop off near North Oak and Highway 169. Most racquets are ready in 2\u20133 days. No drive south of the river.",
+        "schedule_button_text": "Book Racquet Stringing",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/gladstone-racquet-service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_gladstone_bottom"
+      }
+    }
+  },
+  "order": [
+    "city_hero",
+    "city_community",
+    "how_it_works",
+    "city_landing",
+    "cta_inline_mid"
+  ]
+}

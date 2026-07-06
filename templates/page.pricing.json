@@ -1,0 +1,184 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "belle-pricing-section",
+      "settings": {
+        "title": "Pricing"
+      }
+    },
+    "belles_pricing_addons_gG9bzT": {
+      "type": "belles-pricing-addons",
+      "name": "Belle's Pricing Add-Ons",
+      "settings": {
+        "email": "sales@bellesperformancetennis.com"
+      }
+    },
+    "belle_shop_strings_bVhNcB": {
+      "type": "belle-shop-strings",
+      "blocks": {
+        "string_item_FrXndW": {
+          "type": "string_item",
+          "settings": {
+            "string_name": "Solinco Mach-10",
+            "string_description": ""
+          }
+        },
+        "string_item_CBtFLL": {
+          "type": "string_item",
+          "settings": {
+            "string_name": "Wilson Synthetic Gut Power",
+            "string_description": ""
+          }
+        },
+        "string_item_AJQL4h": {
+          "type": "string_item",
+          "settings": {
+            "string_name": "Gosen OG Sheep Micro",
+            "string_description": ""
+          }
+        },
+        "string_item_QjJAiN": {
+          "type": "string_item",
+          "settings": {
+            "string_name": "Solinco Hyper-G Soft",
+            "string_description": ""
+          }
+        },
+        "string_item_JrRa8W": {
+          "type": "string_item",
+          "settings": {
+            "string_name": "Solinco Tour Bite",
+            "string_description": ""
+          }
+        },
+        "string_item_crRMpW": {
+          "type": "string_item",
+          "settings": {
+            "string_name": "Solinco Confidential",
+            "string_description": ""
+          }
+        },
+        "string_item_AbQLHE": {
+          "type": "string_item",
+          "settings": {
+            "string_name": "Solinco Vanquish",
+            "string_description": ""
+          }
+        },
+        "string_item_kEertK": {
+          "type": "string_item",
+          "settings": {
+            "string_name": "Solinco Natural-X",
+            "string_description": ""
+          }
+        }
+      },
+      "block_order": [
+        "string_item_FrXndW",
+        "string_item_CBtFLL",
+        "string_item_AJQL4h",
+        "string_item_QjJAiN",
+        "string_item_JrRa8W",
+        "string_item_crRMpW",
+        "string_item_AbQLHE",
+        "string_item_kEertK"
+      ],
+      "disabled": true,
+      "name": "Shop Strings",
+      "settings": {
+        "card_title": "Strings We Have On Hand",
+        "cta_url": "",
+        "cta_label": "View all strings"
+      }
+    },
+    "belle_faq_pricing": {
+      "type": "belle-faq-section",
+      "blocks": {
+        "question_how_it_works": {
+          "type": "question",
+          "settings": {
+            "question": "How does drop-off and pickup work?",
+            "answer": "<p>When you book, you choose a convenient Northland meetup spot from a list of Kansas City Northland QuikTrip locations. We meet at your scheduled time, we confirm your racquet details, and take it for stringing. Once it's done, we contact you to arrange pickup usually at the same place that you dropped it off.</p>",
+            "category": ""
+          }
+        },
+        "question_how_to_pay": {
+          "type": "question",
+          "settings": {
+            "question": "How do I pay?",
+            "answer": "<p>When your racquet is ready, we send you an invoice you can pay online. We accept all major credit cards. No deposits required.</p>",
+            "category": ""
+          }
+        },
+        "question_turnaround": {
+          "type": "question",
+          "settings": {
+            "question": "How long does stringing take?",
+            "answer": "<p>Most racquets are ready within 2\u20133 days. Same-day and next-day service may be available -- contact us to check. You're welcome to borrow a free Solinco demo racquet while yours is being strung so you never miss practice or a match.</p>",
+            "category": ""
+          }
+        },
+        "question_string_choice": {
+          "type": "question",
+          "settings": {
+            "question": "Do I need to know what string I want?",
+            "answer": "<p>No. If you liked how your racquet played before, we can match your existing setup. If you want to change strings or aren't sure, we can help you choose based on your racquet, playing level, and goals. No consultation required.</p>",
+            "category": ""
+          }
+        },
+        "question_byo": {
+          "type": "question",
+          "settings": {
+            "question": "Can I bring my own string?",
+            "answer": "<p>Yes. If you have a string you prefer that we don't carry, bring it and we string it for labor only. Standard labor is $30. See the full pricing table above for express and rush rates.</p>",
+            "category": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_how_it_works",
+        "question_how_to_pay",
+        "question_turnaround",
+        "question_string_choice",
+        "question_byo"
+      ],
+      "name": "Pricing FAQ",
+      "settings": {
+        "title": "Questions About the Process",
+        "subtitle": "Everything you need to know before you book",
+        "open_first": true,
+        "show_contact_cta": false,
+        "contact_title": "Still Have Questions?",
+        "contact_text": "Send a message before you book.",
+        "contact_link": "",
+        "phone": "816-938-7622"
+      }
+    },
+    "cta_inline_LiFkYw": {
+      "type": "cta-inline",
+      "name": "CTA Inline",
+      "settings": {
+        "cta_heading": "Book a Northland Drop-Off",
+        "cta_description": "Choose a QuikTrip drop-off time. Strings are included, no deposit is required, and you pay after the racquet is done.",
+        "schedule_button_text": "Book Racquet Stringing",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=pricing_bottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "belles_pricing_addons_gG9bzT",
+    "belle_shop_strings_bVhNcB",
+    "belle_faq_pricing",
+    "cta_inline_LiFkYw"
+  ]
+}

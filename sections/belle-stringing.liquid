@@ -1,0 +1,38 @@
+<div style="background: #faf9f6; border: 1px solid #e0e0e0; border-radius: 6px; padding: 24px 20px; margin: 20px 0;">
+  <label style="display: flex; align-items: center; gap: 12px; cursor: pointer; margin-bottom: 16px;">
+    <input type="checkbox" id="bps-string-toggle" style="width: 44px; height: 24px;">
+    <span style="font-weight: 600; font-size: 15px;">Add professional stringing +$25</span>
+  </label>
+
+  <div id="bps-options" style="display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid #e0e0e0;">
+    <div style="margin-bottom: 12px;">
+      <label for="bps-string" style="display: block; font-weight: 500; font-size: 13px; margin-bottom: 6px;">String</label>
+      <select id="bps-string" style="width: 100%; padding: 10px 12px; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 14px;">
+        <option value="Let Belle's recommend">Let Belle's recommend</option>
+        <option value="Solinco Hyper-G Soft 17">Solinco Hyper-G Soft 17 (default)</option>
+        <option value="Solinco Tour Bite 17">Solinco Tour Bite 17 (max spin)</option>
+        <option value="Solinco Confidential 16">Solinco Confidential 16 (max control)</option>
+      </select>
+    </div>
+
+    <div style="margin-bottom: 12px;">
+      <label for="bps-tension" style="display: block; font-weight: 500; font-size: 13px; margin-bottom: 6px;">Tension (lbs)</label>
+      <input type="text" id="bps-tension" style="width: 100%; padding: 10px 12px; border: 1px solid #e0e0e0; border-radius: 4px; font-size: 14px;" placeholder="e.g. 52, or 52/50 for hybrid">
+    </div>
+
+    <p style="font-size: 12px; color: #666; margin-top: 12px; line-height: 1.4;">Discounted with your racquet purchase. Standard string included. Premium strings or rush turnaround are added to your final invoice. We string after the order and arrange your QuikTrip handoff.</p>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const toggle = document.getElementById('bps-string-toggle');
+  const options = document.getElementById('bps-options');
+  
+  if (toggle) {
+    toggle.addEventListener('change', function() {
+      options.style.display = this.checked ? 'block' : 'none';
+    });
+  }
+});
+</script>

@@ -1,0 +1,39 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "belle_racquet_sales_33bPim": {
+      "type": "belle-racquet-sales",
+      "name": "Racquet Sales",
+      "settings": {
+        "collection": "solinco-racquets",
+        "eyebrow": "Kansas City Northland",
+        "heading": "Solinco Racquets",
+        "subheading": "Authorized Solinco dealer. Order online and pick up your racquet locally in the Northland, strung and ready if you want it.",
+        "show_steps": true,
+        "step1_title": "Pick Your Racquet",
+        "step1_text": "Choose your frame, grip, and optional stringing.",
+        "step2_title": "Check Out Securely",
+        "step2_text": "Check out and pay online.",
+        "step3_title": "Meet At QuikTrip",
+        "step3_text": "We arrange a QuikTrip handoff near you in the Northland.",
+        "modal_note": "Secure checkout. We arrange your QuikTrip handoff after your order.",
+        "stringing_variant_id": "46269950329028",
+        "stringing_price_label": "+$25",
+        "stringing_subtext": "Discounted with your racquet purchase. Standard string included. Premium strings or rush turnaround are added to your final invoice. We string after the order and arrange your QuikTrip handoff.",
+        "padding_top": 32,
+        "padding_bottom": 32
+      }
+    }
+  },
+  "order": [
+    "belle_racquet_sales_33bPim"
+  ]
+}

@@ -1,0 +1,274 @@
+{% comment %}
+  Section: belle-racquet-sales
+  Theme:   belle-v1 (Dawn base). Matches Belle's v1 brand system
+  Design:  Bebas Neue headlines + Source Sans Pro body
+           --belle-green #1a3c2a, --belle-gold #c8a951, --belle-cream #faf9f6
+  Layout:  Solinco-style filterable racquet grid + detail modal + add to cart
+  Data:    Reads a Shopify collection. All product data and specs come from
+           Shopify, so this stays in sync with the imported products.
+
+  Specs are read from product metafields, namespace "specs":
+    head_size, weight, pattern, length, balance, swingweight, beam, flex,
+    short_desc, level (comma list), play_style (comma list)
+  Series filter tabs are driven by product.product_type (e.g. "BLACKout V2",
+  "Whiteout V2 Camo", "BRAINDEAD x Solinco", "Junior", "PRIZM").
+
+  Template usage: assign this section to a page, e.g. page.racquets.json,
+  and pick the "Solinco Racquets" collection in the section settings.
+{% endcomment %}
+
+{%- liquid
+  assign src = section.settings.collection
+  assign products = src.products
+-%}
+
+{{ 'belle-racquet-sales.css' | asset_url | stylesheet_tag }}
+
+<div class="brs">
+  <div class="brs-container">
+
+    <div class="brs-header">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="brs-eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <h2>{{ section.settings.heading | default: "Solinco Racquets" }}</h2>
+      {%- if section.settings.subheading != blank -%}
+        <p>{{ section.settings.subheading }}</p>
+      {%- endif -%}
+    </div>
+
+    {%- if section.settings.show_steps -%}
+    <div class="brs-steps">
+      <div class="brs-step">
+        <div class="brs-step-num">1</div>
+        <h4>{{ section.settings.step1_title | default: "Pick Your Racquet" }}</h4>
+        <p>{{ section.settings.step1_text | default: "Choose a frame and grip size. Add professional stringing if you want it strung before pickup." }}</p>
+      </div>
+      <div class="brs-step">
+        <div class="brs-step-num">2</div>
+        <h4>{{ section.settings.step2_title | default: "We Reach Out" }}</h4>
+        <p>{{ section.settings.step2_text | default: "After your order we contact you to schedule pickup at a QuikTrip near you in the Northland." }}</p>
+      </div>
+      <div class="brs-step">
+        <div class="brs-step-num">3</div>
+        <h4>{{ section.settings.step3_title | default: "Pick Up Locally" }}</h4>
+        <p>{{ section.settings.step3_text | default: "Pay securely at checkout. We arrange your QuikTrip handoff in the Northland after your order." }}</p>
+      </div>
+    </div>
+    {%- endif -%}
+
+    {%- if products.size > 0 -%}
+      <div class="brs-grid" id="brs-grid-{{ section.id }}">
+        {%- for product in products -%}
+          {%- liquid
+            assign short = product.metafields.specs.short_desc | default: product.description | strip_html | truncatewords: 22
+            assign ptype = product.product_type | strip | default: "Other"
+          -%}
+          <div class="brs-card{% unless product.available %} is-unavailable{% endunless %}"
+               data-type="{{ ptype | handle }}"
+               data-id="{{ product.id }}"
+               tabindex="0"
+               role="button"
+               aria-label="View {{ product.title | escape }}">
+            <div class="brs-card-img">
+              {%- if product.featured_image -%}
+                <img src="{{ product.featured_image | image_url: width: 480 }}" alt="{{ product.featured_image.alt | escape | default: product.title | escape }}" loading="lazy" width="240" height="170">
+              {%- else -%}
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><ellipse cx="12" cy="8" rx="6" ry="7" stroke="currentColor" stroke-width="1.5"/><path d="M12 15v7" stroke="currentColor" stroke-width="1.5"/></svg>
+              {%- endif -%}
+            </div>
+            <div class="brs-card-body">
+              {%- if ptype != blank and ptype != "Other" -%}<p class="brs-card-badge">{{ ptype }}</p>{%- endif -%}
+              <p class="brs-card-name">{{ product.title | remove: "Solinco " }}</p>
+              <p class="brs-card-desc">{{ short }}</p>
+            </div>
+            <div class="brs-card-foot">
+              <span class="brs-card-price">{{ product.price | money }}</span>
+              <span class="brs-card-cta">{% if product.available %}View &rarr;{% else %}Sold Out{% endif %}</span>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <p class="brs-empty">No racquets to show yet. Assign the Solinco Racquets collection in this section's settings.</p>
+    {%- endif -%}
+
+  </div>
+</div>
+
+{%- comment %} Product data for the modal. Sourced entirely from Shopify {% endcomment -%}
+<script>
+  window.BelleRacquetSales = window.BelleRacquetSales || {};
+  window.BelleRacquetSales["{{ section.id }}"] = {
+    products: {
+      {%- for product in products -%}
+      "{{ product.id }}": {
+        "title": {{ product.title | json }},
+        "series": {{ product.product_type | json }},
+        "image": {{ product.featured_image | image_url: width: 900 | json }},
+        "images": [
+          {%- for img in product.images -%}
+          {{ img | image_url: width: 1000 | json }}{%- unless forloop.last -%},{%- endunless -%}
+          {%- endfor -%}
+        ],
+        "price": {{ product.price | json }},
+        "available": {{ product.available }},
+        "desc": {{ product.description | strip_html | json }},
+        "specs": {
+          "Color":       {{ product.metafields.specs.color | json }},
+          "Finish":      {{ product.metafields.specs.finish | json }},
+          "Head Size":   {{ product.metafields.specs.head_size | json }},
+          "Weight":      {{ product.metafields.specs.weight | json }},
+          "Pattern":     {{ product.metafields.specs.pattern | json }},
+          "Length":      {{ product.metafields.specs.length | json }},
+          "Balance":     {{ product.metafields.specs.balance | json }},
+          "Swingweight": {{ product.metafields.specs.swingweight | json }},
+          "Beam":        {{ product.metafields.specs.beam | json }},
+          "Flex":        {{ product.metafields.specs.flex | json }}
+        },
+        "variants": [
+          {%- for v in product.variants -%}
+          { "id": {{ v.id }}, "title": {{ v.title | json }}, "price": {{ v.price | json }}, "available": {{ v.available }} }{%- unless forloop.last -%},{%- endunless -%}
+          {%- endfor -%}
+        ]
+      }{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    },
+    moneyFormat: {{ shop.money_format | json }},
+    note: {{ section.settings.modal_note | default: "Secure checkout. We arrange your QuikTrip handoff after your order." | json }},
+    stringing: {
+      variantId: {{ section.settings.stringing_variant_id | json }},
+      priceLabel: {{ section.settings.stringing_price_label | default: "+$25" | json }}
+    }
+  };
+</script>
+
+<div class="brs-overlay" id="brs-overlay-{{ section.id }}" role="dialog" aria-modal="true" aria-labelledby="brs-name-{{ section.id }}">
+  <div class="brs-modal">
+    <button class="brs-modal__close" data-close aria-label="Close">&#x2715;</button>
+    <div class="brs-modal__grid">
+      <div class="brs-modal__gallery">
+        <div class="brs-modal__img" id="brs-img-{{ section.id }}"></div>
+        <div class="brs-modal__thumbs" id="brs-thumbs-{{ section.id }}"></div>
+      </div>
+      <div class="brs-modal__content">
+        <p class="brs-modal__series" id="brs-series-{{ section.id }}"></p>
+        <h3 class="brs-modal__name" id="brs-name-{{ section.id }}"></h3>
+        <p class="brs-modal__price" id="brs-price-{{ section.id }}"></p>
+        <p class="brs-modal__desc" id="brs-desc-{{ section.id }}"></p>
+        <div class="brs-specs" id="brs-specs-{{ section.id }}"></div>
+        <div class="brs-field" id="brs-variant-wrap-{{ section.id }}">
+          <label for="brs-variant-{{ section.id }}">Grip Size</label>
+          <select id="brs-variant-{{ section.id }}"></select>
+        </div>
+
+        {%- if section.settings.stringing_variant_id != blank -%}
+        <div class="brs-string">
+          <label class="brs-string__toggle">
+            <input type="checkbox" id="brs-string-on-{{ section.id }}">
+            <span class="brs-string__switch" aria-hidden="true"></span>
+            <span class="brs-string__label">
+              Add professional stringing
+              <strong id="brs-string-price-{{ section.id }}"></strong>
+            </span>
+          </label>
+          <p class="brs-string__sub">{{ section.settings.stringing_subtext }}</p>
+
+          <div class="brs-string__opts" id="brs-string-opts-{{ section.id }}" hidden>
+            <div class="brs-field">
+              <label for="brs-string-sel-{{ section.id }}">String</label>
+              <select id="brs-string-sel-{{ section.id }}">
+                <option value="Let Belle's recommend">Let Belle's recommend</option>
+                <optgroup label="Polyester (spin and control)">
+                  <option value="Solinco Hyper-G Soft 17">Solinco Hyper-G Soft 17 (default)</option>
+                  <option value="Solinco Tour Bite 17">Solinco Tour Bite 17 (max spin)</option>
+                  <option value="Solinco Tour Bite Soft 17">Solinco Tour Bite Soft 17 (spin, softer)</option>
+                  <option value="Solinco Confidential 16">Solinco Confidential 16 (max control)</option>
+                  <option value="Solinco Confidential Soft 17">Solinco Confidential Soft 17 (control, softer)</option>
+                  <option value="Solinco Mach-10 17">Solinco Mach-10 17 (soft, lively)</option>
+                  <option value="Head Lynx Touch 17">Head Lynx Touch 17 (comfort poly)</option>
+                  <option value="Head Lynx 18">Head Lynx 18 (neutral poly)</option>
+                </optgroup>
+                <optgroup label="Multifilament (comfort)">
+                  <option value="Solinco X-Natural 17">Solinco X-Natural 17 (premium comfort)</option>
+                  <option value="Solinco Vanquish 17">Solinco Vanquish 17 (plush comfort)</option>
+                </optgroup>
+                <optgroup label="Synthetic Gut (value)">
+                  <option value="Gosen OG-Sheep Micro 16">Gosen OG-Sheep Micro 16 (value)</option>
+                  <option value="Wilson Synthetic Gut Power 16">Wilson Synthetic Gut Power 16 (budget comfort)</option>
+                </optgroup>
+                <optgroup label="Hybrid">
+                  <option value="Solinco Hyper-Mach BD hybrid">Solinco Hyper-Mach BD hybrid (Hyper-G + Mach-10)</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="brs-field">
+              <label for="brs-tension-{{ section.id }}">Tension (lbs)</label>
+              <input type="text" id="brs-tension-{{ section.id }}" inputmode="numeric"
+                     placeholder="e.g. 52, or 52/50 for hybrid">
+            </div>
+          </div>
+        </div>
+        {%- endif -%}
+
+        <button class="brs-add" id="brs-add-{{ section.id }}">Add to Cart</button>
+        <p class="brs-modal__note" id="brs-note-{{ section.id }}"></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="brs-lightbox" id="brs-lightbox-{{ section.id }}" role="dialog" aria-modal="true" aria-label="Zoomed product image">
+  <button class="brs-lightbox__close" data-lb-close aria-label="Close zoom">&#x2715;</button>
+  <img id="brs-lightbox-img-{{ section.id }}" src="" alt="">
+</div>
+
+<div class="brs-toast" id="brs-toast-{{ section.id }}" role="status" aria-live="polite"></div>
+
+<script src="{{ 'belle-racquet-sales.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Racquet Sales",
+  "tag": "section",
+  "class": "section-belle-racquet-sales",
+  "settings": [
+    { "type": "header", "content": "Collection" },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Racquets collection",
+      "info": "Create a 'Solinco Racquets' collection in Shopify, add the imported racquets to it, and select it here."
+    },
+    { "type": "header", "content": "Header" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Belle's Performance Tennis Shop | Kansas City Northland" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Solinco Racquets" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading", "default": "Authorized Solinco dealer. Order online and pick up your racquet locally in the Northland, strung and ready if you want it." },
+    { "type": "header", "content": "How It Works Strip" },
+    { "type": "checkbox", "id": "show_steps", "label": "Show how-it-works strip", "default": true },
+    { "type": "text", "id": "step1_title", "label": "Step 1 title", "default": "Pick Your Racquet" },
+    { "type": "textarea", "id": "step1_text", "label": "Step 1 text", "default": "Choose a frame and grip size. Add professional stringing if you want it strung before pickup." },
+    { "type": "text", "id": "step2_title", "label": "Step 2 title", "default": "We Reach Out" },
+    { "type": "textarea", "id": "step2_text", "label": "Step 2 text", "default": "After your order we contact you to schedule pickup at a QuikTrip near you in the Northland." },
+    { "type": "text", "id": "step3_title", "label": "Step 3 title", "default": "Pick Up Locally" },
+    { "type": "textarea", "id": "step3_text", "label": "Step 3 text", "default": "Pay securely at checkout. We arrange your QuikTrip handoff in the Northland after your order." },
+    { "type": "header", "content": "Modal" },
+    { "type": "text", "id": "modal_note", "label": "Modal footer note", "default": "Secure checkout. We arrange your QuikTrip handoff after your order." },
+    { "type": "header", "content": "Stringing Add-On" },
+    {
+      "type": "text",
+      "id": "stringing_variant_id",
+      "label": "Stringing product variant ID",
+      "info": "Create a hidden 'Stringing With Racquet Purchase' product at $25, then paste its variant ID here. Leave blank to hide the stringing option. Get the ID from the product's .js URL or the variant's admin URL after '/variants/'."
+    },
+    { "type": "text", "id": "stringing_price_label", "label": "Stringing toggle price", "default": "+$25" },
+    { "type": "textarea", "id": "stringing_subtext", "label": "Stringing helper text", "default": "Discounted with your racquet purchase, paid at checkout. Standard string included. We string your racquet before your QuikTrip handoff. Premium strings, if you choose them, are billed separately after." },
+    { "type": "header", "content": "Spacing" },
+    { "type": "range", "id": "padding_top", "label": "Top padding", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 60 },
+    { "type": "range", "id": "padding_bottom", "label": "Bottom padding", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "presets": [
+    { "name": "Racquet Sales" }
+  ]
+}
+{% endschema %}

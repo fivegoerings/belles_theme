@@ -1,0 +1,505 @@
+{% comment %}
+  Belle's Performance Tennis - About Section
+  About Us page with team photos and story
+  Version: 1.1.0 - 2026-04-14 - Removed hover effects (image zoom, card lift) from team member cards
+{% endcomment %}
+
+<style>
+  
+  .belle-about {
+    --belle-green: #1a3c2a;
+    --belle-gold: #c8a951;
+    --belle-cream: #faf9f6;
+    --belle-charcoal: #2d2d2d;
+    --belle-light: #f8f8f8;
+    --belle-border: #e0e0e0;
+
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 60px 20px;
+    background: linear-gradient(180deg, var(--belle-cream) 0%, #fff 100%);
+  }
+
+  .belle-about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .belle-about-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .belle-about-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--belle-green);
+    margin: 0 0 12px 0;
+    letter-spacing: 2px;
+  }
+
+  .belle-about-subtitle {
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+  }
+
+  /* Team Section */
+  .belle-about-team {
+    margin-bottom: 50px;
+  }
+
+  .belle-about-team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+
+  /* Team Member Card */
+  .belle-about-member {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .belle-about-member-image {
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: var(--belle-light);
+  }
+
+  .belle-about-member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .belle-about-member-info {
+    padding: 24px;
+    text-align: center;
+    border-top: 4px solid var(--belle-gold);
+  }
+
+  .belle-about-member-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    color: var(--belle-green);
+    margin: 0 0 4px 0;
+    letter-spacing: 1px;
+  }
+
+  .belle-about-member-role {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--belle-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 12px 0;
+  }
+
+  .belle-about-member-bio {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Story Section */
+  .belle-about-story {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 50px;
+    position: relative;
+  }
+
+  .belle-about-story::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--belle-gold);
+    border-radius: 16px 16px 0 0;
+  }
+
+  .belle-about-story-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--belle-green);
+    margin: 0 0 20px 0;
+    letter-spacing: 1px;
+  }
+
+  .belle-about-story-content {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+  }
+
+  .belle-about-story-content p {
+    margin: 0 0 16px 0;
+  }
+
+  .belle-about-story-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Values/Features */
+  .belle-about-values {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-bottom: 50px;
+  }
+
+  .belle-about-value {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+  }
+
+  .belle-about-value:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .belle-about-value-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, var(--belle-green) 0%, #2a5a3a 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 16px;
+  }
+
+  .belle-about-value-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: var(--belle-gold);
+  }
+
+  .belle-about-value-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    color: var(--belle-green);
+    margin: 0 0 8px 0;
+    letter-spacing: 0.5px;
+  }
+
+  .belle-about-value-text {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .belle-about {
+      padding: 40px 16px;
+    }
+
+    .belle-about-title {
+      font-size: 36px;
+    }
+
+    .belle-about-story {
+      padding: 30px 24px;
+    }
+
+    .belle-about-story-title {
+      font-size: 26px;
+    }
+
+
+  }
+
+  @media (max-width: 480px) {
+    .belle-about-team-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .belle-about-values {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="belle-about">
+  <div class="belle-about-container">
+    
+    <!-- Header -->
+    <div class="belle-about-header">
+      <h1 class="belle-about-title">{{ section.settings.title | default: 'About Us' }}</h1>
+      <p class="belle-about-subtitle">{{ section.settings.subtitle | default: "The story behind Belle's Performance Tennis" }}</p>
+    </div>
+
+    <!-- Team Section -->
+    {% assign team_members = section.blocks | where: "type", "team_member" %}
+    {% if team_members.size > 0 %}
+    <div class="belle-about-team">
+      <div class="belle-about-team-grid">
+        {% for block in team_members %}
+        <div class="belle-about-member" {{ block.shopify_attributes }}>
+          <div class="belle-about-member-image">
+            {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.name }}" loading="lazy">
+            {% else %}
+              <div style="width:100%;height:100%;background:var(--belle-light);display:flex;align-items:center;justify-content:center;">
+                <svg style="width:80px;height:80px;fill:#ccc;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+              </div>
+            {% endif %}
+          </div>
+          <div class="belle-about-member-info">
+            <h3 class="belle-about-member-name">{{ block.settings.name | default: 'Team Member' }}</h3>
+            {% if block.settings.role != blank %}
+            <p class="belle-about-member-role">{{ block.settings.role }}</p>
+            {% endif %}
+            {% if block.settings.bio != blank %}
+            <p class="belle-about-member-bio">{{ block.settings.bio }}</p>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Our Story -->
+    {% if section.settings.story_title != blank or section.settings.story_content != blank %}
+    <div class="belle-about-story">
+      <h2 class="belle-about-story-title">{{ section.settings.story_title | default: 'Our Story' }}</h2>
+      <div class="belle-about-story-content">
+        {{ section.settings.story_content }}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Values -->
+    {% assign values = section.blocks | where: "type", "value" %}
+    {% if values.size > 0 %}
+    <div class="belle-about-values">
+      {% for block in values %}
+      <div class="belle-about-value" {{ block.shopify_attributes }}>
+        <div class="belle-about-value-icon">
+          {% case block.settings.icon %}
+            {% when 'heart' %}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            {% when 'star' %}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            {% when 'trophy' %}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/></svg>
+            {% when 'handshake' %}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.22 19.85c-.18.18-.5.21-.71 0L3.93 12.27a2.5 2.5 0 010-3.54l3.54-3.54c.47-.47 1.12-.73 1.77-.73.65 0 1.29.26 1.77.73l.71.71 1.06-1.06c.47-.47 1.12-.73 1.77-.73.65 0 1.29.26 1.77.73l3.54 3.54a2.5 2.5 0 010 3.54l-7.64 7.93zM9.24 6.88L5.7 10.42c-.39.39-.39 1.02 0 1.41l6.36 6.36 6.36-6.36c.39-.39.39-1.02 0-1.41l-3.54-3.54-1.77 1.77 2.83 2.83-1.41 1.41L9.24 6.88z"/></svg>
+            {% when 'clock' %}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+            {% when 'location' %}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            {% when 'school' %}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+            {% else %}
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          {% endcase %}
+        </div>
+        <h3 class="belle-about-value-title">{{ block.settings.title | default: 'Value' }}</h3>
+        <p class="belle-about-value-text">{{ block.settings.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+
+
+  </div>
+</div>
+
+{% comment %}
+  AboutPage + Person JSON-LD
+  Establishes the page entity and the humans behind the business.
+  Person schema outputs dynamically for each team_member block —
+  updates automatically when blocks are added or changed in theme editor.
+  AboutPage links to the LocalBusiness defined in header.liquid.
+  Updated: May 2026
+{% endcomment %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About Belle's Performance Tennis Shop",
+  "url": "{{ request.origin }}{{ page.url }}",
+  "description": "Belle's Performance Tennis Shop is a family-owned racquet stringing and tennis equipment business serving the Kansas City Northland. Founded by Randy Goering and named after his daughter Isabelle.",
+  "about": {
+    "@type": "LocalBusiness",
+    "name": "Belle's Performance Tennis Shop",
+    "url": "https://www.bellesperformancetennis.com"
+  }
+}
+</script>
+
+{%- assign schema_team = section.blocks | where: "type", "team_member" -%}
+{% for block in schema_team %}
+  {% if block.settings.name != blank %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": {{ block.settings.name | json }},
+    {% if block.settings.role != blank %}"jobTitle": {{ block.settings.role | json }},{% endif %}
+    {% if block.settings.bio != blank %}"description": {{ block.settings.bio | strip_html | strip | json }},{% endif %}
+    {% if block.settings.image != blank %}"image": "{{ block.settings.image | image_url: width: 600 }}",{% endif %}
+    "worksFor": {
+      "@type": "LocalBusiness",
+      "name": "Belle's Performance Tennis Shop",
+      "url": "https://www.bellesperformancetennis.com"
+    },
+    "url": "{{ request.origin }}{{ page.url }}"
+  }
+  </script>
+  {% endif %}
+{% endfor %}
+
+{% schema %}
+{
+  "name": "Belle's About",
+  "tag": "section",
+  "class": "belle-about-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "About Us"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "The story behind Belle's Performance Tennis"
+    },
+    {
+      "type": "header",
+      "content": "Our Story"
+    },
+    {
+      "type": "text",
+      "id": "story_title",
+      "label": "Story Title",
+      "default": "Our Story"
+    },
+    {
+      "type": "richtext",
+      "id": "story_content",
+      "label": "Story Content",
+      "default": "<p>Tennis players in the Kansas City Northland were driving 35-40 minutes across the metro or shipping racquets out of state just to get them restrung. That needed to change.</p><p>As a tennis parent, I saw this problem up close when my daughter Isabelle started competing. But it wasn't just high school players struggling. USTA league players, recreational doubles teams, and year-round competitors all faced the same frustration: no reliable local stringing option in the Northland.</p><p>That's when I decided to bring professional-grade stringing services to our community. Named after my daughter, the inspiration behind it all.  Belle's Performance Tennis is committed to providing personalized service, expert advice, and quick turnaround for every player.</p>"
+    },
+
+  ],
+  "blocks": [
+    {
+      "type": "team_member",
+      "name": "Team Member",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Name"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Role",
+          "placeholder": "e.g., Owner, Inspiration"
+        },
+        {
+          "type": "textarea",
+          "id": "bio",
+          "label": "Short Bio",
+          "placeholder": "A brief description..."
+        }
+      ]
+    },
+    {
+      "type": "value",
+      "name": "Value / Feature",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "heart", "label": "Heart (Passion)" },
+            { "value": "star", "label": "Star (Quality)" },
+            { "value": "trophy", "label": "Trophy (Excellence)" },
+            { "value": "handshake", "label": "Handshake (Service)" },
+            { "value": "clock", "label": "Clock (Fast)" },
+            { "value": "location", "label": "Location (Local)" },
+            { "value": "school", "label": "School (Education)" },
+            { "value": "check", "label": "Checkmark" }
+          ],
+          "default": "star"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Quality Service"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Belle's About",
+      "blocks": [
+        {
+          "type": "team_member",
+          "settings": {
+            "name": "Randy",
+            "role": "Owner & Stringer",
+            "bio": "Passionate about helping tennis players get the most out of their equipment."
+          }
+        },
+        {
+          "type": "team_member",
+          "settings": {
+            "name": "Isabelle",
+            "role": "The Inspiration",
+            "bio": "High school tennis player and the inspiration behind Belle's."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+  document.querySelectorAll('.belle-about-member-image img').forEach(function(img) {
+    img.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+  });
+</script>

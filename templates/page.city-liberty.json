@@ -1,0 +1,107 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "city_hero": {
+      "type": "belle-city-hero",
+      "settings": {
+        "city_name": "Liberty",
+        "eyebrow": "Liberty, MO",
+        "headline": "Tennis Racquet Stringing in Liberty, MO",
+        "intro": "Belle\u2019s strings racquets for Liberty, MO players, including Liberty North, Liberty High, adult league players, and tournament players. Drop off by appointment in the Northland. Most racquets are ready in 2\u20133 days. No shipping. No drive south of the river. Your string and tension notes are logged for next time.",
+        "cta_text": "Book Racquet Stringing",
+        "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_liberty_hero",
+        "hero_image_alt": ""
+      }
+    },
+    "city_community": {
+      "type": "belle-city-community",
+      "settings": {
+        "community_heading": "",
+        "community_text": ""
+      }
+    },
+    "how_it_works": {
+      "type": "belle-how-it-works",
+      "settings": {
+        "title": "How It Works",
+        "subtitle": "Three steps. No confusion. Your racquet comes back strung right.",
+        "step_1_title": "Book Online",
+        "step_1_text": "Pick a time and choose a drop-off spot. QuikTrip locations near Liberty and other Northland spots are available.",
+        "step_2_title": "Meet & Drop Off",
+        "step_2_text": "We meet at your chosen location. Hand off your racquet and grab a free Solinco demo if you need one for practice.",
+        "step_3_title": "Pick Up & Play",
+        "step_3_text": "Your racquet comes back strung, labeled, and logged. Most racquets ready in 2\u20133 days."
+      }
+    },
+    "city_landing": {
+      "type": "belle-city-landing",
+      "settings": {
+        "city_name": "Liberty",
+        "values_heading": "What Liberty Players Get",
+        "value_1_title": "Tracked Setup",
+        "value_1_text": "We log your string type, tension, and preferences after every job. When you come back, we already know what you had and whether you liked it.",
+        "value_2_title": "Free Solinco Demo Racquet",
+        "value_2_text": "Need a racquet while yours is being strung? Borrow a Solinco demo at no charge. Useful for Liberty players who have practice the same day.",
+        "value_3_title": "Pricing",
+        "value_3_text": "You know the cost before we start. No deposit at booking. You pay after the job is done.",
+        "value_4_title": "Gamma Progression II ELS",
+        "value_4_text": "Every racquet is strung on a Gamma Progression II electronic constant-pull machine. It holds tension accurately through the entire job.",
+        "local_heading": "Why Liberty players use Belle\u2019s",
+        "local_paragraph_1": "<b>Local racquet stringing without the extra drive. </b><p>\n\nLiberty players should not have to drive across the metro for a basic racquet restring. Belle\u2019s serves Liberty and the Kansas City Northland with appointment-based drop-off, honest string guidance, and professional stringing for junior, high school, adult, and competitive players.</p>",
+        "local_paragraph_2": "<b>Your setup is tracked.</b><p>\n\nEvery string job is recorded by string type, tension, date, and string bed stiffness. That means when you come back, we are not starting over. We know what was in your racquet, how tight it was strung, and what worked last time.</p>",
+        "local_paragraph_3": "<b>Help choosing the right string</b><p>\n\nNot sure whether you need synthetic gut, multifilament, polyester, or a hybrid? I will recommend a setup based on how you play, how often you break strings, your arm comfort, and your budget.</p>",
+        "testimonial_text": "",
+        "testimonial_author": "",
+        "meetup_heading": "Find a Drop-Off Near You",
+        "meetup_description": "",
+        "meetup_maps_url": "",
+        "faq_heading": "Liberty Stringing FAQ",
+        "faq_1_question": "Where can I get a tennis racquet restrung in Liberty, MO?",
+        "faq_1_answer": "Belle\u2019s strings racquets for Liberty, MO and Kansas City Northland players. Drop-off and pickup are appointment-based, and most racquets are ready in 2\u20133 days.",
+        "faq_2_question": "Do you string racquets for Liberty North and Liberty High players?",
+        "faq_2_answer": "Yes. Belle\u2019s serves Liberty North, Liberty High, Staley, and other Northland high school players. I can help match a player\u2019s current setup or recommend a string based on control, power, comfort, spin, and durability.",
+        "faq_3_question": "Do I need to know what string I want?",
+        "faq_3_answer": "No. Most players do not know consistently what string they need. I can recommend synthetic gut, multifilament, polyester, or hybrid based on the player\u2019s racquet, level, style, and arm comfort.",
+        "nearby_1_label": "Staley / KC North",
+        "nearby_1_url": "/pages/racquet-stringing-staley-kansas-city-north",
+        "nearby_2_label": "Park Hill",
+        "nearby_2_url": "/pages/tennis-racquet-stringing-parkhill",
+        "nearby_3_label": "Gladstone",
+        "nearby_3_url": "/pages/racquet-stringing-gladstone",
+        "nearby_4_label": "Kearney",
+        "nearby_4_url": "/pages/racquet-stringing-kearney",
+        "nearby_5_label": "North Kansas City",
+        "nearby_5_url": "/pages/racquet-stringing-north-kansas-city",
+        "nearby_6_label": "Platte City",
+        "nearby_6_url": "/pages/tennis-stringing-platte-city-mo",
+        "nearby_7_label": "Winnetonka",
+        "nearby_7_url": "/pages/racquet-stringing-winnetonka"
+      }
+    },
+    "cta_inline_mid": {
+      "type": "cta-inline",
+      "name": "CTA Inline",
+      "settings": {
+        "cta_heading": "Book a Liberty Drop-Off",
+        "cta_description": "Liberty players can book an appointment-based QuikTrip drop-off. Strings are included, no deposit is required, and most racquets are ready in 2\u20133 days.",
+        "schedule_button_text": "Book Racquet Stringing",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_liberty_bottom"
+      }
+    }
+  },
+  "order": [
+    "city_hero",
+    "city_community",
+    "how_it_works",
+    "city_landing",
+    "cta_inline_mid"
+  ]
+}

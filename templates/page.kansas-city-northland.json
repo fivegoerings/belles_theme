@@ -1,0 +1,107 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "city_hero": {
+      "type": "belle-city-hero",
+      "settings": {
+        "city_name": "Kansas City Northland",
+        "eyebrow": "Kansas City, MO \u2014 North of the River",
+        "headline": "Racquet Stringing for Kansas City Northland Players",
+        "intro": "Belle's is a Kansas City stringer \u2014 based north of the river, serving players who live here. No driving south. No shipping out. Drop off at a nearby QuikTrip and get your racquet back in 2\u20133 days.",
+        "cta_text": "Book Racquet Stringing",
+        "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_kcnorthland_hero",
+        "hero_image_alt": ""
+      }
+    },
+    "city_community": {
+      "type": "belle-city-community",
+      "settings": {
+        "community_heading": "",
+        "community_text": ""
+      }
+    },
+    "how_it_works": {
+      "type": "belle-how-it-works",
+      "settings": {
+        "title": "How It Works",
+        "subtitle": "Three steps. Your racquet comes back strung right.",
+        "step_1_title": "Book Online",
+        "step_1_text": "Pick a time and a QuikTrip drop-off spot in the Northland.",
+        "step_2_title": "Meet & Drop Off",
+        "step_2_text": "We meet you there. Hand off your racquet and grab a free Solinco demo if you need one.",
+        "step_3_title": "Pick Up & Play",
+        "step_3_text": "Strung, logged, labeled. Back to you in 2\u20133 days."
+      }
+    },
+    "city_landing": {
+      "type": "belle-city-landing",
+      "settings": {
+        "city_name": "Kansas City Northland",
+        "values_heading": "What Northland Players Get",
+        "value_1_title": "Tracked Setup",
+        "value_1_text": "We log your string, tension, and preferences every time. We already know your setup next visit.",
+        "value_2_title": "Free Solinco Demo Racquet",
+        "value_2_text": "Borrow a Solinco while yours is being strung. No charge.",
+        "value_3_title": "Pricing",
+        "value_3_text": "Most restrings run $40\u2013$55 total, string included. See the pricing page for the full breakdown.",
+        "value_4_title": "Gamma Progression II ELS",
+        "value_4_text": "Strung on a Gamma Progression II electronic constant-pull machine. consistent tension every time.",
+        "local_heading": "A Kansas City Stringer, North of the River",
+        "local_paragraph_1": "Most Kansas City stringing options are south of the river. For Northland players that means a 30-minute detour just to drop off a racquet. Belle's was built specifically for this part of KC. We operate entirely in the Northland, with drop-off and pickup at QuikTrip locations convenient to where you already are.",
+        "local_paragraph_2": "The Northland covers a lot of ground: Barry Road, Tiffany Springs, Zona Rosa, Shoal Creek, Staley, Winnetonka, and North Kansas City. If your Kansas City address puts you north of the Missouri River, Belle\u2019s is nearby. Same 2\u20133 day standard turnaround without the drive south.",
+        "local_paragraph_3": "No deposit required at booking. You pay after the job is done.  Express and rush options available if you have a match coming up.",
+        "testimonial_text": "",
+        "testimonial_author": "",
+        "meetup_heading": "Find a Drop-Off Near You",
+        "meetup_description": "",
+        "meetup_maps_url": "",
+        "faq_heading": "Kansas City Northland Stringing FAQ",
+        "faq_1_question": "Are you actually based in the Northland?",
+        "faq_1_answer": "Yes. Belle's operates entirely north of the river. Drop-off and pickup are at QuikTrip locations in the Northland. This is not a south KC shop with a Northland landing page.",
+        "faq_2_question": "Where consistently do we meet?",
+        "faq_2_answer": "You pick the QuikTrip location when you book online. We cover the Northland from North Kansas City out through the Barry Road and Tiffany Springs corridors.",
+        "faq_3_question": "How fast do you turn it around?",
+        "faq_3_answer": "Standard turnaround is 2\u20133 days. Need it faster? Same-day and next-day service are available on request.",
+        "nearby_1_label": "Gladstone",
+        "nearby_1_url": "/pages/racquet-stringing-gladstone",
+        "nearby_2_label": "North Kansas City",
+        "nearby_2_url": "/pages/racquet-stringing-north-kansas-city",
+        "nearby_3_label": "Staley / KC North",
+        "nearby_3_url": "/pages/racquet-stringing-staley-kansas-city-north",
+        "nearby_4_label": "Winnetonka",
+        "nearby_4_url": "/pages/racquet-stringing-winnetonka",
+        "nearby_5_label": "Park Hill",
+        "nearby_5_url": "/pages/tennis-racquet-stringing-parkhill",
+        "nearby_6_label": "Parkville",
+        "nearby_6_url": "/pages/tennis-racquet-stringing-parkville-mo",
+        "nearby_7_label": "Liberty",
+        "nearby_7_url": "/pages/racquet-stringing-liberty"
+      }
+    },
+    "cta_inline_mid": {
+      "type": "cta-inline",
+      "name": "CTA Inline",
+      "settings": {
+        "cta_heading": "Book a Northland Drop-Off",
+        "cta_description": "Kansas City Northland players can book a QuikTrip drop-off north of the river. Most racquets are ready in 2\u20133 days. No shipping. No drive south of the river.",
+        "schedule_button_text": "Book Racquet Stringing",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_kcnorthland_bottom"
+      }
+    }
+  },
+  "order": [
+    "city_hero",
+    "city_community",
+    "how_it_works",
+    "city_landing",
+    "cta_inline_mid"
+  ]
+}

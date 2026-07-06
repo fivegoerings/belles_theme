@@ -1,0 +1,88 @@
+{% comment %}
+  Belle's Performance Tennis - City Community Callout Section (v2)
+  Styled to match cta-inline: light background, gold top/bottom borders, centered.
+  Entire section hidden when heading is blank.
+{% endcomment %}
+
+{% if section.settings.community_heading != blank %}
+
+<style>
+
+.section-belle-community {
+  padding: 0 !important;
+  margin-top: 0 !important;
+}
+
+.belle-community-wrap {
+  padding: 28px 20px;
+  text-align: center;
+  border-top: 2px solid #c8a951;
+  border-bottom: 2px solid #c8a951;
+  background: #ffffff;
+}
+
+.belle-community-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.belle-community-container h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #1a3c2a;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.belle-community-container p {
+  color: #444;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 560px;
+}
+</style>
+
+<div class="belle-community-wrap">
+  <div class="belle-community-container">
+    <h2>{{ section.settings.community_heading }}</h2>
+    {% if section.settings.community_text != blank %}
+      <p>{{ section.settings.community_text }}</p>
+    {% endif %}
+  </div>
+</div>
+
+{% endif %}
+
+{% schema %}
+{
+  "name": "City Community Callout",
+  "tag": "section",
+  "class": "section-belle-community",
+  "settings": [
+    {
+      "type": "text",
+      "id": "community_heading",
+      "label": "Heading",
+      "info": "Leave blank to hide this entire section."
+    },
+    {
+      "type": "textarea",
+      "id": "community_text",
+      "label": "Body Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "City Community Callout"
+    }
+  ]
+}
+{% endschema %}

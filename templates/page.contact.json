@@ -1,0 +1,36 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "belle-contact",
+      "settings": {
+        "heading": "Get in Touch",
+        "subheading": "Questions about stringing, tension, drop-off, or turnaround? Send a message before you book.",
+        "phone": "816-938-7622",
+        "email": "sales@bellesperformancetennis.com"
+      }
+    },
+    "cta_inline_4MK9eR": {
+      "type": "cta-inline",
+      "name": "CTA Inline",
+      "settings": {
+        "cta_heading": "Book a Northland Drop-Off",
+        "cta_description": "Choose a QuikTrip location and time. Most racquets are ready in 2\u20133 days.",
+        "schedule_button_text": "Book Racquet Stringing",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=contact_bottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cta_inline_4MK9eR"
+  ]
+}

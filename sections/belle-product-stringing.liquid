@@ -1,0 +1,255 @@
+{% comment %}
+  Section: belle-product-stringing
+  Purpose: Add professional stringing option to individual product pages
+  Used on: product.json template
+  
+  Simple toggle + string selection + tension field for single racquet pages
+{% endcomment %}
+
+{%- if section.settings.stringing_variant_id != blank -%}
+<style>
+  #shopify-section-{{ section.id }} .bps {
+    background: #faf9f6;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 24px 20px;
+    margin: 20px 0;
+  }
+
+  #shopify-section-{{ section.id }} .bps-toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    margin-bottom: 16px;
+  }
+
+  #shopify-section-{{ section.id }} .bps-toggle input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  #shopify-section-{{ section.id }} .bps-switch {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    background: #ccc;
+    border-radius: 12px;
+    transition: background 0.3s;
+    flex-shrink: 0;
+  }
+
+  #shopify-section-{{ section.id }} .bps-switch::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: left 0.3s;
+  }
+
+  #shopify-section-{{ section.id }} .bps-toggle input:checked + .bps-switch {
+    background: #1a3c2a;
+  }
+
+  #shopify-section-{{ section.id }} .bps-toggle input:checked + .bps-switch::after {
+    left: 22px;
+  }
+
+  #shopify-section-{{ section.id }} .bps-label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  #shopify-section-{{ section.id }} .bps-label-text {
+    font-weight: 600;
+    font-size: 15px;
+    color: #1a1a1a;
+  }
+
+  #shopify-section-{{ section.id }} .bps-label-price {
+    font-size: 13px;
+    color: #666;
+  }
+
+  #shopify-section-{{ section.id }} .bps-options {
+    display: none;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  #shopify-section-{{ section.id }} .bps-options.show {
+    display: block;
+  }
+
+  #shopify-section-{{ section.id }} .bps-field {
+    margin-bottom: 12px;
+  }
+
+  #shopify-section-{{ section.id }} .bps-field label {
+    display: block;
+    font-weight: 500;
+    font-size: 13px;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+  }
+
+  #shopify-section-{{ section.id }} .bps-field select,
+  #shopify-section-{{ section.id }} .bps-field input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+  }
+
+  #shopify-section-{{ section.id }} .bps-field select:focus,
+  #shopify-section-{{ section.id }} .bps-field input:focus {
+    outline: none;
+    border-color: #1a3c2a;
+  }
+
+  #shopify-section-{{ section.id }} .bps-subtext {
+    font-size: 12px;
+    color: #666;
+    margin-top: 12px;
+    line-height: 1.4;
+  }
+</style>
+
+<div class="bps">
+  <label class="bps-toggle">
+    <input type="checkbox" id="bps-string-toggle-{{ section.id }}">
+    <span class="bps-switch" aria-hidden="true"></span>
+    <span class="bps-label">
+      <span class="bps-label-text">Add professional stringing</span>
+      <span class="bps-label-price">{{ section.settings.stringing_price_label }}</span>
+    </span>
+  </label>
+
+  <div class="bps-options" id="bps-options-{{ section.id }}">
+    <div class="bps-field">
+      <label for="bps-string-{{ section.id }}">String</label>
+      <select id="bps-string-{{ section.id }}">
+        <option value="Let Belle's recommend">Let Belle's recommend</option>
+        <optgroup label="Polyester (spin and control)">
+          <option value="Solinco Hyper-G Soft 17">Solinco Hyper-G Soft 17 (default)</option>
+          <option value="Solinco Tour Bite 17">Solinco Tour Bite 17 (max spin)</option>
+          <option value="Solinco Tour Bite Soft 17">Solinco Tour Bite Soft 17 (spin, softer)</option>
+          <option value="Solinco Confidential 16">Solinco Confidential 16 (max control)</option>
+          <option value="Solinco Confidential Soft 17">Solinco Confidential Soft 17 (control, softer)</option>
+          <option value="Solinco Mach-10 17">Solinco Mach-10 17 (soft, lively)</option>
+          <option value="Head Lynx Touch 17">Head Lynx Touch 17 (comfort poly)</option>
+          <option value="Head Lynx 18">Head Lynx 18 (neutral poly)</option>
+        </optgroup>
+        <optgroup label="Multifilament (comfort)">
+          <option value="Solinco X-Natural 17">Solinco X-Natural 17 (premium comfort)</option>
+          <option value="Solinco Vanquish 17">Solinco Vanquish 17 (plush comfort)</option>
+        </optgroup>
+        <optgroup label="Synthetic Gut (value)">
+          <option value="Gosen OG-Sheep Micro 16">Gosen OG-Sheep Micro 16 (value)</option>
+          <option value="Wilson Synthetic Gut Power 16">Wilson Synthetic Gut Power 16 (budget comfort)</option>
+        </optgroup>
+        <optgroup label="Hybrid">
+          <option value="Solinco Hyper-Mach BD hybrid">Solinco Hyper-Mach BD hybrid (Hyper-G + Mach-10)</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <div class="bps-field">
+      <label for="bps-tension-{{ section.id }}">Tension (lbs)</label>
+      <input type="text" id="bps-tension-{{ section.id }}" inputmode="numeric" placeholder="e.g. 52, or 52/50 for hybrid">
+    </div>
+
+    <p class="bps-subtext">{{ section.settings.stringing_subtext }}</p>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const toggle = document.getElementById('bps-string-toggle-{{ section.id }}');
+  const options = document.getElementById('bps-options-{{ section.id }}');
+  const stringSelect = document.getElementById('bps-string-{{ section.id }}');
+  const tensionInput = document.getElementById('bps-tension-{{ section.id }}');
+
+  if (toggle) {
+    toggle.addEventListener('change', function() {
+      options.classList.toggle('show', this.checked);
+    });
+  }
+
+  // Store selections in cart attributes when product is added to cart
+  const cartForm = document.querySelector('form[action="/cart/add"]') || document.querySelector('form[action*="/cart/add"]');
+  if (cartForm) {
+    const originalSubmit = cartForm.onsubmit;
+    cartForm.addEventListener('submit', function(e) {
+      if (toggle && toggle.checked) {
+        // Create hidden input for string and tension
+        let stringInput = document.createElement('input');
+        stringInput.type = 'hidden';
+        stringInput.name = 'attributes[String]';
+        stringInput.value = stringSelect.value;
+        cartForm.appendChild(stringInput);
+
+        let tensionInput = document.createElement('input');
+        tensionInput.type = 'hidden';
+        tensionInput.name = 'attributes[Tension]';
+        tensionInput.value = tensionInput.value || '';
+        cartForm.appendChild(tensionInput);
+
+        // Add the stringing variant to the form
+        let variantInput = document.createElement('input');
+        variantInput.type = 'hidden';
+        variantInput.name = 'id';
+        variantInput.value = {{ section.settings.stringing_variant_id | json }};
+        cartForm.appendChild(variantInput);
+      }
+    });
+  }
+});
+</script>
+
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Product Stringing Add-On",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Stringing Add-On"
+    },
+    {
+      "type": "text",
+      "id": "stringing_variant_id",
+      "label": "Stringing product variant ID",
+      "info": "Create a hidden 'Stringing With Racquet Purchase' product at $25, then paste its variant ID here. Leave blank to hide the stringing option. Get the ID from the variant's admin URL after '/variants/'."
+    },
+    {
+      "type": "text",
+      "id": "stringing_price_label",
+      "label": "Stringing toggle price",
+      "default": "+$25"
+    },
+    {
+      "type": "textarea",
+      "id": "stringing_subtext",
+      "label": "Stringing helper text",
+      "default": "Discounted with your racquet purchase. Standard string included. Premium strings or rush turnaround are added to your final invoice. We string after the order and arrange your QuikTrip handoff."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Stringing Add-On"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,932 @@
+{% comment %}
+  Belle's Performance Tennis - Demo Racquet Program Page
+  Showcases the Solinco demo racquet lending program
+{% endcomment %}
+
+<style>
+
+  .belle-demo {
+    --belle-green: #1a3c2a;
+    --belle-gold: #c8a951;
+    --belle-cream: #faf9f6;
+    --belle-charcoal: #2d2d2d;
+    --belle-light: #f8f8f8;
+    --belle-border: #e0e0e0;
+
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 60px 20px;
+    background: linear-gradient(180deg, var(--belle-cream) 0%, #fff 100%);
+  }
+
+  .belle-demo-container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* ── SEO geo signal (accessible, not decorative) ── */
+  .belle-demo-seo-geo {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* ── Header ─────────────────────────────────────── */
+  .belle-demo-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .belle-demo-badge {
+    display: inline-block;
+    background: var(--belle-gold);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+
+  .belle-demo-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--belle-green);
+    margin: 0 0 12px 0;
+    letter-spacing: 2px;
+  }
+
+  .belle-demo-subtitle {
+    font-size: 18px;
+    color: #666;
+    margin: 0 0 8px 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  /* ── Program Intro Card ─────────────────────────── */
+  .belle-demo-intro {
+    background: white;
+    border-radius: 16px;
+    padding: 36px 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 50px;
+    position: relative;
+  }
+
+  .belle-demo-intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--belle-gold);
+    border-radius: 16px 16px 0 0;
+  }
+
+  .belle-demo-intro-content {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+  }
+
+  .belle-demo-intro-content p {
+    margin: 0 0 16px 0;
+  }
+
+  .belle-demo-intro-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ── How It Works ───────────────────────────────── */
+  .belle-demo-steps-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--belle-green);
+    text-align: center;
+    margin: 0 0 36px 0;
+    letter-spacing: 1px;
+  }
+
+  .belle-demo-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 60px;
+  }
+
+  .belle-demo-step {
+    background: white;
+    border-radius: 12px;
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .belle-demo-step:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .belle-demo-step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--belle-green) 0%, #2a5a3a 100%);
+    color: var(--belle-gold);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    border-radius: 50%;
+    margin-bottom: 14px;
+  }
+
+  .belle-demo-step-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--belle-green);
+    margin: 0 0 8px 0;
+    letter-spacing: 0.5px;
+  }
+
+  .belle-demo-step-text {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ── Racquet Section ────────────────────────────── */
+  .belle-demo-section-header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .belle-demo-section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--belle-green);
+    margin: 0 0 8px 0;
+    letter-spacing: 1px;
+  }
+
+  .belle-demo-section-desc {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+  }
+
+  /* ── Racquet Cards ──────────────────────────────── */
+  .belle-demo-racquets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+    margin-bottom: 60px;
+  }
+
+  .belle-demo-racquet-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .belle-demo-racquet-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .belle-demo-racquet-image {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--belle-light);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .belle-demo-racquet-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 16px;
+    transition: transform 0.4s ease;
+  }
+
+  .belle-demo-racquet-card:hover .belle-demo-racquet-image img {
+    transform: scale(1.05);
+  }
+
+  .belle-demo-racquet-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--belle-green);
+    color: var(--belle-gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 6px;
+  }
+
+  .belle-demo-racquet-info {
+    padding: 24px;
+    border-top: 4px solid var(--belle-gold);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .belle-demo-racquet-brand {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--belle-gold);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 0 0 4px 0;
+  }
+
+  .belle-demo-racquet-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--belle-green);
+    margin: 0 0 8px 0;
+    letter-spacing: 1px;
+  }
+
+  .belle-demo-racquet-tagline {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+  }
+
+  .belle-demo-racquet-specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex: 1;
+  }
+
+  .belle-demo-spec {
+    background: var(--belle-light);
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+
+  .belle-demo-spec-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 2px 0;
+  }
+
+  .belle-demo-spec-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--belle-charcoal);
+    margin: 0;
+  }
+
+  .belle-demo-racquet-best-for {
+    background: linear-gradient(135deg, rgba(26, 71, 42, 0.06), rgba(26, 71, 42, 0.02));
+    border-left: 3px solid var(--belle-green);
+    border-radius: 0 8px 8px 0;
+    padding: 10px 14px;
+    margin-bottom: 20px;
+  }
+
+  .belle-demo-racquet-best-for-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--belle-green);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 2px 0;
+  }
+
+  .belle-demo-racquet-best-for-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .belle-demo-racquet-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .belle-demo-racquet-price {
+    font-size: 13px;
+    color: #999;
+  }
+
+  .belle-demo-racquet-free {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--belle-green), #2a5a3a);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── Program Details / FAQ ──────────────────────── */
+  .belle-demo-details {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 50px;
+    position: relative;
+  }
+
+  .belle-demo-details::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--belle-gold);
+    border-radius: 16px 16px 0 0;
+  }
+
+  .belle-demo-details-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--belle-green);
+    margin: 0 0 24px 0;
+    letter-spacing: 1px;
+  }
+
+  .belle-demo-detail-item {
+    border-bottom: 1px solid var(--belle-border);
+    padding: 16px 0;
+  }
+
+  .belle-demo-detail-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .belle-demo-detail-item:first-child {
+    padding-top: 0;
+  }
+
+  .belle-demo-detail-q {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--belle-charcoal);
+    margin: 0 0 6px 0;
+  }
+
+  .belle-demo-detail-a {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── Responsive ─────────────────────────────────── */
+  @media (max-width: 900px) {
+    .belle-demo-steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .belle-demo-racquets {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .belle-demo {
+      padding: 40px 16px;
+    }
+    .belle-demo-title {
+      font-size: 36px;
+    }
+    .belle-demo-steps {
+      grid-template-columns: 1fr;
+      max-width: 340px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .belle-demo-intro,
+    .belle-demo-details {
+      padding: 28px 20px;
+    }
+    .belle-demo-racquet-specs {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+</style>
+
+<div class="belle-demo">
+  <div class="belle-demo-container">
+
+    <!-- ── Header ──────────────────────────────────── -->
+    <div class="belle-demo-header">
+      <div class="belle-demo-badge">{{ section.settings.badge_text }}</div>
+      <h1 class="belle-demo-title">{{ section.settings.title }}</h1>
+      <p class="belle-demo-subtitle">{{ section.settings.subtitle }}</p>
+    </div>
+
+    <!-- ── SEO Geo Signal (screen-reader accessible, visually hidden) ── -->
+    <p class="belle-demo-seo-geo">Belle's Performance Tennis Shop offers a free demo tennis racquet program serving Kansas City Northland players in Liberty, Smithville, Platte City, Kearney, Park Hill, Gladstone, Staley, Winnetonka, and North Kansas City, Missouri. Try Solinco demo racquets near you at a convenient local meetup before you buy.</p>
+
+    <!-- ── Program Intro ───────────────────────────── -->
+    {% if section.settings.intro_content != blank %}
+    <div class="belle-demo-intro">
+      <div class="belle-demo-intro-content">
+        {{ section.settings.intro_content }}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- ── How It Works ────────────────────────────── -->
+    {% assign steps = section.blocks | where: "type", "step" %}
+    {% if steps.size > 0 %}
+    <h2 class="belle-demo-steps-title">{{ section.settings.steps_title | default: "How It Works" }}</h2>
+    <div class="belle-demo-steps">
+      {% for block in steps %}
+      <div class="belle-demo-step" {{ block.shopify_attributes }}>
+        <div class="belle-demo-step-num">{{ forloop.index }}</div>
+        <h3 class="belle-demo-step-title">{{ block.settings.title }}</h3>
+        <p class="belle-demo-step-text">{{ block.settings.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- ── Demo Racquets ───────────────────────────── -->
+    {% assign racquets = section.blocks | where: "type", "racquet" %}
+    {% if racquets.size > 0 %}
+    <div class="belle-demo-section-header">
+      <h2 class="belle-demo-section-title">{{ section.settings.racquets_title | default: "Demo Racquets" }}</h2>
+      <p class="belle-demo-section-desc">{{ section.settings.racquets_desc }}</p>
+    </div>
+
+    <div class="belle-demo-racquets">
+      {% for block in racquets %}
+      <div class="belle-demo-racquet-card" {{ block.shopify_attributes }}>
+        <div class="belle-demo-racquet-image">
+          {% if block.settings.image != blank %}
+            <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.brand }} {{ block.settings.name }}" loading="lazy">
+          {% else %}
+            <svg style="width:80px;height:80px;fill:#ccc;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21.5 2.5c-.3-.3-.7-.5-1.1-.5-.4 0-.8.2-1.1.5L16 5.8l-1.4-1.4c-.6-.6-1.5-.6-2.1 0L10 6.9c-.6.6-.6 1.5 0 2.1l.7.7L2.5 17.9c-.3.3-.5.7-.5 1.1 0 .4.2.8.5 1.1l1.4 1.4c.3.3.7.5 1.1.5.4 0 .8-.2 1.1-.5l8.2-8.2.7.7c.6.6 1.5.6 2.1 0l2.5-2.5c.6-.6.6-1.5 0-2.1L18.2 8l3.3-3.3c.6-.6.6-1.6 0-2.2z"/></svg>
+          {% endif %}
+          <div class="belle-demo-racquet-badge">{{ block.settings.badge_text | default: "FREE DEMO" }}</div>
+        </div>
+        <div class="belle-demo-racquet-info">
+          <p class="belle-demo-racquet-brand">{{ block.settings.brand }}</p>
+          <h3 class="belle-demo-racquet-name">{{ block.settings.name }}</h3>
+          <p class="belle-demo-racquet-tagline">{{ block.settings.tagline }}</p>
+
+          <div class="belle-demo-racquet-specs">
+            {% if block.settings.head_size != blank %}
+            <div class="belle-demo-spec">
+              <p class="belle-demo-spec-label">Head Size</p>
+              <p class="belle-demo-spec-value">{{ block.settings.head_size }}</p>
+            </div>
+            {% endif %}
+            {% if block.settings.weight != blank %}
+            <div class="belle-demo-spec">
+              <p class="belle-demo-spec-label">Weight</p>
+              <p class="belle-demo-spec-value">{{ block.settings.weight }}</p>
+            </div>
+            {% endif %}
+            {% if block.settings.pattern != blank %}
+            <div class="belle-demo-spec">
+              <p class="belle-demo-spec-label">Pattern</p>
+              <p class="belle-demo-spec-value">{{ block.settings.pattern }}</p>
+            </div>
+            {% endif %}
+            {% if block.settings.length != blank %}
+            <div class="belle-demo-spec">
+              <p class="belle-demo-spec-label">Length</p>
+              <p class="belle-demo-spec-value">{{ block.settings.length }}</p>
+            </div>
+            {% endif %}
+            {% if block.settings.balance != blank %}
+            <div class="belle-demo-spec">
+              <p class="belle-demo-spec-label">Balance</p>
+              <p class="belle-demo-spec-value">{{ block.settings.balance }}</p>
+            </div>
+            {% endif %}
+            {% if block.settings.beam != blank %}
+            <div class="belle-demo-spec">
+              <p class="belle-demo-spec-label">Beam</p>
+              <p class="belle-demo-spec-value">{{ block.settings.beam }}</p>
+            </div>
+            {% endif %}
+          </div>
+
+          {% if block.settings.best_for != blank %}
+          <div class="belle-demo-racquet-best-for">
+            <p class="belle-demo-racquet-best-for-label">Best For</p>
+            <p class="belle-demo-racquet-best-for-text">{{ block.settings.best_for }}</p>
+          </div>
+          {% endif %}
+
+          <div class="belle-demo-racquet-footer">
+            <span class="belle-demo-racquet-price">Retail ~{{ block.settings.retail_price }}</span>
+            <span class="belle-demo-racquet-free">Free to Demo</span>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- ── Program Details ─────────────────────────── -->
+    {% assign details = section.blocks | where: "type", "detail" %}
+    {% if details.size > 0 %}
+    <div class="belle-demo-details">
+      <h2 class="belle-demo-details-title">{{ section.settings.details_title | default: "Program Details" }}</h2>
+      {% for block in details %}
+      <div class="belle-demo-detail-item" {{ block.shopify_attributes }}>
+        <p class="belle-demo-detail-q">{{ block.settings.question }}</p>
+        <p class="belle-demo-detail-a">{{ block.settings.answer }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Belle's Demo Racquets",
+  "tag": "section",
+  "class": "belle-demo-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "FREE PROGRAM"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Page Title",
+      "default": "Demo Racquet Program"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Try before you commit. Borrow a premium Solinco frame at your next meetup. No cost, no obligation."
+    },
+    {
+      "type": "header",
+      "content": "Program Introduction"
+    },
+    {
+      "type": "richtext",
+      "id": "intro_content",
+      "label": "Introduction Text",
+      "default": "<p><strong>Why demo a racquet?</strong> Because specs on a screen don't tell you how a frame actually feels in your hand. The weight, the balance, the way it responds when you swing. You have to hit with it to know.</p><p>Our demo program is simple: borrow a Solinco frame, take it to practice or a hitting session, and see for yourself. No sales pitch, no pressure. If you like it, we can order one for you. If you don't, just bring it back.</p><p>Every demo racquet is freshly strung with Solinco string so you're feeling the frame at its best, not with dead strings someone left on six months ago.</p>"
+    },
+    {
+      "type": "header",
+      "content": "How It Works"
+    },
+    {
+      "type": "text",
+      "id": "steps_title",
+      "label": "Steps Title",
+      "default": "How It Works"
+    },
+    {
+      "type": "header",
+      "content": "Racquets Section"
+    },
+    {
+      "type": "text",
+      "id": "racquets_title",
+      "label": "Racquets Section Title",
+      "default": "Available Demo Racquets"
+    },
+    {
+      "type": "text",
+      "id": "racquets_desc",
+      "label": "Racquets Section Description",
+      "default": "Each frame is freshly strung and ready to borrow"
+    },
+    {
+      "type": "header",
+      "content": "Program Details"
+    },
+    {
+      "type": "text",
+      "id": "details_title",
+      "label": "Details Section Title",
+      "default": "Program Details"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "How It Works Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step Title",
+          "default": "Step Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Step Description"
+        }
+      ]
+    },
+    {
+      "type": "racquet",
+      "name": "Demo Racquet",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Racquet Image"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge Text",
+          "default": "FREE DEMO"
+        },
+        {
+          "type": "text",
+          "id": "brand",
+          "label": "Brand",
+          "default": "Solinco"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Model Name",
+          "default": "Racquet Name"
+        },
+        {
+          "type": "textarea",
+          "id": "tagline",
+          "label": "Short Description"
+        },
+        {
+          "type": "text",
+          "id": "head_size",
+          "label": "Head Size",
+          "placeholder": "e.g., 98 sq. in."
+        },
+        {
+          "type": "text",
+          "id": "weight",
+          "label": "Weight",
+          "placeholder": "e.g., 305g"
+        },
+        {
+          "type": "text",
+          "id": "pattern",
+          "label": "String Pattern",
+          "placeholder": "e.g., 16×19"
+        },
+        {
+          "type": "text",
+          "id": "length",
+          "label": "Length",
+          "placeholder": "e.g., 27 in."
+        },
+        {
+          "type": "text",
+          "id": "balance",
+          "label": "Balance",
+          "placeholder": "e.g., 4 pts HL"
+        },
+        {
+          "type": "text",
+          "id": "beam",
+          "label": "Beam Width",
+          "placeholder": "e.g., 21.7 mm"
+        },
+        {
+          "type": "textarea",
+          "id": "best_for",
+          "label": "Best For",
+          "placeholder": "e.g., Intermediate to advanced players who want control and spin"
+        },
+        {
+          "type": "text",
+          "id": "retail_price",
+          "label": "Retail Price (display only)",
+          "default": "$229.99"
+        }
+      ]
+    },
+    {
+      "type": "detail",
+      "name": "Program Detail",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question / Label",
+          "default": "Question"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer / Detail"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Belle's Demo Racquets",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "Browse the Frames",
+            "description": "Look through our demo racquets below. Pick one (or two) you want to try."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Book a Demo Racquet Meetup",
+            "description": "Schedule a time and pick a Northland QuikTrip. We'll bring the racquet to you."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Hit With It",
+            "description": "Take it to your next practice or hitting session. Keep it for up to a week. Completely free."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Decide on Your Terms",
+            "description": "Love it? We can order one and string it to your specs. Not for you? Just bring it back. No pressure."
+          }
+        },
+        {
+          "type": "racquet",
+          "settings": {
+            "brand": "Solinco",
+            "name": "Whiteout 305",
+            "tagline": "Control and feel with more free power than you'd expect. Solinco's flagship precision frame, comparable to the Wilson Blade and Babolat Pure Strike.",
+            "head_size": "98 sq. in.",
+            "weight": "305g (10.8 oz)",
+            "pattern": "16×19",
+            "length": "27 in.",
+            "balance": "320 mm",
+            "beam": "21.7 mm",
+            "best_for": "Intermediate to advanced players who want spin, control, and precision without sacrificing power.",
+            "retail_price": "$229.99"
+          }
+        },
+        {
+          "type": "racquet",
+          "settings": {
+            "brand": "Solinco",
+            "name": "Whiteout 290",
+            "tagline": "Same precision frame, lighter swing. Easier to maneuver for faster hands at the net and quicker swing speed from the baseline.",
+            "head_size": "98 sq. in.",
+            "weight": "290g (10.2 oz)",
+            "pattern": "16×19",
+            "length": "27 in.",
+            "balance": "325 mm",
+            "beam": "21.7 mm",
+            "best_for": "All-level players who want the Whiteout feel with a lighter, more maneuverable swing.",
+            "retail_price": "$229.99"
+          }
+        },
+        {
+          "type": "racquet",
+          "settings": {
+            "brand": "Solinco",
+            "name": "Whiteout 305 XTD",
+            "tagline": "Extended-length control frame with extra reach and serve power. The extra half-inch delivers more pop on serves without going full oversized.",
+            "head_size": "98 sq. in.",
+            "weight": "305g (10.8 oz)",
+            "pattern": "16×19",
+            "length": "27.5 in.",
+            "balance": "320 mm",
+            "beam": "21.7 mm",
+            "best_for": "Advanced players wanting extra reach and serve power. Great for two-handed backhand players.",
+            "retail_price": "$229.99"
+          }
+        },
+        {
+          "type": "racquet",
+          "settings": {
+            "brand": "Solinco",
+            "name": "Blackout 300",
+            "tagline": "Easy power and heavy spin in a surprisingly comfortable package. Solinco's power frame. Explosive off the baseline with a plush, arm-friendly feel.",
+            "head_size": "100 sq. in.",
+            "weight": "300g (10.6 oz)",
+            "pattern": "16×19",
+            "length": "27 in.",
+            "balance": "315 mm",
+            "beam": "24/26/22 mm",
+            "best_for": "All-level players who want easy power and spin. Great for baseline players who like to hit big.",
+            "retail_price": "$239.99"
+          }
+        },
+        {
+          "type": "detail",
+          "settings": {
+            "question": "What does it cost?",
+            "answer": "Nothing. The demo itself is completely free. We do require a signed demo agreement and a credit card authorization hold for the retail value of the racquet, which is released as soon as you return it."
+          }
+        },
+        {
+          "type": "detail",
+          "settings": {
+            "question": "Do I need to sign anything?",
+            "answer": "Yes. We ask everyone to sign a short demo agreement and liability waiver at pickup. It covers the basics: return timeline, responsibility for damage or loss, and a standard liability release. Takes about two minutes."
+          }
+        },
+        {
+          "type": "detail",
+          "settings": {
+            "question": "What about the card hold?",
+            "answer": "We place a temporary hold on a credit or debit card for the racquet's retail value. It's an authorization only, not a charge, and it's released the moment you return the racquet. This is standard for any demo program and protects the equipment so we can keep offering it for free."
+          }
+        },
+        {
+          "type": "detail",
+          "settings": {
+            "question": "How long can I keep it?",
+            "answer": "Up to one week. That gives you time to hit with it in a real practice session or match, not just a five-minute demo on a store's mini court."
+          }
+        },
+        {
+          "type": "detail",
+          "settings": {
+            "question": "What strings are on the demo racquets?",
+            "answer": "Each demo is strung with Solinco string at a mid-range tension so you can feel what the frame actually plays like. If you want to try a specific string or tension, let us know when you book."
+          }
+        },
+        {
+          "type": "detail",
+          "settings": {
+            "question": "Can I demo while my racquet is being strung?",
+            "answer": "Absolutely. That's one of the main reasons the program exists. Drop off your racquet for stringing and borrow a demo so you never miss practice."
+          }
+        },
+        {
+          "type": "detail",
+          "settings": {
+            "question": "What if I want to buy one?",
+            "answer": "We can order any Solinco racquet through our wholesale account and have it strung to your consistent specifications before you pick it up. Same local meetup, same personal service."
+          }
+        },
+        {
+          "type": "detail",
+          "settings": {
+            "question": "Where do I pick up / return the demo?",
+            "answer": "Same as our stringing meetups, at a convenient QuikTrip or public location in the Northland. We'll coordinate a time and spot that works for you."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

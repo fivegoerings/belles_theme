@@ -1,0 +1,180 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "belle-gallery-section",
+      "blocks": {
+        "cat_racquets": {
+          "type": "category_heading",
+          "settings": {
+            "heading": "Strung Racquets",
+            "icon": "racquet"
+          }
+        },
+        "racquet_image_fdzp34": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_1264.heic",
+            "title": "",
+            "description": ""
+          }
+        },
+        "racquet_image_dMxMdd": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_46FEE689-76C9-4A71-AD25-74294B4E303D.jpg",
+            "title": "",
+            "description": ""
+          }
+        },
+        "racquet_image_ng84UG": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_1298.heic",
+            "title": "",
+            "description": ""
+          }
+        },
+        "racquet_image_dJXcf9": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_1283.heic",
+            "title": "",
+            "description": ""
+          }
+        },
+        "racquet_image_paq66V": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_1284.heic",
+            "title": "",
+            "description": ""
+          }
+        },
+        "racquet_image_jQCaKG": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_1262.heic",
+            "title": "",
+            "description": ""
+          }
+        },
+        "racquet_image_iWzeWA": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/07194F27-0BED-4E6A-AF28-9D37F2252A33.png",
+            "title": "",
+            "description": ""
+          }
+        },
+        "racquet_image_QgFy3G": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_45AC.jpg",
+            "title": "",
+            "description": ""
+          }
+        },
+        "racquet_image_7V8wY6": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_1335.heic",
+            "title": "",
+            "description": ""
+          }
+        },
+        "cat_equipment": {
+          "type": "category_heading",
+          "settings": {
+            "heading": "Our Equipment",
+            "icon": "equipment"
+          }
+        },
+        "equipment_image_A4RgY7": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_1255.heic",
+            "title": "",
+            "description": ""
+          }
+        },
+        "equipment_image_mNrmBp": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0709.jpg",
+            "title": "",
+            "description": ""
+          }
+        },
+        "equipment_image_PxNrqC": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/IMG-1256.heic",
+            "title": "",
+            "description": ""
+          }
+        },
+        "equipment_image_qc3w6y": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/IMG-1257.heic",
+            "title": "",
+            "description": ""
+          }
+        },
+        "equipment_image_KVKX8T": {
+          "type": "gallery_image",
+          "settings": {
+            "image": "shopify://shop_images/IMG-1258.heic",
+            "title": "",
+            "description": ""
+          }
+        }
+      },
+      "block_order": [
+        "cat_racquets",
+        "racquet_image_fdzp34",
+        "racquet_image_dMxMdd",
+        "racquet_image_ng84UG",
+        "racquet_image_dJXcf9",
+        "racquet_image_paq66V",
+        "racquet_image_jQCaKG",
+        "racquet_image_iWzeWA",
+        "racquet_image_QgFy3G",
+        "racquet_image_7V8wY6",
+        "cat_equipment",
+        "equipment_image_A4RgY7",
+        "equipment_image_mNrmBp",
+        "equipment_image_PxNrqC",
+        "equipment_image_qc3w6y",
+        "equipment_image_KVKX8T"
+      ],
+      "settings": {
+        "title": "From Our Shop",
+        "subtitle": "Racquets strung here in the Northland. These photos show actual stringing work, equipment, and finished racquets."
+      }
+    },
+    "cta_inline_BNtYXY": {
+      "type": "cta-inline",
+      "name": "CTA Inline",
+      "settings": {
+        "cta_heading": "Book a Northland Drop-Off",
+        "cta_description": "Choose a Northland QuikTrip drop-off time. Most racquets are ready in 2\u20133 days.",
+        "schedule_button_text": "Book Racquet Stringing",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=gallery_bottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cta_inline_BNtYXY"
+  ]
+}

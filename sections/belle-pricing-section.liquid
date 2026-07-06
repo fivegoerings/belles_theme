@@ -1,0 +1,1003 @@
+{% comment %}
+  Belle's Performance Tennis — Pricing Section
+  v5.0 — June 2026
+  Full restructure per roast recommendations:
+    1. Hero: price anchor + checkmarks + killer sentence + CTA
+    2. 3 turnaround tier cards (speed first, string second)
+    3. Not sure what string? section
+    4. Real customer examples
+    5. What You Get With Belle's + stringer callout
+    5b. Why not big-box / club
+    6. Detailed pricing table
+    7. What happens to your racquet
+    8. Bottom CTA
+{% endcomment %}
+
+<style>
+  .bp-pricing {
+    --bp-green: #1a3c2a;
+    --bp-gold: #c8a951;
+    --bp-border: #e5e5e5;
+    --bp-text: #1a1a1a;
+    --bp-muted: #666;
+    --bp-bg: #faf9f6;
+    --bp-white: #ffffff;
+    --bp-light-green: #f4f8f5;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 40px 20px;
+    background: var(--bp-bg);
+  }
+
+  .bp-container {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* ── 1. HERO ── */
+  .bp-hero {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+
+  /* SEO h1 — in DOM for search, visually secondary */
+  .bp-hero h1 {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--bp-muted);
+    letter-spacing: 0.03em;
+    margin: 0 0 14px;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  /* Hook question — leads the eye */
+  .bp-hero-hook {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--bp-text);
+    margin: 0 0 16px;
+    line-height: 1.3;
+  }
+
+  /* Price card — dark green, high contrast */
+  .bp-price-card {
+    background: var(--bp-green);
+    border-radius: 12px;
+    padding: 28px 24px 22px;
+    margin-bottom: 14px;
+  }
+
+  .bp-price-eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bp-gold);
+    margin: 0 0 2px;
+    opacity: 0.9;
+  }
+
+  /* THE number — 2x everything else */
+  .bp-price-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    color: #ffffff;
+    margin: 0 0 2px;
+    line-height: 1;
+    letter-spacing: 1px;
+  }
+
+  .bp-price-suffix {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    margin: 0 0 20px;
+    letter-spacing: 0.02em;
+  }
+
+  /* Compressed single-line bullets inside card */
+  .bp-hero-checks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 18px;
+    margin-bottom: 20px;
+  }
+
+  .bp-hero-check {
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .bp-hero-check svg {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    color: var(--bp-gold);
+  }
+
+  /* CTA inside card — gold */
+  .bp-cta-gold {
+    display: block;
+    background: var(--bp-gold);
+    color: var(--bp-green);
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    font-weight: 400;
+    transition: opacity 0.15s;
+  }
+
+  .bp-cta-gold:hover {
+    opacity: 0.88;
+    color: var(--bp-green);
+  }
+
+  /* Northland tagline — below card, smaller */
+  .bp-hero-tagline {
+    font-size: 13px;
+    color: var(--bp-muted);
+    line-height: 1.6;
+    max-width: 520px;
+    margin: 0 auto;
+    font-style: italic;
+  }
+
+  /* CTA */
+  .bp-cta {
+    display: block;
+    background: var(--bp-green);
+    color: var(--bp-gold);
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    transition: opacity 0.15s;
+  }
+
+  .bp-cta:hover {
+    opacity: 0.88;
+    color: var(--bp-gold);
+  }
+
+  /* ── 2. TURNAROUND TIERS ── */
+  .bp-tiers-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    color: var(--bp-green);
+    margin: 0 0 14px;
+    letter-spacing: 1px;
+  }
+
+  .bp-tiers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  .bp-tier-card {
+    background: var(--bp-white);
+    border: 1px solid var(--bp-border);
+    border-radius: 12px;
+    padding: 20px 18px;
+  }
+
+  .bp-tier-card--featured {
+    border: 2px solid var(--bp-green);
+    background: var(--bp-light-green);
+  }
+
+  .bp-tier-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--bp-text);
+    margin: 0 0 6px;
+  }
+
+  .bp-tier-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--bp-green);
+    margin: 0 0 4px;
+    line-height: 1.1;
+  }
+
+  /* "Starting at" label — half the price size */
+  .bp-tier-price-label {
+    font-size: 16px;
+    display: block;
+    letter-spacing: 0.5px;
+  }
+
+  .bp-tier-tagline {
+    font-size: 13px;
+    color: var(--bp-muted);
+    margin: 0 0 10px;
+  }
+
+  .bp-tier-detail {
+    font-size: 13px;
+    color: var(--bp-muted);
+    margin: 0 0 4px;
+  }
+
+  .bp-tier-note {
+    font-size: 12px;
+    color: var(--bp-muted);
+    font-style: italic;
+    margin: 10px 0 0;
+    line-height: 1.5;
+    padding-top: 10px;
+    border-top: 1px solid var(--bp-border);
+  }
+
+  /* ── 3. NOT SURE? ── */
+  .bp-not-sure {
+    background: var(--bp-white);
+    border: 1px solid var(--bp-border);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 32px;
+  }
+
+  .bp-not-sure h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    color: var(--bp-green);
+    margin: 0 0 6px;
+    letter-spacing: 1px;
+  }
+
+  .bp-not-sure-intro {
+    font-size: 15px;
+    color: var(--bp-muted);
+    margin: 0 0 14px;
+  }
+
+  .bp-not-sure-list {
+    font-size: 14px;
+    color: var(--bp-text);
+    margin: 0 0 14px;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .bp-not-sure-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .bp-not-sure-list li svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    color: var(--bp-green);
+    margin-top: 3px;
+  }
+
+  .bp-not-sure-sub {
+    font-size: 13px;
+    color: var(--bp-muted);
+    margin: 0 0 6px;
+    padding-left: 22px;
+  }
+
+  .bp-not-sure-sub span {
+    display: inline-block;
+    background: var(--bp-light-green);
+    color: var(--bp-green);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin: 3px 3px 0 0;
+  }
+
+  .bp-not-sure-close {
+    font-size: 14px;
+    color: var(--bp-text);
+    margin: 0;
+    font-weight: 600;
+  }
+
+  /* ── 4. CUSTOMER EXAMPLES ── */
+  .bp-section-label {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--bp-muted);
+    margin: 0 0 12px;
+  }
+
+  .bp-examples {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 32px;
+  }
+
+  .bp-example-card {
+    background: var(--bp-white);
+    border: 1px solid var(--bp-border);
+    border-radius: 12px;
+    padding: 18px;
+  }
+
+  .bp-example-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--bp-gold);
+    margin: 0 0 8px;
+  }
+
+  .bp-example-racquet {
+    font-size: 13px;
+    color: var(--bp-muted);
+    margin: 0 0 2px;
+  }
+
+  .bp-example-speed {
+    font-size: 13px;
+    color: var(--bp-muted);
+    margin: 0 0 14px;
+  }
+
+  .bp-example-total-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--bp-muted);
+    margin: 0 0 2px;
+  }
+
+  .bp-example-total {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--bp-green);
+    margin: 0;
+    line-height: 1;
+  }
+
+  /* ── 5. WHAT YOU GET / WHY BELLE'S ── */
+  .bp-why {
+    background: var(--bp-white);
+    border: 1px solid var(--bp-border);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+  }
+
+  .bp-why h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: var(--bp-green);
+    margin: 0 0 8px;
+    letter-spacing: 1px;
+  }
+
+  .bp-why-intro {
+    font-size: 15px;
+    color: var(--bp-muted);
+    margin: 0 0 14px;
+  }
+
+  .bp-why-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+  }
+
+  .bp-why-list li {
+    font-size: 14px;
+    color: var(--bp-text);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .bp-why-list li svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    color: var(--bp-green);
+    margin-top: 3px;
+  }
+
+  /* Stringer callout — elevated personal statement */
+  .bp-stringer-callout {
+    background: var(--bp-green);
+    border-radius: 8px;
+    padding: 16px 20px;
+  }
+
+  .bp-stringer-callout p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .bp-stringer-callout p strong {
+    color: var(--bp-gold);
+    display: block;
+    font-size: 17px;
+    margin-bottom: 4px;
+  }
+
+  /* Why not big-box section */
+  .bp-why-not {
+    background: var(--bp-white);
+    border: 1px solid var(--bp-border);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 32px;
+  }
+
+  .bp-why-not h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--bp-green);
+    margin: 0 0 14px;
+    letter-spacing: 1px;
+  }
+
+  .bp-why-not-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .bp-why-not-list li {
+    font-size: 14px;
+    color: var(--bp-text);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .bp-why-not-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  .bp-why-not-list li svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    color: var(--bp-green);
+    margin-top: 3px;
+  }
+
+  /* ── 6. TABLE ── */
+  .bp-table-wrap {
+    background: var(--bp-white);
+    border: 1px solid var(--bp-border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+
+  .bp-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    table-layout: fixed;
+  }
+
+  .bp-table thead th {
+    background: var(--bp-green);
+    color: rgba(255,255,255,0.9);
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 10px 14px;
+    text-align: left;
+  }
+
+  .bp-table thead th:not(:first-child) {
+    text-align: center;
+    border-left: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .bp-table tbody tr {
+    border-bottom: 1px solid var(--bp-border);
+  }
+
+  .bp-table tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  .bp-table tbody tr.bp-row-highlight {
+    background: var(--bp-light-green);
+  }
+
+  .bp-table td {
+    padding: 12px 14px;
+    color: var(--bp-text);
+    vertical-align: middle;
+  }
+
+  .bp-table td:not(:first-child) {
+    text-align: center;
+    border-left: 1px solid var(--bp-border);
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--bp-green);
+  }
+
+  .bp-string-plain {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--bp-green);
+    margin-bottom: 2px;
+  }
+
+  .bp-string-name {
+    font-weight: 600;
+    color: var(--bp-text);
+    margin-bottom: 2px;
+  }
+
+  .bp-string-desc {
+    font-size: 12px;
+    color: var(--bp-muted);
+  }
+
+  .bp-turnaround-note {
+    font-size: 12px;
+    color: var(--bp-muted);
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  /* ── 7. WHAT HAPPENS ── */
+  .bp-includes {
+    background: var(--bp-white);
+    border: 1px solid var(--bp-border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+  }
+
+  .bp-includes h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--bp-text);
+    margin: 0 0 14px;
+  }
+
+  .bp-includes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 20px;
+  }
+
+  .bp-includes-item {
+    font-size: 14px;
+    color: var(--bp-muted);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .bp-includes-item svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    color: var(--bp-green);
+    margin-top: 3px;
+  }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .bp-price-number { font-size: 56px; }
+    .bp-hero-hook { font-size: 18px; }
+    .bp-hero-checks { flex-direction: column; align-items: center; }
+
+    .bp-tiers,
+    .bp-examples {
+      grid-template-columns: 1fr;
+    }
+
+    .bp-includes-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .bp-table td,
+    .bp-table thead th {
+      padding: 10px;
+      font-size: 13px;
+    }
+  }
+</style>
+
+<div class="bp-pricing">
+  <div class="bp-container">
+    <!-- 1. HERO -->
+    <div class="bp-hero">
+      <h1>{{ section.settings.title }}</h1>
+
+      <p class="bp-hero-hook">Need your racquet ready for your next match?</p>
+
+      <div class="bp-price-card">
+        <p class="bp-price-eyebrow">Standard restrings usually run</p>
+        <p class="bp-price-number">$40&ndash;$55</p>
+        <p class="bp-price-suffix">labor &amp; strings included</p>
+
+        <div class="bp-hero-checks">
+          <span class="bp-hero-check">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Strings in stock
+          </span>
+          <span class="bp-hero-check">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            2&ndash;3 day turnaround
+          </span>
+          <span class="bp-hero-check">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Same-day when available
+          </span>
+          <span class="bp-hero-check">
+            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            No deposit
+          </span>
+        </div>
+
+        <a
+          href="https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=pricing_top"
+          class="bp-cta-gold"
+        >
+          Book Appointment
+        </a>
+      </div>
+
+      <p class="bp-hero-tagline">
+        Northland players shouldn&rsquo;t have to drive to Johnson County or leave a racquet at a retail counter just to
+        get a quality restring.
+      </p>
+    </div>
+
+    <!-- 2. TURNAROUND TIERS -->
+    <p class="bp-tiers-heading">Choose Your Turnaround</p>
+    <div class="bp-tiers">
+      <div class="bp-tier-card bp-tier-card--featured">
+        <p class="bp-tier-name">Standard Service</p>
+        <p class="bp-tier-price"><span class="bp-tier-price-label">Starting at</span>$40</p>
+        <p class="bp-tier-tagline">Most popular option</p>
+        <p class="bp-tier-detail">2&ndash;3 day turnaround</p>
+      </div>
+
+      <div class="bp-tier-card">
+        <p class="bp-tier-name">Next-Day Service</p>
+        <p class="bp-tier-price"><span class="bp-tier-price-label">Starting at</span>$55</p>
+        <p class="bp-tier-tagline">Includes $15 rush fee</p>
+        <p class="bp-tier-detail">When schedule allows</p>
+      </div>
+
+      <div class="bp-tier-card">
+        <p class="bp-tier-name">Same-Day Rush</p>
+        <p class="bp-tier-price"><span class="bp-tier-price-label">Starting at</span>$70</p>
+        <p class="bp-tier-tagline">Includes $30 rush fee</p>
+        <p class="bp-tier-detail">Very limited - when schedule allows</p>
+      </div>
+    </div>
+
+    <!-- 3. NOT SURE? -->
+    <div class="bp-not-sure">
+      <h2>Not Sure What String You Need?</h2>
+      <p class="bp-not-sure-intro">Most customers aren&rsquo;t sure &mdash; and that&rsquo;s normal.</p>
+      <ul class="bp-not-sure-list">
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          What you use now
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          How often you play
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          What you want more of
+        </li>
+      </ul>
+      <p class="bp-not-sure-sub">
+        <span>Power</span>
+        <span>Control</span>
+        <span>Comfort</span>
+        <span>Spin</span>
+      </p>
+      <p class="bp-not-sure-close">Bring your racquet. We&rsquo;ll help you choose a setup.</p>
+    </div>
+
+    <!-- 4. REAL CUSTOMER EXAMPLES -->
+    <p class="bp-section-label">Real Customer Examples</p>
+    <div class="bp-examples">
+      <div class="bp-example-card">
+        <p class="bp-example-label">Standard Restring</p>
+        <p class="bp-example-racquet">Wilson Blade + synthetic gut</p>
+        <p class="bp-example-speed">Standard turnaround</p>
+        <p class="bp-example-total-label">Total</p>
+        <p class="bp-example-total">$40</p>
+      </div>
+
+      <div class="bp-example-card">
+        <p class="bp-example-label">Next-Day Performance Setup</p>
+        <p class="bp-example-racquet">Pure Aero + Solinco Hyper-G</p>
+        <p class="bp-example-speed">Next-day turnaround</p>
+        <p class="bp-example-total-label">Total</p>
+        <p class="bp-example-total">$70</p>
+      </div>
+
+      <div class="bp-example-card">
+        <p class="bp-example-label">Same-Day Restring + Grip</p>
+        <p class="bp-example-racquet">Ezone + poly restring + grip</p>
+        <p class="bp-example-speed">Same-day turnaround</p>
+        <p class="bp-example-total-label">Total</p>
+        <p class="bp-example-total">~$90</p>
+      </div>
+    </div>
+
+    <!-- 5. WHAT YOU GET WITH BELLE'S -->
+    <div class="bp-why">
+      <h2>What You Get With Belle&rsquo;s</h2>
+      <p class="bp-why-intro">You&rsquo;re not paying for just strings. You&rsquo;re paying for:</p>
+      <ul class="bp-why-list">
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Direct communication with the actual stringer
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Appointment-based drop-off at a convenient Northland location
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Consistent tension on an electronic constant-pull machine
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          String, tension, and racquet notes saved for future restrings
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Rush service when you need it
+        </li>
+      </ul>
+
+      <div class="bp-stringer-callout">
+        <p>
+          <strong>I string every racquet myself.</strong>Your string, tension, and setup notes are saved for future
+          restrings &mdash; so every job is consistent, not a fresh start.
+        </p>
+      </div>
+    </div>
+
+    <!-- 5b. WHY NOT BIG-BOX OR CLUB -->
+    <div class="bp-why-not">
+      <h2>Why Players Choose Belle&rsquo;s Over Big-Box Stores or Club Stringers</h2>
+      <ul class="bp-why-not-list">
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          No shipping your racquet off or waiting a week to get it back
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          No guessing who&rsquo;s actually touching your frame &mdash; same stringer every time
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Your setup is saved so your next restring picks up exactly where the last one ended
+        </li>
+      </ul>
+    </div>
+
+    <!-- 6. DETAILED PRICING TABLE -->
+    <p class="bp-section-label">Detailed Pricing</p>
+    <div class="bp-table-wrap">
+      <table class="bp-table">
+        <thead>
+          <tr>
+            <th style="width: 44%">String type</th>
+            <th>
+              Standard<br>
+              <span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;">2&ndash;3 days</span>
+            </th>
+            <th>
+              Express<br>
+              <span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;">next day</span>
+            </th>
+            <th>
+              Rush<br>
+              <span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;">same day</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="bp-row-highlight">
+            <td>
+              <div class="bp-string-plain">All-around, easy choice</div>
+              <div class="bp-string-name">Synthetic gut</div>
+              <div class="bp-string-desc">Durable, comfortable feel</div>
+            </td>
+            <td>$40</td>
+            <td>$55</td>
+            <td>$70</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="bp-string-plain">Easier on your arm</div>
+              <div class="bp-string-name">Multifilament</div>
+              <div class="bp-string-desc">Softer feel, good for sensitive elbows</div>
+            </td>
+            <td>$48</td>
+            <td>$63</td>
+            <td>$78</td>
+          </tr>
+          <tr class="bp-row-highlight">
+            <td>
+              <div class="bp-string-plain">More spin and control</div>
+              <div class="bp-string-name">Polyester</div>
+              <div class="bp-string-desc">Solinco Hyper-G, Tour Bite, Confidential &amp; more</div>
+            </td>
+            <td>$55</td>
+            <td>$70</td>
+            <td>$85</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="bp-string-plain">Premium feel and power</div>
+              <div class="bp-string-name">Natural gut</div>
+              <div class="bp-string-desc">Price varies by string selected</div>
+            </td>
+            <td>$60+</td>
+            <td>$75+</td>
+            <td>$90+</td>
+          </tr>
+          <tr class="bp-row-highlight">
+            <td>
+              <div class="bp-string-plain">You provide the string</div>
+              <div class="bp-string-name">Bring your own string</div>
+            </td>
+            <td colspan="3">Quote Required</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="bp-turnaround-note">
+      <span>All prices include labor &amp; string.</span>
+      <span>No deposit. Pay when your racquet is ready.</span>
+      <span>Express &amp; Rush subject to availability.</span>
+      <span>Sales tax applies to the string portion of your order.</span>
+    </div>
+
+    <!-- 7. WHAT HAPPENS TO YOUR RACQUET -->
+    <div class="bp-includes">
+      <h3>What happens to your racquet</h3>
+      <div class="bp-includes-grid">
+        <div class="bp-includes-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Old strings removed and discarded
+        </div>
+        <div class="bp-includes-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Frame inspected before stringing starts
+        </div>
+        <div class="bp-includes-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          New strings installed at your requested tension
+        </div>
+        <div class="bp-includes-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          String bed straightened and checked
+        </div>
+        <div class="bp-includes-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          String type and tension labeled on frame
+        </div>
+        <div class="bp-includes-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Setup logged &mdash; we remember your specs next time
+        </div>
+        <div class="bp-includes-item" style="grid-column: span 2;">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Free Solinco demo racquet while yours is being strung
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. BOTTOM CTA -->
+    <a
+      href="https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=pricing_bottom"
+      class="bp-cta"
+    >
+      Book Appointment
+    </a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Belle's Pricing",
+  "tag": "section",
+  "class": "belle-pricing-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Page title",
+      "default": "Racquet Stringing Pricing — Kansas City Northland"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Belle's Pricing"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,31 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "belle_footer_4KzAT7": {
+      "type": "belle-footer",
+      "name": "Belle's Footer",
+      "settings": {
+        "footer_logo": "shopify://shop_images/belles_logo_cymk.webp",
+        "usrsa_logo": "shopify://shop_images/usrsa-color-423.webp",
+        "footer_tagline": "Racquet Stringing for Kansas City Northland Players",
+        "footer_value_prop": "Drop off at a Northland QuikTrip. Most racquets are ready in 2–3 days. Strung by a USRSA member.",
+        "footer_email": "sales@bellesperformancetennis.com",
+        "quick_links_menu": "footer-quick-links",
+        "show_gallery_link": true
+      }
+    }
+  },
+  "order": [
+    "belle_footer_4KzAT7"
+  ]
+}

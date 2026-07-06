@@ -1,0 +1,353 @@
+/* Belle's Performance Tennis - FAQ Section Styles */
+
+.belle-faq {
+  --belle-green: #1a3c2a;
+  --belle-gold: #c8a951;
+  --belle-cream: #faf9f6;
+  --belle-charcoal: #2d2d2d;
+  --belle-light: #f8f8f8;
+  --belle-border: #e0e0e0;
+
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 60px 20px;
+  background: linear-gradient(180deg, var(--belle-cream) 0%, #fff 100%);
+}
+
+.belle-faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Header */
+.belle-faq-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.belle-faq-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  color: var(--belle-green);
+  margin: 0 0 12px 0;
+  letter-spacing: 2px;
+}
+
+.belle-faq-subtitle {
+  font-size: 18px;
+  color: #666;
+  margin: 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Category Section */
+.belle-faq-category {
+  margin-bottom: 40px;
+}
+
+.belle-faq-category-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: var(--belle-green);
+  margin: 0 0 20px 0;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--belle-gold);
+}
+
+.belle-faq-category-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--belle-green) 0%, #2a5a3a 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.belle-faq-category-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--belle-gold);
+}
+
+/* FAQ List */
+.belle-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* FAQ Item */
+.belle-faq-item {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.belle-faq-item:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.belle-faq-details {
+  width: 100%;
+}
+
+.belle-faq-details summary {
+  list-style: none;
+}
+
+.belle-faq-details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Question (Summary) */
+.belle-faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  cursor: pointer;
+  gap: 16px;
+  transition: background 0.2s ease;
+}
+
+.belle-faq-question:hover {
+  background: var(--belle-light);
+}
+
+.belle-faq-question-text {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--belle-charcoal);
+  line-height: 1.4;
+  flex: 1;
+}
+
+.belle-faq-icon {
+  width: 28px;
+  height: 28px;
+  background: var(--belle-green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.belle-faq-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+}
+
+.belle-faq-icon-plus {
+  display: block;
+}
+
+.belle-faq-icon-minus {
+  display: none;
+}
+
+.belle-faq-details[open] .belle-faq-icon {
+  background: var(--belle-gold);
+  transform: rotate(180deg);
+}
+
+.belle-faq-details[open] .belle-faq-icon-plus {
+  display: none;
+}
+
+.belle-faq-details[open] .belle-faq-icon-minus {
+  display: block;
+}
+
+/* Answer */
+.belle-faq-answer {
+  padding: 0 24px 24px 24px;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  border-top: 1px solid var(--belle-border);
+  margin-top: 0;
+  padding-top: 20px;
+}
+
+.belle-faq-answer p {
+  margin: 0 0 12px 0;
+}
+
+.belle-faq-answer p:last-child {
+  margin-bottom: 0;
+}
+
+.belle-faq-answer ul,
+.belle-faq-answer ol {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+.belle-faq-answer li {
+  margin-bottom: 8px;
+}
+
+.belle-faq-answer a {
+  color: var(--belle-green);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.belle-faq-answer a:hover {
+  color: var(--belle-gold);
+}
+
+/* Contact CTA */
+.belle-faq-contact {
+  margin-top: 50px;
+  background: linear-gradient(135deg, var(--belle-green) 0%, #2a5a3a 100%);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.belle-faq-contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--belle-gold);
+}
+
+.belle-faq-contact-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  color: white;
+  margin: 0 0 12px 0;
+  letter-spacing: 1px;
+}
+
+.belle-faq-contact-text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 17px;
+  margin: 0 0 24px 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.belle-faq-contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.belle-faq-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.belle-faq-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.belle-faq-btn-primary {
+  background: var(--belle-gold);
+  color: var(--belle-green);
+}
+
+.belle-faq-btn-primary svg {
+  fill: var(--belle-green);
+}
+
+.belle-faq-btn-primary:hover {
+  background: #ddb632;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.belle-faq-btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.belle-faq-btn-secondary svg {
+  fill: white;
+}
+
+.belle-faq-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .belle-faq {
+    padding: 40px 16px;
+  }
+
+  .belle-faq-title {
+    font-size: 36px;
+  }
+
+  .belle-faq-subtitle {
+    font-size: 16px;
+  }
+
+  .belle-faq-category-title {
+    font-size: 24px;
+  }
+
+  .belle-faq-question {
+    padding: 16px 20px;
+  }
+
+  .belle-faq-question-text {
+    font-size: 15px;
+  }
+
+  .belle-faq-answer {
+    padding: 0 20px 20px 20px;
+    font-size: 15px;
+  }
+
+  .belle-faq-contact {
+    padding: 30px 24px;
+  }
+
+  .belle-faq-contact-title {
+    font-size: 26px;
+  }
+
+  .belle-faq-contact-text {
+    font-size: 15px;
+  }
+
+  .belle-faq-btn {
+    padding: 12px 20px;
+    font-size: 14px;
+    width: 100%;
+    justify-content: center;
+  }
+}

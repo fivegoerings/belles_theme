@@ -1,0 +1,403 @@
+{% comment %}
+  Belle's Performance Tennis - Lessons Section
+  Version: 1.0 | June 2026
+
+  Purpose: Promote tennis instruction services by Ella Gates, a Missouri
+  Western State University player and Staley High School alumna. Players
+  can book private lessons, small groups, or match play coaching.
+
+  Added to page stack (page.events.json):
+    1. belle-city-hero (page header)
+    2. belle-lessons-section (this file - NEW)
+    3. belle-events-section (KC Summer Slam Series)
+    4. cta-inline (booking CTA)
+
+  Managing: Theme editor > Lessons section > Edit.
+{% endcomment %}
+
+<style>
+.belle-lessons-section {
+  --belle-green: #1a3c2a;
+  --belle-gold: #c8a951;
+  --belle-gold-dim: #a08838;
+  --belle-cream: #faf9f6;
+  background: #fff;
+  padding: 60px 24px;
+}
+
+.belle-lessons-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.belle-lessons-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.belle-lessons-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  color: var(--belle-green);
+  margin: 0 0 8px;
+  letter-spacing: 1.5px;
+}
+
+.belle-lessons-header p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Main lessons grid ── */
+.belle-lessons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+/* ── Instructor profile ── */
+.belle-instructor-card {
+  background: var(--belle-cream);
+  border-radius: 8px;
+  padding: 32px 28px;
+  border-left: 4px solid var(--belle-gold);
+}
+
+.belle-instructor-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: var(--belle-green);
+  margin: 0 0 4px;
+  letter-spacing: 0.5px;
+}
+
+.belle-instructor-title {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--belle-gold-dim);
+  margin: 0 0 20px;
+}
+
+.belle-credentials-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+}
+
+.belle-credentials-list li {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 8px;
+  padding-left: 24px;
+  position: relative;
+}
+
+.belle-credentials-list li:before {
+  content: "▪";
+  position: absolute;
+  left: 0;
+  color: var(--belle-gold);
+  font-weight: 700;
+}
+
+.belle-instructor-cta {
+  display: inline-block;
+  background: var(--belle-green);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.belle-instructor-cta:hover {
+  background-color: var(--belle-gold-dim);
+  text-decoration: none;
+}
+
+/* ── Lessons info column ── */
+.belle-lessons-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Info box (dates, types, locations) ── */
+.belle-lesson-info-box {
+  background: var(--belle-cream);
+  border-radius: 8px;
+  padding: 24px;
+  border-top: 3px solid var(--belle-green);
+}
+
+.belle-lesson-info-box h3 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--belle-gold-dim);
+  margin: 0 0 12px;
+}
+
+.belle-lesson-info-box p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.belle-lesson-info-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.belle-lesson-info-box li {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 6px;
+}
+
+.belle-lesson-info-box li:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Lesson types ── */
+.belle-lesson-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.belle-lesson-type-tag {
+  background: #fff;
+  border: 1px solid var(--belle-green);
+  color: var(--belle-green);
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .belle-lessons-section {
+    padding: 40px 16px;
+  }
+  
+  .belle-lessons-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .belle-lessons-header h2 {
+    font-size: 28px;
+  }
+}
+</style>
+
+<div class="belle-lessons-section">
+  <div class="belle-lessons-container">
+
+    <div class="belle-lessons-header">
+      <h2>{{ section.settings.section_title }}</h2>
+      {%- if section.settings.section_subtitle != blank -%}
+        <p>{{ section.settings.section_subtitle }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="belle-lessons-grid">
+
+      <!-- Instructor Profile Column -->
+      <div class="belle-instructor-card">
+        <h3 class="belle-instructor-name">{{ section.settings.instructor_name }}</h3>
+        <div class="belle-instructor-title">Tennis Instructor</div>
+        
+        <ul class="belle-credentials-list">
+          <li>{{ section.settings.credential_1 }}</li>
+          <li>{{ section.settings.credential_2 }}</li>
+          <li>{{ section.settings.credential_3 }}</li>
+          <li>{{ section.settings.credential_4 }}</li>
+        </ul>
+
+        <a href="mailto:{{ section.settings.instructor_email }}" class="belle-instructor-cta">
+          Schedule Now
+        </a>
+      </div>
+
+      <!-- Lessons Info Column -->
+      <div class="belle-lessons-info">
+
+        <!-- Lesson Types -->
+        <div class="belle-lesson-info-box">
+          <h3>Lesson Types</h3>
+          <div class="belle-lesson-types">
+            {%- if section.settings.lesson_type_1 != blank -%}
+              <span class="belle-lesson-type-tag">{{ section.settings.lesson_type_1 }}</span>
+            {%- endif -%}
+            {%- if section.settings.lesson_type_2 != blank -%}
+              <span class="belle-lesson-type-tag">{{ section.settings.lesson_type_2 }}</span>
+            {%- endif -%}
+            {%- if section.settings.lesson_type_3 != blank -%}
+              <span class="belle-lesson-type-tag">{{ section.settings.lesson_type_3 }}</span>
+            {%- endif -%}
+          </div>
+        </div>
+
+        <!-- Dates & Availability -->
+        <div class="belle-lesson-info-box">
+          <h3>Dates & Availability</h3>
+          <p>{{ section.settings.date_range }}</p>
+          <p>{{ section.settings.scheduling_window }}</p>
+        </div>
+
+        <!-- Court Locations -->
+        <div class="belle-lesson-info-box">
+          <h3>Court Locations</h3>
+          <ul>
+            {%- if section.settings.location_1 != blank -%}
+              <li>{{ section.settings.location_1 }}</li>
+            {%- endif -%}
+            {%- if section.settings.location_2 != blank -%}
+              <li>{{ section.settings.location_2 }}</li>
+            {%- endif -%}
+            {%- if section.settings.location_3 != blank -%}
+              <li>{{ section.settings.location_3 }}</li>
+            {%- endif -%}
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Lessons",
+  "tag": "section",
+  "class": "section-belle-lessons",
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section Title",
+      "default": "Summer Tennis Lessons"
+    },
+    {
+      "type": "text",
+      "id": "section_subtitle",
+      "label": "Section Subtitle",
+      "default": "Get expert instruction from a competitive college player."
+    },
+    {
+      "type": "text",
+      "id": "instructor_name",
+      "label": "Instructor Name",
+      "default": "Ella Gates"
+    },
+    {
+      "type": "text",
+      "id": "instructor_email",
+      "label": "Instructor Email Address",
+      "default": "ellagatestennis@gmail.com"
+    },
+    {
+      "type": "textarea",
+      "id": "credential_1",
+      "label": "Credential 1",
+      "default": "Scholarship tennis player at Missouri Western State University"
+    },
+    {
+      "type": "textarea",
+      "id": "credential_2",
+      "label": "Credential 2",
+      "default": "2025 ITA Division II Central Regional Flight B Singles Champion"
+    },
+    {
+      "type": "textarea",
+      "id": "credential_3",
+      "label": "Credential 3",
+      "default": "Staley High School varsity MVP and school record holder (133 career wins)"
+    },
+    {
+      "type": "textarea",
+      "id": "credential_4",
+      "label": "Credential 4",
+      "default": "3x state finalist and 3x individual conference champion"
+    },
+    {
+      "type": "text",
+      "id": "lesson_type_1",
+      "label": "Lesson Type 1",
+      "default": "Private Lessons"
+    },
+    {
+      "type": "text",
+      "id": "lesson_type_2",
+      "label": "Lesson Type 2",
+      "default": "Small Groups"
+    },
+    {
+      "type": "text",
+      "id": "lesson_type_3",
+      "label": "Lesson Type 3",
+      "default": "Match Play"
+    },
+    {
+      "type": "text",
+      "id": "date_range",
+      "label": "Date Range",
+      "default": "May 18, 2026 — August 7, 2026"
+    },
+    {
+      "type": "text",
+      "id": "scheduling_window",
+      "label": "Scheduling Window",
+      "default": "Lessons available 7 days a week, 7:00 AM — 8:00 PM"
+    },
+    {
+      "type": "text",
+      "id": "location_1",
+      "label": "Location 1",
+      "default": "Staley Farms Neighborhood Courts"
+    },
+    {
+      "type": "text",
+      "id": "location_2",
+      "label": "Location 2",
+      "default": "Staley High School Courts"
+    },
+    {
+      "type": "text",
+      "id": "location_3",
+      "label": "Location 3",
+      "default": "Oak Park High School Courts"
+    }
+  ]
+}
+{% endschema %}

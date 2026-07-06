@@ -1,0 +1,961 @@
+{% comment %}
+  Belle's Performance Tennis - City Landing Page Section (v3)
+  
+  Changes from v2:
+  - Hero removed (now belle-city-hero.liquid)
+  - Trust strip removed (now in hero)
+  - Value props redesigned as 2x2 feature grid
+  - Local context section hidden unless populated
+  - Community callout removed (now belle-city-community.liquid)
+  - All existing setting IDs preserved for backward compatibility
+  
+  Section order on each page (all drag-and-drop):
+  1. belle-city-hero
+  2. belle-city-community (optional)
+  3. cta-inline (top)
+  4. belle-city-landing (this file)
+  5. cta-inline (mid)
+  6. belle-how-it-works
+{% endcomment %}
+
+<style>
+.belle-city {
+  --belle-green: #1a3c2a;
+  --belle-green-light: #2a5a3a;
+  --belle-gold: #c8a951;
+  --belle-cream: #faf9f6;
+  --belle-charcoal: #2d2d2d;
+}
+
+/* ===== Feature Grid (2x2) ===== */
+.belle-city-values {
+  background: var(--belle-cream);
+  padding: 52px 24px;
+}
+
+.belle-city-values-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.belle-city-values h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  color: var(--belle-green);
+  text-align: center;
+  margin: 0 0 32px;
+  letter-spacing: 1.5px;
+}
+
+.belle-city-values-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.belle-city-value {
+  background: #fff;
+  border-radius: 10px;
+  padding: 22px 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border-left: 4px solid var(--belle-gold);
+}
+
+.belle-city-value-icon {
+  display: block;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.belle-city-value h3 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--belle-green);
+  margin: 0 0 6px;
+  line-height: 1.2;
+}
+
+.belle-city-value p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 13px;
+  color: #555;
+  margin: 0;
+  line-height: 1.55;
+}
+
+/* ===== Local Context (hidden unless populated) ===== */
+.belle-city-local {
+  padding: 52px 24px;
+  background: #fff;
+}
+
+.belle-city-local-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.belle-city-local h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 34px;
+  color: var(--belle-green);
+  margin: 0 0 20px;
+  letter-spacing: 1.5px;
+}
+
+.belle-city-local p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  color: #444;
+  line-height: 1.65;
+  margin: 0 0 16px;
+}
+
+.belle-city-local p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== Testimonial ===== */
+.belle-city-testimonial {
+  background: var(--belle-cream);
+  padding: 48px 24px;
+}
+
+.belle-city-testimonial-container {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.belle-city-testimonial blockquote {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 18px;
+  color: var(--belle-charcoal);
+  line-height: 1.65;
+  margin: 0 0 16px;
+  font-style: italic;
+  position: relative;
+  padding: 0 20px;
+}
+
+.belle-city-testimonial blockquote::before {
+  content: '\201C';
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 72px;
+  color: var(--belle-gold);
+  position: absolute;
+  top: -24px;
+  left: -8px;
+  line-height: 1;
+  opacity: 0.55;
+}
+
+.belle-city-testimonial cite {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--belle-green);
+  letter-spacing: 0.3px;
+}
+
+.belle-city-testimonial .belle-stars {
+  color: var(--belle-gold);
+  font-size: 20px;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+/* ===== City FAQ ===== */
+.belle-city-faq {
+  padding: 52px 24px;
+  background: #fff;
+}
+
+.belle-city-faq-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.belle-city-faq h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 34px;
+  color: var(--belle-green);
+  margin: 0 0 24px;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+.belle-city-faq-item {
+  border-bottom: 1px solid #e8e8e8;
+  padding: 18px 0;
+}
+
+.belle-city-faq-item:first-of-type {
+  border-top: 1px solid #e8e8e8;
+}
+
+.belle-city-faq-item h3 {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--belle-green);
+  margin: 0 0 8px;
+}
+
+.belle-city-faq-item p {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+  color: #555;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ===== Internal Links ===== */
+.belle-city-explore {
+  background: var(--belle-cream);
+  padding: 44px 24px;
+}
+
+.belle-city-explore-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.belle-city-explore h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  color: var(--belle-green);
+  margin: 0 0 20px;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+.belle-city-explore-links {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.belle-city-explore-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px;
+  background: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--belle-green);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+  border-left: 3px solid var(--belle-gold);
+}
+
+.belle-city-explore-link:hover {
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  transform: translateY(-1px);
+  color: var(--belle-green);
+}
+
+.belle-city-explore-link svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--belle-gold);
+  flex-shrink: 0;
+}
+
+/* ===== Nearby Areas ===== */
+.belle-city-nearby {
+  padding: 44px 24px;
+  background: #fff;
+}
+
+.belle-city-nearby-container {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.belle-city-nearby h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  color: var(--belle-green);
+  margin: 0 0 6px;
+  letter-spacing: 1.5px;
+}
+
+.belle-city-nearby-sub {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+  color: #666;
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+.belle-city-nearby-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.belle-city-nearby-grid a {
+  display: inline-block;
+  padding: 9px 18px;
+  background: var(--belle-cream);
+  color: var(--belle-green);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 24px;
+  border: 1px solid #e0ddd6;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.belle-city-nearby-grid a:hover {
+  background: var(--belle-green);
+  color: #fff;
+  border-color: var(--belle-green);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .belle-city-values {
+    padding: 36px 20px;
+  }
+
+  .belle-city-values h2 {
+    font-size: 28px;
+  }
+
+  .belle-city-values-grid {
+    gap: 12px;
+  }
+
+  .belle-city-value {
+    padding: 16px 14px;
+  }
+
+  .belle-city-value h3 {
+    font-size: 14px;
+  }
+
+  .belle-city-local {
+    padding: 36px 20px;
+  }
+
+  .belle-city-local h2 {
+    font-size: 28px;
+  }
+
+  .belle-city-testimonial {
+    padding: 36px 20px;
+  }
+
+  .belle-city-testimonial blockquote {
+    font-size: 16px;
+  }
+
+  .belle-city-faq {
+    padding: 36px 20px;
+  }
+
+  .belle-city-faq h2 {
+    font-size: 28px;
+  }
+
+  .belle-city-explore {
+    padding: 32px 20px;
+  }
+
+  .belle-city-explore-links {
+    grid-template-columns: 1fr;
+  }
+
+  .belle-city-nearby {
+    padding: 32px 20px;
+  }
+}
+
+/* ===== Meetup Locations Link ===== */
+.belle-city-meetup {
+  padding: 28px 20px;
+  text-align: center;
+  border-top: 2px solid #c8a951;
+  border-bottom: 2px solid #c8a951;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.belle-city-meetup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.belle-city-meetup h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #1a3c2a;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.belle-city-meetup p {
+  color: #444;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 560px;
+}
+
+.belle-city-meetup-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 28px;
+  margin-top: 4px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-decoration: none;
+  border-radius: 8px;
+  background-color: #c8a951;
+  color: #1a3c2a;
+  border: 2px solid #c8a951;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.belle-city-meetup-link:hover {
+  background-color: #d4b96a;
+  border-color: #d4b96a;
+  transform: translateY(-1px);
+  color: #1a3c2a;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .belle-city-meetup-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
+
+<div class="belle-city">
+
+  <!-- 2x2 Feature Grid -->
+  <section class="belle-city-values">
+    <div class="belle-city-values-container">
+      <h2>{{ section.settings.values_heading | default: "What You Get" }}</h2>
+      <div class="belle-city-values-grid">
+        <div class="belle-city-value">
+          <span class="belle-city-value-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="#c8a951"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></span>
+          <h3>{{ section.settings.value_1_title | default: "Tracked Setup" }}</h3>
+          <p>{{ section.settings.value_1_text | default: "We write down your string, tension, and preferences every time. You don't have to remember what you had last time. We already know." }}</p>
+        </div>
+        <div class="belle-city-value">
+          <span class="belle-city-value-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="#c8a951"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></span>
+          <h3>{{ section.settings.value_2_title | default: "Free Solinco Demo Racquet" }}</h3>
+          <p>{{ section.settings.value_2_text | default: "Borrow a Solinco while yours is being strung. No charge, no catch." }}</p>
+        </div>
+        <div class="belle-city-value">
+          <span class="belle-city-value-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="#c8a951"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></span>
+          <h3>{{ section.settings.value_3_title | default: "No Surprises" }}</h3>
+          <p>{{ section.settings.value_3_text | default: "Most restrings $40–$55 total, string included. No surprises." }}</p>
+        </div>
+        <div class="belle-city-value">
+          <span class="belle-city-value-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="#c8a951"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg></span>
+          <h3>{{ section.settings.value_4_title | default: "Gamma Progression II ELS" }}</h3>
+          <p>{{ section.settings.value_4_text | default: "Your racquet is strung on a professional electronic constant-pull machine. It holds consistent tension through the whole job." }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Context (hidden unless populated) -->
+  {% if section.settings.local_paragraph_1 != blank %}
+  <section class="belle-city-local">
+    <div class="belle-city-local-container">
+      {% if section.settings.local_heading != blank %}
+        <h2>{{ section.settings.local_heading }}</h2>
+      {% endif %}
+      <p>{{ section.settings.local_paragraph_1 }}</p>
+      {% if section.settings.local_paragraph_2 != blank %}
+        <p>{{ section.settings.local_paragraph_2 }}</p>
+      {% endif %}
+      {% if section.settings.local_paragraph_3 != blank %}
+        <p>{{ section.settings.local_paragraph_3 }}</p>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Testimonial -->
+  {% if section.settings.testimonial_text != blank %}
+  <section class="belle-city-testimonial">
+    <div class="belle-city-testimonial-container">
+      <div class="belle-stars" aria-label="5 star rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote>{{ section.settings.testimonial_text }}</blockquote>
+      {% if section.settings.testimonial_author != blank %}
+        <cite>{{ section.settings.testimonial_author }}</cite>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+
+  <!-- Meetup Locations Link -->
+  {% if section.settings.meetup_maps_url != blank %}
+  <section class="belle-city-meetup">
+    <div class="belle-city-meetup-container">
+      <h2>{{ section.settings.meetup_heading | default: "Find a Drop-Off Near You" }}</h2>
+      {% if section.settings.meetup_description != blank %}
+        <p>{{ section.settings.meetup_description }}</p>
+      {% endif %}
+      <a href="{{ section.settings.meetup_maps_url }}" target="_blank" rel="noopener" class="belle-city-meetup-link">
+        📍 See Drop-Off Locations on Google Maps
+      </a>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- City-Specific FAQ -->
+  {% if section.settings.faq_1_question != blank %}
+  <section class="belle-city-faq">
+    <div class="belle-city-faq-container">
+      <h2>{{ section.settings.faq_heading | default: "Quick Answers" }}</h2>
+
+      <div class="belle-city-faq-item">
+        <h3>{{ section.settings.faq_1_question }}</h3>
+        <p>{{ section.settings.faq_1_answer }}</p>
+      </div>
+
+      {% if section.settings.faq_2_question != blank %}
+      <div class="belle-city-faq-item">
+        <h3>{{ section.settings.faq_2_question }}</h3>
+        <p>{{ section.settings.faq_2_answer }}</p>
+      </div>
+      {% endif %}
+
+      {% if section.settings.faq_3_question != blank %}
+      <div class="belle-city-faq-item">
+        <h3>{{ section.settings.faq_3_question }}</h3>
+        <p>{{ section.settings.faq_3_answer }}</p>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Internal Links -->
+  <section class="belle-city-explore">
+    <div class="belle-city-explore-container">
+      <h2>Learn More About Our Services</h2>
+      <div class="belle-city-explore-links">
+        <a href="/pages/pricing" class="belle-city-explore-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+          See Pricing
+        </a>
+        <a href="/pages/demo-racquet-program" class="belle-city-explore-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+          Demo Racquet Program
+        </a>
+        <a href="/pages/faq" class="belle-city-explore-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z"/></svg>
+          Stringing FAQ
+        </a>
+        <a href="/blogs/news" class="belle-city-explore-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+          Stringing Tips Blog
+        </a>
+        <a href="/pages/about-tennis-stringing-kansas-city-northland" class="belle-city-explore-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+          About Belle's
+        </a>
+        <a href="/pages/professional-tennis-stringing-gallery-kansas-city-northland" class="belle-city-explore-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+          Our Work
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nearby Areas -->
+  <section class="belle-city-nearby">
+    <div class="belle-city-nearby-container">
+      <h2>Nearby Areas We Serve</h2>
+      <p class="belle-city-nearby-sub">Belle's serves tennis players across the Kansas City Northland. Find your community below.</p>
+      <div class="belle-city-nearby-grid">
+        {% if section.settings.nearby_1_label != blank %}
+          <a href="{{ section.settings.nearby_1_url }}">{{ section.settings.nearby_1_label }}</a>
+        {% endif %}
+        {% if section.settings.nearby_2_label != blank %}
+          <a href="{{ section.settings.nearby_2_url }}">{{ section.settings.nearby_2_label }}</a>
+        {% endif %}
+        {% if section.settings.nearby_3_label != blank %}
+          <a href="{{ section.settings.nearby_3_url }}">{{ section.settings.nearby_3_label }}</a>
+        {% endif %}
+        {% if section.settings.nearby_4_label != blank %}
+          <a href="{{ section.settings.nearby_4_url }}">{{ section.settings.nearby_4_label }}</a>
+        {% endif %}
+        {% if section.settings.nearby_5_label != blank %}
+          <a href="{{ section.settings.nearby_5_url }}">{{ section.settings.nearby_5_label }}</a>
+        {% endif %}
+        {% if section.settings.nearby_6_label != blank %}
+          <a href="{{ section.settings.nearby_6_url }}">{{ section.settings.nearby_6_label }}</a>
+        {% endif %}
+        {% if section.settings.nearby_7_label != blank %}
+          <a href="{{ section.settings.nearby_7_url }}">{{ section.settings.nearby_7_label }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- FAQPage Schema (JSON-LD) -->
+{% if section.settings.faq_1_question != blank %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% if section.settings.faq_1_question != blank %}
+    {
+      "@type": "Question",
+      "name": {{ section.settings.faq_1_question | json }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ section.settings.faq_1_answer | json }}
+      }
+    }{% if section.settings.faq_2_question != blank %},{% endif %}
+    {% endif %}
+    {% if section.settings.faq_2_question != blank %}
+    {
+      "@type": "Question",
+      "name": {{ section.settings.faq_2_question | json }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ section.settings.faq_2_answer | json }}
+      }
+    }{% if section.settings.faq_3_question != blank %},{% endif %}
+    {% endif %}
+    {% if section.settings.faq_3_question != blank %}
+    {
+      "@type": "Question",
+      "name": {{ section.settings.faq_3_question | json }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ section.settings.faq_3_answer | json }}
+      }
+    }
+    {% endif %}
+  ]
+}
+</script>
+{% endif %}
+
+<!-- Service + LocalBusiness Schema (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Racquet Stringing in {{ section.settings.city_name | default: 'Kansas City Northland' }}",
+  "description": "Professional racquet stringing for {{ section.settings.city_name | default: 'Kansas City Northland' }} tennis players. 2-3 day turnaround. Appointment-based meetup service at local QuikTrip locations.",
+  "serviceType": "Racquet Stringing",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "Belle's Performance Tennis Shop",
+    "url": "https://www.bellesperformancetennis.com",
+    "telephone": "+18169387622",
+    "priceRange": "$$",
+    "image": "https://www.bellesperformancetennis.com/cdn/shop/files/belles_logo_text_white_e9eebce4-5eb3-482c-9033-dbfe346a5f9f.png",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kansas City",
+      "addressRegion": "MO",
+      "addressCountry": "US"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": {{ section.settings.city_name | default: "Kansas City Northland" | json }}
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": {{ section.settings.city_name | default: "Kansas City Northland" | json }},
+    "containedInPlace": {
+      "@type": "State",
+      "name": "Missouri"
+    }
+  }
+}
+</script>
+
+{% schema %}
+{
+  "name": "City Landing Page",
+  "tag": "section",
+  "class": "section-belle-city",
+  "settings": [
+    {
+      "type": "header",
+      "content": "City Identity"
+    },
+    {
+      "type": "text",
+      "id": "city_name",
+      "label": "City Name (for schema markup)",
+      "info": "Plain city name, e.g. 'Liberty'",
+      "default": "Kansas City Northland"
+    },
+    {
+      "type": "header",
+      "content": "Feature Grid"
+    },
+    {
+      "type": "text",
+      "id": "values_heading",
+      "label": "Section Heading",
+      "default": "What You Get"
+    },
+    {
+      "type": "text",
+      "id": "value_1_title",
+      "label": "Feature 1 Title",
+      "default": "Tracked Setup"
+    },
+    {
+      "type": "textarea",
+      "id": "value_1_text",
+      "label": "Feature 1 Description",
+      "default": "We write down your string, tension, and preferences every time. You don't have to remember what you had last time. We already know."
+    },
+    {
+      "type": "text",
+      "id": "value_2_title",
+      "label": "Feature 2 Title",
+      "default": "Free Solinco Demo Racquet"
+    },
+    {
+      "type": "textarea",
+      "id": "value_2_text",
+      "label": "Feature 2 Description",
+      "default": "Borrow a Solinco while yours is being strung. No charge, no catch."
+    },
+    {
+      "type": "text",
+      "id": "value_3_title",
+      "label": "Feature 3 Title",
+      "default": "No Surprises"
+    },
+    {
+      "type": "textarea",
+      "id": "value_3_text",
+      "label": "Feature 3 Description",
+      "default": "Most restrings $40-$55 total, string included. No surprises."
+    },
+    {
+      "type": "text",
+      "id": "value_4_title",
+      "label": "Feature 4 Title",
+      "default": "Gamma Progression II ELS"
+    },
+    {
+      "type": "textarea",
+      "id": "value_4_text",
+      "label": "Feature 4 Description",
+      "default": "Your racquet is strung on a professional electronic constant-pull machine. It holds consistent tension through the whole job."
+    },
+    {
+      "type": "header",
+      "content": "Local Context (leave blank to hide)"
+    },
+    {
+      "type": "text",
+      "id": "local_heading",
+      "label": "Local Section Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "local_paragraph_1",
+      "label": "Local Paragraph 1"
+    },
+    {
+      "type": "textarea",
+      "id": "local_paragraph_2",
+      "label": "Local Paragraph 2"
+    },
+    {
+      "type": "textarea",
+      "id": "local_paragraph_3",
+      "label": "Local Paragraph 3"
+    },
+    {
+      "type": "header",
+      "content": "Testimonial (leave blank to hide)"
+    },
+    {
+      "type": "textarea",
+      "id": "testimonial_text",
+      "label": "Testimonial Quote"
+    },
+    {
+      "type": "text",
+      "id": "testimonial_author",
+      "label": "Testimonial Author"
+    },
+    {
+      "type": "header",
+      "content": "Meetup Locations Map Link (leave blank to hide)"
+    },
+    {
+      "type": "text",
+      "id": "meetup_heading",
+      "label": "Section Heading",
+      "default": "Find a Drop-Off Near You"
+    },
+    {
+      "type": "textarea",
+      "id": "meetup_description",
+      "label": "Description",
+      "info": "Brief text above the map link. Leave blank to hide."
+    },
+    {
+      "type": "url",
+      "id": "meetup_maps_url",
+      "label": "Google Maps URL",
+      "info": "Link to Google Maps showing QuikTrip locations near this city. Leave blank to hide this section."
+    },
+    {
+      "type": "header",
+      "content": "City-Specific FAQ (leave blank to hide)"
+    },
+    {
+      "type": "text",
+      "id": "faq_heading",
+      "label": "FAQ Section Heading",
+      "default": "Quick Answers"
+    },
+    {
+      "type": "text",
+      "id": "faq_1_question",
+      "label": "FAQ 1 Question"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_1_answer",
+      "label": "FAQ 1 Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_2_question",
+      "label": "FAQ 2 Question"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_2_answer",
+      "label": "FAQ 2 Answer"
+    },
+    {
+      "type": "text",
+      "id": "faq_3_question",
+      "label": "FAQ 3 Question"
+    },
+    {
+      "type": "textarea",
+      "id": "faq_3_answer",
+      "label": "FAQ 3 Answer"
+    },
+    {
+      "type": "header",
+      "content": "Nearby Areas (internal cross-links)"
+    },
+    {
+      "type": "text",
+      "id": "nearby_1_label",
+      "label": "Nearby Area 1 Label"
+    },
+    {
+      "type": "url",
+      "id": "nearby_1_url",
+      "label": "Nearby Area 1 URL"
+    },
+    {
+      "type": "text",
+      "id": "nearby_2_label",
+      "label": "Nearby Area 2 Label"
+    },
+    {
+      "type": "url",
+      "id": "nearby_2_url",
+      "label": "Nearby Area 2 URL"
+    },
+    {
+      "type": "text",
+      "id": "nearby_3_label",
+      "label": "Nearby Area 3 Label"
+    },
+    {
+      "type": "url",
+      "id": "nearby_3_url",
+      "label": "Nearby Area 3 URL"
+    },
+    {
+      "type": "text",
+      "id": "nearby_4_label",
+      "label": "Nearby Area 4 Label"
+    },
+    {
+      "type": "url",
+      "id": "nearby_4_url",
+      "label": "Nearby Area 4 URL"
+    },
+    {
+      "type": "text",
+      "id": "nearby_5_label",
+      "label": "Nearby Area 5 Label"
+    },
+    {
+      "type": "url",
+      "id": "nearby_5_url",
+      "label": "Nearby Area 5 URL"
+    },
+    {
+      "type": "text",
+      "id": "nearby_6_label",
+      "label": "Nearby Area 6 Label"
+    },
+    {
+      "type": "url",
+      "id": "nearby_6_url",
+      "label": "Nearby Area 6 URL"
+    },
+    {
+      "type": "text",
+      "id": "nearby_7_label",
+      "label": "Nearby Area 7 Label"
+    },
+    {
+      "type": "url",
+      "id": "nearby_7_url",
+      "label": "Nearby Area 7 URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "City Landing Page"
+    }
+  ]
+}
+{% endschema %}

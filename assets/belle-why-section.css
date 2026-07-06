@@ -1,0 +1,490 @@
+/* 
+ * Belle's Performance Tennis - Why Choose Us Section (Enhanced with Image Support)
+ */
+
+.belle-why {
+  --belle-green: #1a3c2a;
+  --belle-gold: #c8a951;
+  --belle-cream: #faf9f6;
+  --belle-charcoal: #2d2d2d;
+  
+  background: linear-gradient(180deg, #ffffff 0%, var(--belle-cream) 100%);
+  padding: 80px 24px;
+  position: relative;
+}
+
+.belle-why-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.belle-why-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.belle-why-header h2 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  color: var(--belle-green);
+  margin: 0 0 16px 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.belle-why-subtitle {
+  font-size: 18px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid */
+.belle-why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+/* Cards */
+.belle-why-card {
+  background: white;
+  padding: 0;
+  border-radius: 12px;
+  border: 2px solid rgba(26, 71, 42, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Subtle background pattern */
+.belle-why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, rgba(26, 71, 42, 0.03) 0%, transparent 50%);
+  border-radius: 0 12px 0 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.belle-why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  border-color: var(--belle-gold);
+}
+
+/* Image Styles */
+.belle-why-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  background: var(--belle-cream);
+  flex-shrink: 0;
+}
+
+.belle-why-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.belle-why-card:hover .belle-why-image img {
+  transform: scale(1.05);
+}
+
+/* Icon (fallback when no image) */
+.belle-why-icon {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, var(--belle-green) 0%, #2a5a3a 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.belle-why-icon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0.2;
+  transform: scale(1.3);
+  transition: transform 0.3s ease;
+}
+
+.belle-why-card:hover .belle-why-icon::after {
+  transform: scale(1.5);
+}
+
+.belle-why-icon svg {
+  width: 36px;
+  height: 36px;
+  fill: var(--belle-gold);
+  position: relative;
+  z-index: 2;
+}
+
+/* Content Area */
+.belle-why-content {
+  padding: 32px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* When using icon only (no image), adjust padding */
+.belle-why-card:has(.belle-why-icon) {
+  padding: 0 0 40px 0;
+}
+
+/* Text */
+.belle-why-card h3 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--belle-charcoal);
+  margin: 0 0 12px 0;
+  letter-spacing: 0.3px;
+  line-height: 1.3;
+  position: relative;
+  z-index: 1;
+}
+
+.belle-why-card p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .belle-why {
+    padding: 60px 20px;
+  }
+
+  .belle-why-header {
+    margin-bottom: 40px;
+  }
+
+  .belle-why-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .belle-why-image {
+    height: 180px;
+  }
+
+  .belle-why-content {
+    padding: 24px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .belle-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Special layout for 4 cards */
+@media (min-width: 1025px) {
+  .belle-why-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Make 3 cards look good too */
+.belle-why-grid:has(.belle-why-card:nth-child(3):last-child) {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+@media (min-width: 1025px) {/* 
+ * Belle's Performance Tennis - Why Choose Us Section (Enhanced with Image Support)
+ */
+
+.belle-why {
+  --belle-green: #1a3c2a;
+  --belle-gold: #c8a951;
+  --belle-cream: #faf9f6;
+  --belle-charcoal: #2d2d2d;
+  
+  background: linear-gradient(180deg, #ffffff 0%, var(--belle-cream) 100%);
+  padding: 80px 24px;
+  position: relative;
+}
+
+.belle-why-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.belle-why-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.belle-why-header h2 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  color: var(--belle-green);
+  margin: 0 0 16px 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.belle-why-subtitle {
+  font-size: 18px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Grid */
+.belle-why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+/* Cards */
+.belle-why-card {
+  background: white;
+  padding: 0;
+  border-radius: 12px;
+  border: 2px solid rgba(26, 71, 42, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Subtle background pattern */
+.belle-why-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, rgba(26, 71, 42, 0.03) 0%, transparent 50%);
+  border-radius: 0 12px 0 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.belle-why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  border-color: var(--belle-gold);
+}
+
+/* Image Styles */
+.belle-why-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  background: var(--belle-cream);
+  flex-shrink: 0;
+}
+
+.belle-why-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.belle-why-card:hover .belle-why-image img {
+  transform: scale(1.05);
+}
+
+/* Icon (fallback when no image) */
+.belle-why-icon {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, var(--belle-green) 0%, #2a5a3a 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.belle-why-icon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: inherit;
+  opacity: 0.2;
+  transform: scale(1.3);
+  transition: transform 0.3s ease;
+}
+
+.belle-why-card:hover .belle-why-icon::after {
+  transform: scale(1.5);
+}
+
+.belle-why-icon svg {
+  width: 36px;
+  height: 36px;
+  fill: var(--belle-gold);
+  position: relative;
+  z-index: 2;
+}
+
+/* Content Area */
+.belle-why-content {
+  padding: 32px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* When using icon only (no image), adjust padding */
+.belle-why-card:has(.belle-why-icon) {
+  padding: 0 0 40px 0;
+}
+
+/* Text */
+.belle-why-card h3 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--belle-charcoal);
+  margin: 0 0 12px 0;
+  letter-spacing: 0.3px;
+  line-height: 1.3;
+  position: relative;
+  z-index: 1;
+}
+
+.belle-why-card p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .belle-why {
+    padding: 60px 20px;
+  }
+
+  .belle-why-header {
+    margin-bottom: 40px;
+  }
+
+  .belle-why-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .belle-why-image {
+    height: 180px;
+  }
+
+  .belle-why-content {
+    padding: 24px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .belle-why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Special layout for 4 cards */
+@media (min-width: 1025px) {
+  .belle-why-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Make 3 cards look good too */
+.belle-why-grid:has(.belle-why-card:nth-child(3):last-child) {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+@media (min-width: 1025px) {
+  .belle-why-grid:has(.belle-why-card:nth-child(3):last-child) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .belle-why-card,
+  .belle-why-icon::after,
+  .belle-why-image img {
+    transition: none;
+  }
+  
+  .belle-why-card:hover {
+    transform: none;
+  }
+  
+  .belle-why-card:hover .belle-why-image img {
+    transform: none;
+  }
+}
+
+  .belle-why-grid:has(.belle-why-card:nth-child(3):last-child) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .belle-why-card,
+  .belle-why-icon::after,
+  .belle-why-image img {
+    transition: none;
+  }
+  
+  .belle-why-card:hover {
+    transform: none;
+  }
+  
+  .belle-why-card:hover .belle-why-image img {
+    transform: none;
+  }
+}

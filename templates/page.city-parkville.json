@@ -1,0 +1,107 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "city_hero": {
+      "type": "belle-city-hero",
+      "settings": {
+        "city_name": "Parkville",
+        "eyebrow": "Parkville, MO",
+        "headline": "Racquet Stringing for Parkville Tennis Players",
+        "intro": "Belle's meets Parkville players at the QuikTrip on MO-45. Most racquets are ready in 2\u20133 days. Next-day and same-day options may be available when the schedule allows. No drive south of the river.",
+        "cta_text": "Book Racquet Stringing",
+        "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_parkville_hero",
+        "hero_image_alt": ""
+      }
+    },
+    "city_community": {
+      "type": "belle-city-community",
+      "settings": {
+        "community_heading": "",
+        "community_text": ""
+      }
+    },
+    "how_it_works": {
+      "type": "belle-how-it-works",
+      "settings": {
+        "title": "How It Works",
+        "subtitle": "Three steps. Your racquet comes back strung right.",
+        "step_1_title": "Book Online",
+        "step_1_text": "Pick a time. Your meetup is the QuikTrip at 8601 MO-45 in Parkville.",
+        "step_2_title": "Meet & Drop Off",
+        "step_2_text": "We meet you there. Hand off your racquet and grab a free Solinco demo if you need one.",
+        "step_3_title": "Pick Up & Play",
+        "step_3_text": "Strung, logged, labeled. Back to you in 2\u20133 days."
+      }
+    },
+    "city_landing": {
+      "type": "belle-city-landing",
+      "settings": {
+        "city_name": "Parkville",
+        "values_heading": "What Parkville Players Get",
+        "value_1_title": "Tracked Setup",
+        "value_1_text": "We log your string, tension, and preferences every time. We already know your setup next visit.",
+        "value_2_title": "Free Solinco Demo Racquet",
+        "value_2_text": "Borrow a Solinco while yours is being strung. No charge.",
+        "value_3_title": "Pricing",
+        "value_3_text": "Most restrings 42-53 total, string included. See the pricing page for the full breakdown.",
+        "value_4_title": "Gamma Progression II ELS",
+        "value_4_text": "Strung on a Gamma Progression II electronic constant-pull machine. consistent tension every time.",
+        "local_heading": "",
+        "local_paragraph_1": "",
+        "local_paragraph_2": "",
+        "local_paragraph_3": "",
+        "testimonial_text": "",
+        "testimonial_author": "",
+        "meetup_heading": "Find a Drop-Off Near You",
+        "meetup_description": "",
+        "meetup_maps_url": "",
+        "faq_heading": "Parkville Stringing FAQ",
+        "faq_1_question": "Where do we meet in Parkville?",
+        "faq_1_answer": "The QuikTrip at 8601 MO-45 in Parkville. Pick your time when you book online.",
+        "faq_2_question": "Do you serve Park University players?",
+        "faq_2_answer": "Yes. College players, recreational players, Coaches and USTA league players are welcome.",
+        "faq_3_question": "How fast do you turn it around?",
+        "faq_3_answer": "Most jobs ready in 2\u20133 days. Need it faster? Ask when you book.",
+        "nearby_1_label": "Weatherby Lake",
+        "nearby_1_url": "/pages/tennis-stringing-weatherby-lake-mo",
+        "nearby_2_label": "Platte City",
+        "nearby_2_url": "/pages/tennis-stringing-platte-city-mo",
+        "nearby_3_label": "Park Hill",
+        "nearby_3_url": "/pages/tennis-racquet-stringing-parkhill",
+        "nearby_4_label": "Gladstone",
+        "nearby_4_url": "/pages/racquet-stringing-gladstone",
+        "nearby_5_label": "North Kansas City",
+        "nearby_5_url": "/pages/racquet-stringing-north-kansas-city",
+        "nearby_6_label": "Liberty",
+        "nearby_6_url": "/pages/racquet-stringing-liberty",
+        "nearby_7_label": "Staley / KC North",
+        "nearby_7_url": "/pages/racquet-stringing-staley-kansas-city-north"
+      }
+    },
+    "cta_inline_mid": {
+      "type": "cta-inline",
+      "name": "CTA Inline",
+      "settings": {
+        "cta_heading": "Book a Parkville Drop-Off",
+        "cta_description": "Parkville players can drop off at the QuikTrip at 8601 MO-45. Standard turnaround is 2\u20133 days. Next-day and same-day options are available when the schedule allows.",
+        "schedule_button_text": "Book Racquet Stringing",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_parkville_bottom"
+      }
+    }
+  },
+  "order": [
+    "city_hero",
+    "city_community",
+    "how_it_works",
+    "city_landing",
+    "cta_inline_mid"
+  ]
+}

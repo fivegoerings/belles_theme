@@ -1,0 +1,662 @@
+{% comment %}
+  Belle's Performance Tennis - Gallery Section
+  Customizable gallery with dynamic category sections
+  CTA should be added as a separate section (e.g., CTA Standard)
+{% endcomment %}
+
+<style>
+  .belle-gallery {
+    --belle-green: #1a3c2a;
+    --belle-gold: #c8a951;
+    --belle-cream: #faf9f6;
+    --belle-charcoal: #2d2d2d;
+    --belle-light: #f8f8f8;
+    --belle-border: #e0e0e0;
+
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 60px 20px;
+    background: linear-gradient(180deg, var(--belle-cream) 0%, #fff 100%);
+  }
+
+  .belle-gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .belle-gallery-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .belle-gallery-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--belle-green);
+    margin: 0 0 12px 0;
+    letter-spacing: 2px;
+  }
+
+  .belle-gallery-subtitle {
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Category Sections */
+  .belle-gallery-category {
+    margin-bottom: 60px;
+  }
+
+  .belle-gallery-category:last-child {
+    margin-bottom: 0;
+  }
+
+  .belle-gallery-category-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--belle-gold);
+  }
+
+  .belle-gallery-category-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--belle-green);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .belle-gallery-category-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: var(--belle-gold);
+  }
+
+  .belle-gallery-category-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--belle-green);
+    margin: 0;
+    letter-spacing: 1px;
+  }
+
+  .belle-gallery-category-count {
+    font-size: 14px;
+    color: #888;
+    margin-left: auto;
+  }
+
+  /* Image Grid */
+  .belle-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  /* Gallery Item */
+  .belle-gallery-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .belle-gallery-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .belle-gallery-item-image {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+  }
+
+  .belle-gallery-item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .belle-gallery-item:hover .belle-gallery-item-image img {
+    transform: scale(1.05);
+  }
+
+  .belle-gallery-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(26, 71, 42, 0.9) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+  }
+
+  .belle-gallery-item:hover .belle-gallery-item-overlay {
+    opacity: 1;
+  }
+
+  .belle-gallery-item-info {
+    color: white;
+    width: 100%;
+  }
+
+  .belle-gallery-item-title {
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0 0 4px 0;
+  }
+
+  .belle-gallery-item-desc {
+    font-size: 14px;
+    opacity: 0.85;
+    margin: 0;
+  }
+
+  /* Caption below image (always visible) */
+  .belle-gallery-item-caption {
+    padding: 16px;
+    background: white;
+  }
+
+  .belle-gallery-item-caption-title {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--belle-charcoal);
+    margin: 0 0 4px 0;
+  }
+
+  .belle-gallery-item-caption-desc {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  /* Zoom Icon */
+  .belle-gallery-zoom {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .belle-gallery-item:hover .belle-gallery-zoom {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .belle-gallery-zoom svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--belle-green);
+  }
+
+  /* Lightbox */
+  .belle-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .belle-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .belle-lightbox-content {
+    max-width: 90vw;
+    max-height: 85vh;
+    position: relative;
+  }
+
+  .belle-lightbox-content img {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+
+  .belle-lightbox-caption {
+    text-align: center;
+    color: white;
+    padding: 16px 0;
+  }
+
+  .belle-lightbox-caption-title {
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0 0 4px 0;
+  }
+
+  .belle-lightbox-caption-desc {
+    font-size: 15px;
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  .belle-lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  .belle-lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+  }
+
+  .belle-lightbox-close svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+  }
+
+  .belle-lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 56px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  .belle-lightbox-nav:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .belle-lightbox-nav svg {
+    width: 28px;
+    height: 28px;
+    fill: white;
+  }
+
+  .belle-lightbox-prev {
+    left: 20px;
+  }
+
+  .belle-lightbox-next {
+    right: 20px;
+  }
+
+  /* Empty State */
+  .belle-gallery-empty {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--belle-light);
+    border-radius: 12px;
+    border: 2px dashed var(--belle-border);
+  }
+
+  .belle-gallery-empty-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 16px;
+    fill: #ccc;
+  }
+
+  .belle-gallery-empty-text {
+    color: #888;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .belle-gallery {
+      padding: 40px 16px;
+    }
+
+    .belle-gallery-title {
+      font-size: 36px;
+    }
+
+    .belle-gallery-grid {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .belle-gallery-category-header {
+      flex-wrap: wrap;
+    }
+
+    .belle-gallery-category-count {
+      width: 100%;
+      margin-left: 0;
+      margin-top: -8px;
+    }
+
+    .belle-lightbox-nav {
+      width: 44px;
+      height: 44px;
+    }
+
+    .belle-lightbox-prev {
+      left: 10px;
+    }
+
+    .belle-lightbox-next {
+      right: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .belle-gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="belle-gallery">
+  <div class="belle-gallery-container">
+    
+    <!-- Header -->
+    <div class="belle-gallery-header">
+      <h1 class="belle-gallery-title">{{ section.settings.title | default: 'Our Work' }}</h1>
+      <p class="belle-gallery-subtitle">{{ section.settings.subtitle | default: 'Browse our collection of professionally strung racquets and the equipment we use to deliver quality results.' }}</p>
+    </div>
+
+    {%- assign category_open = false -%}
+    {%- assign image_count = 0 -%}
+
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'category_heading' -%}
+        {%- comment -%} Close previous category if one was open {%- endcomment -%}
+        {%- if category_open -%}
+          {%- if image_count == 0 -%}
+            <div class="belle-gallery-empty">
+              <svg class="belle-gallery-empty-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+              <p class="belle-gallery-empty-text">Add photos below this category in the theme customizer</p>
+            </div>
+          {%- else -%}
+            </div><!-- /.belle-gallery-grid -->
+          {%- endif -%}
+          </div><!-- /.belle-gallery-category -->
+        {%- endif -%}
+
+        {%- assign category_open = true -%}
+        {%- assign image_count = 0 -%}
+
+        {%- comment -%} Count images in this category (look-ahead) {%- endcomment -%}
+        {%- assign cat_image_count = 0 -%}
+        {%- assign found_self = false -%}
+        {%- for future_block in section.blocks -%}
+          {%- if future_block.id == block.id -%}
+            {%- assign found_self = true -%}
+            {%- continue -%}
+          {%- endif -%}
+          {%- if found_self -%}
+            {%- if future_block.type == 'category_heading' -%}
+              {%- break -%}
+            {%- endif -%}
+            {%- if future_block.type == 'gallery_image' -%}
+              {%- assign cat_image_count = cat_image_count | plus: 1 -%}
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        <div class="belle-gallery-category" {{ block.shopify_attributes }}>
+          <div class="belle-gallery-category-header">
+            <div class="belle-gallery-category-icon">
+              {%- case block.settings.icon -%}
+                {%- when 'racquet' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                {%- when 'equipment' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+                {%- when 'star' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                {%- when 'camera' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 15.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4zM9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9z"/></svg>
+                {%- when 'people' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                {%- when 'string' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.28 4.93l-2.12-2.12c-.78-.78-2.05-.78-2.83 0L11.5 5.64l2.12 2.12 2.12-2.12 1.41 1.41-2.12 2.12 1.41 1.42 2.83-2.83c.79-.78.79-2.05.01-2.83zM5.49 13.77c.59.59 1.54.59 2.12 0l2.83-2.83-2.12-2.12-2.83 2.83c-.59.59-.59 1.54 0 2.12zM15.54 12l-1.41-1.41-3.54 3.54 1.41 1.41L15.54 12zM3.52 19.78l1.41 1.41L19.78 6.34l-1.41-1.41L3.52 19.78z"/></svg>
+                {%- else -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+              {%- endcase -%}
+            </div>
+            <h2 class="belle-gallery-category-title">{{ block.settings.heading }}</h2>
+            <span class="belle-gallery-category-count">{{ cat_image_count }} {% if cat_image_count == 1 %}photo{% else %}photos{% endif %}</span>
+          </div>
+
+          {%- if cat_image_count > 0 -%}
+            <div class="belle-gallery-grid">
+          {%- endif -%}
+
+      {%- elsif block.type == 'gallery_image' -%}
+        {%- assign image_count = image_count | plus: 1 -%}
+
+        <div class="belle-gallery-item" onclick="openLightbox('{{ block.settings.image | image_url: width: 1600 }}', '{{ block.settings.title | escape }}', '{{ block.settings.description | escape }}')" {{ block.shopify_attributes }}>
+          <div class="belle-gallery-item-image">
+            {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.title | default: 'Gallery photo' }}" loading="lazy">
+            {% else %}
+              <div style="width:100%;height:100%;background:#eee;display:flex;align-items:center;justify-content:center;color:#999;">No Image</div>
+            {% endif %}
+          </div>
+          <div class="belle-gallery-zoom">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zm.5-7H9v2H7v1h2v2h1v-2h2V9h-2z"/></svg>
+          </div>
+          {% if block.settings.title != blank or block.settings.description != blank %}
+          <div class="belle-gallery-item-caption">
+            {% if block.settings.title != blank %}
+            <p class="belle-gallery-item-caption-title">{{ block.settings.title }}</p>
+            {% endif %}
+            {% if block.settings.description != blank %}
+            <p class="belle-gallery-item-caption-desc">{{ block.settings.description }}</p>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- comment -%} Close the last category if one was open {%- endcomment -%}
+    {%- if category_open -%}
+      {%- if image_count == 0 -%}
+        <div class="belle-gallery-empty">
+          <svg class="belle-gallery-empty-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+          <p class="belle-gallery-empty-text">Add photos below this category in the theme customizer</p>
+        </div>
+      {%- else -%}
+        </div><!-- /.belle-gallery-grid -->
+      {%- endif -%}
+      </div><!-- /.belle-gallery-category -->
+    {%- endif -%}
+
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="belle-lightbox" id="belleLightbox">
+  <button class="belle-lightbox-close" onclick="closeLightbox()">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+  </button>
+  <div class="belle-lightbox-content">
+    <img id="belleLightboxImg" src="" alt="">
+    <div class="belle-lightbox-caption">
+      <p class="belle-lightbox-caption-title" id="belleLightboxTitle"></p>
+      <p class="belle-lightbox-caption-desc" id="belleLightboxDesc"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openLightbox(src, title, desc) {
+    const lightbox = document.getElementById('belleLightbox');
+    const img = document.getElementById('belleLightboxImg');
+    const titleEl = document.getElementById('belleLightboxTitle');
+    const descEl = document.getElementById('belleLightboxDesc');
+    
+    img.src = src;
+    titleEl.textContent = title || '';
+    descEl.textContent = desc || '';
+    titleEl.style.display = title ? 'block' : 'none';
+    descEl.style.display = desc ? 'block' : 'none';
+    
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    document.getElementById('belleLightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Close on overlay click
+  document.getElementById('belleLightbox').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeLightbox();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Belle's Gallery",
+  "tag": "section",
+  "class": "belle-gallery-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Our Work"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Browse our collection of professionally strung racquets and the equipment we use to deliver quality results."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category_heading",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Category Name",
+          "default": "New Category"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "default": "racquet",
+          "options": [
+            { "value": "racquet", "label": "Racquet / Globe" },
+            { "value": "equipment", "label": "Equipment / Wrench" },
+            { "value": "star", "label": "Star" },
+            { "value": "camera", "label": "Camera" },
+            { "value": "people", "label": "People" },
+            { "value": "string", "label": "String / Diagonal" },
+            { "value": "image", "label": "Image (default)" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "gallery_image",
+      "name": "Photo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "placeholder": "e.g., Wilson Pro Staff 97"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "placeholder": "e.g., Luxilon ALU Power 16L @ 52lbs"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Belle's Gallery",
+      "blocks": [
+        {
+          "type": "category_heading",
+          "settings": {
+            "heading": "Strung Racquets",
+            "icon": "racquet"
+          }
+        },
+        {
+          "type": "category_heading",
+          "settings": {
+            "heading": "Our Equipment",
+            "icon": "equipment"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

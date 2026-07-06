@@ -1,0 +1,455 @@
+{% comment %}
+  Belle's Performance Tennis - Custom Footer (OPTIMIZED)
+  Fixed: Added explicit width/height to images for CLS
+  Fixed: Removed blocking Google Fonts import
+  Fixed: External CSS reference
+{% endcomment %}
+
+{{ 'belle-footer.css' | asset_url | stylesheet_tag }}
+
+<style>
+.belle-footer-cities-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(26,60,42,0.3);
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 6px;
+  color: #1a3c2a;
+  letter-spacing: 0.3px;
+}
+
+.belle-footer-cities-toggle:hover {
+  background: rgba(26,60,42,0.06);
+  border-color: rgba(26,60,42,0.5);
+  
+}
+
+.belle-footer-cities-chevron {
+  transition: transform 0.2s ease;
+  opacity: 1;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+.belle-footer-cities-toggle[aria-expanded="true"] .belle-footer-cities-chevron {
+  transform: rotate(180deg);
+}
+
+.belle-footer-cities-list {
+  margin-top: 4px;
+  animation: footerCitiesFade 0.2s ease;
+}
+
+.belle-footer-cities-list[hidden] {
+  display: none !important;
+}
+
+.belle-footer-menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(26,60,42,0.3);
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 6px;
+  color: #1a3c2a;
+  letter-spacing: 0.3px;
+}
+
+.belle-footer-menu-toggle:hover {
+  background: rgba(26,60,42,0.06);
+  border-color: rgba(26,60,42,0.5);
+}
+
+.belle-footer-menu-chevron {
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+
+.belle-footer-menu-toggle[aria-expanded="true"] .belle-footer-menu-chevron {
+  transform: rotate(180deg);
+}
+
+.belle-footer-menu-list {
+  margin-top: 4px;
+  animation: footerCitiesFade 0.2s ease;
+}
+
+.belle-footer-menu-list[hidden] {
+  display: none !important;
+}
+
+@keyframes footerCitiesFade {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<script>
+(function() {
+  function initCitiesToggle() {
+    var toggle = document.querySelector('.belle-footer-cities-toggle');
+    var list = document.getElementById('belle-footer-cities');
+    if (!toggle || !list) return;
+
+    // Menu toggle
+    var menuToggle = document.querySelector('.belle-footer-menu-toggle');
+    var menuList = document.getElementById('belle-footer-menu');
+    if (menuToggle && menuList) {
+      menuList.setAttribute('hidden', '');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.addEventListener('click', function() {
+        var isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        if (isExpanded) {
+          menuList.setAttribute('hidden', '');
+          menuToggle.setAttribute('aria-expanded', 'false');
+        } else {
+          menuList.removeAttribute('hidden');
+          menuToggle.setAttribute('aria-expanded', 'true');
+        }
+      });
+    }
+
+    // Cities toggle
+    // Ensure closed on init
+    list.setAttribute('hidden', '');
+    toggle.setAttribute('aria-expanded', 'false');
+
+    toggle.addEventListener('click', function() {
+      var isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        list.setAttribute('hidden', '');
+        toggle.setAttribute('aria-expanded', 'false');
+      } else {
+        list.removeAttribute('hidden');
+        toggle.setAttribute('aria-expanded', 'true');
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCitiesToggle);
+  } else {
+    initCitiesToggle();
+  }
+})();
+</script>
+
+<footer class="belle-footer">
+  <div class="belle-footer-main">
+    
+    <div class="belle-footer-grid">
+      
+      {%- comment -%} Column 1: Brand/Logo {%- endcomment -%}
+      <div class="belle-footer-brand">
+        {%- if section.settings.footer_logo != blank -%}
+          {%- liquid
+            assign footer_logo = section.settings.footer_logo
+            assign logo_width = footer_logo.width
+            assign logo_height = footer_logo.height
+            
+            # Calculate display dimensions (max-width: 180px from CSS)
+            if logo_width > 180
+              assign display_width = 180
+              assign aspect_ratio = logo_height | times: 1.0 | divided_by: logo_width
+              assign display_height = display_width | times: aspect_ratio | round
+            else
+              assign display_width = logo_width
+              assign display_height = logo_height
+            endif
+          -%}
+          {{
+            footer_logo | image_url: width: 360 | image_tag:
+              class: 'belle-footer-logo',
+              alt: shop.name,
+              loading: 'lazy',
+              width: display_width,
+              height: display_height,
+              widths: '180, 360'
+          }}
+        {%- else -%}
+          <h2 class="belle-footer-tagline" style="font-size: 22px; margin-bottom: 12px;">{{ shop.name }}</h2>
+        {%- endif -%}
+        
+        <p class="belle-footer-tagline">{{ section.settings.footer_tagline | default: "Expert Racquet Stringing in Kansas City Northland" }}</p>
+        <p class="belle-footer-value-prop">{{ section.settings.footer_value_prop | default: "Convenient local service with Solinco demo racquets available" }}</p>
+        
+        {%- if section.settings.usrsa_logo != blank -%}
+          <div class="belle-footer-usrsa">
+            <p class="belle-footer-usrsa-label">Member</p>
+            {%- liquid
+              assign usrsa_logo = section.settings.usrsa_logo
+              assign usrsa_width = usrsa_logo.width
+              assign usrsa_height = usrsa_logo.height
+              
+              # Calculate display dimensions (max-width: 120px from CSS)
+              if usrsa_width > 120
+                assign usrsa_display_width = 120
+                assign usrsa_aspect_ratio = usrsa_height | times: 1.0 | divided_by: usrsa_width
+                assign usrsa_display_height = usrsa_display_width | times: usrsa_aspect_ratio | round
+              else
+                assign usrsa_display_width = usrsa_width
+                assign usrsa_display_height = usrsa_height
+              endif
+            -%}
+            {{
+              usrsa_logo | image_url: width: 240 | image_tag:
+                alt: 'USRSA Member',
+                loading: 'lazy',
+                width: usrsa_display_width,
+                height: usrsa_display_height,
+                widths: '120, 240'
+            }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} Column 2: Quick Links (collapsible) {%- endcomment -%}
+      <div class="belle-footer-column">
+        <h3>Quick Links</h3>
+        <button class="belle-footer-menu-toggle" aria-expanded="false" aria-controls="belle-footer-menu">
+          Menu
+          <svg class="belle-footer-menu-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg>
+        </button>
+        <ul class="belle-footer-links belle-footer-menu-list" id="belle-footer-menu" hidden>
+          {%- if section.settings.quick_links_menu != blank -%}
+            {%- for link in linklists[section.settings.quick_links_menu].links -%}
+              {%- liquid
+                assign is_calendly = false
+                assign lower_url = link.url | downcase
+                assign lower_title = link.title | downcase
+                if lower_url contains 'calendly' or lower_url contains 'schedule' or lower_title contains 'schedule' or lower_title contains 'book'
+                  assign is_calendly = true
+                endif
+              -%}
+              <li>
+                {%- if is_calendly -%}
+                  <a href="#" data-calendly-modal="true">{{ link.title }}</a>
+                {%- else -%}
+                  <a href="{{ link.url }}">{{ link.title }}</a>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          {%- else -%}
+            {%- comment -%} Fallback links if no menu is selected {%- endcomment -%}
+            <li><a href="/">Home</a></li>
+            <li><a href="#" data-calendly-modal="true">Schedule</a></li>
+            <li><a href="/pages/racquet-stringing-prices-kansas-city-northland">Pricing</a></li>
+            {%- if section.settings.show_gallery_link -%}
+              <li><a href="/pages/professional-tennis-stringing-gallery-kansas-city-northland">Our Work</a></li>
+            {%- endif -%}
+            <li><a href="/pages/faq">FAQ</a></li>
+            <li><a href="/blogs/news">Blog</a></li>
+          {%- endif -%}
+        </ul>
+      </div>
+
+      {%- comment -%} Column 3: Service Info {%- endcomment -%}
+      <div class="belle-footer-column belle-footer-service-info">
+        <h3>Service Info</h3>
+        <p><strong>By Appointment Only</strong></p>
+         <a href="https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=footer_serviceinfo" data-calendly-modal="true" class="belle-cta-link">Book Your Restring</a>
+      </div>
+
+      {%- comment -%} Column 4: Areas We Serve (collapsible) {%- endcomment -%}
+      <div class="belle-footer-column belle-footer-areas">
+        <h3>Areas We Serve</h3>
+        <button class="belle-footer-cities-toggle" aria-expanded="false" aria-controls="belle-footer-cities">
+          Cities
+          <svg class="belle-footer-cities-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg>
+        </button>
+        <ul class="belle-footer-links belle-footer-cities-list" id="belle-footer-cities" hidden>
+          <li><a href="/pages/racquet-stringing-staley-kansas-city-north">Staley / KC North</a></li>
+          <li><a href="/pages/tennis-racquet-stringing-parkville-mo">Parkville</a></li>
+          <li><a href="/pages/racquet-stringing-liberty">Liberty</a></li>
+          <li><a href="/pages/racquet-stringing-gladstone">Gladstone</a></li>
+          <li><a href="/pages/racquet-stringing-north-kansas-city">North Kansas City</a></li>
+          <li><a href="/pages/racquet-stringing-kearney">Kearney</a></li>
+          <li><a href="/pages/racquet-stringing-smithville">Smithville</a></li>
+          <li><a href="/pages/racquet-stringing-platte-city">Platte City</a></li>
+          <li><a href="/pages/racquet-stringing-winnetonka">Winnetonka</a></li>
+          <li><a href="/pages/tennis-stringing-pleasant-valley-mo">Pleasant Valley</a></li>
+          <li><a href="/pages/tennis-stringing-weatherby-lake-mo">Weatherby Lake</a></li>
+        </ul>
+      </div>
+
+      {%- comment -%} Column 5: Connect {%- endcomment -%}
+      <div class="belle-footer-column belle-footer-connect">
+        <h3>Connect</h3>
+        <p>Have questions?</p>
+        {%- if section.settings.footer_email != blank -%}
+          <p><a href="mailto:{{ section.settings.footer_email }}">{{ section.settings.footer_email }}</a></p>
+        {%- endif -%}
+        {%- comment -%} Social media links can go here if needed {%- endcomment -%}
+      </div>
+
+    </div>
+
+    {%- comment -%} Bottom Bar {%- endcomment -%}
+    <div class="belle-footer-bottom">
+
+      {%- comment -%} Social Icons {%- endcomment -%}
+      {%- liquid
+        assign has_social = false
+        if settings.social_facebook_link != blank or settings.social_instagram_link != blank or settings.social_youtube_link != blank or settings.social_tiktok_link != blank or settings.social_twitter_link != blank or settings.social_pinterest_link != blank
+          assign has_social = true
+        endif
+      -%}
+      {%- if has_social -%}
+        <div class="belle-footer-social">
+          {%- render 'social-icons', class: 'belle-social-list' -%}
+        </div>
+      {%- endif -%}
+
+      <p class="belle-footer-brand-info">Belle's Performance Tennis Shop is a brand of Goering Ventures LLC</p>
+      <p class="belle-footer-legal">
+        &copy; {{ 'now' | date: '%Y' }} Goering Ventures LLC
+        <span class="belle-footer-separator">|</span>
+        {%- if shop.privacy_policy != blank -%}
+          <a href="{{ shop.privacy_policy.url }}">Privacy Policy</a>
+          <span class="belle-footer-separator">|</span>
+        {%- endif -%}
+        {%- if shop.terms_of_service != blank -%}
+          <a href="{{ shop.terms_of_service.url }}">Terms of Service</a>
+        {%- endif -%}
+      </p>
+
+      {%- comment -%} Payment Icons {%- endcomment -%}
+      {%- unless shop.enabled_payment_types == empty -%}
+        <div class="belle-footer-payment">
+          <span class="visually-hidden">Payment methods</span>
+          <ul class="belle-payment-list" role="list">
+            {%- for type in shop.enabled_payment_types -%}
+              <li class="belle-payment-item">
+                {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endunless -%}
+
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  function fixJudgeMeArrows() {
+    document.querySelectorAll('button.jdgm-arrow').forEach(function (btn) {
+      if (!btn.getAttribute('aria-label')) {
+        var onclick = btn.getAttribute('onclick') || '';
+        btn.setAttribute('aria-label', onclick.includes('Previous') ? 'Previous review' : 'Next review');
+      }
+    });
+  }
+  function fixMerchantIframe() {
+    var iframe = document.getElementById('merchantwidgetiframe');
+    if (iframe && !iframe.getAttribute('title')) {
+      iframe.setAttribute('title', 'Google merchant widget');
+      return true;
+    }
+    return false;
+  }
+  document.addEventListener('DOMContentLoaded', fixJudgeMeArrows);
+  setTimeout(fixJudgeMeArrows, 2000);
+  var observer = new MutationObserver(function () {
+    if (fixMerchantIframe()) { observer.disconnect(); }
+  });
+  document.addEventListener('DOMContentLoaded', function () {
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+</script>
+{% render 'calendly-modal' %}
+
+{% schema %}
+{
+  "name": "Belle's Footer",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Brand Logos"
+    },
+    {
+      "type": "image_picker",
+      "id": "footer_logo",
+      "label": "Belle's Performance Tennis Logo",
+      "info": "Recommended: 360x120px (3:1 ratio), PNG with transparent background"
+    },
+    {
+      "type": "image_picker",
+      "id": "usrsa_logo",
+      "label": "USRSA Member Logo",
+      "info": "Recommended: 240x80px, PNG format"
+    },
+    {
+      "type": "header",
+      "content": "Brand Information"
+    },
+    {
+      "type": "text",
+      "id": "footer_tagline",
+      "label": "Tagline",
+      "default": "Professional-Grade Racquet Stringing in Kansas City Northland"
+    },
+    {
+      "type": "textarea",
+      "id": "footer_value_prop",
+      "label": "Value Proposition",
+      "default": "Convenient local service with Solinco demo racquets available. Strung by a USRSA member serving Kansas City Northland tennis players"
+    },
+    {
+      "type": "header",
+      "content": "Contact Information"
+    },
+    {
+      "type": "text",
+      "id": "footer_email",
+      "label": "Email Address (optional)",
+      "info": "Will be displayed in the Connect column"
+    },
+    {
+      "type": "header",
+      "content": "Navigation Options"
+    },
+    {
+      "type": "link_list",
+      "id": "quick_links_menu",
+      "label": "Quick Links Menu",
+      "info": "Select the menu to display in the footer Quick Links column. Any link titled 'Schedule' or 'Book' (or linking to a Calendly URL) will automatically trigger the booking modal."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_gallery_link",
+      "label": "Show 'Our Work' link (fallback only)",
+      "default": true,
+      "info": "Only applies when no Quick Links Menu is selected above"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Belle's Footer"
+    }
+  ]
+}
+{% endschema %}

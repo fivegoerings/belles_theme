@@ -1,0 +1,369 @@
+{% comment %}
+  Belle's Performance Tennis - Terms of Service Section
+  Matches the Belle's brand design system
+{% endcomment %}
+
+{{ 'section-belle-legal.css' | asset_url | stylesheet_tag }}
+
+<style>
+ 
+  .belle-legal {
+    --belle-green: #1a3c2a;
+    --belle-gold: #c8a951;
+    --belle-cream: #faf9f6;
+    --belle-charcoal: #2d2d2d;
+    --belle-light-gray: #f5f5f5;
+    
+    font-family: 'Source Sans Pro', sans-serif;
+    background: linear-gradient(180deg, var(--belle-cream) 0%, #ffffff 100%);
+    position: relative;
+    padding: 60px 0 80px;
+  }
+
+  .belle-legal-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Page Header */
+  .belle-legal-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 3px solid var(--belle-green);
+  }
+
+  .belle-legal-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: var(--belle-green);
+    margin: 0 0 16px 0;
+    text-transform: uppercase;
+  }
+
+  .belle-legal-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+
+  /* Content Sections */
+  .belle-legal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .belle-legal-section {
+    margin-bottom: 40px;
+  }
+
+  .belle-legal-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .belle-legal-section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: var(--belle-green);
+    margin: 0 0 16px 0;
+    text-transform: uppercase;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--belle-gold);
+  }
+
+  .belle-legal-section h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--belle-charcoal);
+    margin: 24px 0 12px 0;
+  }
+
+  .belle-legal-section p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--belle-charcoal);
+    margin: 0 0 16px 0;
+  }
+
+  .belle-legal-section ul,
+  .belle-legal-section ol {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--belle-charcoal);
+    margin: 0 0 16px 0;
+    padding-left: 24px;
+  }
+
+  .belle-legal-section li {
+    margin-bottom: 8px;
+  }
+
+  .belle-legal-section strong {
+    color: var(--belle-green);
+    font-weight: 600;
+  }
+
+  .belle-legal-section em {
+    color: #666;
+    font-style: italic;
+  }
+
+  /* Highlight boxes */
+  .belle-legal-highlight {
+    background: var(--belle-light-gray);
+    border-left: 4px solid var(--belle-gold);
+    padding: 20px 24px;
+    margin: 24px 0;
+    border-radius: 4px;
+  }
+
+  .belle-legal-highlight p {
+    margin-bottom: 0;
+  }
+
+  /* Links */
+  .belle-legal-content a {
+    color: var(--belle-green);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+  }
+
+  .belle-legal-content a:hover {
+    border-bottom-color: var(--belle-gold);
+  }
+
+  /* Last updated date */
+  .belle-legal-updated {
+    font-size: 13px;
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .belle-legal {
+      padding: 40px 0 60px;
+    }
+
+    .belle-legal-container {
+      padding: 0 20px;
+    }
+
+    .belle-legal-title {
+      font-size: 36px;
+    }
+
+    .belle-legal-content {
+      padding: 24px;
+    }
+
+    .belle-legal-section-title {
+      font-size: 20px;
+    }
+
+    .belle-legal-section h3 {
+      font-size: 16px;
+    }
+
+    .belle-legal-section p,
+    .belle-legal-section ul,
+    .belle-legal-section ol {
+      font-size: 14px;
+    }
+
+    .belle-legal-highlight {
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+  }
+</style>
+
+<div class="belle-legal">
+  <div class="belle-legal-container">
+    
+    <div class="belle-legal-header">
+      <h1 class="belle-legal-title">{{ section.settings.page_title }}</h1>
+      {%- if section.settings.last_updated != blank -%}
+        <p class="belle-legal-subtitle">Last Updated: {{ section.settings.last_updated }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="belle-legal-content">
+      
+      {%- if section.settings.overview != blank -%}
+        <div class="belle-legal-section">
+          <h2 class="belle-legal-section-title">Overview</h2>
+          <div class="rte">{{ section.settings.overview }}</div>
+        </div>
+      {%- endif -%}
+
+      {%- for block in section.blocks -%}
+        <div class="belle-legal-section" {{ block.shopify_attributes }}>
+          {%- if block.settings.section_title != blank -%}
+            <h2 class="belle-legal-section-title">{{ block.settings.section_title }}</h2>
+          {%- endif -%}
+          
+          {%- if block.type == 'text_section' -%}
+            <div class="rte">{{ block.settings.content }}</div>
+          {%- endif -%}
+
+          {%- if block.type == 'highlight_section' -%}
+            <div class="belle-legal-highlight">
+              <div class="rte">{{ block.settings.content }}</div>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+
+      {%- if section.settings.show_contact_info -%}
+        <div class="belle-legal-section">
+          <h2 class="belle-legal-section-title">Contact Us</h2>
+          <p>If you have any questions about these {{ section.settings.page_title }}, please contact us:</p>
+          {%- if section.settings.contact_email != blank -%}
+            <p><strong>Email:</strong> <a href="mailto:{{ section.settings.contact_email }}">{{ section.settings.contact_email }}</a></p>
+          {%- endif -%}
+          {%- if section.settings.business_name != blank -%}
+            <p><strong>Business:</strong> {{ section.settings.business_name }}</p>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.last_updated != blank -%}
+        <p class="belle-legal-updated">Last updated: {{ section.settings.last_updated }}</p>
+      {%- endif -%}
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Belle's Legal Page",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Page Settings"
+    },
+    {
+      "type": "text",
+      "id": "page_title",
+      "label": "Page Title",
+      "default": "Terms of Service"
+    },
+    {
+      "type": "text",
+      "id": "last_updated",
+      "label": "Last Updated Date",
+      "default": "January 15, 2026",
+      "info": "Format: Month Day, Year"
+    },
+    {
+      "type": "header",
+      "content": "Overview Section"
+    },
+    {
+      "type": "richtext",
+      "id": "overview",
+      "label": "Overview Text",
+      "default": "<p>Welcome to Belle's Performance Tennis Shop™! The terms \"we\", \"us\", and \"our\" refer to Belle's Performance Tennis Shop™. Belle's Performance Tennis Shop™ operates this store and website, including all related information, content, features, tools, products and services in order to provide you, the customer, with a curated shopping experience (the \"Services\"). Belle's Performance Tennis Shop™ is powered by Shopify, which enables us to provide the Services to you.</p><p>The below terms and conditions, together with any policies referenced herein (these \"Terms of Service\" or \"Terms\") describe your rights and responsibilities when you use the Services.</p><p>Please read these Terms of Service carefully, as they include important information about your legal rights and cover areas such as warranty disclaimers and limitations of liability.</p><p>By visiting, interacting with or using our Services, you agree to be bound by these Terms of Service and our Privacy Policy [LINK]. If you do not agree to these Terms of Service or Privacy Policy, you should not use or access our Services.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Contact Information"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_contact_info",
+      "label": "Show Contact Section",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "contact_email",
+      "label": "Contact Email"
+    },
+    {
+      "type": "text",
+      "id": "business_name",
+      "label": "Business Name",
+      "default": "Belle's Performance Tennis (A brand of Goering Ventures LLC)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_section",
+      "name": "Text Section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "section_title",
+          "label": "Section Title",
+          "default": "Section Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Add your content here. You can format text, add links, and create lists.</p>"
+        }
+      ]
+    },
+    {
+      "type": "highlight_section",
+      "name": "Highlighted Section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "section_title",
+          "label": "Section Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Highlighted Content",
+          "default": "<p>This content will appear in a highlighted box to draw attention to important information.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Belle's Legal Page",
+      "blocks": [
+        {
+          "type": "text_section",
+          "settings": {
+            "section_title": "Use of Services"
+          }
+        },
+        {
+          "type": "text_section",
+          "settings": {
+            "section_title": "Products and Services"
+          }
+        },
+        {
+          "type": "text_section",
+          "settings": {
+            "section_title": "Limitation of Liability"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

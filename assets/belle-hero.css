@@ -1,0 +1,279 @@
+{% comment %}
+  Belle's Performance Tennis - City Hero Section (v2)
+  Background applied directly to the section element via inline CSS.
+  Photo overlay uses dark green at 50% opacity.
+{% endcomment %}
+
+{% if section.settings.hero_image != blank %}
+  {% assign hero_image_url = section.settings.hero_image | image_url: width: 1200 %}
+{% endif %}
+
+<style>
+.belle-hero {
+  --belle-green: #1a3c2a;
+  --belle-gold: #c8a951;
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.belle-hero--gradient {
+  background: linear-gradient(135deg, #1a3c2a 0%, #2d5a3d 50%, #1a3c2a 100%);
+}
+
+.belle-hero--gradient::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 22px, rgba(200,169,81,0.06) 22px, rgba(200,169,81,0.06) 23px),
+    repeating-linear-gradient(90deg, transparent, transparent 22px, rgba(200,169,81,0.06) 22px, rgba(200,169,81,0.06) 23px);
+}
+
+.belle-hero--photo {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.belle-hero--photo::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(20, 48, 32, 0.50);
+  pointer-events: none;
+}
+
+.belle-hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 48px 24px 44px;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.belle-hero-eyebrow {
+  display: inline-block;
+  background: rgba(200,169,81,0.18);
+  border: 1px solid rgba(200,169,81,0.45);
+  color: var(--belle-gold);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 4px;
+  margin-bottom: 14px;
+}
+
+.belle-hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 44px;
+  line-height: 0.95;
+  color: #ffffff;
+  margin: 0 0 14px;
+  letter-spacing: 1.5px;
+}
+
+.belle-hero-intro {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 17px;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.6;
+  max-width: 580px;
+  margin: 0 auto 24px;
+}
+
+.belle-hero-cta {
+  display: inline-block;
+  background: var(--belle-gold);
+  color: var(--belle-green) !important;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 1px;
+  padding: 14px 36px;
+  border-radius: 6px;
+  text-decoration: none !important;
+  transition: background 0.2s ease, transform 0.15s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.belle-hero-cta:hover {
+  background: #c8a951;
+  transform: translateY(-1px);
+}
+
+.belle-hero-trust {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: var(--belle-gold);
+  padding: 10px 16px;
+}
+
+.belle-hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--belle-green);
+  padding: 2px 14px;
+  border-right: 1px solid rgba(26,60,42,0.2);
+  white-space: nowrap;
+}
+
+.belle-hero-trust-item:last-child {
+  border-right: none;
+}
+
+.belle-hero-trust-item svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--belle-green);
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .belle-hero { min-height: 340px; }
+  .belle-hero h1 { font-size: 30px; }
+  .belle-hero-intro { font-size: 15px; }
+  .belle-hero-content { padding: 32px 20px 28px; }
+  .belle-hero-trust-item { font-size: 11px; padding: 2px 8px; }
+}
+</style>
+
+{% if section.settings.hero_image != blank %}
+  <div class="belle-hero belle-hero--photo" style="background-image: url('{{ hero_image_url }}');">
+{% else %}
+  <div class="belle-hero belle-hero--gradient">
+{% endif %}
+
+  <div class="belle-hero-content">
+    {% if section.settings.eyebrow != blank %}
+      <span class="belle-hero-eyebrow">{{ section.settings.eyebrow }}</span>
+    {% endif %}
+
+    <h1>{{ section.settings.headline }}</h1>
+
+    {% if section.settings.intro != blank %}
+      <p class="belle-hero-intro">{{ section.settings.intro }}</p>
+    {% endif %}
+
+    {% if section.settings.cta_url != blank %}
+      <a href="#" data-calendly-modal="true" data-calendly-url="{{ section.settings.cta_url }}" class="belle-hero-cta">
+        📅 {{ section.settings.cta_text | default: "Book Your Appointment" }}
+      </a>
+    {% else %}
+      <a href="#" data-calendly-modal="true" class="belle-hero-cta">
+        📅 {{ section.settings.cta_text | default: "Book Your Appointment" }}
+      </a>
+    {% endif %}
+  </div>
+
+  <div class="belle-hero-trust">
+    <div class="belle-hero-trust-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+      $40–$55 total
+    </div>
+    <div class="belle-hero-trust-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+      2-3 Day, Next, or Same Day
+    </div>
+    <div class="belle-hero-trust-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+      USRSA Member
+    </div>
+    <div class="belle-hero-trust-item">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      KC Northland
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "City Hero",
+  "tag": "section",
+  "class": "section-belle-city-hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "City"
+    },
+    {
+      "type": "text",
+      "id": "city_name",
+      "label": "City Name",
+      "info": "Used in image alt text",
+      "default": "Kansas City Northland"
+    },
+    {
+      "type": "header",
+      "content": "Hero Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow Label",
+      "info": "Small text above headline e.g. 'Kearney, MO'. Leave blank to hide."
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "H1 Headline",
+      "default": "Racquet Stringing for [City] Tennis Players"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Intro Paragraph"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Text",
+      "default": "Book Your Appointment"
+    },
+    {
+      "type": "text",
+      "id": "cta_url",
+      "label": "Button URL",
+      "info": "Optional. Paste the full Calendly URL (with UTM params) to override the default booking modal."
+    },
+    {
+      "type": "header",
+      "content": "Background Photo (optional)"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Background Photo",
+      "info": "Recommended 1200x420px. Leave blank to use the green gradient."
+    },
+    {
+      "type": "text",
+      "id": "hero_image_alt",
+      "label": "Photo Alt Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "City Hero"
+    }
+  ]
+}
+{% endschema %}

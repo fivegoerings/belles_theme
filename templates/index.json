@@ -1,0 +1,397 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "belle_hero_section_CQH4xD": {
+      "type": "belle-hero-section",
+      "blocks": {
+        "feature_KLjwWg": {
+          "type": "feature",
+          "settings": {
+            "icon": "check",
+            "title": "We track your setup",
+            "description": "String type, tension, date. Logged every time. When you come back, we already know what worked.",
+            "url": ""
+          }
+        },
+        "feature_QrnArP": {
+          "type": "feature",
+          "settings": {
+            "icon": "calendar",
+            "title": "Local Pickup & Drop-off",
+            "description": "We meet at a local QuikTrip. Simple drop-off and pickup by appointment.",
+            "url": ""
+          }
+        },
+        "feature_PcAcka": {
+          "type": "feature",
+          "settings": {
+            "icon": "badge",
+            "title": "Bought Your Racquet Elsewhere?",
+            "description": "No problem. String selection and setup help is part of the service here, regardless of where you bought the frame.",
+            "url": ""
+          }
+        },
+        "feature_79BCn4": {
+          "type": "feature",
+          "settings": {
+            "icon": "racquet",
+            "title": "Free Demo Racquet",
+            "description": "Borrow a Solinco demo while your racquet is being strung. No charge.",
+            "url": "shopify://pages/demo-racquet-program"
+          }
+        }
+      },
+      "block_order": [
+        "feature_KLjwWg",
+        "feature_QrnArP",
+        "feature_PcAcka",
+        "feature_79BCn4"
+      ],
+      "settings": {
+        "address": "Kansas City, MO 64155",
+        "phone": "816-938-7622",
+        "bg_image": "shopify://shop_images/IMG_1772_4_a2d26233-fa49-4da7-8831-bb9e1422d273.webp",
+        "badge_text": "Built by a Northland Tennis Parent — For Northland Tennis Families",
+        "byline": "Belle's Performance Tennis Shop",
+        "headline_line1": "Stringing Is the Service",
+        "headline_line2": "Better Setup Is the Goal",
+        "tagline": "Not sure what string or tension is right for your game? Most players aren't. Tell me about your setup and I'll recommend what actually works for your racquet and level.",
+        "cta_primary_text": "Book Tennis Racquet Stringing",
+        "cta_secondary_text": "See Pricing",
+        "cta_secondary_url": "shopify://pages/racquet-stringing-prices-kansas-city-northland",
+        "trust_1": "$40–$55 total",
+        "trust_2": "Most racquets ready in 2–3 days",
+        "trust_3": "USRSA Member"
+      }
+    },
+    "rich_text_rNtgTy": {
+      "type": "rich-text",
+      "blocks": {
+        "text_mAdqEm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>When Isabelle joined the Staley High School tennis team, I started looking for someone to string her racquet in the Northland. The options weren't great. So I became a USRSA member, bought a Gamma Progression II ELS electronic stringing machine, and opened Belle's.</p>"
+          }
+        },
+        "button_bQGxqB": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn Our Story",
+            "button_link": "shopify://pages/about-tennis-stringing-kansas-city-northland",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_mAdqEm",
+        "button_bQGxqB"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_9kkXcB": {
+      "type": "rich-text",
+      "blocks": {
+        "text_dX43YV": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Looking for tennis racquet stringing near Kansas City? Belle’s Performance Tennis Shop serves Northland players in Kansas City, North Kansas City, Gladstone, Liberty, Parkville, Platte City, Smithville, Kearney, and nearby areas.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_dX43YV"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "belle_how_it_works_CCTPpr": {
+      "type": "belle-how-it-works",
+      "name": "How It Works",
+      "settings": {
+        "title": "How It Works",
+        "subtitle": "Three steps. No confusion. Your racquet comes back strung right.",
+        "step_1_title": "Book Online",
+        "step_1_text": "Pick a day and time and QuikTrip location that works for you.",
+        "step_2_title": "Meet & Drop Off",
+        "step_2_text": "We meet at a local QuikTrip. Drop off in 5 minutes.",
+        "step_3_title": "Pick Up & Play",
+        "step_3_text": "Your racquet is strung, labeled, and ready. We arrange a pickup time and location that works for you."
+      }
+    },
+    "belle_new_racquet_setup_BiEEC9": {
+      "type": "belle-new-racquet-setup",
+      "blocks": {
+        "item_UprizT": {
+          "type": "item",
+          "settings": {
+            "title": "String selection",
+            "description": "I'll recommend a string matched to your swing style and racquet head size."
+          }
+        },
+        "item_G7mBbJ": {
+          "type": "item",
+          "settings": {
+            "title": "Tension recommendation",
+            "description": "Too tight means less power. Too loose means less control. I'll help you find the right number."
+          }
+        },
+        "item_n9VCCw": {
+          "type": "item",
+          "settings": {
+            "title": "Notes for future restrings",
+            "description": "I track your setup so the next job starts from a good baseline, not a blank slate."
+          }
+        },
+        "item_e74ncW": {
+          "type": "item",
+          "settings": {
+            "title": "Works on any frame",
+            "description": "Doesn't matter where you bought it. Bring it in and we'll get it set up right."
+          }
+        }
+      },
+      "block_order": [
+        "item_UprizT",
+        "item_G7mBbJ",
+        "item_n9VCCw",
+        "item_e74ncW"
+      ],
+      "name": "New Racquet Setup",
+      "settings": {
+        "label": "Just Got a New Racquet?",
+        "headline_line1": "Don't Assume the Factory",
+        "headline_line2": "Strings Are Right for You.",
+        "body": "Factory strings are designed to ship — not to match your game. Whether you're a junior in high school, an adult returner, or a parent buying a racquet for your child, I can help you choose the right string and tension from the start.",
+        "cta_text": "Book a New Racquet Setup",
+        "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=new_racquet_setup&utm_content=homepage_nrs",
+        "cta_calendly": true
+      }
+    },
+    "belle_why_section_thytpW": {
+      "type": "belle-why-section",
+      "blocks": {
+        "reason_YfzfDF": {
+          "type": "reason",
+          "settings": {
+            "image": "shopify://shop_images/IMG_1335_2.webp",
+            "icon": "racquet",
+            "title": "Free Solinco Demo Racquets",
+            "description": "Tournaments don't wait and neither should you. Every Belle's stringing customer can request a free Solinco demo racquet to borrow during service. Check out our Demo Racquet Program to see what's available.",
+            "url": "shopify://pages/demo-racquet-program"
+          }
+        },
+        "reason_WFDWiE": {
+          "type": "reason",
+          "settings": {
+            "image": "shopify://shop_images/IMG_0709_3.webp",
+            "icon": "machine",
+            "title": "Strung on a Gamma Progression II ELS",
+            "description": "Your racquet is strung on a Gamma Progression II ELS electronic constant-pull machine. It pulls each string to the requested tension and keeps the job consistent from first pull to last.",
+            "url": "shopify://blogs/news/why-your-stringers-machine-matters-more-than-you-think"
+          }
+        },
+        "reason_xdpKtX": {
+          "type": "reason",
+          "settings": {
+            "image": "shopify://shop_images/20231114_SOL_X-Natural_Reel_BGR_GRY_1-1.webp",
+            "icon": "badge",
+            "title": "Strings On Hand",
+            "description": "Solinco, Gosen, Head, and Wilson strings are kept on hand for common Northland restring jobs. If you already know what you like, I can match it. If not, I’ll explain the practical difference before stringing.",
+            "url": "shopify://pages/tennis-equipment-kansas-city-northland"
+          }
+        }
+      },
+      "block_order": [
+        "reason_YfzfDF",
+        "reason_WFDWiE",
+        "reason_xdpKtX"
+      ],
+      "name": "Why Belle's",
+      "settings": {
+        "section_title": "Why Belle's?",
+        "section_subtitle": ""
+      }
+    },
+    "17747623808744282d": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_testimonials_carousel_FfW4W8": {
+          "type": "shopify://apps/judge-me-reviews/blocks/testimonials_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "show_sample_reviews": false,
+            "reviews_selection": "all",
+            "products": [],
+            "star_rating": "all",
+            "max_reviews": 30,
+            "quote_marks_size": "small",
+            "product_name_text_size": "small",
+            "verified_badge_style": "icon",
+            "card_height": "compact",
+            "text_size": "small",
+            "stars_size": "small",
+            "arrows_position": "bottom",
+            "max_width": 1600,
+            "corner_styling": "soft",
+            "quote_marks_style": "serif",
+            "card_color": "#f9f9f9",
+            "stars_and_quote_marks_color": "#1a3c2a",
+            "text_color": "#000000",
+            "arrows_color": "#000000",
+            "show_border": false,
+            "border_color": "#108474",
+            "show_drop_shadow": false,
+            "transition_speed": 5,
+            "header_text": "What KC Northland Players Are Saying",
+            "show_average_rating": true,
+            "rating_display": "default"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_testimonials_carousel_FfW4W8"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "cta_inline_z7Jiir": {
+      "type": "cta-inline",
+      "name": "CTA Inline",
+      "settings": {
+        "cta_heading": "Your Setup Saved for Next Time",
+        "cta_description": "Book online, drop off at a Northland QuikTrip, and most racquets are ready in 2–3 days. Your string and tension notes are saved for next time.",
+        "schedule_button_text": "Book Racquet Stringing",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=homepage_mid"
+      }
+    },
+    "belle_faq_section_pyB8HM": {
+      "type": "belle-faq-section",
+      "blocks": {
+        "question_f4zGBm": {
+          "type": "question",
+          "settings": {
+            "question": "How does the appointment/drop-off process work?",
+            "answer": "<p>Booking is simple. When you schedule your appointment, you will choose a <strong>pickup/drop-off location</strong> from a list of convenient QuikTrip locations in the Northland.</p><p>During booking, you will also enter your contact info and answer a few quick questions about your racquet, string needs, and timing. This helps me prepare before we meet.</p><p>At your scheduled drop-off time, we meet at the location you selected, I confirm your racquet details and service request, and then I take your racquet for service. Once your racquet is finished, I will contact you to arrange pickup at a convenient location.</p><p>This is a <strong>service-area pickup/drop-off model</strong> (not an in-home storefront), which makes the process simple, flexible, and convenient for local players.</p><p>If you are not sure what string or tension you need, that is no problem. I can help you choose based on your racquet, playing level, and goals.</p>",
+            "category": ""
+          }
+        },
+        "question_3X4BwB": {
+          "type": "question",
+          "settings": {
+            "question": "How do I pay?",
+            "answer": "<p>When your racquet is ready, we'll send you an invoice you can pay online. We accept all major credit cards. No deposits required.</p>",
+            "category": ""
+          }
+        },
+        "question_xGfGrY": {
+          "type": "question",
+          "settings": {
+            "question": "Why not just use a big box store or my club?",
+            "answer": "<p>Big-box stores and clubs may be convenient, but they usually are not built around Northland drop-off, setup history, and repeat restrings. At Belle’s, your string, tension, and racquet notes are saved, and I string every racquet myself.</p>",
+            "category": ""
+          }
+        },
+        "question_rEDQTV": {
+          "type": "question",
+          "settings": {
+            "question": "What if my strings break mid-season?",
+            "answer": "<p>We offer same-day and next-day service when available, and you can borrow a demo racquet while yours is being strung so you never miss a match.</p>",
+            "category": ""
+          }
+        },
+        "question_PXt4jK": {
+          "type": "question",
+          "settings": {
+            "question": "How do I know the tension will be right?",
+            "answer": "<p>We record your setup every time. So whether it's your first restring with us or your tenth, your racquet comes back feeling the way you expect — not however the last person happened to string it.</p>",
+            "category": ""
+          }
+        },
+        "question_zQz3LH": {
+          "type": "question",
+          "settings": {
+            "question": "What if my racquet gets damaged during stringing?",
+            "answer": "<p>Every racquet is inspected before stringing. If I notice a crack, worn grommet, or other visible issue, I’ll contact you before proceeding. Racquets with pre-existing stress fractures can fail during stringing, so those are flagged before work continues.</p>",
+            "category": ""
+          }
+        },
+        "question_8jBRrx": {
+          "type": "question",
+          "settings": {
+            "question": "How often should I be restringing?",
+            "answer": "<p>A good rule of thumb: as many times per year as you play per week. Play three times a week? Restring three times a year. Most players are playing on dead strings without realizing it — and wondering why their game feels off.</p>",
+            "category": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_f4zGBm",
+        "question_3X4BwB",
+        "question_xGfGrY",
+        "question_rEDQTV",
+        "question_PXt4jK",
+        "question_zQz3LH",
+        "question_8jBRrx"
+      ],
+      "name": "Belle's FAQ",
+      "settings": {
+        "title": "Common Questions - Answered",
+        "subtitle": "Everything you need to know before drop-off",
+        "open_first": true,
+        "show_contact_cta": false,
+        "contact_title": "Still Have Questions?",
+        "contact_text": "We're here to help! Reach out and we'll get back to you as soon as possible.",
+        "contact_link": "",
+        "phone": "816-938-7622"
+      }
+    },
+    "cta_inline_dKAwEt": {
+      "type": "cta-inline",
+      "name": "CTA Inline",
+      "settings": {
+        "cta_heading": "Book a Northland Drop-Off",
+        "cta_description": "Choose a Northland QuikTrip location and time. Strings are included, no deposit is required, and you pay after the racquet is done.",
+        "schedule_button_text": "Book Racquet Stringing",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=homepage_bottom"
+      }
+    }
+  },
+  "order": [
+    "belle_hero_section_CQH4xD",
+    "rich_text_rNtgTy",
+    "rich_text_9kkXcB",
+    "belle_how_it_works_CCTPpr",
+    "belle_new_racquet_setup_BiEEC9",
+    "belle_why_section_thytpW",
+    "17747623808744282d",
+    "cta_inline_z7Jiir",
+    "belle_faq_section_pyB8HM",
+    "cta_inline_dKAwEt"
+  ]
+}

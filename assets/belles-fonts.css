@@ -1,0 +1,36 @@
+/* Self-hosted Google Fonts for Belle's Performance Tennis */
+/* Bebas Neue - Regular 400 */
+@font-face {
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url('bebas-neue-v16-latin-regular.woff2') format('woff2');
+}
+
+/* Source Sans 3 (formerly Source Sans Pro) - Regular 400 */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url('source-sans-3-v19-latin-regular.woff2') format('woff2');
+}
+
+/* Source Sans 3 - SemiBold 600 */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  font-display: optional;
+  src: url('source-sans-3-v19-latin-600.woff2') format('woff2');
+}
+
+/* Source Sans 3 - Bold 700 */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url('source-sans-3-v19-latin-700.woff2') format('woff2');
+}

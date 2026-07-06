@@ -1,0 +1,32 @@
+/* Belle's Performance Tennis - Footer Styles
+   Additional styles can be added here if needed
+   Main styles are embedded in the section file for easier customization
+*/
+
+/* Smooth scrolling for footer links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Additional hover effects for footer CTA */
+.belle-footer-service-info .belle-cta-link {
+  box-shadow: 0 2px 4px rgba(26, 71, 42, 0.1);
+}
+
+.belle-footer-service-info .belle-cta-link:hover {
+  box-shadow: 0 4px 12px rgba(26, 71, 42, 0.2);
+}
+
+/* Print styles */
+@media print {
+  .belle-footer {
+    border-top: 1px solid #000;
+    background: white;
+  }
+  
+  .belle-footer-service-info .belle-cta-link {
+    background: white;
+    color: #000;
+    border: 1px solid #000;
+  }
+}

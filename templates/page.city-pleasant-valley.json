@@ -1,0 +1,108 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "city_hero": {
+      "type": "belle-city-hero",
+      "settings": {
+        "city_name": "Pleasant Valley",
+        "eyebrow": "Pleasant Valley, MO",
+        "headline": "Racquet Stringing for Pleasant Valley Tennis Players",
+        "intro": "Pleasant Valley and Claycomo players can drop off at the QuikTrip at 8600 Pleasant Valley Rd. Most racquets are ready in 2\u20133 days. No drive south of the river.",
+        "cta_text": "Book Racquet Stringing",
+        "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_pleasantvalley_hero",
+        "hero_image_alt": ""
+      }
+    },
+    "city_community": {
+      "type": "belle-city-community",
+      "disabled": true,
+      "settings": {
+        "community_heading": "CLAYCOMO NEXT DOOR. LIBERTY FIVE MINUTES NORTH.",
+        "community_text": "Pleasant Valley sits at a crossroads in the Northland. Claycomo is right next door. Jump on 35 north and you're in Liberty in five minutes. But tennis players here have always had to go south for stringing. Weatherby Lake players can use the Parkville QuikTrip drop-off at 8601 MO-45. Most racquets are ready in 2\u20133 days, with string and tension notes saved for next time."
+      }
+    },
+    "how_it_works": {
+      "type": "belle-how-it-works",
+      "settings": {
+        "title": "How It Works",
+        "subtitle": "Three steps. No confusion. Your racquet comes back strung right.",
+        "step_1_title": "Book Online",
+        "step_1_text": "Pick a time. Your meetup spot is the QuikTrip at 8600 Pleasant Valley Rd.",
+        "step_2_title": "Hand It Off",
+        "step_2_text": "We meet you there. Drop off your racquet and grab a free Solinco demo if you need one.",
+        "step_3_title": "Pick Up & Play",
+        "step_3_text": "Strung, logged, labeled. Back in your hands in 2\u20133 days."
+      }
+    },
+    "city_landing": {
+      "type": "belle-city-landing",
+      "settings": {
+        "city_name": "Pleasant Valley",
+        "values_heading": "What Pleasant Valley Players Get",
+        "value_1_title": "Every Job Logged",
+        "value_1_text": "We record your string, tension, and preferences each time. Next visit, we already know your setup.",
+        "value_2_title": "Free Loaner Racquet",
+        "value_2_text": "Borrow a Solinco demo at no charge while yours is on the machine.",
+        "value_3_title": "Pricing",
+        "value_3_text": "Most restrings $40\u2013$55 total, string included. See the pricing page for the full breakdown.",
+        "value_4_title": "Consistent Tension",
+        "value_4_text": "We string on a Gamma Progression II electronic constant-pull machine. consistent tension from the first string to the last.",
+        "local_heading": "",
+        "local_paragraph_1": "",
+        "local_paragraph_2": "",
+        "local_paragraph_3": "",
+        "testimonial_text": "He was readily available and was able to make accommodations based on my pickup location. You can also get your mains and crosses strung to specific tensions. Definitely recommend his services.",
+        "testimonial_author": "Jayden S. \u2014 Google Review",
+        "meetup_heading": "Find a Drop-Off Near You",
+        "meetup_description": "",
+        "meetup_maps_url": "",
+        "faq_heading": "Pleasant Valley Stringing FAQ",
+        "faq_1_question": "Where consistently do we meet in Pleasant Valley?",
+        "faq_1_answer": "The QuikTrip at 8600 Pleasant Valley Rd. Pick your time when you book. We'll be there.",
+        "faq_2_question": "How fast do you turn it around?",
+        "faq_2_answer": "Most jobs completed in 2\u20133 days. Need it sooner? Same-day and next-day available on request. Have a match coming up? Mention it when you book.",
+        "faq_3_question": "Do you serve Liberty players too?",
+        "faq_3_answer": "Yes. Liberty is five minutes north on 35. If you want to book with a neighbor and split a meetup, we can work that out.",
+        "nearby_1_label": "Gladstone",
+        "nearby_1_url": "/pages/racquet-stringing-gladstone",
+        "nearby_2_label": "Liberty",
+        "nearby_2_url": "/pages/racquet-stringing-liberty",
+        "nearby_3_label": "North Kansas City",
+        "nearby_3_url": "/pages/racquet-stringing-north-kansas-city",
+        "nearby_4_label": "Parkville",
+        "nearby_4_url": "/pages/tennis-racquet-stringing-parkville-mo",
+        "nearby_5_label": "Smithville",
+        "nearby_5_url": "/pages/racquet-stringing-smithville",
+        "nearby_6_label": "Kearney",
+        "nearby_6_url": "/pages/racquet-stringing-kearney",
+        "nearby_7_label": "Platte City",
+        "nearby_7_url": "/pages/tennis-stringing-platte-city-mo"
+      }
+    },
+    "cta_inline_mid": {
+      "type": "cta-inline",
+      "name": "CTA Inline",
+      "settings": {
+        "cta_heading": "Book a Pleasant Valley Drop-Off",
+        "cta_description": "Pleasant Valley and Claycomo players can drop off at the QuikTrip at 8600 Pleasant Valley Rd. Most racquets are ready in 2\u20133 days. No drive south of the river.",
+        "schedule_button_text": "Book Racquet Stringing",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_pleasantvalley_bottom"
+      }
+    }
+  },
+  "order": [
+    "city_hero",
+    "city_community",
+    "how_it_works",
+    "city_landing",
+    "cta_inline_mid"
+  ]
+}

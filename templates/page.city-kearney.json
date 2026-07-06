@@ -1,0 +1,107 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "city_hero": {
+      "type": "belle-city-hero",
+      "settings": {
+        "city_name": "Kearney",
+        "eyebrow": "Kearney, MO",
+        "headline": "Racquet Stringing for Kearney Tennis Players",
+        "intro": "Kearney players can book a Northland drop-off without shipping a racquet or driving south of the river. Most racquets are ready in 2\u20133 days, and your setup is logged for next time.",
+        "cta_text": "Book Racquet Stringing",
+        "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_kearney_hero",
+        "hero_image_alt": ""
+      }
+    },
+    "city_community": {
+      "type": "belle-city-community",
+      "settings": {
+        "community_heading": "",
+        "community_text": ""
+      }
+    },
+    "how_it_works": {
+      "type": "belle-how-it-works",
+      "settings": {
+        "title": "How It Works",
+        "subtitle": "Three steps. Your racquet comes back strung right.",
+        "step_1_title": "Book Online",
+        "step_1_text": "Pick a time and a drop-off spot near Kearney.",
+        "step_2_title": "Meet & Drop Off",
+        "step_2_text": "We meet you there. Hand off your racquet and grab a free Solinco demo if you need one.",
+        "step_3_title": "Pick Up & Play",
+        "step_3_text": "Strung, logged, labeled. Back to you in 2\u20133 days."
+      }
+    },
+    "city_landing": {
+      "type": "belle-city-landing",
+      "settings": {
+        "city_name": "Kearney",
+        "values_heading": "What Kearney Players Get",
+        "value_1_title": "Tracked Setup",
+        "value_1_text": "We log your string, tension, and preferences every time. We already know your setup next visit.",
+        "value_2_title": "Free Solinco Demo Racquet",
+        "value_2_text": "Borrow a Solinco demo while yours is being strung. No charge.",
+        "value_3_title": "Pricing",
+        "value_3_text": "Most restrings $40\u2013$55 total, string included. See the pricing page for the full breakdown.",
+        "value_4_title": "Gamma Progression II ELS",
+        "value_4_text": "Strung on a Gamma Progression II electronic constant-pull machine. consistent tension every time.",
+        "local_heading": "Stringing for Kearney Players",
+        "local_paragraph_1": "Kearney players can book a Northland drop-off without shipping a racquet or driving south of the river. Most racquets are ready in 2\u20133 days, and your string and tension notes are saved for next time.",
+        "local_paragraph_2": "Kearney High School players get the same service as everyone else. We log your string, tension, and any preferences so we already know your setup the next time you come back.",
+        "local_paragraph_3": "No deposit required. You pay after the job is done, via invoice.",
+        "testimonial_text": "",
+        "testimonial_author": "",
+        "meetup_heading": "Find a Drop-Off Near You",
+        "meetup_description": "",
+        "meetup_maps_url": "",
+        "faq_heading": "Kearney Stringing FAQ",
+        "faq_1_question": "Where do we meet near Kearney?",
+        "faq_1_answer": "We meet at convenient spots in and around Kearney. You pick the location and time when you book online.",
+        "faq_2_question": "Do you serve Kearney High School players?",
+        "faq_2_answer": "Yes. High school players, USTA league players, Coaches and recreational players are welcome.",
+        "faq_3_question": "How fast do you turn it around?",
+        "faq_3_answer": "Most jobs take 2\u20133 days.",
+        "nearby_1_label": "Liberty",
+        "nearby_1_url": "/pages/racquet-stringing-liberty",
+        "nearby_2_label": "Smithville",
+        "nearby_2_url": "/pages/racquet-stringing-smithville",
+        "nearby_3_label": "Gladstone",
+        "nearby_3_url": "/pages/racquet-stringing-gladstone",
+        "nearby_4_label": "North Kansas City",
+        "nearby_4_url": "/pages/racquet-stringing-north-kansas-city",
+        "nearby_5_label": "Platte City",
+        "nearby_5_url": "/pages/tennis-stringing-platte-city-mo",
+        "nearby_6_label": "Staley / KC North",
+        "nearby_6_url": "/pages/racquet-stringing-staley-kansas-city-north",
+        "nearby_7_label": "Winnetonka",
+        "nearby_7_url": "/pages/racquet-stringing-winnetonka"
+      }
+    },
+    "cta_inline_mid": {
+      "type": "cta-inline",
+      "name": "CTA Inline",
+      "settings": {
+        "cta_heading": "Book a Kearney Drop-Off",
+        "cta_description": "Kearney players can book a Northland drop-off without shipping a racquet or driving south of the river. Most racquets are ready in 2\u20133 days, with your setup logged for future restrings.",
+        "schedule_button_text": "Book Racquet Stringing",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_kearney_bottom"
+      }
+    }
+  },
+  "order": [
+    "city_hero",
+    "city_community",
+    "how_it_works",
+    "city_landing",
+    "cta_inline_mid"
+  ]
+}

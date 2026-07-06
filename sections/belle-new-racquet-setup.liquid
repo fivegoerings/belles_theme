@@ -1,0 +1,325 @@
+{% comment %}
+  Belle's Performance Tennis Shop - New Racquet Setup Section
+  Version: 1.0.0 - 2026-06-24
+
+  Purpose: Capture parents, grandparents, and new frame owners who don't know
+  that factory strings are rarely right for serious play. Addresses the insight
+  from Mike Lyman's review — people are buying confidence in equipment decisions,
+  not just a string installation.
+
+  Placement: index.json between belle-how-it-works and belle-why-section.
+  LOCKED: Do not modify without data showing conversion issue.
+{% endcomment %}
+
+<style>
+  .belle-nrs {
+    --belle-green: #1a3c2a;
+    --belle-green-dark: #0f2e1a;
+    --belle-gold: #c8a951;
+    --belle-cream: #faf9f6;
+
+    background: var(--belle-green);
+    padding: 60px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle radial accent */
+  .belle-nrs::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(201, 162, 39, 0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .belle-nrs-container {
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  /* Left: headline and body */
+  .belle-nrs-label {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--belle-gold);
+    margin: 0 0 12px 0;
+  }
+
+  .belle-nrs h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin: 0 0 16px 0;
+  }
+
+  .belle-nrs h2 span {
+    color: var(--belle-gold);
+  }
+
+  .belle-nrs-body {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.80);
+    margin: 0 0 28px 0;
+  }
+
+  .belle-nrs-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--belle-gold);
+    color: var(--belle-green-dark);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    letter-spacing: 0.3px;
+  }
+
+  .belle-nrs-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(201, 162, 39, 0.3);
+  }
+
+  .belle-nrs-cta svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--belle-green-dark);
+    flex-shrink: 0;
+  }
+
+  /* Right: checklist */
+  .belle-nrs-checklist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .belle-nrs-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .belle-nrs-check-icon {
+    width: 22px;
+    height: 22px;
+    background: rgba(201, 162, 39, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .belle-nrs-check-icon svg {
+    width: 12px;
+    height: 12px;
+    fill: var(--belle-gold);
+  }
+
+  .belle-nrs-checklist-text {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.45;
+  }
+
+  .belle-nrs-checklist-text strong {
+    color: #ffffff;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .belle-nrs {
+      padding: 48px 20px 56px;
+    }
+
+    .belle-nrs-container {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+
+    .belle-nrs h2 {
+      font-size: 32px;
+    }
+  }
+</style>
+
+<section class="belle-nrs">
+  <div class="belle-nrs-container">
+
+    <div class="belle-nrs-left">
+      <p class="belle-nrs-label">{{ section.settings.label }}</p>
+      <h2>{{ section.settings.headline_line1 }} <span>{{ section.settings.headline_line2 }}</span></h2>
+      <p class="belle-nrs-body">{{ section.settings.body }}</p>
+      {% if section.settings.cta_url != blank %}
+        <a
+          href="{{ section.settings.cta_url }}"
+          class="belle-nrs-cta"
+          {% if section.settings.cta_calendly %}
+            data-calendly-modal="true"
+            data-calendly-url="{{ section.settings.cta_url }}"
+          {% endif %}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z"/>
+          </svg>
+          {{ section.settings.cta_text }}
+        </a>
+      {% endif %}
+    </div>
+
+    <ul class="belle-nrs-checklist">
+      {% for block in section.blocks %}
+        <li {{ block.shopify_attributes }}>
+          <div class="belle-nrs-check-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+            </svg>
+          </div>
+          <div class="belle-nrs-checklist-text">
+            {% if block.settings.title != blank %}
+              <strong>{{ block.settings.title }}</strong>
+            {% endif %}
+            {{ block.settings.description }}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "New Racquet Setup",
+  "tag": "section",
+  "class": "section-belle-nrs",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label (small text above headline)",
+      "default": "Just Got a New Racquet?"
+    },
+    {
+      "type": "text",
+      "id": "headline_line1",
+      "label": "Headline Line 1",
+      "default": "Don't Assume the Factory"
+    },
+    {
+      "type": "text",
+      "id": "headline_line2",
+      "label": "Headline Line 2 (gold accent)",
+      "default": "Strings Are Right for You."
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body Copy",
+      "default": "Factory strings are designed to ship — not to match your game. Whether you're a junior in high school, an adult returner, or a parent buying a racquet for your child, I can help you choose the right string and tension from the start."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button Text",
+      "default": "Book a New Racquet Setup"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button URL",
+      "info": "Use your Calendly URL with UTM: https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=new_racquet_setup&utm_content=homepage_nrs"
+    },
+    {
+      "type": "checkbox",
+      "id": "cta_calendly",
+      "label": "Open as Calendly modal?",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Checklist Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title (bold, optional)",
+          "default": "String selection"
+        },
+        {
+          "type": "text",
+          "id": "description",
+          "label": "Description",
+          "default": "I'll recommend a string matched to your game style and racquet."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "New Racquet Setup",
+      "blocks": [
+        {
+          "type": "item",
+          "settings": {
+            "title": "String selection",
+            "description": "I'll recommend a string matched to your swing style and racquet head size."
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Tension recommendation",
+            "description": "Too tight means less power. Too loose means less control. I'll help you find the right number."
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Notes for future restrings",
+            "description": "I track your setup so the next job starts from a good baseline, not a blank slate."
+          }
+        },
+        {
+          "type": "item",
+          "settings": {
+            "title": "Works on any frame",
+            "description": "Doesn't matter where you bought it. Bring it in and we'll get it set up right."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
