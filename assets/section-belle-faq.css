@@ -8,7 +8,7 @@
   --belle-light: #f8f8f8;
   --belle-border: #e0e0e0;
 
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', 'Source Sans Pro Fallback', sans-serif;
   padding: 60px 20px;
   background: linear-gradient(180deg, var(--belle-cream) 0%, #fff 100%);
 }
@@ -25,7 +25,7 @@
 }
 
 .belle-faq-title {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Bebas Neue', 'Bebas Neue Fallback', sans-serif;
   font-size: 48px;
   color: var(--belle-green);
   margin: 0 0 12px 0;
@@ -47,7 +47,7 @@
 }
 
 .belle-faq-category-title {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Bebas Neue', 'Bebas Neue Fallback', sans-serif;
   font-size: 28px;
   color: var(--belle-green);
   margin: 0 0 20px 0;
@@ -231,7 +231,7 @@
 }
 
 .belle-faq-contact-title {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Bebas Neue', 'Bebas Neue Fallback', sans-serif;
   font-size: 32px;
   color: white;
   margin: 0 0 12px 0;
