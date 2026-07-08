@@ -107,6 +107,7 @@
       ],
       "settings": {
         "title": "Frequently Asked Questions",
+        "is_page_heading": true,
         "subtitle": "Find answers to common questions about our racquet stringing services",
         "open_first": true,
         "show_contact_cta": false,

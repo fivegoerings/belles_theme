@@ -10,7 +10,11 @@
     
     <!-- Header -->
     <div class="belle-faq-header">
-      <h1 class="belle-faq-title">{{ section.settings.title | default: 'Frequently Asked Questions' }}</h1>
+      {%- if section.settings.is_page_heading -%}
+        <h1 class="belle-faq-title">{{ section.settings.title | default: 'Frequently Asked Questions' }}</h1>
+      {%- else -%}
+        <h2 class="belle-faq-title">{{ section.settings.title | default: 'Frequently Asked Questions' }}</h2>
+      {%- endif -%}
       {% if section.settings.subtitle != blank %}
       <p class="belle-faq-subtitle">{{ section.settings.subtitle }}</p>
       {% endif %}
@@ -159,6 +163,13 @@
       "id": "title",
       "label": "Title",
       "default": "Frequently Asked Questions"
+    },
+    {
+      "type": "checkbox",
+      "id": "is_page_heading",
+      "label": "Use this title as the page's main heading (h1)",
+      "info": "Only enable this when the FAQ is the primary content of the page (e.g. a dedicated FAQ page). Leave off when it's a secondary section alongside another heading.",
+      "default": false
     },
     {
       "type": "textarea",
