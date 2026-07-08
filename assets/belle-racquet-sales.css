@@ -17,7 +17,7 @@
     font-family: 'Source Sans Pro', 'Source Sans Pro Fallback', sans-serif; font-size: 12px; font-weight: 700;
     letter-spacing: 2px; text-transform: uppercase; color: var(--gold-dim); margin: 0 0 10px;
   }
-  .brs-header h2 {
+  .brs-header h1 {
     font-family: 'Bebas Neue', 'Bebas Neue Fallback', sans-serif; font-size: 52px; font-weight: 400;
     color: var(--green); margin: 0 0 12px; letter-spacing: 1px; line-height: 1;
   }
@@ -258,7 +258,7 @@
     .brs-steps { flex-direction: column; }
     .brs-step { border-right: none; border-bottom: 1px solid #f0f0f0; }
     .brs-step:last-child { border-bottom: none; }
-    .brs-header h2 { font-size: 40px; }
+    .brs-header h1 { font-size: 40px; }
     .brs-modal__grid { grid-template-columns: 1fr; }
     .brs-modal__img { min-height: 300px; }
   }
