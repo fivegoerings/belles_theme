@@ -45,8 +45,13 @@
     </header>
     
     <!-- Article Content -->
+    {%- comment -%}
+      The belle-article-title above is the page's h1. Authors sometimes add an
+      H1 inside the article body in the blog editor, producing duplicate h1s on
+      the page — demote any body h1s to h2 at render time.
+    {%- endcomment -%}
     <div class="belle-article-content rte" itemprop="articleBody">
-      {{ article.content }}
+      {{ article.content | replace: '<h1>', '<h2>' | replace: '<h1 ', '<h2 ' | replace: '</h1>', '</h2>' }}
     </div>
     
     <!-- Share Section -->
