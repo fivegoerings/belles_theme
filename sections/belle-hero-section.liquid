@@ -379,7 +379,7 @@
         fill: var(--belle-green);
       }
 
-      .belle-feature-v2 h3 {
+      .belle-feature-v2 h2 {
         font-family: 'Source Sans Pro', sans-serif;
         font-size: 15px;
         font-weight: 700;
@@ -489,7 +489,7 @@
           height: 44px;
         }
 
-        .belle-feature-v2 h3 {
+        .belle-feature-v2 h2 {
           margin-bottom: 4px;
         }
       }
@@ -544,6 +544,7 @@
       {% if section.settings.bg_image != blank %}
         {%- liquid
           assign bg_image = section.settings.bg_image
+          assign bg_alt = bg_image.alt | default: "Tennis racquet stringing at Belle's Performance Tennis"
         -%}
         {{-
           bg_image
@@ -551,7 +552,7 @@
           | image_tag:
             loading: 'eager',
             fetchpriority: 'high',
-            alt: bg_image.alt,
+            alt: bg_alt,
             sizes: '100vw',
             widths: '800, 1200, 1600'
         -}}
@@ -682,7 +683,7 @@
             {% endcase %}
           </div>
           <div>
-            <h3>{{ block.settings.title }}</h3>
+            <h2>{{ block.settings.title }}</h2>
             <p>{{ block.settings.description }}</p>
           </div>
           {% if block.settings.url != blank %}</a>{% else %}</div>{% endif %}
