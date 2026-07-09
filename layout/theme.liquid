@@ -49,7 +49,8 @@
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
       {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
-      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+      {%- comment -%} Short brand suffix instead of the full shop.name to keep titles under Google's ~60-char truncation point {%- endcomment -%}
+      {%- unless page_title contains shop.name %} &ndash; Belle&rsquo;s&trade;{% endunless -%}
     </title>
 
     {%- assign meta_desc = page_description | default: shop.description -%}
