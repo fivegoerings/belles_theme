@@ -34,6 +34,18 @@
     {% # theme-check-enable RemoteAsset %}
 
     {%- comment -%}
+      The Judge.me reviews app extension serves its own CSS (carousels.css etc.)
+      from cdn.shopify.com/extensions/... -- a different origin than this store's
+      own /cdn/ asset paths, which are served from the storefront domain itself.
+      Lighthouse flagged a tiny 3.7KB file here costing 700-1400ms of
+      render-blocking time, almost entirely cold DNS+TLS connection setup since
+      nothing preconnects to this origin first.
+    {%- endcomment -%}
+    {% # theme-check-disable RemoteAsset %}
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    {% # theme-check-enable RemoteAsset %}
+
+    {%- comment -%}
       Self-hosted fonts - preload woff2 files, synchronous CSS registered before content_for_header.
       All four weights are preloaded (not just regular) because the hero section uses the 600/700
       weights for headings and CTAs; leaving them unpreloaded let them arrive after first paint,
