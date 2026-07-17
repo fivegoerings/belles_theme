@@ -130,23 +130,36 @@
     addBtn.disabled = !p.available;
     addBtn.textContent = p.available ? "Add to Cart" : "Sold Out";
 
-    // Backorder note: reflects whichever variant is currently selected,
+    // Stock status note: reflects whichever variant is currently selected,
     // falling back to the product-level flag when there's no variant picker.
+    // Shows the backorder note, or an "N items available" count for tracked
+    // in-stock variants (untracked variants have unlimited stock, so no count).
     var backorderEl = document.getElementById("brs-backorder-" + SID);
-    function updateBackorderNote(){
-      if (!backorderEl) return;
+    var stockEl = document.getElementById("brs-stock-" + SID);
+    function updateStockStatus(){
       var vid = realVariants.length ? sel.value : (p.variants[0] && p.variants[0].id);
       var v = p.variants.filter(function(x){ return String(x.id) === String(vid); })[0];
       var backordered = v ? v.backordered : p.backordered;
-      if (backordered && p.backorderLabel){
-        backorderEl.textContent = p.backorderLabel;
-        backorderEl.hidden = false;
-      } else {
-        backorderEl.hidden = true;
+      if (backorderEl){
+        if (backordered && p.backorderLabel){
+          backorderEl.textContent = p.backorderLabel;
+          backorderEl.hidden = false;
+        } else {
+          backorderEl.hidden = true;
+        }
+      }
+      if (stockEl){
+        var qty = v ? v.quantity : null;
+        if (!backordered && v && v.tracked && qty > 0){
+          stockEl.textContent = qty + (qty === 1 ? " item available" : " items available");
+          stockEl.hidden = false;
+        } else {
+          stockEl.hidden = true;
+        }
       }
     }
-    updateBackorderNote();
-    sel.onchange = updateBackorderNote;
+    updateStockStatus();
+    sel.onchange = updateStockStatus;
 
     // Stringing add-on reset
     var strOn = document.getElementById("brs-string-on-" + SID);

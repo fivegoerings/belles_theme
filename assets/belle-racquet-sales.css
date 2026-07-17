@@ -223,6 +223,10 @@
     color: #8a5a00; background: #fff3d6; border: 1px solid #f0d28a; border-radius: 6px;
     padding: 10px 12px; margin: 0 0 14px;
   }
+  .brs-modal__stock {
+    font-family: 'Source Sans Pro', 'Source Sans Pro Fallback', sans-serif; font-size: 12px; font-weight: 700;
+    letter-spacing: 0.3px; color: var(--belle-green, #1a3c2a); margin: 0 0 14px;
+  }
   /* Stringing add-on */
   .brs-string {
     border: 1px solid var(--belle-border, #e0e0e0); border-radius: 6px;
