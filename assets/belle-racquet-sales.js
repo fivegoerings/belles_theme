@@ -164,8 +164,13 @@
     // Stringing add-on reset. strSel/tension are shared DOM nodes reused across
     // modal opens, so their values must be reset explicitly or a prior racquet's
     // string/tension choice leaks into the next one.
+    // Pre-strung racquets already ship strung, so the add-on doesn't apply to them.
+    var stringWrap = document.getElementById("brs-string-" + SID);
+    var isPrestrung = ((p.specs && p.specs.Pattern) || "").toLowerCase() === "pre-strung";
+    if (stringWrap) stringWrap.hidden = isPrestrung;
+
     var strOn = document.getElementById("brs-string-on-" + SID);
-    if (strOn && DATA.stringing && DATA.stringing.variantId){
+    if (strOn && DATA.stringing && DATA.stringing.variantId && !isPrestrung){
       var strOpts = document.getElementById("brs-string-opts-" + SID);
       var strPrice = document.getElementById("brs-string-price-" + SID);
       var strSel = document.getElementById("brs-string-sel-" + SID);
@@ -182,6 +187,9 @@
         if (strOpts) strOpts.hidden = !strOn.checked;
         if (strOn.checked) resetStringChoice();
       };
+    } else if (strOn){
+      strOn.checked = false;
+      strOn.onchange = null;
     }
 
     addBtn.onclick = function(){

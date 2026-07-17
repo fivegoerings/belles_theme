@@ -219,7 +219,7 @@
         </div>
 
         {%- if section.settings.stringing_variant_id != blank -%}
-        <div class="brs-string">
+        <div class="brs-string" id="brs-string-{{ section.id }}">
           <label class="brs-string__toggle">
             <input type="checkbox" id="brs-string-on-{{ section.id }}">
             <span class="brs-string__switch" aria-hidden="true"></span>
