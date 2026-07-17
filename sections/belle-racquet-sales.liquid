@@ -63,6 +63,26 @@
           {%- liquid
             assign short = product.metafields.specs.short_desc | default: product.description | strip_html | truncatewords: 22
             assign ptype = product.product_type | strip | default: "Other"
+
+            assign has_trackable_variant = false
+            assign has_stock_variant = false
+            for v in product.variants
+              if v.available
+                if v.inventory_management == "shopify"
+                  assign has_trackable_variant = true
+                  if v.inventory_quantity > 0
+                    assign has_stock_variant = true
+                  endif
+                else
+                  assign has_stock_variant = true
+                endif
+              endif
+            endfor
+            assign is_backordered = false
+            if product.available and has_trackable_variant and has_stock_variant == false
+              assign is_backordered = true
+            endif
+            assign backorder_label = product.metafields.specs.backorder_note | default: section.settings.backorder_label
           -%}
           <div class="brs-card{% unless product.available %} is-unavailable{% endunless %}"
                data-type="{{ ptype | handle }}"
@@ -79,6 +99,9 @@
             </div>
             <div class="brs-card-body">
               {%- if ptype != blank and ptype != "Other" -%}<p class="brs-card-badge">{{ ptype }}</p>{%- endif -%}
+              {%- if is_backordered and section.settings.show_backorder_badge -%}
+                <p class="brs-badge-backorder">{{ backorder_label }}</p>
+              {%- endif -%}
               <p class="brs-card-name">{{ product.title | remove: "Solinco " }}</p>
               <p class="brs-card-desc">{{ short }}</p>
             </div>
@@ -102,6 +125,27 @@
   window.BelleRacquetSales["{{ section.id }}"] = {
     products: {
       {%- for product in products -%}
+      {%- liquid
+        assign has_trackable_variant = false
+        assign has_stock_variant = false
+        for v in product.variants
+          if v.available
+            if v.inventory_management == "shopify"
+              assign has_trackable_variant = true
+              if v.inventory_quantity > 0
+                assign has_stock_variant = true
+              endif
+            else
+              assign has_stock_variant = true
+            endif
+          endif
+        endfor
+        assign is_backordered = false
+        if product.available and has_trackable_variant and has_stock_variant == false
+          assign is_backordered = true
+        endif
+        assign backorder_label = product.metafields.specs.backorder_note | default: section.settings.backorder_label
+      -%}
       "{{ product.id }}": {
         "title": {{ product.title | json }},
         "series": {{ product.product_type | json }},
@@ -113,6 +157,8 @@
         ],
         "price": {{ product.price | json }},
         "available": {{ product.available }},
+        "backordered": {{ is_backordered | json }},
+        "backorderLabel": {{ backorder_label | json }},
         "desc": {{ product.description | strip_html | json }},
         "specs": {
           "Color":       {{ product.metafields.specs.color | json }},
@@ -128,7 +174,13 @@
         },
         "variants": [
           {%- for v in product.variants -%}
-          { "id": {{ v.id }}, "title": {{ v.title | json }}, "price": {{ v.price | json }}, "available": {{ v.available }} }{%- unless forloop.last -%},{%- endunless -%}
+          {%- liquid
+            assign v_backordered = false
+            if v.available and v.inventory_management == "shopify" and v.inventory_quantity <= 0
+              assign v_backordered = true
+            endif
+          -%}
+          { "id": {{ v.id }}, "title": {{ v.title | json }}, "price": {{ v.price | json }}, "available": {{ v.available }}, "backordered": {{ v_backordered | json }} }{%- unless forloop.last -%},{%- endunless -%}
           {%- endfor -%}
         ]
       }{%- unless forloop.last -%},{%- endunless -%}
@@ -211,6 +263,7 @@
         </div>
         {%- endif -%}
 
+        <p class="brs-modal__backorder" id="brs-backorder-{{ section.id }}" hidden></p>
         <button class="brs-add" id="brs-add-{{ section.id }}">Add to Cart</button>
         <p class="brs-modal__note" id="brs-note-{{ section.id }}"></p>
       </div>
@@ -257,6 +310,20 @@
     { "type": "textarea", "id": "step3_text", "label": "Step 3 text", "default": "Pay securely at checkout. We arrange your QuikTrip handoff in the Northland after your order." },
     { "type": "header", "content": "Modal" },
     { "type": "text", "id": "modal_note", "label": "Modal footer note", "default": "Secure checkout. We arrange your QuikTrip handoff after your order." },
+    { "type": "header", "content": "Backorder" },
+    {
+      "type": "checkbox",
+      "id": "show_backorder_badge",
+      "label": "Show backorder badge",
+      "default": true,
+      "info": "Shown automatically on any racquet that's purchasable only because 'Continue selling when out of stock' is on for every variant (i.e. it's actually at 0 on-hand). Override the wording for a single racquet with a product metafield: specs.backorder_note."
+    },
+    {
+      "type": "text",
+      "id": "backorder_label",
+      "label": "Default backorder label",
+      "default": "Backordered — ships in 7-10 days"
+    },
     { "type": "header", "content": "Stringing Add-On" },
     {
       "type": "text",
