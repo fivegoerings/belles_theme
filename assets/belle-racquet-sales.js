@@ -161,15 +161,27 @@
     updateStockStatus();
     sel.onchange = updateStockStatus;
 
-    // Stringing add-on reset
+    // Stringing add-on reset. strSel/tension are shared DOM nodes reused across
+    // modal opens, so their values must be reset explicitly or a prior racquet's
+    // string/tension choice leaks into the next one.
     var strOn = document.getElementById("brs-string-on-" + SID);
     if (strOn && DATA.stringing && DATA.stringing.variantId){
       var strOpts = document.getElementById("brs-string-opts-" + SID);
       var strPrice = document.getElementById("brs-string-price-" + SID);
+      var strSel = document.getElementById("brs-string-sel-" + SID);
+      var tension = document.getElementById("brs-tension-" + SID);
+      function resetStringChoice(){
+        if (strSel) strSel.selectedIndex = 0;
+        if (tension) tension.value = "";
+      }
       if (strPrice) strPrice.textContent = DATA.stringing.priceLabel || "";
       strOn.checked = false;
       if (strOpts) strOpts.hidden = true;
-      strOn.onchange = function(){ if (strOpts) strOpts.hidden = !strOn.checked; };
+      resetStringChoice();
+      strOn.onchange = function(){
+        if (strOpts) strOpts.hidden = !strOn.checked;
+        if (strOn.checked) resetStringChoice();
+      };
     }
 
     addBtn.onclick = function(){
