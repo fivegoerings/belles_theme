@@ -195,6 +195,20 @@
     stringing: {
       variantId: {{ section.settings.stringing_variant_id | json }},
       priceLabel: {{ section.settings.stringing_price_label | default: "+$25" | json }}
+    },
+    stringVariants: {
+      {%- liquid
+        for block in section.blocks
+          if block.type == "string_variant" and block.settings.string_name != blank and block.settings.variant_id != blank
+            echo block.settings.string_name | json
+            echo ":"
+            echo block.settings.variant_id | json
+            unless forloop.last
+              echo ","
+            endunless
+          endif
+        endfor
+      -%}
     }
   };
 </script>
@@ -341,6 +355,26 @@
     { "type": "header", "content": "Spacing" },
     { "type": "range", "id": "padding_top", "label": "Top padding", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 60 },
     { "type": "range", "id": "padding_bottom", "label": "Bottom padding", "min": 0, "max": 120, "step": 4, "unit": "px", "default": 80 }
+  ],
+  "blocks": [
+    {
+      "type": "string_variant",
+      "name": "String Variant",
+      "settings": [
+        {
+          "type": "text",
+          "id": "string_name",
+          "label": "String name",
+          "info": "Must exactly match one of the string option labels in belle-racquet-sales.js (e.g. 'Solinco Tour Bite 17')."
+        },
+        {
+          "type": "text",
+          "id": "variant_id",
+          "label": "Shopify variant ID",
+          "info": "The $0-tracking product's variant ID, added free to the cart via the 'Free string with stringing add-on' automatic discount when this string is selected."
+        }
+      ]
+    }
   ],
   "presets": [
     { "name": "Racquet Sales" }

@@ -245,6 +245,15 @@
       var nameEl = document.getElementById("brs-name-" + SID);
       if (nameEl && nameEl.textContent) props["For racquet"] = nameEl.textContent;
       items.push({ id: parseInt(DATA.stringing.variantId,10), quantity: 1, properties: props });
+
+      // Add the selected string as its own line item so its stock decrements.
+      // It rings up free via the "Free string with stringing add-on" automatic
+      // discount (buy the stringing add-on, get one item from the Strings
+      // collection free) rather than being priced at $0 here.
+      var stringVariantId = DATA.stringVariants && DATA.stringVariants[props["String"]];
+      if (stringVariantId){
+        items.push({ id: parseInt(stringVariantId,10), quantity: 1 });
+      }
     }
 
     fetch("/cart/add.js", {

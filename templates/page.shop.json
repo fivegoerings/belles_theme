@@ -30,7 +30,76 @@
         "stringing_subtext": "Discounted with your racquet purchase. Standard string included. Premium strings or rush turnaround are added to your final invoice. We string after the order and arrange your QuikTrip handoff.",
         "padding_top": 32,
         "padding_bottom": 32
-      }
+      },
+      "blocks": {
+        "string_variant_hyper_g_soft_17": {
+          "type": "string_variant",
+          "settings": { "string_name": "Solinco Hyper-G Soft 17", "variant_id": "45678489698500" }
+        },
+        "string_variant_tour_bite_17": {
+          "type": "string_variant",
+          "settings": { "string_name": "Solinco Tour Bite 17", "variant_id": "46410806591684" }
+        },
+        "string_variant_tour_bite_soft_17": {
+          "type": "string_variant",
+          "settings": { "string_name": "Solinco Tour Bite Soft 17", "variant_id": "45679133917380" }
+        },
+        "string_variant_confidential_16": {
+          "type": "string_variant",
+          "settings": { "string_name": "Solinco Confidential 16", "variant_id": "46410819633348" }
+        },
+        "string_variant_confidential_soft_17": {
+          "type": "string_variant",
+          "settings": { "string_name": "Solinco Confidential Soft 17", "variant_id": "46410832019652" }
+        },
+        "string_variant_mach_10_17": {
+          "type": "string_variant",
+          "settings": { "string_name": "Solinco Mach-10 17", "variant_id": "45678494351556" }
+        },
+        "string_variant_head_lynx_touch_17": {
+          "type": "string_variant",
+          "settings": { "string_name": "Head Lynx Touch 17", "variant_id": "46410840047812" }
+        },
+        "string_variant_head_lynx_18": {
+          "type": "string_variant",
+          "settings": { "string_name": "Head Lynx 18", "variant_id": "46410842669252" }
+        },
+        "string_variant_x_natural_17": {
+          "type": "string_variant",
+          "settings": { "string_name": "Solinco X-Natural 17", "variant_id": "45679115993284" }
+        },
+        "string_variant_vanquish_17": {
+          "type": "string_variant",
+          "settings": { "string_name": "Solinco Vanquish 17", "variant_id": "45679098527940" }
+        },
+        "string_variant_gosen_og_sheep_micro_16": {
+          "type": "string_variant",
+          "settings": { "string_name": "Gosen OG-Sheep Micro 16", "variant_id": "46228509753540" }
+        },
+        "string_variant_wilson_synthetic_gut_power_16": {
+          "type": "string_variant",
+          "settings": { "string_name": "Wilson Synthetic Gut Power 16", "variant_id": "46410860560580" }
+        },
+        "string_variant_hyper_mach_bd_hybrid": {
+          "type": "string_variant",
+          "settings": { "string_name": "Solinco Hyper-Mach BD hybrid", "variant_id": "46410851188932" }
+        }
+      },
+      "block_order": [
+        "string_variant_hyper_g_soft_17",
+        "string_variant_tour_bite_17",
+        "string_variant_tour_bite_soft_17",
+        "string_variant_confidential_16",
+        "string_variant_confidential_soft_17",
+        "string_variant_mach_10_17",
+        "string_variant_head_lynx_touch_17",
+        "string_variant_head_lynx_18",
+        "string_variant_x_natural_17",
+        "string_variant_vanquish_17",
+        "string_variant_gosen_og_sheep_micro_16",
+        "string_variant_wilson_synthetic_gut_power_16",
+        "string_variant_hyper_mach_bd_hybrid"
+      ]
     }
   },
   "order": [
