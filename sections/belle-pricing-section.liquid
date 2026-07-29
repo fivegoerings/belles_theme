@@ -1,13 +1,12 @@
 {% comment %}
   Belle's Performance Tennis — Pricing Section
-  v5.0 — June 2026
+  v5.1 — July 2026
   Full restructure per roast recommendations:
-    1. Hero: price anchor + checkmarks + killer sentence + CTA
+    1. Hero: confidence statement + price anchor + checkmarks + killer sentence + CTA
     2. 3 turnaround tier cards (speed first, string second)
     3. Not sure what string? section
     4. Real customer examples
-    5. What You Get With Belle's + stringer callout
-    5b. Why not big-box / club
+    5. What Makes Belle's Different + stringer callout
     6. Detailed pricing table
     7. What happens to your racquet
     8. Bottom CTA
@@ -379,7 +378,7 @@
     border: 1px solid var(--bp-border);
     border-radius: 12px;
     padding: 22px 24px;
-    margin-bottom: 16px;
+    margin-bottom: 32px;
   }
 
   .bp-why h2 {
@@ -438,50 +437,6 @@
     display: block;
     font-size: 17px;
     margin-bottom: 4px;
-  }
-
-  /* Why not big-box section */
-  .bp-why-not {
-    background: var(--bp-white);
-    border: 1px solid var(--bp-border);
-    border-radius: 12px;
-    padding: 22px 24px;
-    margin-bottom: 32px;
-  }
-
-  .bp-why-not h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
-    color: var(--bp-green);
-    margin: 0 0 14px;
-    letter-spacing: 1px;
-  }
-
-  .bp-why-not-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .bp-why-not-list li {
-    font-size: 14px;
-    color: var(--bp-text);
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 10px;
-  }
-
-  .bp-why-not-list li:last-child {
-    margin-bottom: 0;
-  }
-
-  .bp-why-not-list li svg {
-    width: 14px;
-    height: 14px;
-    flex-shrink: 0;
-    color: var(--bp-green);
-    margin-top: 3px;
   }
 
   /* ── 6. TABLE ── */
@@ -638,7 +593,7 @@
     <div class="bp-hero">
       <h1>{{ section.settings.title }}</h1>
 
-      <p class="bp-hero-hook">Need your racquet ready for your next match?</p>
+      <p class="bp-hero-hook">Professional racquet stringing with a guaranteed turnaround, documented setup history, and direct communication with the person stringing your racquet.</p>
 
       <div class="bp-price-card">
         <p class="bp-price-eyebrow">Standard restrings usually run</p>
@@ -772,22 +727,22 @@
       </div>
     </div>
 
-    <!-- 5. WHAT YOU GET WITH BELLE'S -->
+    <!-- 5. WHAT MAKES BELLE'S DIFFERENT -->
     <div class="bp-why">
-      <h2>What You Get With Belle&rsquo;s</h2>
+      <h2>What Makes Belle&rsquo;s Different</h2>
       <p class="bp-why-intro">You&rsquo;re not paying for just strings. You&rsquo;re paying for:</p>
       <ul class="bp-why-list">
         <li>
           <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <polyline points="20 6 9 17 4 12"/>
           </svg>
-          Direct communication with the actual stringer
+          Every racquet strung by the same person &mdash; no guessing who&rsquo;s touching your frame
         </li>
         <li>
           <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <polyline points="20 6 9 17 4 12"/>
           </svg>
-          Appointment-based drop-off at a convenient Northland location
+          Direct communication with the actual stringer, from drop-off to pickup
         </li>
         <li>
           <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -799,28 +754,8 @@
           <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <polyline points="20 6 9 17 4 12"/>
           </svg>
-          String, tension, and racquet notes saved for future restrings
+          String, tension, and racquet notes saved for every future restring
         </li>
-        <li>
-          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <polyline points="20 6 9 17 4 12"/>
-          </svg>
-          Rush service when you need it
-        </li>
-      </ul>
-
-      <div class="bp-stringer-callout">
-        <p>
-          <strong>I string every racquet myself.</strong>Your string, tension, and setup notes are saved for future
-          restrings &mdash; so every job is consistent, not a fresh start.
-        </p>
-      </div>
-    </div>
-
-    <!-- 5b. WHY NOT BIG-BOX OR CLUB -->
-    <div class="bp-why-not">
-      <h2>Why Players Choose Belle&rsquo;s Over Big-Box Stores or Club Stringers</h2>
-      <ul class="bp-why-not-list">
         <li>
           <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <polyline points="20 6 9 17 4 12"/>
@@ -831,15 +766,40 @@
           <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <polyline points="20 6 9 17 4 12"/>
           </svg>
-          No guessing who&rsquo;s actually touching your frame &mdash; same stringer every time
+          Published turnaround times before you book &mdash; Standard, Next-Day, or Same-Day
         </li>
         <li>
           <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <polyline points="20 6 9 17 4 12"/>
           </svg>
-          Your setup is saved so your next restring picks up exactly where the last one ended
+          Rush service when you need it
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Appointment-based drop-off at a convenient Northland location
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          No membership required
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          No deposit &mdash; pay when your racquet is ready
         </li>
       </ul>
+
+      <div class="bp-stringer-callout">
+        <p>
+          <strong>I string every racquet myself.</strong>Your string, tension, and setup notes are saved for future
+          restrings &mdash; so every job is consistent, not a fresh start.
+        </p>
+      </div>
     </div>
 
     <!-- 6. DETAILED PRICING TABLE -->
