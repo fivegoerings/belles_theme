@@ -131,7 +131,7 @@
           "type": "question",
           "settings": {
             "question": "Do I need to know what string I want?",
-            "answer": "<p>No. If you liked how your racquet played before, we can match your existing setup. If you want to change strings or aren't sure, we can help you choose based on your racquet, playing level, and goals. No consultation required.</p>",
+            "answer": "<p>No. If you liked how your racquet played before, we can match your existing setup. If you want to change strings or aren't sure, we can help you choose based on your racquet, playing level, and goals.</p>",
             "category": ""
           }
         },
