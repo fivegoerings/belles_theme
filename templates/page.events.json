@@ -14,8 +14,8 @@
       "settings": {
         "city_name": "KC Northland Tennis Events",
         "eyebrow": "Kansas City Northland",
-        "headline": "KC Summer Slam Series 2026",
-        "intro": "Playing the KC Summer Slam Series? Book a Northland drop-off before your next match.",
+        "headline": "KC Northland Tennis Events",
+        "intro": "Book a Northland drop-off before your next match.",
         "cta_text": "Schedule Racquet Stringing",
         "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=events_hero",
         "hero_image_alt": "",
@@ -27,81 +27,11 @@
     },
     "belle_events_main": {
       "type": "belle-events-section",
-      "blocks": {
-        "hornet-slam": {
-          "type": "event",
-          "disabled": true,
-          "settings": {
-            "title": "KC Summer Slam \u2014 Hornet Slam",
-            "date": "Jun 2, 2026",
-            "end_date": "Jun 4, 2026",
-            "location": "Liberty High School & Staley High School, Liberty, MO",
-            "event_type": "Tournament",
-            "description": "Opening event of the 2026 KC Summer Slam Series. Youth high school tennis \u2014 Varsity, JV, and Novice singles and doubles. Completed June 2\u20134.",
-            "event_url": "https://sites.google.com/a/lsr7.net/kc-summer-slam-series"
-          }
-        },
-        "tiger-slam": {
-          "type": "event",
-          "disabled": true,
-          "settings": {
-            "title": "KC Summer Slam \u2014 Tiger Slam",
-            "date": "Jun 9, 2026",
-            "end_date": "Jun 11, 2026",
-            "location": "Warrensburg (boys) / Sedalia (girls)",
-            "event_type": "Tournament",
-            "description": "New addition to the 2026 KC Summer Slam Series. Youth high school tournament \u2014 Varsity, JV, and Novice divisions.",
-            "event_url": "https://sites.google.com/a/lsr7.net/kc-summer-slam-series"
-          }
-        },
-        "liberty-slam": {
-          "type": "event",
-          "disabled": true,
-          "settings": {
-            "title": "KC Summer Slam \u2014 Liberty Slam",
-            "date": "Jun 16, 2026",
-            "end_date": "Jun 18, 2026",
-            "location": "Liberty High School & Staley High School, Liberty, MO",
-            "event_type": "Tournament",
-            "description": "Mid-summer stop on the KC Summer Slam Series. Youth high school tournament \u2014 Varsity, JV, and Novice singles and doubles.",
-            "event_url": "https://sites.google.com/a/lsr7.net/kc-summer-slam-series"
-          }
-        },
-        "summit-slam": {
-          "type": "event",
-          "settings": {
-            "title": "KC Summer Slam \u2014 Summit Slam",
-            "date": "Jul 7, 2026",
-            "end_date": "Jul 9, 2026",
-            "location": "Lee's Summit R7 Schools, Lee's Summit, MO",
-            "event_type": "Tournament",
-            "description": "Lee's Summit stop on the KC Summer Slam Series. Youth high school tournament \u2014 Varsity, JV, and Novice singles and doubles.",
-            "event_url": "https://sites.google.com/a/lsr7.net/kc-summer-slam-series"
-          }
-        },
-        "jaguar-slam": {
-          "type": "event",
-          "settings": {
-            "title": "KC Summer Slam \u2014 Jaguar Slam",
-            "date": "Jul 21, 2026",
-            "end_date": "Jul 23, 2026",
-            "location": "Blue Springs South / Lee's Summit North / Grain Valley",
-            "event_type": "Tournament",
-            "description": "Final stop of the 2026 KC Summer Slam Series. Youth high school tournament \u2014 Varsity, JV, and Novice singles and doubles.",
-            "event_url": "https://sites.google.com/a/lsr7.net/kc-summer-slam-series"
-          }
-        }
-      },
-      "block_order": [
-        "hornet-slam",
-        "tiger-slam",
-        "liberty-slam",
-        "summit-slam",
-        "jaguar-slam"
-      ],
+      "blocks": {},
+      "block_order": [],
       "settings": {
         "section_title": "KC Northland Tennis Events",
-        "section_subtitle": "Competing this summer? Get your racquet strung before your next match. Standard turnaround is 2\u20133 days."
+        "section_subtitle": "Check back for upcoming tournaments and events. Standard stringing turnaround is 2\u20133 days."
       }
     },
     "belle_lessons_section": {
@@ -128,7 +58,7 @@
     "cta_inline_events": {
       "type": "cta-inline",
       "settings": {
-        "cta_heading": "The KC Summer Slam Series Is Underway",
+        "cta_heading": "Ready for Your Next Match?",
         "cta_description": "Standard turnaround is 2\u20133 days. Next-day and same-day options may be available if you have a match coming up.",
         "schedule_button_text": "Schedule Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=events_bottom"
