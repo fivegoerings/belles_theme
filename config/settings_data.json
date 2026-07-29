@@ -144,18 +144,6 @@
     },
     "content_for_index": [],
     "blocks": {
-      "12120936241911852800": {
-        "type": "shopify://apps/judge-me-reviews/blocks/reviews_tab/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-        "disabled": true,
-        "settings": {
-          "position": "right"
-        }
-      },
-      "15181020662106344915": {
-        "type": "shopify://apps/judge-me-reviews/blocks/popup_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-        "disabled": true,
-        "settings": {}
-      },
       "6159598353363395418": {
         "type": "shopify://apps/google-youtube/blocks/store_widget/14ec7bd0-ac77-49a9-9417-90752398bdff",
         "disabled": false,
@@ -166,11 +154,6 @@
           "mobile_side_margin": 16,
           "mobile_bottom_margin": 46
         }
-      },
-      "14060646107696862457": {
-        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-        "disabled": false,
-        "settings": {}
       },
       "2567389343055140935": {
         "type": "shopify://apps/microsoft-clarity/blocks/clarity_js/31c3d126-8116-4b4a-8ba1-baeda7c4aeea",
