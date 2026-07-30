@@ -14,6 +14,7 @@
       "blocks": {
         "cat_racquets": {
           "type": "category_heading",
+          "disabled": true,
           "settings": {
             "heading": "Strung Racquets",
             "icon": "racquet"
@@ -21,6 +22,7 @@
         },
         "racquet_image_fdzp34": {
           "type": "gallery_image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/IMG_1264.heic",
             "title": "",
@@ -29,6 +31,7 @@
         },
         "racquet_image_dMxMdd": {
           "type": "gallery_image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/IMG_46FEE689-76C9-4A71-AD25-74294B4E303D.jpg",
             "title": "",
@@ -37,6 +40,7 @@
         },
         "racquet_image_ng84UG": {
           "type": "gallery_image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/IMG_1298.heic",
             "title": "",
@@ -45,6 +49,7 @@
         },
         "racquet_image_dJXcf9": {
           "type": "gallery_image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/IMG_1283.heic",
             "title": "",
@@ -53,6 +58,7 @@
         },
         "racquet_image_paq66V": {
           "type": "gallery_image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/IMG_1284.heic",
             "title": "",
@@ -61,6 +67,7 @@
         },
         "racquet_image_jQCaKG": {
           "type": "gallery_image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/IMG_1262.heic",
             "title": "",
@@ -69,6 +76,7 @@
         },
         "racquet_image_iWzeWA": {
           "type": "gallery_image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/07194F27-0BED-4E6A-AF28-9D37F2252A33.png",
             "title": "",
@@ -77,6 +85,7 @@
         },
         "racquet_image_QgFy3G": {
           "type": "gallery_image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/IMG_45AC.jpg",
             "title": "",
@@ -85,6 +94,7 @@
         },
         "racquet_image_7V8wY6": {
           "type": "gallery_image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/IMG_1335.heic",
             "title": "",
