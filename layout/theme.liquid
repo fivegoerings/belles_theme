@@ -34,12 +34,10 @@
     {% # theme-check-enable RemoteAsset %}
 
     {%- comment -%}
-      The Judge.me reviews app extension serves its own CSS (carousels.css etc.)
-      from cdn.shopify.com/extensions/... -- a different origin than this store's
-      own /cdn/ asset paths, which are served from the storefront domain itself.
-      Lighthouse flagged a tiny 3.7KB file here costing 700-1400ms of
-      render-blocking time, almost entirely cold DNS+TLS connection setup since
-      nothing preconnects to this origin first.
+      cdn.shopify.com hosts app-extension assets and uploaded Files/images,
+      a different origin than this store's own /cdn/ asset paths (served from
+      the storefront domain itself). Preconnecting avoids cold DNS+TLS setup
+      on first use of that origin.
     {%- endcomment -%}
     {% # theme-check-disable RemoteAsset %}
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
