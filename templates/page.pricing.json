@@ -142,6 +142,14 @@
             "answer": "<p>Yes. If you have a string you prefer that we don't carry, bring it and we string it for labor only. Standard labor is $30. See the full pricing table above for express and rush rates.</p>",
             "category": ""
           }
+        },
+        "question_diy_machine": {
+          "type": "question",
+          "settings": {
+            "question": "Should I buy a stringing machine so I can string my own racquet?",
+            "answer": "<p>If you play tennis for a living and travel most weeks, maybe. Portable stringing machines run $2,200 and up, plus a mount, clamps, and a real time investment to learn.</p><p>If you're a recreational or high school player restringing every few weeks, the math doesn't work. String twice a month with Belle's and you're paying around $1,300 a year. A $2,200 machine doesn't pay for itself at that pace. It pays for itself for someone stringing dozens of racquets a year, not a handful.</p><p>There's also the learning curve. My first racquet took over four hours. The knots were ugly. I made a mess of it. Getting to a consistent, accurate string bed takes real practice, and a bad string job can hurt your play more than dead strings ever would.</p><p>If you're stringing a few times a year, a machine is a bigger investment than the problem calls for. That's what I'm here for.</p>",
+            "category": ""
+          }
         }
       },
       "block_order": [
@@ -149,7 +157,8 @@
         "question_how_to_pay",
         "question_turnaround",
         "question_string_choice",
-        "question_byo"
+        "question_byo",
+        "question_diy_machine"
       ],
       "name": "Pricing FAQ",
       "settings": {
