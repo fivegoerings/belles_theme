@@ -12,7 +12,7 @@
     "main": {
       "type": "belle-pricing-section",
       "settings": {
-        "title": "Pricing"
+        "title": "Racquet Stringing Prices in the Kansas City Northland"
       }
     },
     "belles_pricing_addons_gG9bzT": {
@@ -123,7 +123,7 @@
           "type": "question",
           "settings": {
             "question": "How long does stringing take?",
-            "answer": "<p>Most racquets are ready within 2\u20133 days. Same-day and next-day service may be available -- contact us to check. You're welcome to borrow a free Solinco demo racquet while yours is being strung so you never miss practice or a match.</p>",
+            "answer": "<p>Most racquets are ready within 2\u20133 days. Same-day and next-day service may be available. Contact us to check. You're welcome to borrow a free Solinco demo racquet while yours is being strung so you never miss practice or a match.</p>",
             "category": ""
           }
         },
