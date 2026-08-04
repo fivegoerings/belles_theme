@@ -139,7 +139,7 @@
           "type": "question",
           "settings": {
             "question": "Can I bring my own string?",
-            "answer": "<p>Yes. If you have a string you prefer that we don't carry, bring it and we string it for labor only. Cost depends on your string and frame. See the full pricing table above for express and rush rates.</p>",
+            "answer": "<p>Yes. If you have a string you prefer that we don't carry, bring it and we string it. Cost depends on your string and frame. See the full pricing table above for express and rush rates.</p>",
             "category": ""
           }
         },
