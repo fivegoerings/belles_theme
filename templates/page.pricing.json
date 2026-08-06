@@ -111,6 +111,14 @@
             "category": ""
           }
         },
+        "question_service_area": {
+          "type": "question",
+          "settings": {
+            "question": "Do you meet outside the Kansas City Northland?",
+            "answer": "<p>Yes, within limits. Belle's serves the Kansas City Northland, and drop-off and pickup happen at a QuikTrip in that area at your scheduled time.</p><p>If you're outside the Northland:</p><ul><li>Meeting at one of my Northland QuikTrip locations is the default. Traveling to you is the exception, not the default.</li><li>Ask before you book. It isn't guaranteed and depends on my schedule and route that day.</li><li>If a Northland meetup isn't possible, a travel fee applies for locations 10 to 20 miles from the QuikTrip at 9600 N Oak Trafficway, charged at the current IRS standard mileage rate for the round-trip distance beyond that 10-mile mark.</li><li>I won't travel more than 20 miles from the 9600 N Oak QuikTrip, even with the travel fee.</li><li>Turnaround may shift. Standard, express, and rush windows are built around the Northland meetup pattern, so an out-of-area meetup may mean a slower turnaround.</li><li>If a request can't be accommodated, I'll tell you before the racquet changes hands.</li></ul>",
+            "category": ""
+          }
+        },
         "question_how_to_pay": {
           "type": "question",
           "settings": {
@@ -154,6 +162,7 @@
       },
       "block_order": [
         "question_how_it_works",
+        "question_service_area",
         "question_how_to_pay",
         "question_turnaround",
         "question_string_choice",
