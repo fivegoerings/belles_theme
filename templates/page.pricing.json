@@ -123,7 +123,7 @@
           "type": "question",
           "settings": {
             "question": "How long does stringing take?",
-            "answer": "<p>Most racquets are ready within 2\u20133 days. Same-day and next-day service may be available. Contact us to check. You're welcome to borrow a free Solinco demo racquet while yours is being strung so you never miss practice or a match.</p>",
+            "answer": "<p>Most racquets are ready within 2-3 days. That covers the drop-off meet, a stringing slot in the week, and the return trip.</p><p>Same-day service is available when I pick up your racquet before 10 am. You get it back by 6 pm that evening at the meeting location.</p><p>If I pick up after 10 am, next day is the fastest option. Rush and express pricing is in the table above.</p><p>Ask before you book. Same-day depends on my schedule, my travel that day, and the condition of the racquet. If you are using my string, it also depends on that string being in stock. If I cannot do it, I will tell you before I take the racquet.</p><p>You're welcome to borrow a free Solinco demo racquet while yours is being strung.</p>",
             "category": ""
           }
         },
@@ -139,7 +139,7 @@
           "type": "question",
           "settings": {
             "question": "Can I bring my own string?",
-            "answer": "<p>Yes. If you have a string you prefer that we don't carry, bring it and we string it. Cost depends on your string and frame. See the full pricing table above for express and rush rates.</p>",
+            "answer": "<p>Yes. If you have a string you prefer that I don't carry, bring it and I'll string it. Customer-supplied labor rates are in the table above.</p><p>Tell me what string it is when you book. Natural gut and other delicate strings need special handling, and I'll tell you before I take the racquet if a rush window isn't right for it. Replacement of customer-supplied string damaged during installation is not guaranteed.</p>",
             "category": ""
           }
         },
