@@ -307,15 +307,15 @@
       "image": "https://www.bellesperformancetennis.com/cdn/shop/files/belles_logo_text_white_e9eebce4-5eb3-482c-9033-dbfe346a5f9f.png",
       "organizer": {
         "@type": "Organization",
-        "name": "KC Summer Slam Series",
-        "url": "https://sites.google.com/a/lsr7.net/kc-summer-slam-series"
+        "name": {{ block.settings.organizer_name | default: "KC Summer Slam Series" | json }},
+        "url": {{ block.settings.organizer_url | default: "https://sites.google.com/a/lsr7.net/kc-summer-slam-series" | json }}
       },
       "offers": {
         "@type": "Offer",
         "price": "0",
         "priceCurrency": "USD",
         "validFrom": "{{ block.settings.date | date: '%Y-%m-%d' }}",
-        "url": {% if block.settings.event_url != blank %}{{ block.settings.event_url | json }}{% else %}"https://sites.google.com/a/lsr7.net/kc-summer-slam-series"{% endif %},
+        "url": {% if block.settings.event_url != blank %}{{ block.settings.event_url | json }}{% else %}{{ block.settings.organizer_url | default: "https://sites.google.com/a/lsr7.net/kc-summer-slam-series" | json }}{% endif %},
         "availability": "https://schema.org/InStock"
       },
       "performer": {
@@ -395,6 +395,19 @@
           "id": "event_url",
           "label": "Event URL",
           "info": "Link to the official event page. Leave blank if none."
+        },
+        {
+          "type": "text",
+          "id": "organizer_name",
+          "label": "Organizer Name",
+          "info": "Used in this event's schema markup. Defaults to KC Summer Slam Series.",
+          "default": "KC Summer Slam Series"
+        },
+        {
+          "type": "url",
+          "id": "organizer_url",
+          "label": "Organizer URL",
+          "info": "Leave blank to use the KC Summer Slam Series site."
         }
       ]
     }
