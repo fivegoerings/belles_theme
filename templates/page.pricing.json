@@ -107,7 +107,7 @@
           "type": "question",
           "settings": {
             "question": "How does drop-off and pickup work?",
-            "answer": "<p>When you book, you choose a convenient Northland meetup spot from a list of Kansas City Northland QuikTrip locations. We meet at your scheduled time, we confirm your racquet details, and take it for stringing. Once it's done, we contact you to arrange pickup usually at the same place that you dropped it off.</p>",
+            "answer": "<p>When you book, you choose a convenient Northland meetup spot from a list of Kansas City Northland QuikTrip locations. I meet you at your scheduled time, confirm your racquet details, and take it for stringing. Once it's done, I contact you to arrange pickup, usually at the same place you dropped it off.</p>",
             "category": ""
           }
         },
@@ -123,7 +123,7 @@
           "type": "question",
           "settings": {
             "question": "How do I pay?",
-            "answer": "<p>When your racquet is ready, we send you an invoice you can pay online. We accept all major credit cards. No deposits required.</p>",
+            "answer": "<p>When your racquet is ready, I send you an invoice you can pay online. I accept all major credit cards. No deposits required.</p>",
             "category": ""
           }
         },
@@ -131,7 +131,7 @@
           "type": "question",
           "settings": {
             "question": "How long does stringing take?",
-            "answer": "<p>Most racquets are ready within 2-3 days. That covers the drop-off meet, a stringing slot in the week, and the return trip.</p><p>Same-day service is available when I pick up your racquet before 10 am. You get it back by 6 pm that evening at the meeting location.</p><p>If I pick up after 10 am, next day is the fastest option. Rush and express pricing is in the table above.</p><p>Ask before you book. Same-day depends on my schedule, my travel that day, and the condition of the racquet. If you are using my string, it also depends on that string being in stock. If I cannot do it, I will tell you before I take the racquet.</p><p>You're welcome to borrow a free Solinco demo racquet while yours is being strung.</p>",
+            "answer": "<p>Most racquets are ready within 2-3 days. That covers the drop-off meet, a stringing slot in the week, and the return trip.</p><p>Same-day service is available when I pick up your racquet before 10 am. You get it back by 6 pm that evening at the meeting location.</p><p>If I pick up after 10 am, next day is the fastest option. Rush and express pricing is in the table above.</p><p>Go ahead and book. Same-day depends on my schedule, my travel that day, the condition of the racquet, and string availability if you're using mine. I'll confirm same-day is a go, or tell you the fastest real option, before I take the racquet.</p><p>You're welcome to borrow a free Solinco demo racquet while yours is being strung.</p>",
             "category": ""
           }
         },
@@ -139,7 +139,15 @@
           "type": "question",
           "settings": {
             "question": "Do I need to know what string I want?",
-            "answer": "<p>No. If you liked how your racquet played before, we can match your existing setup. If you want to change strings or aren't sure, we can help you choose based on your racquet, playing level, and goals.</p>",
+            "answer": "<p>No. If you liked how your racquet played before, I can match your existing setup. If you want to change strings or aren't sure, I can help you choose based on your racquet, playing level, and goals.</p>",
+            "category": ""
+          }
+        },
+        "question_out_of_stock": {
+          "type": "question",
+          "settings": {
+            "question": "What if you don't carry the string I want?",
+            "answer": "<p>Go ahead and book. I stock Solinco, Gosen, Wilson, and Head, and once you're on the calendar, tell me what string you're using or want. I'll confirm before I take your racquet: whether I have it in stock, need to order it (adds a few days), or should suggest something close and why. If you'd rather not wait on an order, you can always bring your own string and pay the customer-supplied rate.</p>",
             "category": ""
           }
         },
@@ -166,6 +174,7 @@
         "question_how_to_pay",
         "question_turnaround",
         "question_string_choice",
+        "question_out_of_stock",
         "question_byo",
         "question_diy_machine"
       ],

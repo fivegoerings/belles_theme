@@ -19,7 +19,7 @@
         "cta_text": "Schedule Racquet Stringing",
         "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=events_hero",
         "hero_image_alt": "",
-        "trust_1": "$40\u2013$55 total",
+        "trust_1": "$40–$55 total",
         "trust_2": "2-3 Day, Next, or Same Day",
         "trust_3": "USRSA Member",
         "trust_4": "KC Northland"
@@ -27,11 +27,9 @@
     },
     "belle_events_main": {
       "type": "belle-events-section",
-      "blocks": {},
-      "block_order": [],
       "settings": {
         "section_title": "KC Northland Tennis Events",
-        "section_subtitle": "Check back for upcoming tournaments and events. Standard stringing turnaround is 2\u20133 days."
+        "section_subtitle": "Check back for upcoming tournaments and events. Standard stringing turnaround is 2–3 days."
       }
     },
     "belle_lessons_section": {
@@ -48,8 +46,8 @@
         "lesson_type_1": "Private Lessons",
         "lesson_type_2": "Small Groups",
         "lesson_type_3": "Match Play",
-        "date_range": "May 18, 2026 \u2014 August 7, 2026",
-        "scheduling_window": "Lessons available 7 days a week, 7:00 AM \u2014 8:00 PM",
+        "date_range": "May 18, 2026 — August 7, 2026",
+        "scheduling_window": "Lessons available 7 days a week, 7:00 AM — 8:00 PM",
         "location_1": "Staley Farms Neighborhood Courts",
         "location_2": "Staley High School Courts",
         "location_3": "Oak Park High School Courts"
@@ -59,7 +57,7 @@
       "type": "cta-inline",
       "settings": {
         "cta_heading": "Ready for Your Next Match?",
-        "cta_description": "Standard turnaround is 2\u20133 days. Next-day and same-day options may be available if you have a match coming up.",
+        "cta_description": "Standard turnaround is 2–3 days. Next-day and same-day options may be available if you have a match coming up.",
         "schedule_button_text": "Schedule Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=events_bottom"
       }
