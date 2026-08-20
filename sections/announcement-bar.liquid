@@ -1,5 +1,16 @@
-{{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
-{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{%- comment -%}
+  Slider/slideshow CSS is only needed when there are 2+ announcement blocks.
+  With 0 or 1 block the markup below renders as a plain <div class="announcement-bar">,
+  with no slideshow-component, .slider, or slider-button elements for this CSS to style,
+  so loading it render-blocking on every page costs a mobile round-trip (~490ms each,
+  measured) for nothing. Kept render-blocking (not deferred) in the 2+ case on purpose:
+  the announcement bar is above the fold site-wide and genuinely uses the slider
+  mechanics on first paint there.
+{%- endcomment -%}
+{%- if section.blocks.size > 1 -%}
+  {{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
+  {{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
 
 {%- liquid
   assign social_icons = true
