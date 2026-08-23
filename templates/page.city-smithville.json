@@ -15,7 +15,7 @@
         "city_name": "Smithville",
         "eyebrow": "Smithville, MO",
         "headline": "Racquet Stringing for Smithville Tennis Players",
-        "intro": "Smithville players can book a QuikTrip drop-off on 169 Highway. Most racquets are ready in 2\u20133 days. No drive south required.",
+        "intro": "Belle\u2019s strings racquets for Smithville players, including Smithville High School, adult league players, and tournament players. Drop off by appointment in the Northland. Most racquets are ready in 2\u20133 days. No shipping. No drive south of the river. Your string and tension notes are logged for next time.",
         "cta_text": "Book Racquet Stringing",
         "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_smithville_hero",
         "hero_image_alt": ""
@@ -34,11 +34,11 @@
         "title": "How It Works",
         "subtitle": "Three steps. Your racquet comes back strung right.",
         "step_1_title": "Book Online",
-        "step_1_text": "Pick a time. Your meetup is the QuikTrip on 169 Highway in Smithville.",
+        "step_1_text": "Pick a time and choose a drop-off spot. QuikTrip locations near Smithville and other Northland spots are available.",
         "step_2_title": "Meet & Drop Off",
-        "step_2_text": "We meet you there. Hand off your racquet and grab a free Solinco demo if needed.",
+        "step_2_text": "We meet at your chosen location. Hand off your racquet and grab a free Solinco demo if you need one for practice.",
         "step_3_title": "Pick Up & Play",
-        "step_3_text": "Strung, logged, labeled. Back to you in 2\u20133 days."
+        "step_3_text": "Your racquet comes back strung, labeled, and logged. Most racquets ready in 2\u20133 days."
       }
     },
     "city_landing": {
@@ -47,17 +47,17 @@
         "city_name": "Smithville",
         "values_heading": "What Smithville Players Get",
         "value_1_title": "Tracked Setup",
-        "value_1_text": "We log your string, tension, and preferences every time. We already know your setup next visit.",
+        "value_1_text": "We log your string type, tension, and preferences after every job. When you come back, we already know what you had and whether you liked it.",
         "value_2_title": "Free Solinco Demo Racquet",
-        "value_2_text": "Borrow a Solinco demo while yours is being strung. No charge.",
+        "value_2_text": "Need a racquet while yours is being strung? Borrow a Solinco demo at no charge. Useful for Smithville players who have practice the same day.",
         "value_3_title": "Pricing",
-        "value_3_text": "Most restrings $40\u2013$55 total, string included. See the pricing page for the full breakdown.",
+        "value_3_text": "Most restrings $40\u2013$55 total, string included. No deposit at booking. You pay after the job is done. See the pricing page for the full breakdown.",
         "value_4_title": "Gamma Progression II ELS",
         "value_4_text": "Strung on a Gamma Progression II electronic constant-pull machine. Consistent tension every time.",
-        "local_heading": "",
-        "local_paragraph_1": "",
-        "local_paragraph_2": "",
-        "local_paragraph_3": "",
+        "local_heading": "Why Smithville players use Belle\u2019s",
+        "local_paragraph_1": "Local racquet stringing without the extra drive.\n\nSmithville players should not have to drive across the metro for a basic racquet restring. Belle\u2019s serves Smithville and the Kansas City Northland with appointment-based drop-off, honest string guidance, and professional stringing for junior, high school, adult, and competitive players.",
+        "local_paragraph_2": "Your setup is tracked.\n\nEvery string job is recorded by string type, tension, date, and string bed stiffness. That means when you come back, we are not starting over. We know what was in your racquet, how tight it was strung, and what worked last time.",
+        "local_paragraph_3": "Help choosing the right string\n\nNot sure whether you need synthetic gut, multifilament, polyester, or a hybrid? I will recommend a setup based on how you play, how often you break strings, your arm comfort, and your budget.",
         "testimonial_text": "",
         "testimonial_author": "",
         "meetup_heading": "Find a Drop-Off Near You",
@@ -67,7 +67,7 @@
         "faq_1_question": "Where do we meet near Smithville?",
         "faq_1_answer": "We meet at the QuikTrip on 169 Highway in Smithville. Pick your time when you book online.",
         "faq_2_question": "Do you serve Smithville High School players?",
-        "faq_2_answer": "Yes. High school players, adult recreational players, and USTA league players, coaches are welcome.",
+        "faq_2_answer": "Yes. Smithville High School players, adult recreational players, USTA league players, and coaches are welcome.",
         "faq_3_question": "How fast do you turn it around?",
         "faq_3_answer": "Most jobs completed in 2\u20133 days. Need it faster? Ask when you book.",
         "nearby_1_label": "Kearney",
@@ -91,7 +91,7 @@
       "name": "CTA Inline",
       "settings": {
         "cta_heading": "Book a Smithville Drop-Off",
-        "cta_description": "Smithville players can drop off at the QuikTrip on 169 Highway. Most racquets are ready in 2\u20133 days, and your setup is logged for next time.",
+        "cta_description": "Smithville players can book an appointment-based QuikTrip drop-off. Strings are included, no deposit is required, and most racquets are ready in 2\u20133 days.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_smithville_bottom"
       }
