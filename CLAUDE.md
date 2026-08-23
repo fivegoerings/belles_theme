@@ -23,6 +23,24 @@ There is no automated test suite, but `.github/workflows/theme-check.yml` runs T
 
 Theme Check currently passes clean (0 offenses). A few `{% # theme-check-disable ... %}` / `theme-check-enable` comment pairs are in place for known false positives rather than real bugs — e.g. `RemoteAsset` around the intentional Calendly `preconnect`/`dns-prefetch` links and the JS-populated empty-`src` lightbox `<img>`s, `UndefinedObject` around the valid `offset: continue` pagination keyword in `main-product.liquid`, and `UnclosedHTMLElement` around the cross-loop-iteration category grouping in `belle-gallery-section.liquid` (its div open/close pairs span loop iterations in a way Theme Check's HTML parser can't statically verify, even though the rendered markup is balanced). Don't "fix" these by removing the suppressions without re-verifying the underlying pattern is actually still a false positive.
 
+## Copy rules
+
+**Never use an em dash (`—`, U+2014) in customer-facing copy.** Hard rule, no exceptions. It applies to every string a visitor can read: section schema defaults, template JSON settings, page and blog content, and meta descriptions. Use a comma, period, colon, or parentheses instead, or rewrite the sentence.
+
+En dashes (`–`, U+2013) are fine and are used deliberately in numeric ranges (`$40–$55`, `2–3 days`). The ban is em dashes only.
+
+Before shipping copy, check the theme with:
+
+```bash
+grep -rn "—" --include=*.liquid --include=*.json .
+```
+
+That grep will not find meta descriptions or page body content, which live in Shopify Admin rather than this repo. Those have to be checked on the rendered page or in the admin.
+
+**Write in first person singular.** Belle's is one person, and that is the main thing competitors cannot copy, so copy says "I string every racquet myself" rather than "we". The one legitimate "we" is where it means the customer and Randy together ("before we meet", "we meet at the QuikTrip you chose"). A "we" that implies staff should be changed to "I".
+
+See `BRAND.md` for the full style guide (colors, type, voice).
+
 ## Architecture
 
 Standard Shopify theme structure:

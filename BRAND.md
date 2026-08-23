@@ -88,7 +88,26 @@ Secondary gradient stop used alongside Belle Green: `#2d5a3d` / `#2a5a3a` (a lig
 
 ## Voice/Tone Notes (inferred from copy)
 - Direct, locally-rooted ("Kansas City Northland players"), appointment/service-oriented rather than big-box retail
-- CTAs favor action verbs framed around booking (Calendly integration is central — "Book", scheduling language)
+- CTAs favor action verbs framed around booking (Calendly integration is central, "Book", scheduling language)
+
+## Copy Rules (hard rules, not preferences)
+
+**Never use em dashes (`—`, U+2014) in any customer-facing copy.** This applies to every string a visitor can read: section settings, template JSON, schema defaults, page and blog content, meta descriptions, and Shopify Admin fields. Use a comma, a period, a colon, or parentheses instead. Rewrite the sentence if none of those fit.
+
+- Wrong: `Factory strings are designed to ship — not to match your game.`
+- Right: `Factory strings are designed to ship, not to match your game.`
+
+En dashes (`–`, U+2013) are fine and are used intentionally in numeric ranges (`$40–$55`, `2–3 days`). The rule is about em dashes only.
+
+To check the theme before shipping copy:
+
+```bash
+grep -rn "—" --include=*.liquid --include=*.json . | grep -v node_modules
+```
+
+Note that meta descriptions and page body content live in Shopify Admin, not in this repo, so grep will not catch those. They have to be checked in the admin or on the rendered page.
+
+**First person, singular.** Belle's is one person. Customer-facing copy says "I string every racquet myself", not "we". The exception is where "we" genuinely means the customer and Randy together ("before we meet", "we meet at the QuikTrip you chose"), which is correct and should stay. A "we" that implies staff undercuts the main differentiator.
 
 ## Files to check for the current source of truth
 - `config/settings_data.json` — theme editor colors, fonts, spacing, button/card styling

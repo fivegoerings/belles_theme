@@ -59,16 +59,16 @@
         "address": "Kansas City, MO 64155",
         "phone": "816-938-7622",
         "bg_image": "shopify://shop_images/IMG_1772_4_a2d26233-fa49-4da7-8831-bb9e1422d273.webp",
-        "badge_text": "Built by a Northland Tennis Parent — For Northland Tennis Families",
+        "badge_text": "Built by a Northland Tennis Parent for Northland Tennis Families",
         "byline": "Belle's Performance Tennis Shop",
         "headline_line1": "Tennis Racquet Stringing",
         "headline_line2": "in Kansas City Northland",
-        "tagline": "USRSA member • 2-3 day turnaround • Free Solinco demo racquet • Serving players across the Kansas City Northland by appointment",
+        "tagline": "USRSA member \u2022 2-3 day turnaround \u2022 Free Solinco demo racquet \u2022 Serving players across the Kansas City Northland by appointment",
         "cta_primary_text": "Book Tennis Racquet Stringing",
         "cta_secondary_text": "See Pricing",
         "cta_secondary_url": "shopify://pages/racquet-stringing-prices-kansas-city-northland",
-        "trust_1": "$40–$55 total",
-        "trust_2": "Most racquets ready in 2–3 days",
+        "trust_1": "$40\u2013$55 total",
+        "trust_2": "Most racquets ready in 2\u20133 days",
         "trust_3": "USRSA Member"
       }
     },
@@ -113,7 +113,7 @@
         "text_dX43YV": {
           "type": "text",
           "settings": {
-            "text": "<p>Looking for tennis racquet stringing near Kansas City? Belle’s Performance Tennis Shop serves Northland players in Kansas City, North Kansas City, Gladstone, Liberty, Parkville, Platte City, Smithville, Kearney, and nearby areas.</p>"
+            "text": "<p>Looking for tennis racquet stringing near Kansas City? Belle\u2019s Performance Tennis Shop serves Northland players in Kansas City, North Kansas City, Gladstone, Liberty, Parkville, Platte City, Smithville, Kearney, and nearby areas.</p>"
           }
         }
       },
@@ -187,7 +187,7 @@
         "label": "Just Got a New Racquet?",
         "headline_line1": "Don't Assume the Factory",
         "headline_line2": "Strings Are Right for You.",
-        "body": "Factory strings are designed to ship — not to match your game. Whether you're a junior in high school, an adult returner, or a parent buying a racquet for your child, I can help you choose the right string and tension from the start.",
+        "body": "Factory strings are designed to ship, not to match your game. Whether you're a junior in high school, an adult returner, or a parent buying a racquet for your child, I can help you choose the right string and tension from the start.",
         "cta_text": "Book a New Racquet Setup",
         "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=new_racquet_setup&utm_content=homepage_nrs",
         "cta_calendly": true
@@ -222,7 +222,7 @@
             "image": "shopify://shop_images/20231114_SOL_X-Natural_Reel_BGR_GRY_1-1.webp",
             "icon": "badge",
             "title": "Strings On Hand",
-            "description": "Solinco, Gosen, Head, and Wilson strings are kept on hand for common Northland restring jobs. If you already know what you like, I can match it. If not, I’ll explain the practical difference before stringing.",
+            "description": "Solinco, Gosen, Head, and Wilson strings are kept on hand for common Northland restring jobs. If you already know what you like, I can match it. If not, I\u2019ll explain the practical difference before stringing.",
             "url": "shopify://pages/tennis-equipment-kansas-city-northland"
           }
         }
@@ -243,7 +243,7 @@
       "name": "CTA Inline",
       "settings": {
         "cta_heading": "Your Setup Saved for Next Time",
-        "cta_description": "Book online, drop off at a Northland QuikTrip, and most racquets are ready in 2–3 days. Your string and tension notes are saved for next time.",
+        "cta_description": "Book online, drop off at a Northland QuikTrip, and most racquets are ready in 2\u20133 days. Your string and tension notes are saved for next time.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=homepage_mid"
       }
@@ -263,7 +263,7 @@
           "type": "question",
           "settings": {
             "question": "How do I pay?",
-            "answer": "<p>When your racquet is ready, we'll send you an invoice you can pay online. We accept all major credit cards. No deposits required.</p>",
+            "answer": "<p>When your racquet is ready, I'll send you an invoice you can pay online. I accept all major credit cards. No deposits required.</p>",
             "category": ""
           }
         },
@@ -271,7 +271,7 @@
           "type": "question",
           "settings": {
             "question": "Why not just use a big box store or my club?",
-            "answer": "<p>Big-box stores and clubs may be convenient, but they usually are not built around Northland drop-off, setup history, and repeat restrings. At Belle’s, your string, tension, and racquet notes are saved, and I string every racquet myself.</p>",
+            "answer": "<p>Big-box stores and clubs may be convenient, but they usually are not built around Northland drop-off, setup history, and repeat restrings. At Belle\u2019s, your string, tension, and racquet notes are saved, and I string every racquet myself.</p>",
             "category": ""
           }
         },
@@ -279,7 +279,7 @@
           "type": "question",
           "settings": {
             "question": "What if my strings break mid-season?",
-            "answer": "<p>We offer same-day and next-day service when available, and you can borrow a demo racquet while yours is being strung so you never miss a match.</p>",
+            "answer": "<p>I offer same-day and next-day service when available, and you can borrow a demo racquet while yours is being strung so you never miss a match.</p>",
             "category": ""
           }
         },
@@ -287,7 +287,7 @@
           "type": "question",
           "settings": {
             "question": "How do I know the tension will be right?",
-            "answer": "<p>We record your setup every time. So whether it's your first restring with us or your tenth, your racquet comes back feeling the way you expect — not however the last person happened to string it.</p>",
+            "answer": "<p>I record your setup every time. So whether it's your first restring with me or your tenth, your racquet comes back feeling the way you expect, not however the last person happened to string it.</p>",
             "category": ""
           }
         },
@@ -295,7 +295,7 @@
           "type": "question",
           "settings": {
             "question": "What if my racquet gets damaged during stringing?",
-            "answer": "<p>Every racquet is inspected before stringing. If I notice a crack, worn grommet, or other visible issue, I’ll contact you before proceeding. Racquets with pre-existing stress fractures can fail during stringing, so those are flagged before work continues.</p>",
+            "answer": "<p>Every racquet is inspected before stringing. If I notice a crack, worn grommet, or other visible issue, I\u2019ll contact you before proceeding. Racquets with pre-existing stress fractures can fail during stringing, so those are flagged before work continues.</p>",
             "category": ""
           }
         },
@@ -303,7 +303,7 @@
           "type": "question",
           "settings": {
             "question": "How often should I be restringing?",
-            "answer": "<p>A good rule of thumb: as many times per year as you play per week. Play three times a week? Restring three times a year. Most players are playing on dead strings without realizing it — and wondering why their game feels off.</p>",
+            "answer": "<p>A good rule of thumb: as many times per year as you play per week. Play three times a week? Restring three times a year. Most players are playing on dead strings without realizing it, and wondering why their game feels off.</p>",
             "category": ""
           }
         }
