@@ -109,6 +109,46 @@ Note that meta descriptions and page body content live in Shopify Admin, not in 
 
 **First person, singular.** Belle's is one person. Customer-facing copy says "I string every racquet myself", not "we". The exception is where "we" genuinely means the customer and Randy together ("before we meet", "we meet at the QuikTrip you chose"), which is correct and should stay. A "we" that implies staff undercuts the main differentiator.
 
+## Service facts (confirmed, keep copy consistent with these)
+
+These are the numbers and claims the whole site has to agree on. Verified live 2026-08-23.
+
+| Fact | Value |
+|---|---|
+| Standard restring | **$40–$55 all-in, string included** |
+| Rush uplift | **+$15 next-day, +$30 same-day** |
+| Natural gut | **from $95**, quoted by string |
+| Customer-supplied string | **$35 / $50 / $65** (standard / next-day / same-day) |
+| Standard turnaround | **2–3 days** |
+| Deposit | None. Invoice sent when the racquet is done, paid before pickup |
+| Machine | Gamma Progression II ELS electronic constant-pull |
+| Credential | USRSA member |
+| Strings kept on hand | **Solinco, Gosen, Head, Wilson** |
+
+Notes on two of these that have been questioned and settled:
+
+- **Rush pricing is deliberately higher than comparable stringers.** Competitors charge less for same-day, but most of them are storefront or locker-based, so their rush fee covers labor on a racquet already in hand. Belle's same-day requires a dedicated off-route round trip in each direction. The higher fee is also intentionally throttling demand for rush slots. Do not "correct" this against a competitor price list.
+- **Customer-supplied string is published as a rate**, not quote-required. This is current and intentional.
+
+## Out-of-area policy (do not re-publish what was removed)
+
+Never publish a travel radius, a mileage figure, or a specific QuikTrip address as the base of operations. Both appeared in the out-of-area FAQ and were removed on 2026-08-23.
+
+A published radius converts a case-by-case judgment call into an entitlement customers will negotiate against ("I'm only 14 miles out"). Naming a specific QuikTrip publishes an effective base location for a one-person business that works from home and meets strangers carrying customer property.
+
+The settled framing: a Northland QuikTrip meetup is the normal arrangement at normal pricing; anything outside that is quoted privately before booking, is not guaranteed, and may run slower.
+
+## City page content standard
+
+All 13 city pages (`templates/page.city-*.json` plus `page.kansas-city-northland.json`) share the same five-section stack and should carry comparable depth. As of 2026-08-22 they range 3,548-4,855 characters; before that pass the floor was 2,271 and six pages had all three body paragraphs empty.
+
+Each page should say something *different* in each slot rather than restating the same sentence. The failure mode to watch for is the hero intro, `local_paragraph_1`, and `cta_description` all carrying the same claim.
+
+Two rules when editing these:
+
+1. **Never invent local facts.** School names, courts, districts, and landmarks go on a page only if they are already there or the owner supplies them. Several pages (Parkville, Platte City, Pleasant Valley, Weatherby Lake, North Kansas City, and the Northland hub) have no school anchor, and that is better than a wrong one.
+2. **Do not overwrite local specifics with boilerplate.** Several city pages carry better local detail than the Liberty template does, including exact QuikTrip locations (8601 MO-45, 8600 Pleasant Valley Rd, MO-92, North Oak Trafficway near Highway 169) and references like Northland Racquet Club. That detail is the local SEO asset. Business-level substance (setup tracking, string selection guidance) is shared boilerplate and is fine to repeat; the local slots are what differentiate.
+
 ## Files to check for the current source of truth
 - `config/settings_data.json` — theme editor colors, fonts, spacing, button/card styling
 - `assets/belles-fonts.css` — font-face declarations
