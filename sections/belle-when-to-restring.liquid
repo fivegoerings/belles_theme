@@ -1,0 +1,798 @@
+{% comment %}
+  Belle's Performance Tennis - When To Restring
+
+  Long-form editorial section for templates/page.when-to-restring.json.
+  Follows the same shell as belle-pricing-explainers: cream page background,
+  860px container, white cards with a 12px radius, Bebas Neue headings in
+  belle green, Source Sans Pro body copy.
+
+  The argument runs in one direction and the blocks are ordered to match it:
+    1. Hero, the claim (a break is a late signal)
+    2. Why strings die before they snap
+    3. Material comparison, poly vs natural gut
+    4. Why time-based rules of thumb do not work
+    5. What I do instead, the dynamic tension method
+    6. Why the reading does not match the reference tension
+    7. The service card
+    8. What to do next
+
+  Do not reorder 4 and 5. Block 5 only lands after the reader has accepted
+  that there is no schedule that answers the question for them.
+
+  Copy rule specific to this page: no drop-in language. Every ask is
+  "make an appointment" (block 8 and the cta-inline below it). Do not
+  reintroduce "bring it by" or "come by". There is a fixed location for
+  the reading appointment, but it is deliberately NOT named here, see
+  BRAND.md on not publishing a base address. If a location is ever added
+  it belongs in the booking flow, not in this copy.
+
+  Copy is hardcoded rather than schema-driven, same as the pricing
+  explainers section. There is deliberately no CTA button inside this
+  section: the page closes with cta-inline, and an in-section button sat
+  directly above it as a duplicate. Same call that was made on the pricing
+  page. Add one back only if it moves somewhere higher up the page.
+{% endcomment %}
+
+<style>
+  .bwr {
+    --bwr-green: #1a3c2a;
+    --bwr-green-mid: #2d5a3d;
+    --bwr-gold: #c8a951;
+    --bwr-border: #e5e5e5;
+    --bwr-text: #1a1a1a;
+    --bwr-muted: #666;
+    --bwr-bg: #faf9f6;
+    --bwr-white: #ffffff;
+    --bwr-light-green: #f4f8f5;
+    font-family: 'Source Sans Pro', 'Source Sans Pro Fallback', sans-serif;
+    background: var(--bwr-bg);
+    padding: 40px 20px 32px;
+    color: var(--bwr-text);
+  }
+
+  .bwr-container {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* -- 1. HERO -- */
+  .bwr-hero {
+    text-align: center;
+    margin-bottom: 34px;
+  }
+
+  .bwr-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--bwr-gold);
+    margin: 0 0 10px;
+  }
+
+  .bwr-hero h1 {
+    font-family: 'Bebas Neue', 'Bebas Neue Fallback', sans-serif;
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: 1.5px;
+    color: var(--bwr-green);
+    margin: 0 0 10px;
+  }
+
+  .bwr-deck {
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--bwr-text);
+    line-height: 1.35;
+    margin: 0 auto 18px;
+    max-width: 560px;
+  }
+
+  .bwr-rule {
+    width: 54px;
+    height: 3px;
+    background: var(--bwr-gold);
+    margin: 0 auto 18px;
+  }
+
+  .bwr-lede {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--bwr-text);
+    max-width: 620px;
+    margin: 0 auto;
+  }
+
+  /* -- SHARED BLOCK SHELL -- */
+  .bwr-block {
+    background: var(--bwr-white);
+    border: 1px solid var(--bwr-border);
+    border-radius: 12px;
+    padding: 24px 26px;
+    margin-bottom: 24px;
+  }
+
+  .bwr-block h2 {
+    font-family: 'Bebas Neue', 'Bebas Neue Fallback', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    line-height: 1.05;
+    color: var(--bwr-green);
+    margin: 0 0 12px;
+  }
+
+  .bwr-block p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--bwr-text);
+    margin: 0 0 12px;
+  }
+
+  .bwr-block p:last-child {
+    margin-bottom: 0;
+  }
+
+  .bwr-block p.bwr-muted {
+    color: var(--bwr-muted);
+  }
+
+  /* Pull quote, the one line to remember per block */
+  .bwr-pull {
+    border-left: 3px solid var(--bwr-gold);
+    background: var(--bwr-light-green);
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--bwr-green);
+  }
+
+  /* -- 3. MATERIAL COMPARISON -- */
+  .bwr-compare {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin: 18px 0 0;
+  }
+
+  .bwr-compare-card {
+    border: 1px solid var(--bwr-border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    background: var(--bwr-bg);
+  }
+
+  .bwr-compare-card.is-fast {
+    border-color: rgba(200, 169, 81, 0.55);
+  }
+
+  /* Specificity note: these three rules have to out-rank `.bwr-block p`,
+     so keep them as class selectors on the element, not `.bwr-compare-card p`. */
+  .bwr-compare-card .bwr-compare-label {
+    font-family: 'Bebas Neue', 'Bebas Neue Fallback', sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: 1px;
+    color: var(--bwr-green);
+    margin: 0 0 2px;
+  }
+
+  .bwr-compare-card .bwr-compare-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bwr-muted);
+    margin: 0 0 10px;
+  }
+
+  .bwr-meter {
+    height: 6px;
+    border-radius: 3px;
+    background: #e8e6e0;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .bwr-meter span {
+    display: block;
+    height: 100%;
+    background: var(--bwr-gold);
+  }
+
+  .bwr-meter.is-long span {
+    background: var(--bwr-green);
+  }
+
+  .bwr-compare-card .bwr-compare-desc {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--bwr-muted);
+    margin: 0;
+  }
+
+  /* -- 4. RULES THAT DO NOT WORK -- */
+  .bwr-myths {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0;
+  }
+
+  .bwr-myths li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+    color: var(--bwr-muted);
+    padding: 9px 0;
+    border-bottom: 1px solid var(--bwr-border);
+  }
+
+  .bwr-myths li:last-child {
+    border-bottom: 0;
+  }
+
+  .bwr-myths li svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    color: #b04a3a;
+    margin-top: 3px;
+  }
+
+  .bwr-factors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .bwr-factors li {
+    background: var(--bwr-light-green);
+    color: var(--bwr-green);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 5px 12px;
+    border-radius: 20px;
+  }
+
+  /* -- 5. THE METHOD -- */
+  .bwr-method {
+    background: var(--bwr-green);
+    border: 0;
+    color: #ffffff;
+  }
+
+  .bwr-method h2 {
+    color: var(--bwr-gold);
+  }
+
+  .bwr-method p {
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  .bwr-steps {
+    list-style: none;
+    counter-reset: bwr-step;
+    padding: 0;
+    margin: 18px 0 0;
+  }
+
+  .bwr-steps li {
+    counter-increment: bwr-step;
+    position: relative;
+    padding: 0 0 14px 40px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  .bwr-steps li:last-child {
+    padding-bottom: 0;
+  }
+
+  .bwr-steps li::before {
+    content: counter(bwr-step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--bwr-gold);
+    color: var(--bwr-green);
+    font-family: 'Bebas Neue', 'Bebas Neue Fallback', sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+
+  .bwr-threshold {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(200, 169, 81, 0.4);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 20px 0 0;
+  }
+
+  .bwr-threshold-number {
+    font-family: 'Bebas Neue', 'Bebas Neue Fallback', sans-serif;
+    font-size: 46px;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: var(--bwr-gold);
+    flex-shrink: 0;
+  }
+
+  .bwr-threshold p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .bwr-notes {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0;
+  }
+
+  .bwr-notes li {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    font-size: 14px;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 8px;
+  }
+
+  .bwr-notes li:last-child {
+    margin-bottom: 0;
+  }
+
+  .bwr-notes li svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    color: var(--bwr-gold);
+    margin-top: 3px;
+  }
+
+  /* -- 6. READING VS REFERENCE TENSION -- */
+  .bwr-numbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    background: var(--bwr-bg);
+    border: 1px solid var(--bwr-border);
+    border-radius: 10px;
+    padding: 18px;
+    margin: 16px 0;
+  }
+
+  .bwr-number-item {
+    text-align: center;
+    min-width: 128px;
+  }
+
+  .bwr-number-item strong {
+    display: block;
+    font-family: 'Bebas Neue', 'Bebas Neue Fallback', sans-serif;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: var(--bwr-green);
+  }
+
+  .bwr-number-item span {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bwr-muted);
+    margin-top: 6px;
+  }
+
+  .bwr-number-arrow {
+    color: var(--bwr-gold);
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  /* -- 7. SERVICE CARD -- */
+  .bwr-card-demo {
+    border: 1px solid var(--bwr-border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 16px 0;
+    background: var(--bwr-bg);
+  }
+
+  .bwr-card-demo-head {
+    background: var(--bwr-green);
+    color: var(--bwr-gold);
+    font-family: 'Bebas Neue', 'Bebas Neue Fallback', sans-serif;
+    font-size: 17px;
+    letter-spacing: 1.5px;
+    padding: 10px 16px;
+  }
+
+  .bwr-card-rows {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .bwr-card-rows li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding: 10px 16px;
+    border-bottom: 1px solid var(--bwr-border);
+    font-size: 14px;
+  }
+
+  .bwr-card-rows li:last-child {
+    border-bottom: 0;
+  }
+
+  .bwr-card-rows .bwr-card-key {
+    color: var(--bwr-muted);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .bwr-card-rows .bwr-card-val {
+    color: var(--bwr-text);
+    text-align: right;
+  }
+
+  /* -- 8. WHAT TO DO -- */
+  .bwr-next {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0;
+  }
+
+  .bwr-next li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--bwr-text);
+    margin-bottom: 12px;
+  }
+
+  .bwr-next li:last-child {
+    margin-bottom: 0;
+  }
+
+  .bwr-next li svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    color: var(--bwr-green);
+    margin-top: 4px;
+  }
+
+  .bwr-next li strong {
+    color: var(--bwr-green);
+  }
+
+  .bwr-signoff {
+    text-align: center;
+    font-size: 13px;
+    color: var(--bwr-muted);
+    line-height: 1.6;
+    margin: 26px 0 0;
+  }
+
+  @media (max-width: 640px) {
+    .bwr {
+      padding: 28px 16px 24px;
+    }
+
+    .bwr-hero h1 {
+      font-size: 40px;
+    }
+
+    .bwr-deck {
+      font-size: 17px;
+    }
+
+    .bwr-lede {
+      font-size: 16px;
+    }
+
+    .bwr-block {
+      padding: 20px 18px;
+    }
+
+    .bwr-block h2 {
+      font-size: 25px;
+    }
+
+    .bwr-compare {
+      grid-template-columns: 1fr;
+    }
+
+    .bwr-threshold {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    /* Stack the two readings vertically so the arrow reads top to bottom
+       instead of wrapping alongside the first number. */
+    .bwr-numbers {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .bwr-number-arrow {
+      transform: rotate(90deg);
+    }
+  }
+</style>
+
+<div class="bwr">
+  <div class="bwr-container">
+    <header class="bwr-hero">
+      <p class="bwr-eyebrow">Racquet Stringing / Kansas City Northland</p>
+      <h1>When to Restring</h1>
+      <p class="bwr-deck">Why a broken string is the wrong signal</p>
+      <div class="bwr-rule"></div>
+      <p class="bwr-lede">
+        Most players restring when a string breaks. If that is you, there is a good chance you have been playing on
+        dead strings for weeks before it happened.
+      </p>
+    </header>
+
+    <!-- 2. STRINGS DIE BEFORE THEY SNAP -->
+    <div class="bwr-block">
+      <h2>Strings Stop Working Long Before They Snap</h2>
+      <p>
+        The USRSA racquet technician training is direct about this. The most obvious time to restring is when a string
+        breaks, and far too many players think that is the only reason to restring. So they keep playing on strings
+        that have lost tension and resiliency.
+      </p>
+      <p>
+        The part that catches people is what happens next. You do not notice the strings going dead, because it happens
+        slowly. You adjust. You swing a little harder to get the same depth. You add a little more to the serve. By the
+        time you finally restring, the difference feels enormous, because you have forgotten what fresh strings play
+        like.
+      </p>
+      <div class="bwr-pull">That is not a stringing problem. It is a material problem, and it happens in every racquet.</div>
+    </div>
+
+    <!-- 3. MATERIAL COMPARISON -->
+    <div class="bwr-block">
+      <h2>Polyester Goes the Fastest</h2>
+      <p>
+        If you play polyester, and most competitive players in the Northland do, this applies to you more than anyone.
+      </p>
+      <p>
+        Poly is popular because it is hard to break and it produces spin. The tradeoff is that it loses tension and
+        playability faster than any other type of string on the market. That is the material itself, not the string job.
+      </p>
+      <p>
+        So a player on poly can go months without a break while playing on a stringbed that stopped performing weeks
+        ago. The string is doing one of its two jobs.
+      </p>
+
+      <div class="bwr-compare">
+        <div class="bwr-compare-card is-fast">
+          <p class="bwr-compare-label">Polyester</p>
+          <p class="bwr-compare-tag">Playable life</p>
+          <div class="bwr-meter"><span style="width: 28%;"></span></div>
+          <p class="bwr-compare-desc">Hard to break, quick to go dead. Loses tension and playability faster than
+            anything else on the market.</p>
+        </div>
+        <div class="bwr-compare-card">
+          <p class="bwr-compare-label">Natural Gut</p>
+          <p class="bwr-compare-tag">Playable life</p>
+          <div class="bwr-meter is-long"><span style="width: 88%;"></span></div>
+          <p class="bwr-compare-desc">Holds tension and resiliency much longer than any man-made string, so a player who
+            does not break strings can find it lasts longer in practice than its delicate reputation suggests.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. NO RULE OF THUMB WORKS -->
+    <div class="bwr-block">
+      <h2>There Is No Rule of Thumb That Works</h2>
+      <p>You will see advice like this:</p>
+      <ul class="bwr-myths">
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+          Restring after a set number of playing hours
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+          Restring at least twice a year
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+          Restring as many times per year as you play per week (the old guide)
+        </li>
+      </ul>
+      <p>
+        The USRSA position is that none of these hold up, because today&rsquo;s racquets and strings are too varied for
+        a set time frame. Two players who each play three times a week are not putting the same stress on a stringbed
+        if one plays an hour of social doubles and the other plays three hours of singles.
+      </p>
+      <p class="bwr-muted">All four of these change the answer:</p>
+      <ul class="bwr-factors">
+        <li>Your string</li>
+        <li>Your frame</li>
+        <li>Your swing</li>
+        <li>Your tension</li>
+      </ul>
+    </div>
+
+    <!-- 5. THE METHOD -->
+    <div class="bwr-block bwr-method">
+      <h2>What I Do Instead</h2>
+      <p>I measure it.</p>
+      <ol class="bwr-steps">
+        <li>
+          Every racquet I string gets a dynamic tension reading before it goes back to you. That reading is your
+          baseline.
+        </li>
+        <li>When you bring the racquet back, I take another reading and compare it to the first one.</li>
+        <li>The loss between the two readings, not the calendar, is what says whether it is time.</li>
+      </ol>
+
+      <div class="bwr-threshold">
+        <div class="bwr-threshold-number">25&ndash;30%</div>
+        <p>Once the reading has dropped 25 to 30 percent from baseline, it is usually time to restring.</p>
+      </div>
+
+      <ul class="bwr-notes">
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Some players feel it at 20 percent.
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          If you have any elbow or shoulder history, you should generally restring sooner than that.
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          This is the method the USRSA teaches, and it is the only precise way to know: measure the stringbed
+          immediately after stringing, then measure again at intervals and track the loss.
+        </li>
+      </ul>
+    </div>
+
+    <!-- 6. READING VS REFERENCE TENSION -->
+    <div class="bwr-block">
+      <h2>The Number Will Not Match Your Tension, and That Is Normal</h2>
+      <p>If I string your racquet at 52 pounds and then tell you it reads 33, nothing is wrong.</p>
+
+      <div class="bwr-numbers">
+        <div class="bwr-number-item">
+          <strong>52 lb</strong>
+          <span>Reference tension</span>
+        </div>
+        <div class="bwr-number-arrow" aria-hidden="true">&rarr;</div>
+        <div class="bwr-number-item">
+          <strong>33</strong>
+          <span>Dynamic tension reading</span>
+        </div>
+      </div>
+
+      <p>
+        A tension meter measures the stiffness of the whole stringbed, not the tension of any one string. Depending on
+        the device used, a racquet strung at 60 pounds can read 38 or 72. The number is meaningful compared to itself
+        over time. It is not meant to match the number on my machine.
+      </p>
+      <div class="bwr-pull">What matters is the direction of the change and how big it is.</div>
+    </div>
+
+    <!-- 7. SERVICE CARD -->
+    <div class="bwr-block">
+      <h2>What Is on Your Service Card</h2>
+      <p>Every job gets a card with:</p>
+
+      <div class="bwr-card-demo">
+        <div class="bwr-card-demo-head">Service Card</div>
+        <ul class="bwr-card-rows">
+          <li><span class="bwr-card-key">Frame</span><span class="bwr-card-val">Your racquet, model and grip size</span></li>
+          <li><span class="bwr-card-key">Mains</span><span class="bwr-card-val">String in the mains</span></li>
+          <li><span class="bwr-card-key">Crosses</span><span class="bwr-card-val">String in the crosses</span></li>
+          <li><span class="bwr-card-key">Reference tension</span><span class="bwr-card-val">Set for each</span></li>
+          <li><span class="bwr-card-key">Dynamic tension</span><span class="bwr-card-val">Reading taken at stringing</span></li>
+          <li><span class="bwr-card-key">Date</span><span class="bwr-card-val">The day it was strung</span></li>
+        </ul>
+      </div>
+
+      <p>
+        That card carries forward. When you come back, I am not starting over. I can tell you what you were on last
+        time, what it measured, and what changed.
+      </p>
+      <p>
+        If we try something new and it does not work, that is recorded too. Knowing what did not work for you is worth
+        as much as knowing what did.
+      </p>
+    </div>
+
+    <!-- 8. WHAT TO DO WITH THIS -->
+    <div class="bwr-block">
+      <h2>What to Do With This</h2>
+      <ul class="bwr-next">
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <span><strong>If you are on poly and waiting for a break,</strong> make an appointment and I will read your
+            racquet while you wait. It takes a minute.</span>
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <span><strong>If I have strung for you before,</strong> you already have a baseline on file. Make an
+            appointment and I will tell you where you are against it.</span>
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          <span><strong>If you are not sure what is in your racquet,</strong> that is common and it is fine. Bring it to
+            your appointment and we will start the record from here.</span>
+        </li>
+      </ul>
+    </div>
+
+    <p class="bwr-signoff">
+      Belle&rsquo;s Performance Tennis. Mobile racquet stringing, Kansas City Northland.
+    </p>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "When To Restring",
+  "tag": "section",
+  "class": "belle-when-to-restring-section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "When To Restring"
+    }
+  ]
+}
+{% endschema %}

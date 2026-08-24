@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "main": {
+      "type": "belle-when-to-restring",
+      "settings": {}
+    },
+    "cta_inline_restring": {
+      "type": "cta-inline",
+      "name": "CTA Inline",
+      "settings": {
+        "cta_heading": "Not Sure Where Your Stringbed Is?",
+        "cta_description": "Make an appointment and I will read your racquet against its baseline. Most racquets are ready in 2–3 days, and your setup notes are saved for next time.",
+        "schedule_button_text": "Make an Appointment",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=when_to_restring_bottom"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "cta_inline_restring"
+  ]
+}
