@@ -273,6 +273,15 @@
         box-shadow: 0 8px 25px rgba(201, 162, 39, 0.3);
       }
 
+      /* Secondary/tertiary CTAs stack vertically next to the primary button */
+      .belle-hero-text-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+      }
+
       /* Secondary CTA as plain text link */
       .belle-hero-text-link {
         color: rgba(255, 255, 255, 0.75);
@@ -603,9 +612,22 @@
           </svg>
           {{ section.settings.cta_primary_text }}
         </a>
-        <a href="{{ section.settings.cta_secondary_url }}" class="belle-hero-text-link">
-          {{ section.settings.cta_secondary_text }}
-        </a>
+        {%- comment -%}
+          Two stacked text links, tertiary above secondary. The tertiary slot
+          was added for the When To Restring page and sits ABOVE the pricing
+          link by request. Keep the stacking: a third item inline in the flex
+          row would read as "beside" rather than "above".
+        {%- endcomment -%}
+        <div class="belle-hero-text-links">
+          {%- if section.settings.cta_tertiary_text != blank and section.settings.cta_tertiary_url != blank -%}
+            <a href="{{ section.settings.cta_tertiary_url }}" class="belle-hero-text-link">
+              {{ section.settings.cta_tertiary_text }}
+            </a>
+          {%- endif -%}
+          <a href="{{ section.settings.cta_secondary_url }}" class="belle-hero-text-link">
+            {{ section.settings.cta_secondary_text }}
+          </a>
+        </div>
       </div>
 
       <!-- Trust Bar -->
@@ -768,6 +790,18 @@
       "id": "cta_primary_text",
       "label": "Primary Button Text",
       "default": "Book Your Appointment"
+    },
+    {
+      "type": "text",
+      "id": "cta_tertiary_text",
+      "label": "Tertiary Text Link",
+      "info": "Renders above the secondary link. Leave blank to hide it.",
+      "default": "When to Restring"
+    },
+    {
+      "type": "url",
+      "id": "cta_tertiary_url",
+      "label": "Tertiary Text Link URL"
     },
     {
       "type": "text",
