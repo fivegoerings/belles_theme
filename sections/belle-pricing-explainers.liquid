@@ -1,0 +1,379 @@
+{% comment %}
+  Belle's Performance Tennis - Pricing Explainers
+
+  Split out of belle-pricing-section on 2026-08-23 so these blocks render
+  BELOW the detailed pricing table and the add-ons list. Shopify sections
+  are atomic, so they could not stay inside the pricing section and still
+  appear after add-ons.
+
+  Page order (templates/page.pricing.json):
+    1. belle-pricing-section     hero, turnaround tiers, detailed table
+    2. belles-pricing-addons     add-on price list
+    3. belle-pricing-explainers  THIS FILE
+    4. belle-faq-section
+    5. cta-inline
+
+  Intent: the pricing page leads with numbers and puts the reasoning
+  underneath. Do not move these blocks back above the tables.
+
+  Blocks: Not sure what string, What You're Paying For (with stringer
+  callout), What happens to your racquet.
+{% endcomment %}
+
+<style>
+  .bp-explain {
+    --bp-green: #1a3c2a;
+    --bp-gold: #c8a951;
+    --bp-border: #e5e5e5;
+    --bp-text: #1a1a1a;
+    --bp-muted: #666;
+    --bp-bg: #faf9f6;
+    --bp-white: #ffffff;
+    --bp-light-green: #f4f8f5;
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 0 20px 40px;
+    background: var(--bp-bg);
+  }
+
+  .bp-explain .bp-container {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  /* ── 3. NOT SURE? ── */
+  .bp-not-sure {
+    background: var(--bp-white);
+    border: 1px solid var(--bp-border);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 32px;
+  }
+
+  .bp-not-sure h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    color: var(--bp-green);
+    margin: 0 0 6px;
+    letter-spacing: 1px;
+  }
+
+  .bp-not-sure-intro {
+    font-size: 15px;
+    color: var(--bp-muted);
+    margin: 0 0 14px;
+  }
+
+  .bp-not-sure-list {
+    font-size: 14px;
+    color: var(--bp-text);
+    margin: 0 0 14px;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .bp-not-sure-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .bp-not-sure-list li svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    color: var(--bp-green);
+    margin-top: 3px;
+  }
+
+  .bp-not-sure-sub {
+    font-size: 13px;
+    color: var(--bp-muted);
+    margin: 0 0 6px;
+    padding-left: 22px;
+  }
+
+  .bp-not-sure-sub span {
+    display: inline-block;
+    background: var(--bp-light-green);
+    color: var(--bp-green);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin: 3px 3px 0 0;
+  }
+
+  .bp-not-sure-close {
+    font-size: 14px;
+    color: var(--bp-text);
+    margin: 0;
+    font-weight: 600;
+  }
+
+  /* ── 5. WHAT YOU GET / WHY BELLE'S ── */
+  .bp-why {
+    background: var(--bp-white);
+    border: 1px solid var(--bp-border);
+    border-radius: 12px;
+    padding: 22px 24px;
+    margin-bottom: 32px;
+  }
+
+  .bp-why h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: var(--bp-green);
+    margin: 0 0 8px;
+    letter-spacing: 1px;
+  }
+
+  .bp-why-intro {
+    font-size: 15px;
+    color: var(--bp-muted);
+    margin: 0 0 14px;
+  }
+
+  .bp-why-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+  }
+
+  .bp-why-list li {
+    font-size: 14px;
+    color: var(--bp-text);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .bp-why-list li svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    color: var(--bp-green);
+    margin-top: 3px;
+  }
+
+  /* Stringer callout — elevated personal statement */
+  .bp-stringer-callout {
+    background: var(--bp-green);
+    border-radius: 8px;
+    padding: 16px 20px;
+  }
+
+  .bp-stringer-callout p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .bp-stringer-callout p strong {
+    color: var(--bp-gold);
+    display: block;
+    font-size: 17px;
+    margin-bottom: 4px;
+  }
+
+  /* ── 7. WHAT HAPPENS ── */
+  .bp-includes {
+    background: var(--bp-white);
+    border: 1px solid var(--bp-border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+  }
+
+  .bp-includes h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--bp-text);
+    margin: 0 0 14px;
+  }
+
+  .bp-includes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 20px;
+  }
+
+  .bp-includes-item {
+    font-size: 14px;
+    color: var(--bp-muted);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .bp-includes-item svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    color: var(--bp-green);
+    margin-top: 3px;
+  }
+
+  @media (max-width: 640px) {
+  .bp-includes-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="bp-explain">
+  <div class="bp-container">
+
+    <!-- 1. NOT SURE WHAT STRING? -->
+    <div class="bp-not-sure">
+      <h2>Not Sure What String You Need?</h2>
+      <p class="bp-not-sure-intro">Most customers aren&rsquo;t sure, and that&rsquo;s normal.</p>
+      <ul class="bp-not-sure-list">
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          What you use now
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          How often you play
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          What you want more of
+        </li>
+      </ul>
+      <p class="bp-not-sure-sub">
+        <span>Power</span>
+        <span>Control</span>
+        <span>Comfort</span>
+        <span>Spin</span>
+      </p>
+      <p class="bp-not-sure-close">Bring your racquet. I&rsquo;ll help you choose a setup.</p>
+    </div>
+
+
+    <!-- 2. WHAT YOU'RE PAYING FOR -->
+    <div class="bp-why">
+      <h2>What You&rsquo;re Paying For</h2>
+      <p class="bp-why-intro">You&rsquo;re not paying for just strings. You&rsquo;re paying for:</p>
+      <ul class="bp-why-list">
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Every racquet strung by the same person, so the job is the same every time
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Direct communication with the stringer, from drop-off to pickup
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          A Gamma Progression II electronic constant-pull machine that holds tension steady through the whole job
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          A finished string bed measured with an ERT 300 dynamic tension meter, so the tension you asked for is the tension you got
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          No membership and no club fees
+        </li>
+        <li>
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          No shipping your racquet across the country and waiting a week
+        </li>
+      </ul>
+
+      <div class="bp-stringer-callout">
+        <p>
+          <strong>I string every racquet myself.</strong>The person you email, the person you meet at drop-off, and the
+          person who strings your racquet are the same person.
+        </p>
+      </div>
+    </div>
+
+
+    <!-- 3. WHAT HAPPENS TO YOUR RACQUET -->
+    <div class="bp-includes">
+      <h3>What happens to your racquet</h3>
+      <div class="bp-includes-grid">
+        <div class="bp-includes-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Old strings removed and discarded
+        </div>
+        <div class="bp-includes-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Frame inspected before stringing starts
+        </div>
+        <div class="bp-includes-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          New strings installed at your requested tension
+        </div>
+        <div class="bp-includes-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          String bed straightened and checked
+        </div>
+        <div class="bp-includes-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          String type and tension labeled on frame
+        </div>
+        <div class="bp-includes-item">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Setup logged, I remember your specs next time
+        </div>
+        <div class="bp-includes-item" style="grid-column: span 2;">
+          <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+          Borrow a Solinco demo racquet, free, while yours is being strung
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Pricing Explainers",
+  "tag": "section",
+  "class": "belle-pricing-explainers-section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Pricing Explainers"
+    }
+  ]
+}
+{% endschema %}

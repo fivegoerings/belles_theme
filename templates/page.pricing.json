@@ -199,11 +199,16 @@
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=pricing_bottom"
       }
+    },
+    "belle_pricing_explainers": {
+      "type": "belle-pricing-explainers",
+      "settings": {}
     }
   },
   "order": [
     "main",
     "belles_pricing_addons_gG9bzT",
+    "belle_pricing_explainers",
     "belle_shop_strings_bVhNcB",
     "belle_faq_pricing",
     "cta_inline_LiFkYw"
