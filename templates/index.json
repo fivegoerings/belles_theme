@@ -16,7 +16,7 @@
           "type": "feature",
           "settings": {
             "icon": "check",
-            "title": "We track your setup",
+            "title": "I track your setup",
             "description": "I keep a record of your string, tension, and racquet setup so every future restring starts from what worked last time, not a blank slate.",
             "url": ""
           }
