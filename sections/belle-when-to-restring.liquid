@@ -321,6 +321,27 @@
     color: rgba(255, 255, 255, 0.88);
   }
 
+  /* Photo of the meter, sits inside the dark green method block */
+  .bwr-photo {
+    margin: 16px 0 0;
+    padding: 0;
+  }
+
+  .bwr-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(200, 169, 81, 0.45);
+  }
+
+  .bwr-photo figcaption {
+    font-size: 12.5px;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.65);
+    margin-top: 7px;
+  }
+
   .bwr-steps {
     list-style: none;
     counter-reset: bwr-step;
@@ -757,6 +778,27 @@
     <div class="bwr-block bwr-method">
       <h2>What I Do Instead</h2>
       <p>I measure it.</p>
+
+      {%- comment -%}
+        The meter doing the job the block describes. Hosted in Shopify Files
+        rather than theme assets so the URL survives theme swaps. Width and
+        height are set to the real 1200x630 so the browser reserves the space
+        and the block does not shift as the image loads.
+      {%- endcomment -%}
+      <figure class="bwr-photo">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0724/2694/6756/files/ert300-dynamic-tension-reading.jpg?v=1787624212&width=1000"
+          alt="An ERT 300 dynamic tension meter resting on a freshly strung stringbed, reading 20 DT"
+          width="1200"
+          height="630"
+          loading="lazy"
+          decoding="async"
+        >
+        <figcaption>
+          The ERT 300 reading a finished stringbed. This is the number that goes on your card.
+        </figcaption>
+      </figure>
+
       <ol class="bwr-steps">
         <li>
           Every racquet I string gets a dynamic tension reading before it goes back to you. That reading is your
