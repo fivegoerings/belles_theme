@@ -43,7 +43,7 @@
           "type": "feature",
           "settings": {
             "icon": "racquet",
-            "title": "Free Demo Racquet",
+            "title": "Borrow a Demo, Free",
             "description": "Borrow a Solinco demo while your racquet is being strung. No charge.",
             "url": "shopify://pages/demo-racquet-program"
           }
@@ -203,8 +203,8 @@
           "settings": {
             "image": "shopify://shop_images/IMG_1335_2.webp",
             "icon": "racquet",
-            "title": "Free Solinco Demo Racquets",
-            "description": "Tournaments don't wait and neither should you. Every Belle's stringing customer can request a free Solinco demo racquet to borrow during service. Check out our Demo Racquet Program to see what's available.",
+            "title": "Borrow a Solinco Demo, Free",
+            "description": "Tournaments don't wait and neither should you. Every Belle's stringing customer can borrow a Solinco demo racquet at no charge during service. Check out our Demo Racquet Program to see what's available.",
             "url": "shopify://pages/demo-racquet-program"
           }
         },

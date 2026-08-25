@@ -44,7 +44,7 @@
           "type": "racquet",
           "settings": {
             "image": "shopify://shop_images/20250414_SOL_Web_Racquet_Whiteout-V2_305_18x20_BGR_GRY_01_63c4972e-23a0-48a6-a5b9-d018b13ba91b.jpg",
-            "badge_text": "FREE DEMO",
+            "badge_text": "FREE TO BORROW",
             "brand": "Solinco",
             "name": "Whiteout 305",
             "tagline": "Control and feel with more free power than you'd expect. Solinco's flagship precision frame, comparable to the Wilson Blade and Babolat Pure Strike.",
@@ -62,7 +62,7 @@
           "type": "racquet",
           "settings": {
             "image": "shopify://shop_images/20241209_SOL_Racquet_Whiteout-V2_305_3-4_BGR_TRN_01-2-768x768_337d456f-4a95-4977-a3b0-ff472e7963f0.jpg",
-            "badge_text": "FREE DEMO",
+            "badge_text": "FREE TO BORROW",
             "brand": "Solinco",
             "name": "Whiteout 290",
             "tagline": "Same precision frame, lighter swing. Easier to maneuver for faster hands at the net and quicker swing speed from the baseline.",
@@ -80,7 +80,7 @@
           "type": "racquet",
           "disabled": true,
           "settings": {
-            "badge_text": "FREE DEMO",
+            "badge_text": "FREE TO BORROW",
             "brand": "Solinco",
             "name": "Whiteout 305 XTD",
             "tagline": "Extended-length control frame with extra reach and serve power. The extra half-inch delivers more pop without going full oversized.",
@@ -98,7 +98,7 @@
           "type": "racquet",
           "disabled": true,
           "settings": {
-            "badge_text": "FREE DEMO",
+            "badge_text": "FREE TO BORROW",
             "brand": "Solinco",
             "name": "Blackout 300",
             "tagline": "Easy power and heavy spin in a surprisingly comfortable package. Solinco's power frame. Explosive off the baseline with a plush, arm-friendly feel.",
