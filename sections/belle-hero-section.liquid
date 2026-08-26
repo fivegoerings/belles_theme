@@ -569,17 +569,23 @@
     </div>
 
     <div class="belle-hero-content-v2">
-      <!-- Benefit Badge -->
-      <a
-        href="/pages/about-tennis-stringing-kansas-city-northland"
-        class="belle-hero-badge-v2"
-        style="text-decoration: none; cursor: pointer;"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M18 18.5c-2.5 0-4.71-1.28-6-3.22-1.29 1.94-3.5 3.22-6 3.22H3v2h3c2.12 0 4.07-.86 5.5-2.25C12.93 19.64 14.88 20.5 17 20.5h4v-2h-3zM19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/>
-        </svg>
-        {{ section.settings.badge_text }}
-      </a>
+      {%- comment -%}
+        Benefit badge is optional. Blank the Badge Text setting to hide it
+        entirely: without this guard an empty setting still rendered the pill
+        and its trophy icon with no words in it.
+      {%- endcomment -%}
+      {%- if section.settings.badge_text != blank -%}
+        <a
+          href="/pages/about-tennis-stringing-kansas-city-northland"
+          class="belle-hero-badge-v2"
+          style="text-decoration: none; cursor: pointer;"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M18 18.5c-2.5 0-4.71-1.28-6-3.22-1.29 1.94-3.5 3.22-6 3.22H3v2h3c2.12 0 4.07-.86 5.5-2.25C12.93 19.64 14.88 20.5 17 20.5h4v-2h-3zM19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z"/>
+          </svg>
+          {{ section.settings.badge_text }}
+        </a>
+      {%- endif -%}
 
       <!-- Business name byline -->
       <p class="belle-hero-byline">{{ section.settings.byline }}</p>
@@ -886,7 +892,7 @@
           "type": "feature",
           "settings": {
             "icon": "check",
-            "title": "We Track Your Setup",
+            "title": "I Track Your Setup",
             "description": "Consistent results every time, no guessing."
           }
         },

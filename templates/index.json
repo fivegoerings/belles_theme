@@ -16,7 +16,7 @@
           "type": "feature",
           "settings": {
             "icon": "check",
-            "title": "I track your setup",
+            "title": "Never a blank slate",
             "description": "I keep a record of your string, tension, and racquet setup so every future restring starts from what worked last time, not a blank slate.",
             "url": ""
           }
@@ -59,7 +59,7 @@
         "address": "Kansas City, MO 64155",
         "phone": "816-938-7622",
         "bg_image": "shopify://shop_images/IMG_1772_4_a2d26233-fa49-4da7-8831-bb9e1422d273.webp",
-        "badge_text": "Built by a Northland Tennis Parent for Northland Tennis Families",
+        "badge_text": "",
         "byline": "Belle's Performance Tennis Shop",
         "headline_line1": "Tennis Racquet Stringing",
         "headline_line2": "in Kansas City Northland",
@@ -70,7 +70,7 @@
         "cta_secondary_text": "See Pricing",
         "cta_secondary_url": "shopify://pages/racquet-stringing-prices-kansas-city-northland",
         "trust_1": "USRSA Member",
-        "trust_2": "Setup saved for next time",
+        "trust_2": "I track your setup",
         "trust_3": ""
       }
     },
@@ -244,7 +244,7 @@
       "type": "cta-inline",
       "name": "CTA Inline",
       "settings": {
-        "cta_heading": "Your Setup Saved for Next Time",
+        "cta_heading": "I Track Your Setup for Next Time",
         "cta_description": "Book online, drop off at a Northland QuikTrip, and most racquets are ready in 2\u20133 days. Your string and tension notes are saved for next time.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=homepage_mid"
