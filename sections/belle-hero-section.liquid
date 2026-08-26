@@ -636,6 +636,12 @@
         </div>
       </div>
 
+      {%- comment -%}
+        Trust bar renders only when at least one item has text. Without this
+        the wrapper still emitted an empty div and its bottom margin, leaving
+        a gap under the CTA when all three settings are blank.
+      {%- endcomment -%}
+      {%- if section.settings.trust_1 != blank or section.settings.trust_2 != blank or section.settings.trust_3 != blank -%}
       <!-- Trust Bar -->
       <div class="belle-trust-bar">
         {% if section.settings.trust_1 != blank %}
@@ -665,6 +671,7 @@
           </div>
         {% endif %}
       </div>
+      {%- endif -%}
     </div>
   </div>
 
