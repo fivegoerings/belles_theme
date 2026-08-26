@@ -273,6 +273,22 @@
         box-shadow: 0 8px 25px rgba(201, 162, 39, 0.3);
       }
 
+      /* Secondary CTA: outline button, so the hero offers two commercial
+         paths of comparable weight instead of a button beating a text link. */
+      .belle-btn-secondary-v2 {
+        background: transparent;
+        color: var(--belle-gold);
+        border-color: rgba(201, 162, 39, 0.55);
+      }
+
+      .belle-btn-secondary-v2:hover {
+        background: var(--belle-gold);
+        color: var(--belle-green-dark);
+        border-color: var(--belle-gold);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(201, 162, 39, 0.25);
+      }
+
       /* Secondary/tertiary CTAs stack vertically next to the primary button */
       .belle-hero-text-links {
         display: flex;
@@ -619,22 +635,29 @@
           {{ section.settings.cta_primary_text }}
         </a>
         {%- comment -%}
-          Two stacked text links, tertiary above secondary. The tertiary slot
-          was added for the When To Restring page and sits ABOVE the pricing
-          link by request. Keep the stacking: a third item inline in the flex
-          row would read as "beside" rather than "above".
+          The hero carries the two COMMERCIAL paths only, both as buttons:
+          book, and see pricing. A text link next to a filled button is not a
+          fair fight, which is why pricing was losing.
+
+          The tertiary slot below is for educational links. It renders as a
+          quiet text link under the buttons, and only when filled in. Keep it
+          that way: putting editorial content at button weight next to Book
+          pulls a ready-to-buy visitor sideways.
         {%- endcomment -%}
-        <div class="belle-hero-text-links">
-          {%- if section.settings.cta_tertiary_text != blank and section.settings.cta_tertiary_url != blank -%}
-            <a href="{{ section.settings.cta_tertiary_url }}" class="belle-hero-text-link">
-              {{ section.settings.cta_tertiary_text }}
-            </a>
-          {%- endif -%}
-          <a href="{{ section.settings.cta_secondary_url }}" class="belle-hero-text-link">
+        {%- if section.settings.cta_secondary_text != blank and section.settings.cta_secondary_url != blank -%}
+          <a href="{{ section.settings.cta_secondary_url }}" class="belle-btn-v2 belle-btn-secondary-v2">
             {{ section.settings.cta_secondary_text }}
           </a>
-        </div>
+        {%- endif -%}
       </div>
+
+      {%- if section.settings.cta_tertiary_text != blank and section.settings.cta_tertiary_url != blank -%}
+        <div class="belle-hero-text-links">
+          <a href="{{ section.settings.cta_tertiary_url }}" class="belle-hero-text-link">
+            {{ section.settings.cta_tertiary_text }}
+          </a>
+        </div>
+      {%- endif -%}
 
       {%- comment -%}
         Trust bar renders only when at least one item has text. Without this
