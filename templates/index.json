@@ -16,7 +16,7 @@
           "type": "feature",
           "settings": {
             "icon": "check",
-            "title": "Never a blank slate",
+            "title": "The same setup, next time.",
             "description": "I keep a record of your string, tension, and racquet setup so every future restring starts from what worked last time, not a blank slate.",
             "url": ""
           }
@@ -244,7 +244,7 @@
       "type": "cta-inline",
       "name": "CTA Inline",
       "settings": {
-        "cta_heading": "I Track Your Setup for Next Time",
+        "cta_heading": "The Same Setup, Next Time",
         "cta_description": "Book online, drop off at a Northland QuikTrip, and most racquets are ready in 2\u20133 days. Your string and tension notes are saved for next time.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=homepage_mid"
