@@ -147,7 +147,7 @@
           "type": "question",
           "settings": {
             "question": "What if you don't carry the string I want?",
-            "answer": "<p>Go ahead and book. I stock Solinco, Gosen, Wilson, and Head, and once you're on the calendar, tell me what string you're using or want. I'll confirm before I take your racquet: whether I have it in stock, need to order it (adds a few days), or should suggest something close and why. If you'd rather not wait on an order, you can always bring your own string and pay the flat $45 rate in the add-ons below.</p>",
+            "answer": "<p>Go ahead and book. I stock Solinco, Gosen, Wilson, and Head. Once you're on the calendar, tell me what you're using or want. I'll confirm before I take your racquet: I have it, I can order it, or here's something close and why.</p><p>Ordering adds a few days. Most people take that over a substitute, and it means I've inspected the string and stand behind it.</p><p>If you already own the set and want it installed, I'll do that. Full unopened set, and I'll look it over before I take the racquet. I don't install string that's been sitting for years. It goes brittle whether or not the package was ever opened, and it can fail on the machine.</p>",
             "category": ""
           }
         },
@@ -155,7 +155,7 @@
           "type": "question",
           "settings": {
             "question": "Can I bring my own string?",
-            "answer": "<p>Yes. If you have a string you prefer that I don't carry, bring it and I'll string it. That's a flat $45, listed under add-ons below, and it covers the whole job. Next day is +$15, same day +$30.</p><p>Tell me what string it is when you book. Natural gut and other delicate strings need special handling, and I'll tell you before I take the racquet if a rush window isn't right for it. Replacement of customer-supplied string damaged during installation is not guaranteed.</p>",
+            "answer": "<p>Yes, if it's a string I don't carry and you already own it. That's a flat $45, listed under add-ons below, and it covers the whole job. Next day is +$15, same day +$30.</p><p>If the goal is a specific string rather than a specific set, ordering it is usually the better path. It costs about the same, it adds a few days, and it means I inspected the string and stand behind it.</p><p>What I need from you: a full unopened set. I'll inspect it before I take the racquet and I'll tell you then if I won't install it. I decline string that has been sitting for years, because it goes brittle whether or not the package was opened. Natural gut and other delicate strings need special handling, and I'll say up front if a rush window isn't right for it. Replacement of customer-supplied string damaged during installation is not guaranteed.</p>",
             "category": ""
           }
         },
