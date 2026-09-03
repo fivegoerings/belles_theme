@@ -219,10 +219,14 @@
       {%- comment -%}
         Moved out of the main pricing table on 2026-09-02. This is NOT an
         add-on in the sense the other cards are: it replaces the standard
-        price rather than stacking on top of it. That is why it is
-        full-width, sits first, and shows a bare "$45" with no plus sign
-        while every other card here reads "+$X" or "cost +$X". Do not
-        reformat it to match the others.
+        restring price rather than being bought alongside one. That is why
+        it is full-width, highlighted, and sits first.
+
+        The other cards were flat-priced on 2026-09-03, so the old visual
+        cue (a bare number here versus "+$X" everywhere else) no longer
+        distinguishes it. The description now carries that job on its own,
+        which is why it says outright "this is the whole price for the job,
+        not an extra charge on top". Do not trim that sentence.
       {%- endcomment -%}
       <div class="bp-addon-card full-width highlight">
         <div>
@@ -268,17 +272,17 @@
       <div class="bp-addon-card">
         <div>
           <p class="bp-addon-name">Overgrip replacement</p>
-          <p class="bp-addon-desc">Grip cost + install labor</p>
+          <p class="bp-addon-desc">Overgrip and install included.</p>
         </div>
-        <span class="bp-addon-price">cost +$5</span>
+        <span class="bp-addon-price">$5</span>
       </div>
 
       <div class="bp-addon-card">
         <div>
           <p class="bp-addon-name">Replacement grip</p>
-          <p class="bp-addon-desc">Grip cost + install labor</p>
+          <p class="bp-addon-desc">Grip and install included.</p>
         </div>
-        <span class="bp-addon-price">cost +$10</span>
+        <span class="bp-addon-price">$20</span>
       </div>
 
       <div class="bp-addon-card">
@@ -286,7 +290,7 @@
           <p class="bp-addon-name">Grip build-up</p>
           <p class="bp-addon-desc">Heat shrink sleeve, increases handle size</p>
         </div>
-        <span class="bp-addon-price">cost +$12</span>
+        <span class="bp-addon-price">$25</span>
       </div>
 
       <div class="bp-addon-card">
@@ -294,7 +298,7 @@
           <p class="bp-addon-name">Grommet replacement</p>
           <p class="bp-addon-desc">Full grommet set</p>
         </div>
-        <span class="bp-addon-price">cost +$20</span>
+        <span class="bp-addon-price">$35</span>
       </div>
 
     </div>
