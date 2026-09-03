@@ -216,6 +216,22 @@
 
     <div class="bp-addons-grid">
 
+      {%- comment -%}
+        Moved out of the main pricing table on 2026-09-02. This is NOT an
+        add-on in the sense the other cards are: it replaces the standard
+        price rather than stacking on top of it. That is why it is
+        full-width, sits first, and shows a bare "$45" with no plus sign
+        while every other card here reads "+$X" or "cost +$X". Do not
+        reformat it to match the others.
+      {%- endcomment -%}
+      <div class="bp-addon-card full-width highlight">
+        <div>
+          <p class="bp-addon-name">You provide the string</p>
+          <p class="bp-addon-desc">Bring your own string and I'll install it. This is the whole price for the job, not an extra charge on top. Next day +$15, same day +$30.</p>
+        </div>
+        <span class="bp-addon-price">$45</span>
+      </div>
+
       <div class="bp-addon-card highlight">
         <div>
           <p class="bp-addon-name">Stenciling</p>

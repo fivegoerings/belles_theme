@@ -118,7 +118,7 @@ These are the numbers and claims the whole site has to agree on. Verified live 2
 | Standard restring | **$40–$55 all-in, string included** |
 | Rush uplift | **+$15 next-day, +$30 same-day** |
 | Natural gut | **from $95**, quoted by string |
-| Customer-supplied string | **$35 / $50 / $65** (standard / next-day / same-day) |
+| Customer-supplied string | **$45 flat**, plus the standard rush uplift ($60 next-day, $75 same-day) |
 | Standard turnaround | **2–3 days** |
 | Deposit | None. Invoice sent when the racquet is done, paid before pickup |
 | Machine | Gamma Progression II ELS electronic constant-pull |
@@ -129,6 +129,8 @@ Notes on two of these that have been questioned and settled:
 
 - **Rush pricing is deliberately higher than comparable stringers.** Competitors charge less for same-day, but most of them are storefront or locker-based, so their rush fee covers labor on a racquet already in hand. Belle's same-day requires a dedicated off-route round trip in each direction. The higher fee is also intentionally throttling demand for rush slots. Do not "correct" this against a competitor price list.
 - **Customer-supplied string is published as a rate**, not quote-required. This is current and intentional.
+- **Customer-supplied string lives in the add-ons block, not the main pricing table** (moved 2026-09-02, repriced from $35 to $45). It is deliberately formatted unlike the other add-ons: full width, first in the grid, and a bare "$45" with no plus sign, because it *replaces* the standard price instead of stacking on top of it. Every other card in that block reads "+$X" or "cost +$X". Do not normalise it to match them.
+- **$45 is higher than the $40 low end of the all-in price, and that is not an error.** Labor has to carry the whole job when there is no margin on string, and customer-supplied string is often unknown quality or the wrong length. Expect to be asked about it; the pricing FAQ answers it rather than leaving it unexplained.
 
 ## Out-of-area policy (do not re-publish what was removed)
 

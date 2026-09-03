@@ -147,7 +147,7 @@
           "type": "question",
           "settings": {
             "question": "What if you don't carry the string I want?",
-            "answer": "<p>Go ahead and book. I stock Solinco, Gosen, Wilson, and Head, and once you're on the calendar, tell me what string you're using or want. I'll confirm before I take your racquet: whether I have it in stock, need to order it (adds a few days), or should suggest something close and why. If you'd rather not wait on an order, you can always bring your own string and pay the customer-supplied rate.</p>",
+            "answer": "<p>Go ahead and book. I stock Solinco, Gosen, Wilson, and Head, and once you're on the calendar, tell me what string you're using or want. I'll confirm before I take your racquet: whether I have it in stock, need to order it (adds a few days), or should suggest something close and why. If you'd rather not wait on an order, you can always bring your own string and pay the flat $45 rate in the add-ons below.</p>",
             "category": ""
           }
         },
@@ -155,7 +155,7 @@
           "type": "question",
           "settings": {
             "question": "Can I bring my own string?",
-            "answer": "<p>Yes. If you have a string you prefer that I don't carry, bring it and I'll string it. Customer-supplied labor rates are in the table above.</p><p>Tell me what string it is when you book. Natural gut and other delicate strings need special handling, and I'll tell you before I take the racquet if a rush window isn't right for it. Replacement of customer-supplied string damaged during installation is not guaranteed.</p>",
+            "answer": "<p>Yes. If you have a string you prefer that I don't carry, bring it and I'll string it. That's a flat $45, listed under add-ons below, and it covers the whole job. Next day is +$15, same day +$30.</p><p>Tell me what string it is when you book. Natural gut and other delicate strings need special handling, and I'll tell you before I take the racquet if a rush window isn't right for it. Replacement of customer-supplied string damaged during installation is not guaranteed.</p>",
             "category": ""
           }
         },
