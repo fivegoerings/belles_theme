@@ -111,7 +111,7 @@ Note that meta descriptions and page body content live in Shopify Admin, not in 
 
 ## Service facts (confirmed, keep copy consistent with these)
 
-These are the numbers and claims the whole site has to agree on. Verified live 2026-08-23.
+These are the numbers and claims the whole site has to agree on. Verified against the live pricing page 2026-09-03.
 
 | Fact | Value |
 |---|---|
@@ -122,15 +122,42 @@ These are the numbers and claims the whole site has to agree on. Verified live 2
 | Standard turnaround | **2–3 days** |
 | Deposit | None. Invoice sent when the racquet is done, paid before pickup |
 | Machine | Gamma Progression II ELS electronic constant-pull |
+| Measurement | Dynamic tension read on every finished stringbed with an **ERT 300**, logged on the service card |
 | Credential | USRSA member |
 | Strings kept on hand | **Solinco, Gosen, Head, Wilson** |
 
-Notes on two of these that have been questioned and settled:
+Pricing table, the four rows on the live page (standard / next-day / same-day):
+
+| String type | Standard | Express | Rush |
+|---|---|---|---|
+| Synthetic gut | $40 | $55 | $70 |
+| Multifilament | $50 | $65 | $80 |
+| Polyester | $55 | $70 | $85 |
+| Natural gut | $95+ | $110+ | $125+ |
+
+Add-ons, all repriced 2026-09-03. **Every one is a flat all-in figure.** Nothing on the page reads "+$X" or "cost +$X" any more, and the parts are included rather than billed on top:
+
+| Add-on | Price |
+|---|---|
+| You provide the string | **$45** (see the notes below, this one is not really an add-on) |
+| Stenciling | **$5** |
+| Hybrid setup | **no price shown.** Priced from the higher-tier string, no surcharge |
+| String savers | **$8** |
+| Overgrip replacement | **$5**, overgrip included |
+| Replacement grip | **$20**, grip included |
+| Grip build-up | **$25** |
+| Grommet replacement | **$35** |
+
+Notes on the ones that have been questioned and settled:
 
 - **Rush pricing is deliberately higher than comparable stringers.** Competitors charge less for same-day, but most of them are storefront or locker-based, so their rush fee covers labor on a racquet already in hand. Belle's same-day requires a dedicated off-route round trip in each direction. The higher fee is also intentionally throttling demand for rush slots. Do not "correct" this against a competitor price list.
 - **Customer-supplied string is published as a rate**, not quote-required. This is current and intentional.
-- **Customer-supplied string lives in the add-ons block, not the main pricing table** (moved 2026-09-02, repriced from $35 to $45). It is deliberately formatted unlike the other add-ons: full width, first in the grid, and a bare "$45" with no plus sign, because it *replaces* the standard price instead of stacking on top of it. Every other card in that block reads "+$X" or "cost +$X". Do not normalise it to match them.
-- **$45 is higher than the $40 low end of the all-in price, and that is not an error.** Labor has to carry the whole job when there is no margin on string, and customer-supplied string is often unknown quality or the wrong length. Expect to be asked about it; the pricing FAQ answers it rather than leaving it unexplained.
+- **Customer-supplied string lives in the add-ons block, not the main pricing table** (moved 2026-09-02, repriced from $35/$50/$65 to a flat $45). It is deliberately formatted unlike the other add-ons: full width, highlighted, and first in the grid, because it *replaces* the standard restring price instead of being bought alongside one. Since every add-on was flat-priced on 2026-09-03, the old visual cue (a bare number here versus "+$X" elsewhere) no longer separates it, so the card's own sentence does that work: "This is the whole price for the job, not an extra charge on top." Do not trim that sentence as redundant.
+- **$45 is higher than the $40 low end of the all-in price, and that is not an error.** Labor has to carry the whole job when there is no margin on string, and customer-supplied string is often unknown quality or the wrong length. It also removes any "save money" motive, which is the point: the only customer left is the one who genuinely wants a string not carried. Expect to be asked; the pricing FAQ answers it rather than leaving it unexplained.
+- **Special order is the recommended path, not bring-your-own.** The out-of-stock FAQ used to close by offering customer-supplied string as the way to skip an order wait, which was the shop generating that demand rather than customers asking for it. Reversed 2026-09-02. Ordering is now presented first, with the reason attached (the string was inspected and is stood behind), and bring-your-own is the last paragraph.
+- **Bring-your-own conditions are published, not implied:** full unopened set, inspected before the racquet is taken, declined if it has been sitting for years because it goes brittle regardless of packaging, and no replacement guarantee if it fails during install. These appear on the add-on card and in the FAQ. The reasoning, from the USRSA study guide: with shop string a defect can be marked and the coil returned to the supplier, but with customer string there is no supplier and no remedy, and package length cannot be relied on (a two-piece job needs an extra 12 to 18 inches and four knots instead of two, so a short set means a dead job with the racquet already off the machine).
+- **The hybrid surcharge was removed 2026-09-02** by owner decision, because the published +$10 did not match how hybrid jobs were actually being invoiced. Hybrids are priced from the higher-tier string and nothing else. Do not add a surcharge back without checking real invoices.
+- **The pricing table is a real HTML table at every width.** A mobile "stacking" version was built and reverted on 2026-09-03: it was justified by a claim that the Rush column was clipped and unreachable on phones, and that claim was false, produced by a broken render harness. The real problem was only that the header labels collided ("STANDARDEXPRESS"), caused by the phone breakpoint setting `thead th` to 13px, larger than the 12px desktop size. That is fixed in CSS. Do not restructure the table with `display: block`; it removes table semantics from the accessibility tree.
 
 ## Out-of-area policy (do not re-publish what was removed)
 
