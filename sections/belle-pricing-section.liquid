@@ -287,6 +287,20 @@
     border-left: 1px solid rgba(255,255,255,0.15);
   }
 
+  /* Was an inline style="width: 44%". Moved here so the phone breakpoint
+     can narrow it and give the three price columns more room. */
+  .bp-table thead th:first-child {
+    width: 44%;
+  }
+
+  /* Was an inline style on each sub-label span, same reason. */
+  .bp-th-sub {
+    font-weight: 400;
+    font-size: 11px;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
   .bp-table tbody tr {
     border-bottom: 1px solid var(--bp-border);
   }
@@ -355,61 +369,6 @@
 
   /* Mobile */
 
-  /* Phone: stack the price table into one card per string.
-     Four columns did not fit at 390px, and .bp-table-wrap is overflow:hidden,
-     so the Rush column was clipped off the right edge and unreachable. It was
-     not scrollable, it was invisible. Each price now sits on its own line
-     labelled from the data-label attribute on the cell, so keep those
-     attributes in sync with the thead labels if the tiers ever change. */
-  @media (max-width: 640px) {
-    .bp-table,
-    .bp-table tbody,
-    .bp-table tbody tr,
-    .bp-table tbody th[scope="row"],
-    .bp-table tbody td {
-      display: block;
-      width: 100%;
-    }
-
-    .bp-table thead {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-      white-space: nowrap;
-    }
-
-    .bp-table tbody tr {
-      padding: 4px 0 10px;
-    }
-
-    .bp-table tbody th[scope="row"] {
-      padding: 12px 14px 6px;
-    }
-
-    .bp-table tbody td,
-    .bp-table td:not(:first-child) {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 12px;
-      text-align: right;
-      border-left: 0;
-      padding: 5px 14px;
-    }
-
-    .bp-table tbody td::before {
-      content: attr(data-label);
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--bp-muted);
-      text-align: left;
-    }
-  }
-
   @media (max-width: 640px) {
   .bp-price-number { font-size: 56px; }
 
@@ -422,9 +381,29 @@
     }
 
   .bp-table td,
-    .bp-table thead th {
-      padding: 10px;
+    .bp-table tbody th[scope="row"] {
+      padding: 10px 6px;
       font-size: 13px;
+    }
+
+    /* The header labels collided at phone widths ("STANDARDEXPRESS"). The
+       old rule set thead th to 13px here, which is LARGER than the 12px
+       desktop size, so the text grew exactly where the column got narrow.
+       Shrink the label, drop the letter-spacing, tighten the padding, and
+       take 6% off the first column to widen the price columns. */
+    .bp-table thead th {
+      font-size: 10px;
+      letter-spacing: 0.01em;
+      padding: 8px 4px;
+    }
+
+    .bp-table thead th:first-child {
+      width: 38%;
+      padding-left: 10px;
+    }
+
+    .bp-th-sub {
+      font-size: 9px;
     }
   }
 </style>
@@ -516,18 +495,18 @@
       <table class="bp-table">
         <thead>
           <tr>
-            <th style="width: 44%">String type</th>
-            <th>
+            <th scope="col">String type</th>
+            <th scope="col">
               Standard<br>
-              <span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;">2&ndash;3 days</span>
+              <span class="bp-th-sub">2&ndash;3 days</span>
             </th>
-            <th>
+            <th scope="col">
               Express<br>
-              <span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;">next day</span>
+              <span class="bp-th-sub">next day</span>
             </th>
-            <th>
+            <th scope="col">
               Rush<br>
-              <span style="font-weight:400;font-size:11px;text-transform:none;letter-spacing:0;">same day</span>
+              <span class="bp-th-sub">same day</span>
             </th>
           </tr>
         </thead>
@@ -538,9 +517,9 @@
               <div class="bp-string-name">Synthetic gut</div>
               <div class="bp-string-desc">Durable, comfortable feel</div>
             </th>
-            <td data-label="Standard, 2–3 days">$40</td>
-            <td data-label="Express, next day">$55</td>
-            <td data-label="Rush, same day">$70</td>
+            <td>$40</td>
+            <td>$55</td>
+            <td>$70</td>
           </tr>
           <tr>
             <th scope="row">
@@ -548,9 +527,9 @@
               <div class="bp-string-name">Multifilament</div>
               <div class="bp-string-desc">Softer feel, good for sensitive elbows</div>
             </th>
-            <td data-label="Standard, 2–3 days">$50</td>
-            <td data-label="Express, next day">$65</td>
-            <td data-label="Rush, same day">$80</td>
+            <td>$50</td>
+            <td>$65</td>
+            <td>$80</td>
           </tr>
           <tr class="bp-row-highlight">
             <th scope="row">
@@ -558,9 +537,9 @@
               <div class="bp-string-name">Polyester</div>
               <div class="bp-string-desc">Solinco Hyper-G, Tour Bite, Confidential &amp; more</div>
             </th>
-            <td data-label="Standard, 2–3 days">$55</td>
-            <td data-label="Express, next day">$70</td>
-            <td data-label="Rush, same day">$85</td>
+            <td>$55</td>
+            <td>$70</td>
+            <td>$85</td>
           </tr>
           <tr>
             <th scope="row">
@@ -568,9 +547,9 @@
               <div class="bp-string-name">Natural gut</div>
               <div class="bp-string-desc">Quoted by string. Ask before you book.</div>
             </th>
-            <td data-label="Standard, 2–3 days">$95+</td>
-            <td data-label="Express, next day">$110+</td>
-            <td data-label="Rush, same day">$125+</td>
+            <td>$95+</td>
+            <td>$110+</td>
+            <td>$125+</td>
           </tr>
         </tbody>
       </table>
