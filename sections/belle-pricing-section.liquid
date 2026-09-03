@@ -305,6 +305,17 @@
     vertical-align: middle;
   }
 
+  /* The string-name cell is a <th scope="row"> so screen readers announce
+     which string a price belongs to. Undo the browser default th styling
+     (bold, centred) so it looks exactly like the td it replaced. */
+  .bp-table tbody th[scope="row"] {
+    padding: 12px 14px;
+    color: var(--bp-text);
+    vertical-align: middle;
+    text-align: left;
+    font-weight: 400;
+  }
+
   .bp-table td:not(:first-child) {
     text-align: center;
     border-left: 1px solid var(--bp-border);
@@ -343,6 +354,61 @@
   }
 
   /* Mobile */
+
+  /* Phone: stack the price table into one card per string.
+     Four columns did not fit at 390px, and .bp-table-wrap is overflow:hidden,
+     so the Rush column was clipped off the right edge and unreachable. It was
+     not scrollable, it was invisible. Each price now sits on its own line
+     labelled from the data-label attribute on the cell, so keep those
+     attributes in sync with the thead labels if the tiers ever change. */
+  @media (max-width: 640px) {
+    .bp-table,
+    .bp-table tbody,
+    .bp-table tbody tr,
+    .bp-table tbody th[scope="row"],
+    .bp-table tbody td {
+      display: block;
+      width: 100%;
+    }
+
+    .bp-table thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    .bp-table tbody tr {
+      padding: 4px 0 10px;
+    }
+
+    .bp-table tbody th[scope="row"] {
+      padding: 12px 14px 6px;
+    }
+
+    .bp-table tbody td,
+    .bp-table td:not(:first-child) {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      text-align: right;
+      border-left: 0;
+      padding: 5px 14px;
+    }
+
+    .bp-table tbody td::before {
+      content: attr(data-label);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--bp-muted);
+      text-align: left;
+    }
+  }
 
   @media (max-width: 640px) {
   .bp-price-number { font-size: 56px; }
@@ -467,44 +533,44 @@
         </thead>
         <tbody>
           <tr class="bp-row-highlight">
-            <td>
+            <th scope="row">
               <div class="bp-string-plain">All-around, easy choice</div>
               <div class="bp-string-name">Synthetic gut</div>
               <div class="bp-string-desc">Durable, comfortable feel</div>
-            </td>
-            <td>$40</td>
-            <td>$55</td>
-            <td>$70</td>
+            </th>
+            <td data-label="Standard, 2–3 days">$40</td>
+            <td data-label="Express, next day">$55</td>
+            <td data-label="Rush, same day">$70</td>
           </tr>
           <tr>
-            <td>
+            <th scope="row">
               <div class="bp-string-plain">Easier on your arm</div>
               <div class="bp-string-name">Multifilament</div>
               <div class="bp-string-desc">Softer feel, good for sensitive elbows</div>
-            </td>
-            <td>$50</td>
-            <td>$65</td>
-            <td>$80</td>
+            </th>
+            <td data-label="Standard, 2–3 days">$50</td>
+            <td data-label="Express, next day">$65</td>
+            <td data-label="Rush, same day">$80</td>
           </tr>
           <tr class="bp-row-highlight">
-            <td>
+            <th scope="row">
               <div class="bp-string-plain">More spin and control</div>
               <div class="bp-string-name">Polyester</div>
               <div class="bp-string-desc">Solinco Hyper-G, Tour Bite, Confidential &amp; more</div>
-            </td>
-            <td>$55</td>
-            <td>$70</td>
-            <td>$85</td>
+            </th>
+            <td data-label="Standard, 2–3 days">$55</td>
+            <td data-label="Express, next day">$70</td>
+            <td data-label="Rush, same day">$85</td>
           </tr>
           <tr>
-            <td>
+            <th scope="row">
               <div class="bp-string-plain">Best feel and power</div>
               <div class="bp-string-name">Natural gut</div>
               <div class="bp-string-desc">Quoted by string. Ask before you book.</div>
-            </td>
-            <td>$95+</td>
-            <td>$110+</td>
-            <td>$125+</td>
+            </th>
+            <td data-label="Standard, 2–3 days">$95+</td>
+            <td data-label="Express, next day">$110+</td>
+            <td data-label="Rush, same day">$125+</td>
           </tr>
         </tbody>
       </table>
@@ -517,6 +583,7 @@
       <span>Sales tax applies to the string portion of your order.</span>
       <span>Natural gut and unusual strings may require a quote after inspection.</span>
       <span>Bringing your own string? That rate is in the add-ons below.</span>
+      <span>Every price includes a dynamic tension reading on the finished stringbed, taken with an ERT 300 and logged on your card.</span>
     </div>
 
   </div>

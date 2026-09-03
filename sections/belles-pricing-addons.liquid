@@ -240,12 +240,26 @@
         <span class="bp-addon-price free">$5 / free</span>
       </div>
 
+      {%- comment -%}
+        Hybrid surcharge removed 2026-09-02 by owner decision: the +$10 did
+        not match how hybrid jobs were actually being invoiced. Hybrids are
+        priced from the higher-tier string and nothing else. Do not add a
+        surcharge back without confirming against real invoices.
+      {%- endcomment -%}
       <div class="bp-addon-card">
         <div>
           <p class="bp-addon-name">Hybrid setup</p>
-          <p class="bp-addon-desc">Two different strings, two-piece install. Priced from the higher-tier string, plus $10.</p>
+          <p class="bp-addon-desc">Two different strings, two-piece install. Priced from the higher-tier string.</p>
         </div>
-        <span class="bp-addon-price">+$10</span>
+        <span class="bp-addon-price free">no surcharge</span>
+      </div>
+
+      <div class="bp-addon-card">
+        <div>
+          <p class="bp-addon-name">String savers</p>
+          <p class="bp-addon-desc">Installed during a restring. Slows notching where the strings cross.</p>
+        </div>
+        <span class="bp-addon-price">+$8</span>
       </div>
 
       <div class="bp-addon-card">
