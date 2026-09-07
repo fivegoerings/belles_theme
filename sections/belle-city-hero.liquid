@@ -177,8 +177,28 @@
       <p class="belle-hero-intro">{{ section.settings.intro }}</p>
     {% endif %}
 
+    {%- comment -%}
+      The Calendly URL goes in href, not only in data-calendly-url.
+
+      This was href="#" until 2026-09-07, which made it the one CTA on the
+      page with no fallback: every other Calendly button here carries the
+      real URL in href, so they still work if the modal script fails to
+      load. This one did nothing.
+
+      href is also the pattern snippets/calendly-modal.liquid expects. It
+      looks for "calendly.com" in href, copies it to dataset.calendlyUrl,
+      and then rewrites href from that dataset value.
+
+      Keep the URL in href. data-calendly-url is left in place because the
+      modal reads it directly when deciding which event to open.
+
+      The else branch below is the documented "no cta_url, use the default
+      booking modal" case. It has no URL to fall back to, so it stays
+      href="#" and is JS-only by nature. All 13 city pages set cta_url, so
+      it does not currently render anywhere.
+    {%- endcomment -%}
     {% if section.settings.cta_url != blank %}
-      <a href="#" data-calendly-modal="true" data-calendly-url="{{ section.settings.cta_url }}" class="belle-hero-cta">
+      <a href="{{ section.settings.cta_url }}" data-calendly-modal="true" data-calendly-url="{{ section.settings.cta_url }}" class="belle-hero-cta">
         📅 {{ section.settings.cta_text | default: "Book Your Appointment" }}
       </a>
     {% else %}

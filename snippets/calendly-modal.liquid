@@ -320,8 +320,12 @@
         // Remove existing click handlers and add our handler
         trigger.addEventListener('click', openModal);
 
-        // Ensure the link doesn't navigate away
-        if (trigger.tagName === 'A') {
+        // Restore the real Calendly URL onto href so the link still works
+        // if scripting is unavailable. Guarded: a trigger with no
+        // dataset.calendlyUrl (a button whose href was never a calendly.com
+        // link) used to get the literal string "undefined" written into
+        // href, turning it into a 404 instead of leaving it alone.
+        if (trigger.tagName === 'A' && trigger.dataset.calendlyUrl) {
           trigger.setAttribute('href', trigger.dataset.calendlyUrl);
         }
       });
