@@ -115,7 +115,7 @@
         "text_dX43YV": {
           "type": "text",
           "settings": {
-            "text": "<p>Looking for tennis racquet stringing near Kansas City? Belle\u2019s Performance Tennis Shop serves Northland players in Kansas City, North Kansas City, Gladstone, Liberty, Parkville, Platte City, Smithville, Kearney, and nearby areas.</p>"
+            "text": "<p>Looking for tennis racquet stringing near Kansas City? Belle’s Performance Tennis Shop serves Northland players in Kansas City, North Kansas City, Gladstone, Liberty, Parkville, Platte City, Smithville, Kearney, and nearby areas.</p>"
           }
         }
       },
@@ -224,7 +224,7 @@
             "image": "shopify://shop_images/20231114_SOL_X-Natural_Reel_BGR_GRY_1-1.webp",
             "icon": "badge",
             "title": "Strings On Hand",
-            "description": "Solinco, Gosen, Head, and Wilson strings are kept on hand for common Northland restring jobs. If you already know what you like, I can match it. If not, I\u2019ll explain the practical difference before stringing.",
+            "description": "Solinco, Gosen, Head, and Wilson strings are kept on hand for common Northland restring jobs. If you already know what you like, I can match it. If not, I’ll explain the practical difference before stringing.",
             "url": "shopify://pages/tennis-equipment-kansas-city-northland"
           }
         }
@@ -245,7 +245,7 @@
       "name": "CTA Inline",
       "settings": {
         "cta_heading": "The Same Setup, Next Time",
-        "cta_description": "Book online, drop off at a Northland QuikTrip, and most racquets are ready in 2\u20133 days. Your string and tension notes are saved for next time.",
+        "cta_description": "Book online, drop off at a Northland QuikTrip, and most racquets are ready in 2–3 days. Your string and tension notes are saved for next time.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=homepage_mid"
       }
@@ -273,7 +273,7 @@
           "type": "question",
           "settings": {
             "question": "Why not just use a big box store or my club?",
-            "answer": "<p>Big-box stores and clubs may be convenient, but they usually are not built around Northland drop-off, setup history, and repeat restrings. At Belle\u2019s, your string, tension, and racquet notes are saved, and I string every racquet myself.</p>",
+            "answer": "<p>Big-box stores and clubs may be convenient, but they usually are not built around Northland drop-off, setup history, and repeat restrings. At Belle’s, your string, tension, and racquet notes are saved, and I string every racquet myself.</p>",
             "category": ""
           }
         },
@@ -297,7 +297,7 @@
           "type": "question",
           "settings": {
             "question": "What if my racquet gets damaged during stringing?",
-            "answer": "<p>Every racquet is inspected before stringing. If I notice a crack, worn grommet, or other visible issue, I\u2019ll contact you before proceeding. Racquets with pre-existing stress fractures can fail during stringing, so those are flagged before work continues.</p>",
+            "answer": "<p>Every racquet is inspected before stringing. If I notice a crack, worn grommet, or other visible issue, I’ll contact you before proceeding. Racquets with pre-existing stress fractures can fail during stringing, so those are flagged before work continues.</p>",
             "category": ""
           }
         },
@@ -340,6 +340,50 @@
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=homepage_bottom"
       }
+    },
+    "belle_reviews": {
+      "type": "belle-reviews",
+      "blocks": {
+        "r_jayden": {
+          "type": "review",
+          "settings": {
+            "quote": "No complaints! He was readily available and was able to make accommodations based on my pickup location. You can also get your mains and crosses strung to specific tensions. Definitely recommend his services.",
+            "name": "Jayden Smith",
+            "detail": "Google review",
+            "show_stars": true
+          }
+        },
+        "r_melanie": {
+          "type": "review",
+          "settings": {
+            "quote": "I was genuinely impressed with how conscientious, professional, and genuine Randy was. The work he did was top notch and he made the exchanges extremely convenient. I even got my racket back faster than expected. I will 110% be using this company again.",
+            "name": "Melanie Crockett",
+            "detail": "Google review",
+            "show_stars": true
+          }
+        },
+        "r_tara": {
+          "type": "review",
+          "settings": {
+            "quote": "Owner was quick to respond and met me in my town for pick up and drop off. Very detail oriented and knowledgeable. Communication was great and would recommend to anyone looking for restringing.",
+            "name": "Tara McCoy",
+            "detail": "Google review",
+            "show_stars": true
+          }
+        }
+      },
+      "block_order": [
+        "r_jayden",
+        "r_melanie",
+        "r_tara"
+      ],
+      "settings": {
+        "eyebrow": "Reviews",
+        "heading": "What customers say",
+        "subheading": "Quoted from Google, word for word.",
+        "footer_text": "Read the reviews on Google",
+        "footer_url": "https://www.google.com/maps/place/Belle's+Performance+Tennis+Shop/@39.140139,-94.5603445,17z/data=!4m8!3m7!1s0x87c059ba940b6275:0xde9dea4fe92e50cc!8m2!3d39.140139!4d-94.5603446!9m1!1b1!16s%2Fg%2F11zkmx_89r"
+      }
     }
   },
   "order": [
@@ -347,6 +391,7 @@
     "rich_text_rNtgTy",
     "rich_text_9kkXcB",
     "belle_how_it_works_CCTPpr",
+    "belle_reviews",
     "belle_new_racquet_setup_BiEEC9",
     "belle_why_section_thytpW",
     "cta_inline_z7Jiir",

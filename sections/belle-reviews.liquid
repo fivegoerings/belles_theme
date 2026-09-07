@@ -1,0 +1,263 @@
+{% comment %}
+  Belle's Performance Tennis - Customer Reviews
+
+  Real Google reviews, rendered as plain server HTML so crawlers and AI
+  answers can read them. This exists because the homepage previously had
+  zero proof of a completed job in its source: no review text, no rating,
+  nothing. Judge.me was removed from this theme deliberately, so this is
+  not a replacement widget, it is static text under the owner's control.
+
+  HARD RULES, do not relax these:
+
+  1. Quotes are VERBATIM. Do not fix spelling, punctuation or emoji in a
+     customer's words. If a quote needs trimming, cut whole sentences and
+     leave the rest untouched. Never paraphrase a review.
+  2. Never invent a review, a name, or an attribution. An earlier
+     third-party audit suggested adding a made-up testimonial credited to
+     a "Local League Player". That is a fake review and it is not going on
+     this site.
+  3. NO AggregateRating or Review structured data here, on purpose.
+     Google does not allow a business to mark up reviews about itself that
+     it collected or copied from a third-party site. These came from the
+     Google Business Profile, so marking them up would breach the
+     structured data policy and risks a manual action. Displaying them as
+     visible text is fine. Marking them up is not.
+
+  Source: Google Business Profile for Belle's Performance Tennis Shop.
+  Pulled 2026-09-07.
+{% endcomment %}
+
+<style>
+  .bre {
+    --bre-green: #1a3c2a;
+    --bre-gold: #c8a951;
+    --bre-border: #e5e5e5;
+    --bre-text: #1a1a1a;
+    --bre-muted: #666;
+    --bre-bg: #faf9f6;
+    --bre-white: #ffffff;
+    font-family: 'Source Sans Pro', 'Source Sans Pro Fallback', sans-serif;
+    background: var(--bre-bg);
+    padding: 44px 20px;
+  }
+
+  .bre-container {
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .bre-head {
+    text-align: center;
+    margin-bottom: 26px;
+  }
+
+  .bre-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--bre-gold);
+    margin: 0 0 8px;
+  }
+
+  .bre-head h2 {
+    font-family: 'Bebas Neue', 'Bebas Neue Fallback', sans-serif;
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: var(--bre-green);
+    margin: 0 0 8px;
+  }
+
+  .bre-sub {
+    font-size: 14px;
+    color: var(--bre-muted);
+    margin: 0;
+  }
+
+  .bre-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .bre-card {
+    background: var(--bre-white);
+    border: 1px solid var(--bre-border);
+    border-radius: 12px;
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Decorative only. Deliberately not marked up as structured data,
+     see the note at the top of this file. */
+  .bre-stars {
+    color: var(--bre-gold);
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+
+  .bre-quote {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--bre-text);
+    margin: 0 0 14px;
+    flex-grow: 1;
+  }
+
+  .bre-attr {
+    font-size: 13px;
+    color: var(--bre-muted);
+    margin: 0;
+    padding-top: 12px;
+    border-top: 1px solid var(--bre-border);
+  }
+
+  .bre-attr strong {
+    color: var(--bre-green);
+    font-weight: 700;
+  }
+
+  .bre-foot {
+    text-align: center;
+    margin: 22px 0 0;
+    font-size: 14px;
+  }
+
+  .bre-foot a {
+    color: var(--bre-green);
+    font-weight: 600;
+  }
+
+  @media (max-width: 749px) {
+    .bre {
+      padding: 32px 16px;
+    }
+
+    .bre-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .bre-head h2 {
+      font-size: 28px;
+    }
+  }
+</style>
+
+<div class="bre">
+  <div class="bre-container">
+
+    <div class="bre-head">
+      {% if section.settings.eyebrow != blank %}
+        <p class="bre-eyebrow">{{ section.settings.eyebrow }}</p>
+      {% endif %}
+      {% if section.settings.heading != blank %}
+        <h2>{{ section.settings.heading }}</h2>
+      {% endif %}
+      {% if section.settings.subheading != blank %}
+        <p class="bre-sub">{{ section.settings.subheading }}</p>
+      {% endif %}
+    </div>
+
+    <div class="bre-grid">
+      {% for block in section.blocks %}
+        <div class="bre-card" {{ block.shopify_attributes }}>
+          {% if block.settings.show_stars %}
+            <div class="bre-stars" aria-label="Five out of five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          {% endif %}
+          <blockquote class="bre-quote">{{ block.settings.quote }}</blockquote>
+          <p class="bre-attr">
+            <strong>{{ block.settings.name }}</strong>{% if block.settings.detail != blank %}, {{ block.settings.detail }}{% endif %}
+          </p>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if section.settings.footer_text != blank and section.settings.footer_url != blank %}
+      <p class="bre-foot">
+        <a href="{{ section.settings.footer_url }}" target="_blank" rel="noopener">{{ section.settings.footer_text }}</a>
+      </p>
+    {% endif %}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Customer Reviews",
+  "tag": "section",
+  "class": "belle-reviews-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Reviews"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What customers say"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Quoted from Google, word for word."
+    },
+    {
+      "type": "text",
+      "id": "footer_text",
+      "label": "Footer link text",
+      "default": "Read the reviews on Google"
+    },
+    {
+      "type": "url",
+      "id": "footer_url",
+      "label": "Footer link URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Review text",
+          "info": "Paste the review exactly as written. Do not correct spelling or punctuation."
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Reviewer name"
+        },
+        {
+          "type": "text",
+          "id": "detail",
+          "label": "Detail",
+          "info": "Shown after the name, for example: Google review, August 2026"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_stars",
+          "label": "Show five stars",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [
+    {
+      "name": "Customer Reviews",
+      "blocks": [{ "type": "review" }, { "type": "review" }, { "type": "review" }]
+    }
+  ]
+}
+{% endschema %}
