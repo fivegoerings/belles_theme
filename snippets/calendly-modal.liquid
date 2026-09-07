@@ -188,6 +188,63 @@
 
     var isPreloaded = false;
     var isOpen = false;
+    var lastSource = '';
+
+    /*
+      Booking analytics.
+
+      This store loads GA4 through Shopify's Customer Events web pixel, not
+      through a gtag snippet in the theme, so window.gtag and window.dataLayer
+      do NOT exist in page context. Verified: both appear zero times in the
+      rendered HTML while G-SKJK8YPREK appears twelve. Calling gtag() directly
+      here would fail silently and look like it worked.
+
+      So we publish through Shopify.analytics.publish, which is the supported
+      way for theme code to emit an event that a Customer Events pixel can
+      subscribe to. gtag and dataLayer are still attempted in case either is
+      ever added, and every path is optional.
+
+      Costs nothing on page load. No script is fetched, nothing runs until a
+      visitor actually clicks a booking button, which keeps this clear of the
+      Calendly preload rule in CLAUDE.md.
+
+      IMPORTANT: publishing alone does not put anything in GA4. A custom pixel
+      in Shopify Admin has to subscribe to these two event names and forward
+      them. Until that exists this is emitting into the void, by design, so
+      the theme side is ready and safe either way.
+    */
+    function readUtmContent(url) {
+      try {
+        var m = /[?&]utm_content=([^&#]*)/.exec(url || '');
+        return m ? decodeURIComponent(m[1]) : 'unknown';
+      } catch (err) {
+        return 'unknown';
+      }
+    }
+
+    function trackCalendly(eventName, params) {
+      var payload = params || {};
+      try {
+        if (window.Shopify && window.Shopify.analytics &&
+            typeof window.Shopify.analytics.publish === 'function') {
+          window.Shopify.analytics.publish(eventName, payload);
+        }
+      } catch (err) { /* analytics must never break booking */ }
+      try {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', eventName, payload);
+        }
+      } catch (err) { /* no-op */ }
+      try {
+        if (window.dataLayer && typeof window.dataLayer.push === 'function') {
+          var dl = { event: eventName };
+          for (var k in payload) {
+            if (Object.prototype.hasOwnProperty.call(payload, k)) dl[k] = payload[k];
+          }
+          window.dataLayer.push(dl);
+        }
+      } catch (err) { /* no-op */ }
+    }
 
     // Preload the default Calendly URL in the background on first sign of intent
     // (hover/touch/focus on a trigger) so the click shows instantly without
@@ -231,6 +288,12 @@
         targetUrl = e.currentTarget.dataset.calendlyUrl;
       }
       var embedUrl = buildEmbedUrl(targetUrl);
+
+      lastSource = readUtmContent(targetUrl);
+      trackCalendly('calendly_modal_open', {
+        booking_source: lastSource,
+        page_path: window.location.pathname
+      });
 
       modal.classList.add('active');
       document.body.classList.add('calendly-modal-open');
@@ -289,6 +352,12 @@
           showIframe();
         }
         if (e.data.event === 'calendly.event_scheduled') {
+          // The actual conversion, not just intent. Calendly posts this
+          // from inside the iframe once a booking is confirmed.
+          trackCalendly('calendly_event_scheduled', {
+            booking_source: lastSource,
+            page_path: window.location.pathname
+          });
           setTimeout(closeModal, 2000);
         }
       }
