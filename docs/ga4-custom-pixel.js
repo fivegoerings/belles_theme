@@ -21,6 +21,44 @@
   pageviews for G-SKJK8YPREK. Leaving it on would double count every one.
   This pixel should only ever send the two Calendly events.
 
+  EXPECTED WARNING, DO NOT "FIX" IT BY DELETING THIS PIXEL
+  --------------------------------------------------------
+  Google Tag Manager's Tag Diagnostics reports:
+
+    "Unsupported tag implementation detected on Shopify. Your Google tag
+     is running in a Shopify custom pixel. This may create duplicate
+     measurement with your Google tag configured in the Google & YouTube
+     app on your Shopify website."
+
+  That warning fires on the PATTERN, not on observed duplication. Seen and
+  assessed 2026-09-07. It is expected here and was accepted knowingly:
+
+  1. No event is sent twice. The Google channel sends page_view,
+     session_start, first_visit, scroll and ecommerce. This pixel sends
+     only the two calendly_* events, and send_page_view is off. The two
+     sets are disjoint.
+
+  2. The real residual risk is attribution, not duplication. Two gtag
+     instances on one measurement ID sit in separate storage contexts, and
+     a Shopify pixel sandbox may not share the _ga cookie. The Calendly
+     events can therefore land against a different client ID or session
+     than the pageviews, which would weaken GA4 path and attribution
+     reports.
+
+  3. That risk is mitigated in the payload rather than the plumbing.
+     booking_source and page_path are sent as explicit event parameters,
+     so "which page and which button produced this booking" is answerable
+     from the event itself, with no session stitching required. This is
+     why those parameters exist. Do not drop them.
+
+  Why not avoid the warning entirely: window.gtag does not exist in this
+  store's page context, so theme code has no tag to talk to. Putting gtag
+  in theme.liquid would break the performance rules in CLAUDE.md AND cause
+  genuine duplication. Measurement Protocol would need a secret embedded
+  in client-visible code and loses client linkage anyway. A custom pixel
+  loading its own gtag is the least-bad option, and Google documents it as
+  a supported way to send events even while flagging the pattern.
+
   Events forwarded:
     calendly_modal_open       someone opened the booking modal (intent)
     calendly_event_scheduled  Calendly confirmed a booking  (THE CONVERSION)
