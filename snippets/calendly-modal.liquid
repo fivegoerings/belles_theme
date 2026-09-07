@@ -191,6 +191,21 @@
     var lastSource = '';
 
     /*
+      Guards against double counting the conversion.
+
+      Calendly posts calendly.event_scheduled from inside its iframe, and it
+      does not guarantee posting it exactly once. Verified live on
+      2026-09-07: a single completed booking produced TWO
+      calendly_event_scheduled events in GA4. The theme only attaches one
+      message listener and the snippet is rendered once, so the duplicate
+      came from Calendly, not from us.
+
+      One modal session can only produce one booking, so the conversion is
+      emitted at most once per open. Reset in openModal.
+    */
+    var scheduledTracked = false;
+
+    /*
       Booking analytics.
 
       This store loads GA4 through Shopify's Customer Events web pixel, not
@@ -290,6 +305,7 @@
       var embedUrl = buildEmbedUrl(targetUrl);
 
       lastSource = readUtmContent(targetUrl);
+      scheduledTracked = false;
       trackCalendly('calendly_modal_open', {
         booking_source: lastSource,
         page_path: window.location.pathname
@@ -353,11 +369,18 @@
         }
         if (e.data.event === 'calendly.event_scheduled') {
           // The actual conversion, not just intent. Calendly posts this
-          // from inside the iframe once a booking is confirmed.
-          trackCalendly('calendly_event_scheduled', {
-            booking_source: lastSource,
-            page_path: window.location.pathname
-          });
+          // from inside the iframe once a booking is confirmed, but it can
+          // post it more than once, so this is emitted at most once per
+          // modal open. See the scheduledTracked comment above.
+          if (!scheduledTracked) {
+            scheduledTracked = true;
+            trackCalendly('calendly_event_scheduled', {
+              booking_source: lastSource,
+              page_path: window.location.pathname
+            });
+          }
+          // Closing stays outside the guard: a repeat post should still
+          // close the modal even though it must not re-count.
           setTimeout(closeModal, 2000);
         }
       }
