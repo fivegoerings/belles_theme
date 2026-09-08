@@ -163,6 +163,42 @@
       'https://calendly.com/bellesperformancetennis-sales/racquet_service';
     const EMBED_PARAMS = '?embed_domain=www.bellesperformancetennis.com&embed_type=Inline';
 
+    /*
+      Touch layouts skip the modal entirely and navigate straight to
+      Calendly. Decided 2026-09-08 by the site owner, who set the priority
+      explicitly: the scheduler has to be the fastest thing on the site,
+      even at a cost to PageSpeed.
+
+      Why direct navigation is faster than any preload we could write: the
+      modal loads Calendly's EMBED bundle (~2.5MB) into an iframe on top of
+      an already-loaded page. Navigating hits Calendly's own standalone
+      booking page, which is far smaller and is the thing Calendly actually
+      optimizes. There is no preload strategy that beats not loading it.
+
+      This targets the measured problem. Over Aug 11 - Sep 7 2026, GA4 shows
+      22 users reaching the Calendly page, 5 picking a day, 4 booking. Once
+      someone picks a day they nearly always finish, so effectively all of
+      the loss sits at the first step, which is exactly where the 4-5 second
+      blank spinner on a cold mobile tap lives (see CLAUDE.md).
+
+      Desktop keeps the modal: it holds the visitor in context on a large
+      screen, and desktop is where the hover preload actually gets a chance
+      to run before the click.
+
+      OR rather than AND on purpose. A narrow window on a desktop and a
+      tablet in landscape are both cases where the modal's only real benefit
+      (staying in context on a big screen) does not apply. Fails open to the
+      modal, which works everywhere.
+    */
+    var IS_TOUCH_LAYOUT = (function () {
+      try {
+        return window.matchMedia('(pointer: coarse)').matches ||
+               window.matchMedia('(max-width: 768px)').matches;
+      } catch (err) {
+        return false;
+      }
+    })();
+
     const modal = document.getElementById('calendlyModal');
     const iframe = document.getElementById('calendlyIframe');
     const loading = document.getElementById('calendlyLoading');
@@ -261,11 +297,11 @@
       } catch (err) { /* no-op */ }
     }
 
-    // Preload the default Calendly URL in the background on first sign of intent
-    // (hover/touch/focus on a trigger) so the click shows instantly without
-    // paying the ~2.5MB Calendly bundle cost on every single page view.
+    // Preload the default Calendly URL in the background. Two triggers now:
+    // first sign of intent (hover/focus on a trigger), and on desktop also
+    // once the page has finished painting, see schedulePreload below.
     function preloadCalendly() {
-      if (isPreloaded || !iframe) return;
+      if (isPreloaded || !iframe || IS_TOUCH_LAYOUT) return;
       isPreloaded = true;
       iframe.src = DEFAULT_CALENDLY_URL + EMBED_PARAMS;
       currentCalendlyUrl = DEFAULT_CALENDLY_URL + EMBED_PARAMS;
@@ -273,6 +309,48 @@
         if (loading) loading.style.display = 'none';
         if (iframe) iframe.style.display = 'block';
       }, { once: true });
+    }
+
+    /*
+      Desktop-only warm-up after the page has finished painting.
+
+      READ THIS BEFORE REVERTING. CLAUDE.md carries a rule against any
+      page-load-triggered Calendly preload, because two previous attempts
+      regressed PageSpeed and were reverted (0c51e5c on DOMContentLoaded,
+      23efcce on a 1.5s timer plus requestIdleCallback). That rule was
+      written when PageSpeed was the thing being optimized. On 2026-09-08
+      the owner changed the priority: booking speed wins over PageSpeed.
+      This is a deliberate, informed override of that rule, not a
+      regression, and CLAUDE.md has been updated to match. Do not quietly
+      revert it back to hover-only.
+
+      Two things keep the cost contained:
+
+      1. Desktop only. Mobile never reaches here because IS_TOUCH_LAYOUT
+         short-circuits preloadCalendly, so the mobile PageSpeed run, which
+         is the one that scores badly and throttles hardest, is untouched.
+      2. Hooked to the load event, not a timer. load fires after the hero
+         background image has been fetched, so the Calendly bundle is never
+         competing with the LCP element for bandwidth. The two rAFs push it
+         past the paint that follows. A timer could not make that promise,
+         which is part of why 23efcce failed.
+
+      The hover/focus preload stays as well. It usually wins the race on
+      desktop, and this is the backstop for anyone who clicks without ever
+      hovering, for example via keyboard or a trackpad tap.
+    */
+    function schedulePreload() {
+      if (IS_TOUCH_LAYOUT) return;
+      function start() {
+        requestAnimationFrame(function () {
+          requestAnimationFrame(preloadCalendly);
+        });
+      }
+      if (document.readyState === 'complete') {
+        start();
+      } else {
+        window.addEventListener('load', start, { once: true });
+      }
     }
 
     // Open modal
@@ -320,7 +398,7 @@
           if (loading) loading.style.display = 'none';
           iframe.style.display = 'block';
         } else {
-          // Different URL or not yet preloaded — load now with spinner
+          // Different URL or not yet preloaded, load now with spinner
           if (loading) loading.style.display = 'block';
           iframe.style.display = 'none';
           iframe.src = embedUrl;
@@ -386,6 +464,40 @@
       }
     });
 
+    /*
+      Touch-layout click handler. No modal, no preventDefault on anchors:
+      the browser follows href to Calendly, which is the whole point.
+
+      Still publishes calendly_modal_open, deliberately keeping the same
+      event name as the desktop modal so the GA4 metric stays continuous
+      across this change. It now means "clicked to book" on both paths
+      rather than literally "a modal opened".
+
+      That publish is best effort. Navigation can cut it off, so some taps
+      will not be recorded. Acceptable, because the conversion of record is
+      invitee_meeting_scheduled, which Calendly fires from its own page and
+      which is unaffected by any of this. Booking source attribution also
+      survives, since the UTM params ride along in the URL we navigate to.
+    */
+    function handleDirectBooking(e) {
+      var trigger = e && e.currentTarget;
+      if (!trigger) return;
+
+      var targetUrl = (trigger.dataset && trigger.dataset.calendlyUrl) || DEFAULT_CALENDLY_URL;
+
+      trackCalendly('calendly_modal_open', {
+        booking_source: readUtmContent(targetUrl),
+        page_path: window.location.pathname
+      });
+
+      // Anchors navigate themselves via href. Anything else (a button with
+      // data-calendly-modal) has no href to follow and needs a push.
+      if (trigger.tagName !== 'A') {
+        e.preventDefault();
+        window.location.href = targetUrl;
+      }
+    }
+
     // Function to attach click handlers to calendly triggers
     function attachCalendlyTriggers() {
       // Find all links that either have the data attribute OR contain calendly.com in href
@@ -403,10 +515,25 @@
           trigger.dataset.calendlyUrl = trigger.getAttribute('href');
         }
 
-        // Hover/touch/focus preload — start loading before the click fires,
-        // so by the time the user actually clicks, Calendly is already warm.
+        if (IS_TOUCH_LAYOUT) {
+          /*
+            Navigation is the entire mechanism here, so href has to be a real
+            Calendly URL or the button does nothing. Two triggers rely on the
+            fallback: the else branch in belle-city-hero.liquid, which ships
+            href="#" by design, and any button-tag trigger, which never had an
+            href at all. Both get the default booking URL.
+          */
+          if (trigger.tagName === 'A') {
+            trigger.setAttribute('href', trigger.dataset.calendlyUrl || DEFAULT_CALENDLY_URL);
+          }
+          trigger.addEventListener('click', handleDirectBooking);
+          return;
+        }
+
+        // Hover/focus preload, so by the time the user actually clicks,
+        // Calendly is already warm. touchstart is gone from this branch on
+        // purpose: a coarse pointer is a touch layout and never gets here.
         trigger.addEventListener('pointerenter', preloadCalendly, { once: true });
-        trigger.addEventListener('touchstart', preloadCalendly, { once: true, passive: true });
         trigger.addEventListener('focus', preloadCalendly, { once: true });
 
         // Remove existing click handlers and add our handler
@@ -429,6 +556,9 @@
     } else {
       attachCalendlyTriggers();
     }
+
+    // Desktop warm-up, no-ops on touch layouts. See schedulePreload.
+    schedulePreload();
 
     // Also run after a short delay to catch any dynamically added elements
     setTimeout(attachCalendlyTriggers, 500);
