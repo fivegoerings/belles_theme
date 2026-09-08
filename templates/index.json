@@ -370,17 +370,57 @@
             "detail": "Google review",
             "show_stars": true
           }
+        },
+        "r_shana": {
+          "type": "review",
+          "settings": {
+            "quote": "Great service, quick turnaround on my son’s new Yonex Ezone to get strung. Will use their service again! Very good communication!",
+            "name": "Shana York",
+            "detail": "Google review",
+            "show_stars": true
+          }
+        },
+        "r_dylan": {
+          "type": "review",
+          "settings": {
+            "quote": "Great experience. Quick to respond, and gave great knowledge on what string would be best for myself and the racquet. Owner is very flexible on meeting times as well.",
+            "name": "Dylan Lawson",
+            "detail": "Google review",
+            "show_stars": true
+          }
+        },
+        "r_william": {
+          "type": "review",
+          "settings": {
+            "quote": "Great experience, quick, easy, and racket is playing better than ever. Randy was great to work with, thanks!",
+            "name": "William Morehead",
+            "detail": "Google review",
+            "show_stars": true
+          }
+        },
+        "r_matt": {
+          "type": "review",
+          "settings": {
+            "quote": "Great service and communication. Quick turnaround time.",
+            "name": "Matt Astleford",
+            "detail": "Google review",
+            "show_stars": true
+          }
         }
       },
       "block_order": [
         "r_jayden",
         "r_melanie",
-        "r_tara"
+        "r_tara",
+        "r_dylan",
+        "r_shana",
+        "r_william",
+        "r_matt"
       ],
       "settings": {
         "eyebrow": "Reviews",
         "heading": "What customers say",
-        "subheading": "Quoted from Google, word for word.",
+        "subheading": "Quoted from Google, word for word. Swipe to read more.",
         "footer_text": "Read the reviews on Google",
         "footer_url": "https://maps.google.com/?cid=16041235076699017420"
       }

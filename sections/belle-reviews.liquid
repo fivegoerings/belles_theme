@@ -76,10 +76,43 @@
     margin: 0;
   }
 
+  /*
+    Carousel with NO JavaScript.
+
+    CSS scroll-snap, not a slider library. This page already carries a
+    documented mobile LCP problem (11-12.5s) and a history of fighting
+    render-blocking weight, so adding a slider script to it would be
+    working against the performance notes in CLAUDE.md. Scroll-snap gives
+    swipe-and-snap on touch, drag and keyboard on desktop, and costs
+    nothing at runtime.
+
+    Every review stays in the server HTML. That is the whole point of this
+    section: crawlers and AI answers read the markup, not a JS-built DOM.
+    Do not swap this for a library that renders slides client side.
+  */
   .bre-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     gap: 14px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 2px;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .bre-grid::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .bre-grid::-webkit-scrollbar-thumb {
+    background: rgba(26, 60, 42, 0.25);
+    border-radius: 3px;
+  }
+
+  .bre-grid:focus-visible {
+    outline: 2px solid var(--bre-gold);
+    outline-offset: 3px;
   }
 
   .bre-card {
@@ -89,6 +122,8 @@
     padding: 20px 22px;
     display: flex;
     flex-direction: column;
+    scroll-snap-align: start;
+    flex: 0 0 clamp(250px, 31%, 300px);
   }
 
   /* Decorative only. Deliberately not marked up as structured data,
@@ -137,8 +172,8 @@
       padding: 32px 16px;
     }
 
-    .bre-grid {
-      grid-template-columns: 1fr;
+    .bre-card {
+      flex-basis: 84%;
     }
 
     .bre-head h2 {
@@ -162,7 +197,7 @@
       {% endif %}
     </div>
 
-    <div class="bre-grid">
+    <div class="bre-grid" role="region" aria-label="Customer reviews, scrollable" tabindex="0">
       {% for block in section.blocks %}
         <div class="bre-card" {{ block.shopify_attributes }}>
           {% if block.settings.show_stars %}
@@ -252,7 +287,7 @@
       ]
     }
   ],
-  "max_blocks": 6,
+  "max_blocks": 20,
   "presets": [
     {
       "name": "Customer Reviews",
