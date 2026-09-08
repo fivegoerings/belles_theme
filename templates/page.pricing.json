@@ -242,9 +242,19 @@
             "detail": "Google review",
             "show_stars": true
           }
+        },
+        "p_mike": {
+          "type": "review",
+          "settings": {
+            "quote": "I wanted to buy my granddaughter a racket for her senior season at Staley.  She had her eye on a racket that Belle's doesn't carry but Mr. Goering advised me on the best place to order her racket. Once we had it, he asked her questions about her game and offered her choices of color on the recommended strings. She is very happy with how it looks and plays and hopefully will lead to a successful season. Very happy with Belle's at every step of the way",
+            "name": "Mike Lacy",
+            "detail": "Google review",
+            "show_stars": true
+          }
         }
       },
       "block_order": [
+        "p_mike",
         "p_jayden",
         "p_melanie",
         "p_dylan",
