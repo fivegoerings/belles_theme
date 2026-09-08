@@ -344,47 +344,11 @@
     "belle_reviews": {
       "type": "belle-reviews",
       "blocks": {
-        "r_jayden": {
-          "type": "review",
-          "settings": {
-            "quote": "No complaints! He was readily available and was able to make accommodations based on my pickup location. You can also get your mains and crosses strung to specific tensions. Definitely recommend his services.",
-            "name": "Jayden Smith",
-            "detail": "Google review",
-            "show_stars": true
-          }
-        },
-        "r_melanie": {
-          "type": "review",
-          "settings": {
-            "quote": "I was genuinely impressed with how conscientious, professional, and genuine Randy was. The work he did was top notch and he made the exchanges extremely convenient. I even got my racket back faster than expected. I will 110% be using this company again.",
-            "name": "Melanie Crockett",
-            "detail": "Google review",
-            "show_stars": true
-          }
-        },
-        "r_tara": {
-          "type": "review",
-          "settings": {
-            "quote": "Owner was quick to respond and met me in my town for pick up and drop off. Very detail oriented and knowledgeable. Communication was great and would recommend to anyone looking for restringing.",
-            "name": "Tara McCoy",
-            "detail": "Google review",
-            "show_stars": true
-          }
-        },
         "r_shana": {
           "type": "review",
           "settings": {
             "quote": "Great service, quick turnaround on my son’s new Yonex Ezone to get strung. Will use their service again! Very good communication!",
             "name": "Shana York",
-            "detail": "Google review",
-            "show_stars": true
-          }
-        },
-        "r_dylan": {
-          "type": "review",
-          "settings": {
-            "quote": "Great experience. Quick to respond, and gave great knowledge on what string would be best for myself and the racquet. Owner is very flexible on meeting times as well.",
-            "name": "Dylan Lawson",
             "detail": "Google review",
             "show_stars": true
           }
@@ -406,14 +370,30 @@
             "detail": "Google review",
             "show_stars": true
           }
+        },
+        "r_roman": {
+          "type": "review",
+          "settings": {
+            "quote": "Got it fast and the process is very simple, did a great job",
+            "name": "Roman Naudet",
+            "detail": "Google review",
+            "show_stars": true
+          }
+        },
+        "r_nicole": {
+          "type": "review",
+          "settings": {
+            "quote": "Quickly fixed a tennis racquet over a weekend. Great, quick service!",
+            "name": "Nicole Hufty",
+            "detail": "Google review",
+            "show_stars": true
+          }
         }
       },
       "block_order": [
-        "r_jayden",
-        "r_melanie",
-        "r_tara",
-        "r_dylan",
         "r_shana",
+        "r_roman",
+        "r_nicole",
         "r_william",
         "r_matt"
       ],

@@ -203,12 +203,67 @@
     "belle_pricing_explainers": {
       "type": "belle-pricing-explainers",
       "settings": {}
+    },
+    "belle_reviews_pricing": {
+      "type": "belle-reviews",
+      "blocks": {
+        "p_jayden": {
+          "type": "review",
+          "settings": {
+            "quote": "No complaints! He was readily available and was able to make accommodations based on my pickup location. You can also get your mains and crosses strung to specific tensions. Definitely recommend his services.",
+            "name": "Jayden Smith",
+            "detail": "Google review",
+            "show_stars": true
+          }
+        },
+        "p_melanie": {
+          "type": "review",
+          "settings": {
+            "quote": "I was genuinely impressed with how conscientious, professional, and genuine Randy was. The work he did was top notch and he made the exchanges extremely convenient. I even got my racket back faster than expected. I will 110% be using this company again.",
+            "name": "Melanie Crockett",
+            "detail": "Google review",
+            "show_stars": true
+          }
+        },
+        "p_dylan": {
+          "type": "review",
+          "settings": {
+            "quote": "Great experience. Quick to respond, and gave great knowledge on what string would be best for myself and the racquet. Owner is very flexible on meeting times as well.",
+            "name": "Dylan Lawson",
+            "detail": "Google review",
+            "show_stars": true
+          }
+        },
+        "p_tara": {
+          "type": "review",
+          "settings": {
+            "quote": "Owner was quick to respond and met me in my town for pick up and drop off. Very detail oriented and knowledgeable. Communication was great and would recommend to anyone looking for restringing.",
+            "name": "Tara McCoy",
+            "detail": "Google review",
+            "show_stars": true
+          }
+        }
+      },
+      "block_order": [
+        "p_jayden",
+        "p_melanie",
+        "p_dylan",
+        "p_tara"
+      ],
+      "settings": {
+        "eyebrow": "Reviews",
+        "heading": "What you get for the price",
+        "subheading": "Quoted from Google, word for word. Swipe to read more.",
+        "footer_text": "Read the reviews on Google",
+        "footer_url": "https://maps.google.com/?cid=16041235076699017420"
+      }
     }
   },
   "order": [
     "main",
     "belles_pricing_addons_gG9bzT",
     "belle_pricing_explainers",
+    "belle_reviews_pricing",
     "belle_shop_strings_bVhNcB",
     "belle_faq_pricing",
     "cta_inline_LiFkYw"
