@@ -251,10 +251,20 @@
             "detail": "Google review",
             "show_stars": true
           }
+        },
+        "p_slade": {
+          "type": "review",
+          "settings": {
+            "quote": "Very quick, professional, and knowledgeable service at a great price. Couldn’t be happier!",
+            "name": "Slade Tackett",
+            "detail": "Google review",
+            "show_stars": true
+          }
         }
       },
       "block_order": [
         "p_mike",
+        "p_slade",
         "p_jayden",
         "p_melanie",
         "p_dylan",
