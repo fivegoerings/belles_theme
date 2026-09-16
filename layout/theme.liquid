@@ -107,6 +107,28 @@
 
     {{ content_for_header }}
 
+    {%- comment -%}
+      Google Ads conversion tag, AW-18363133778, from the Google Ads tag
+      shared 2026-09-16 (conversion action: "Book appointment",
+      AW-18363133778/2ZJiCKiw3fIcENLenLRE).
+
+      This gtag instance is configured for the Ads account ONLY, never for
+      GA4 (G-SKJK8YPREK). GA4 stopped going through a theme gtag when the
+      duplicating custom pixel was removed; do not add a
+      gtag('config', 'G-SKJK8YPREK', ...) call here or it recreates that
+      duplication. The actual conversion event fires from
+      snippets/calendly-modal.liquid when Calendly confirms a booking.
+    {%- endcomment -%}
+    {% # theme-check-disable RemoteAsset %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18363133778"></script>
+    {% # theme-check-enable RemoteAsset %}
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { window.dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'AW-18363133778');
+    </script>
+
     {%- liquid
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'

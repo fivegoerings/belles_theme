@@ -1,4 +1,23 @@
 /*
+  REMOVED 2026-09-16. Kept only as historical reference, do not re-add.
+
+  The owner disconnected/deleted this pixel from Shopify Admin because it
+  duplicated measurement on G-SKJK8YPREK (the risk this file's own comments
+  below argued was acceptable - the owner judged otherwise and removed it).
+  As a result, calendly_modal_open/calendly_event_scheduled no longer reach
+  GA4 by any path. This was accepted: invitee_meeting_scheduled from
+  Calendly's own native GA4 integration remains the GA4 conversion of
+  record and needs no pixel. See [[belles-ga4-key-events]]/CLAUDE.md.
+
+  A separate, unrelated Google Ads conversion tag (AW-18363133778, "Book
+  appointment") was added afterward directly in layout/theme.liquid +
+  snippets/calendly-modal.liquid. That gtag instance configures the Ads
+  account only, never G-SKJK8YPREK, specifically to avoid recreating the
+  duplication that got this pixel removed.
+
+  Everything below this point describes the removed pixel, not current
+  behavior.
+
   GA4 custom pixel for Belle's Performance Tennis Shop
   ----------------------------------------------------
   WHERE THIS GOES: this is NOT theme code. Do not put it in the theme.

@@ -244,25 +244,23 @@
     /*
       Booking analytics.
 
-      This store loads GA4 through Shopify's Customer Events web pixel, not
-      through a gtag snippet in the theme, so window.gtag and window.dataLayer
-      do NOT exist in page context. Verified: both appear zero times in the
-      rendered HTML while G-SKJK8YPREK appears twelve. Calling gtag() directly
-      here would fail silently and look like it worked.
+      GA4 (G-SKJK8YPREK) used to reach these events via a Shopify Customer
+      Events custom pixel subscribed to Shopify.analytics.publish. That pixel
+      was removed 2026-09 because it duplicated measurement, so
+      calendly_modal_open/calendly_event_scheduled no longer reach GA4 by any
+      path. The GA4 conversion of record is invitee_meeting_scheduled from
+      Calendly's own native GA4 integration, which is unaffected by any of
+      this and needs no theme code.
 
-      So we publish through Shopify.analytics.publish, which is the supported
-      way for theme code to emit an event that a Customer Events pixel can
-      subscribe to. gtag and dataLayer are still attempted in case either is
-      ever added, and every path is optional.
+      window.gtag DOES now exist in page context (added in theme.liquid), but
+      only configured for Google Ads (AW-18363133778), not GA4 - do not treat
+      its presence here as GA4 coverage. The gtag/dataLayer pushes below are
+      harmless for Ads (unrecognized event names are ignored) and kept as a
+      generic hook; the actual Ads conversion fires explicitly, separately,
+      at the calendly.event_scheduled handler below.
 
-      Costs nothing on page load. No script is fetched, nothing runs until a
-      visitor actually clicks a booking button, which keeps this clear of the
-      Calendly preload rule in CLAUDE.md.
-
-      IMPORTANT: publishing alone does not put anything in GA4. A custom pixel
-      in Shopify Admin has to subscribe to these two event names and forward
-      them. Until that exists this is emitting into the void, by design, so
-      the theme side is ready and safe either way.
+      Shopify.analytics.publish is still called too, harmlessly, in case a
+      pixel is ever reconnected.
     */
     function readUtmContent(url) {
       try {
@@ -456,6 +454,17 @@
               booking_source: lastSource,
               page_path: window.location.pathname
             });
+            // Google Ads conversion: "Book appointment"
+            // (AW-18363133778/2ZJiCKiw3fIcENLenLRE). Fired here, not via
+            // trackCalendly, because this needs the Ads-specific
+            // event name/params shape, not the generic payload.
+            try {
+              if (typeof window.gtag === 'function') {
+                window.gtag('event', 'conversion', {
+                  send_to: 'AW-18363133778/2ZJiCKiw3fIcENLenLRE'
+                });
+              }
+            } catch (err) { /* analytics must never break booking */ }
           }
           // Closing stays outside the guard: a repeat post should still
           // close the modal even though it must not re-count.
