@@ -1,6 +1,6 @@
 {% comment %}
   Belle's Performance Tennis Shop - Hero Section (CONVERSION-OPTIMIZED)
-  Version: 1.1.0 - 2026-04-13 - Added optional Link URL field to feature cards
+  Version: 1.2.0 - 2026-09-16 - Three-way CTA row, no primary/secondary hierarchy
 
   Changes from previous version:
   - Full-width background image with dark green overlay (CTA visible without scrolling on mobile)
@@ -11,9 +11,13 @@
   - Badge reframed from "APPOINTMENT ONLY" to benefit-first text
   - Feature cards preserved below hero
   - v1.1.0: Feature cards now support optional Link URL (set in customizer per block)
+  - v1.2.0: owner decision after a call about a low-commitment lead-in offer
+    (free stringbed tension check). Hero CTA row is now three equal-weight
+    buttons, Check / Price / Book, none styled as primary. This deliberately
+    reopens the "two commercial paths only, no competing primary" rule from
+    v1.1.0 below, superseding it.
 
   Strategy doc reference: Section 3 - Homepage Architecture
-  LOCKED: Do not modify without data from GA4/Calendly showing conversion issue.
 {% endcomment %}
 
 <style>
@@ -271,26 +275,6 @@
         border-color: var(--belle-gold-light);
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(201, 162, 39, 0.3);
-      }
-
-      /* Secondary CTA: tinted rather than outlined. A fully transparent
-         button looked thin sitting over the hero photo, so it carries a
-         translucent gold surface. Do not fill it solid gold: that makes it
-         identical to the primary and the hero ends up with two competing
-         primary actions, which is the problem this pair was built to fix. */
-      .belle-btn-secondary-v2 {
-        background: rgba(201, 162, 39, 0.22);
-        color: var(--belle-gold);
-        border-color: rgba(201, 162, 39, 0.65);
-        backdrop-filter: blur(2px);
-      }
-
-      .belle-btn-secondary-v2:hover {
-        background: var(--belle-gold);
-        color: var(--belle-green-dark);
-        border-color: var(--belle-gold);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(201, 162, 39, 0.25);
       }
 
       /* Secondary/tertiary CTAs stack vertically next to the primary button */
@@ -626,7 +610,33 @@
       <p class="belle-hero-tagline-v2">{{ section.settings.tagline }}</p>
 
       <!-- CTA Buttons -->
+      {%- comment -%}
+        Three equal-weight commercial paths, in this order: free stringbed
+        check, price, book. Owner decision 2026-09-16 after a call about a
+        low-commitment lead-in offer for visitors not ready to book a full
+        restring. All three use belle-btn-primary-v2 on purpose, no button
+        is styled as more important than the others.
+      {%- endcomment -%}
       <div class="belle-cta-group-v2">
+        <a
+          href="https://calendly.com/bellesperformancetennis-sales/stringbed-measurements"
+          data-calendly-modal="true"
+          data-calendly-url="https://calendly.com/bellesperformancetennis-sales/stringbed-measurements?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=stringbed_measurement&utm_content=homepage_hero"
+          class="belle-btn-v2 belle-btn-primary-v2"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+          {{ section.settings.cta_check_text }}
+        </a>
+        {%- if section.settings.cta_secondary_text != blank and section.settings.cta_secondary_url != blank -%}
+          <a href="{{ section.settings.cta_secondary_url }}" class="belle-btn-v2 belle-btn-primary-v2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+            </svg>
+            {{ section.settings.cta_secondary_text }}
+          </a>
+        {%- endif -%}
         <a
           href="https://calendly.com/bellesperformancetennis-sales/racquet_service"
           data-calendly-modal="true"
@@ -638,21 +648,6 @@
           </svg>
           {{ section.settings.cta_primary_text }}
         </a>
-        {%- comment -%}
-          The hero carries the two COMMERCIAL paths only, both as buttons:
-          book, and see pricing. A text link next to a filled button is not a
-          fair fight, which is why pricing was losing.
-
-          The tertiary slot below is for educational links. It renders as a
-          quiet text link under the buttons, and only when filled in. Keep it
-          that way: putting editorial content at button weight next to Book
-          pulls a ready-to-buy visitor sideways.
-        {%- endcomment -%}
-        {%- if section.settings.cta_secondary_text != blank and section.settings.cta_secondary_url != blank -%}
-          <a href="{{ section.settings.cta_secondary_url }}" class="belle-btn-v2 belle-btn-secondary-v2">
-            {{ section.settings.cta_secondary_text }}
-          </a>
-        {%- endif -%}
       </div>
 
       {%- if section.settings.cta_tertiary_text != blank and section.settings.cta_tertiary_url != blank -%}
@@ -824,6 +819,13 @@
     {
       "type": "header",
       "content": "Call to Action"
+    },
+    {
+      "type": "text",
+      "id": "cta_check_text",
+      "label": "Free Check Button Text",
+      "info": "Links to the free stringbed tension check Calendly event (hardcoded, not editable here).",
+      "default": "Free String Tension Check"
     },
     {
       "type": "text",
