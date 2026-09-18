@@ -389,6 +389,15 @@
             "detail": "Google review",
             "show_stars": true
           }
+        },
+        "r_georgina": {
+          "type": "review",
+          "settings": {
+            "quote": "Wonderful to work with Randy! He is very knowledgeable, offered great advice as to what we needed to get my daughter's racquet up to speed. Great communication and turnaround time too!",
+            "name": "Georgina Szabo",
+            "detail": "Google review",
+            "show_stars": true
+          }
         }
       },
       "block_order": [
@@ -396,7 +405,8 @@
         "r_roman",
         "r_nicole",
         "r_william",
-        "r_matt"
+        "r_matt",
+        "r_georgina"
       ],
       "settings": {
         "eyebrow": "Reviews",
