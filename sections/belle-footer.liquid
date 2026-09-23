@@ -191,32 +191,61 @@
         <p class="belle-footer-tagline">{{ section.settings.footer_tagline | default: "Expert Racquet Stringing in Kansas City Northland" }}</p>
         <p class="belle-footer-value-prop">{{ section.settings.footer_value_prop | default: "Convenient local service with Solinco demo racquets available" }}</p>
         
-        {%- if section.settings.usrsa_logo != blank -%}
+        {%- if section.settings.usrsa_logo != blank or section.settings.iart_logo != blank -%}
           <div class="belle-footer-usrsa">
             <p class="belle-footer-usrsa-label">Member</p>
-            {%- liquid
-              assign usrsa_logo = section.settings.usrsa_logo
-              assign usrsa_width = usrsa_logo.width
-              assign usrsa_height = usrsa_logo.height
-              
-              # Calculate display dimensions (max-width: 120px from CSS)
-              if usrsa_width > 120
-                assign usrsa_display_width = 120
-                assign usrsa_aspect_ratio = usrsa_height | times: 1.0 | divided_by: usrsa_width
-                assign usrsa_display_height = usrsa_display_width | times: usrsa_aspect_ratio | round
-              else
-                assign usrsa_display_width = usrsa_width
-                assign usrsa_display_height = usrsa_height
-              endif
-            -%}
-            {{
-              usrsa_logo | image_url: width: 240 | image_tag:
-                alt: 'USRSA Member',
-                loading: 'lazy',
-                width: usrsa_display_width,
-                height: usrsa_display_height,
-                widths: '120, 240'
-            }}
+            <div class="belle-footer-membership-logos">
+              {%- if section.settings.usrsa_logo != blank -%}
+                {%- liquid
+                  assign usrsa_logo = section.settings.usrsa_logo
+                  assign usrsa_width = usrsa_logo.width
+                  assign usrsa_height = usrsa_logo.height
+
+                  # Calculate display dimensions (max-width: 120px from CSS)
+                  if usrsa_width > 120
+                    assign usrsa_display_width = 120
+                    assign usrsa_aspect_ratio = usrsa_height | times: 1.0 | divided_by: usrsa_width
+                    assign usrsa_display_height = usrsa_display_width | times: usrsa_aspect_ratio | round
+                  else
+                    assign usrsa_display_width = usrsa_width
+                    assign usrsa_display_height = usrsa_height
+                  endif
+                -%}
+                {{
+                  usrsa_logo | image_url: width: 240 | image_tag:
+                    alt: 'USRSA Member',
+                    loading: 'lazy',
+                    width: usrsa_display_width,
+                    height: usrsa_display_height,
+                    widths: '120, 240'
+                }}
+              {%- endif -%}
+              {%- if section.settings.iart_logo != blank -%}
+                {%- liquid
+                  assign iart_logo = section.settings.iart_logo
+                  assign iart_width = iart_logo.width
+                  assign iart_height = iart_logo.height
+
+                  # Calculate display dimensions (max-width: 120px from CSS)
+                  if iart_width > 120
+                    assign iart_display_width = 120
+                    assign iart_aspect_ratio = iart_height | times: 1.0 | divided_by: iart_width
+                    assign iart_display_height = iart_display_width | times: iart_aspect_ratio | round
+                  else
+                    assign iart_display_width = iart_width
+                    assign iart_display_height = iart_height
+                  endif
+                -%}
+                {{
+                  iart_logo | image_url: width: 240 | image_tag:
+                    alt: 'IART Member',
+                    loading: 'lazy',
+                    width: iart_display_width,
+                    height: iart_display_height,
+                    widths: '120, 240'
+                }}
+              {%- endif -%}
+            </div>
           </div>
         {%- endif -%}
       </div>
@@ -391,6 +420,12 @@
       "id": "usrsa_logo",
       "label": "USRSA Member Logo",
       "info": "Recommended: 240x80px, PNG format"
+    },
+    {
+      "type": "image_picker",
+      "id": "iart_logo",
+      "label": "IART Member Logo",
+      "info": "International Alliance of Racquet Technicians"
     },
     {
       "type": "header",
