@@ -78,6 +78,11 @@
   transition: opacity 0.3s ease;
 }
 
+.belle-footer-usrsa img.belle-footer-iart-logo {
+  /* Wider max-width: this logo is a wide banner sized to match the USRSA logo's height, not its width */
+  max-width: 260px;
+}
+
 .belle-footer-usrsa img:hover {
   opacity: 1;
 }

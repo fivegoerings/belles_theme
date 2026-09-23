@@ -226,23 +226,20 @@
                   assign iart_width = iart_logo.width
                   assign iart_height = iart_logo.height
 
-                  # Calculate display dimensions (max-width: 120px from CSS)
-                  if iart_width > 120
-                    assign iart_display_width = 120
-                    assign iart_aspect_ratio = iart_height | times: 1.0 | divided_by: iart_width
-                    assign iart_display_height = iart_display_width | times: iart_aspect_ratio | round
-                  else
-                    assign iart_display_width = iart_width
-                    assign iart_display_height = iart_height
-                  endif
+                  # Match the rendered height of the USRSA logo (falls back to 40px if USRSA logo is blank)
+                  assign iart_target_height = usrsa_display_height | default: 40
+                  assign iart_aspect_ratio = iart_width | times: 1.0 | divided_by: iart_height
+                  assign iart_display_height = iart_target_height
+                  assign iart_display_width = iart_target_height | times: iart_aspect_ratio | round
                 -%}
                 {{
-                  iart_logo | image_url: width: 240 | image_tag:
+                  iart_logo | image_url: width: 480 | image_tag:
+                    class: 'belle-footer-iart-logo',
                     alt: 'IART Member',
                     loading: 'lazy',
                     width: iart_display_width,
                     height: iart_display_height,
-                    widths: '120, 240'
+                    widths: '240, 480'
                 }}
               {%- endif -%}
             </div>
