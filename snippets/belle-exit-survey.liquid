@@ -119,20 +119,32 @@
     color: #ffffff;
   }
 
-  .belle-exit-survey-other {
+  .belle-exit-survey-followup {
     display: none;
   }
 
-  .belle-exit-survey-other textarea {
+  .belle-exit-survey-followup textarea,
+  .belle-exit-survey-followup input {
+    display: block;
     width: 100%;
-    min-height: 80px;
     box-sizing: border-box;
     border: 1px solid rgba(45, 45, 45, 0.55);
     padding: 10px 12px;
     font-family: 'Source Sans Pro', 'Source Sans Pro Fallback', sans-serif;
     font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .belle-exit-survey-followup textarea {
+    min-height: 70px;
     resize: vertical;
-    margin-bottom: 12px;
+  }
+
+  .belle-exit-survey-followup-label {
+    font-size: 12px;
+    color: var(--belle-charcoal, #2d2d2d);
+    opacity: 0.75;
+    margin: 4px 0 10px;
   }
 
   .belle-exit-survey-submit {
@@ -202,9 +214,15 @@
         <button type="button" class="belle-exit-survey-option" data-reason="other">Something else</button>
       </div>
 
-      <div class="belle-exit-survey-other" id="belleExitSurveyOtherWrap">
-        <textarea id="belleExitSurveyOtherInput" placeholder="What can I do better?"></textarea>
-        <button type="button" class="belle-exit-survey-submit" id="belleExitSurveyOtherSubmit">Send</button>
+      <div class="belle-exit-survey-followup" id="belleExitSurveyFollowUp">
+        <div id="belleExitSurveyDetailWrap" style="display:none">
+          <textarea id="belleExitSurveyDetailInput" placeholder="What can I do better?"></textarea>
+        </div>
+        <p class="belle-exit-survey-followup-label">Want me to follow up? Totally optional.</p>
+        <input type="text" id="belleExitSurveyName" placeholder="Name" autocomplete="name">
+        <input type="email" id="belleExitSurveyEmail" placeholder="Email" autocomplete="email">
+        <input type="text" id="belleExitSurveyZip" placeholder="Zip code" autocomplete="postal-code" inputmode="numeric">
+        <button type="button" class="belle-exit-survey-submit" id="belleExitSurveySubmit">Send</button>
       </div>
 
       <button type="button" class="belle-exit-survey-no-thanks" id="belleExitSurveyNoThanks">No thanks</button>
@@ -248,11 +266,17 @@
     var closeBtn = document.getElementById('belleExitSurveyClose');
     var noThanksBtn = document.getElementById('belleExitSurveyNoThanks');
     var optionsWrap = document.getElementById('belleExitSurveyOptions');
-    var otherWrap = document.getElementById('belleExitSurveyOtherWrap');
-    var otherInput = document.getElementById('belleExitSurveyOtherInput');
-    var otherSubmit = document.getElementById('belleExitSurveyOtherSubmit');
+    var followUpWrap = document.getElementById('belleExitSurveyFollowUp');
+    var detailWrap = document.getElementById('belleExitSurveyDetailWrap');
+    var detailInput = document.getElementById('belleExitSurveyDetailInput');
+    var nameInput = document.getElementById('belleExitSurveyName');
+    var emailInput = document.getElementById('belleExitSurveyEmail');
+    var zipInput = document.getElementById('belleExitSurveyZip');
+    var followUpSubmit = document.getElementById('belleExitSurveySubmit');
     var thanksEl = document.getElementById('belleExitSurveyThanks');
     var questionEl = document.getElementById('belleExitSurveyQuestion');
+
+    var pendingReason = '';
 
     var opened = false;
     var armed = false;
@@ -358,24 +382,32 @@
       return emailjsReadyPromise;
     }
 
-    function emailResponse(reason, detail) {
+    function emailResponse(reason, detail, contact) {
+      var c = contact || {};
       loadEmailJs().then(function (emailjs) {
         return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
           reason: REASON_LABELS[reason] || reason,
           reason_detail: detail || '(none)',
+          name: c.name || '(not given)',
+          email: c.email || '(not given)',
+          zip: c.zip || '(not given)',
           page_url: window.location.href,
           submitted_at: new Date().toString()
         });
       }).catch(function () { /* best effort, must never break the UI */ });
     }
 
-    function respond(reason, detail) {
+    // GA4 (via docs/ga4-exit-survey-pixel.js) only ever gets reason/detail/
+    // page_path - never name/email/zip. Google's terms prohibit sending
+    // PII to GA4, and there's no reporting reason to need it there anyway;
+    // the email (below) is the only place contact details go.
+    function respond(reason, detail, contact) {
       track('exit_survey_response', {
         reason: reason,
         reason_detail: detail || '',
         page_path: window.location.pathname
       });
-      emailResponse(reason, detail);
+      emailResponse(reason, detail, contact);
       if (questionEl) questionEl.style.display = 'none';
       if (thanksEl) thanksEl.style.display = 'block';
       setTimeout(closeSurvey, 1800);
@@ -396,22 +428,27 @@
       var optionButtons = optionsWrap.querySelectorAll('[data-reason]');
       for (var i = 0; i < optionButtons.length; i++) {
         optionButtons[i].addEventListener('click', function (e) {
-          var reason = e.currentTarget.getAttribute('data-reason');
-          if (reason === 'other') {
-            optionsWrap.style.display = 'none';
-            if (otherWrap) otherWrap.style.display = 'block';
-            if (otherInput) otherInput.focus();
-            return;
+          pendingReason = e.currentTarget.getAttribute('data-reason');
+          optionsWrap.style.display = 'none';
+          if (followUpWrap) followUpWrap.style.display = 'block';
+          if (pendingReason === 'other') {
+            if (detailWrap) detailWrap.style.display = 'block';
+            if (detailInput) detailInput.focus();
+          } else if (nameInput) {
+            nameInput.focus();
           }
-          respond(reason);
         });
       }
     }
 
-    if (otherSubmit) {
-      otherSubmit.addEventListener('click', function () {
-        var detail = otherInput ? otherInput.value.trim() : '';
-        respond('other', detail);
+    if (followUpSubmit) {
+      followUpSubmit.addEventListener('click', function () {
+        var detail = (pendingReason === 'other' && detailInput) ? detailInput.value.trim() : '';
+        respond(pendingReason, detail, {
+          name: nameInput ? nameInput.value.trim() : '',
+          email: emailInput ? emailInput.value.trim() : '',
+          zip: zipInput ? zipInput.value.trim() : ''
+        });
       });
     }
 
