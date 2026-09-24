@@ -320,15 +320,16 @@
       the live storefront 2026-09-24). EmailJS sends straight from the
       browser with no backend, which is why it's used instead.
 
-      Fill in these three values from your EmailJS account (emailjs.com,
-      free tier): Account > General for the Public Key, Email Services for
-      the Service ID, Email Templates for the Template ID. Until real
-      values are set, sends fail silently (caught below) and only the GA4
-      pixel (docs/ga4-exit-survey-pixel.js) records responses.
+      Values below are from the owner's EmailJS account (emailjs.com, free
+      tier, Gmail service connected as sales@bellesperformancetennis.com).
+      The "Contact Us" template (template_o02snl7) has a fixed To Email of
+      sales@bellesperformancetennis.com - not a visitor-supplied address,
+      since the survey never collects one - so do not repoint this at an
+      "Auto-Reply" style template meant to reply to a form submitter.
     */
-    var EMAILJS_PUBLIC_KEY = 'YOUR_EMAILJS_PUBLIC_KEY';
-    var EMAILJS_SERVICE_ID = 'YOUR_EMAILJS_SERVICE_ID';
-    var EMAILJS_TEMPLATE_ID = 'YOUR_EMAILJS_TEMPLATE_ID';
+    var EMAILJS_PUBLIC_KEY = 'JIgEib5ylnFBv1s1u';
+    var EMAILJS_SERVICE_ID = 'service_kn1nejo';
+    var EMAILJS_TEMPLATE_ID = 'template_o02snl7';
     var EMAILJS_SDK_URL = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
 
     var emailjsReadyPromise = null;
