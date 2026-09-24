@@ -1,0 +1,381 @@
+{% comment %}
+  Exit-intent survey.
+
+  Desktop: fires when the cursor leaves the top of the viewport (heading for
+  the tab bar/address bar), after a short arm delay so it can't fire on an
+  accidental cursor pass during initial page load.
+
+  Touch layouts have no cursor to leave the viewport with, so this uses a
+  best-effort proxy instead: a fast upward scroll back toward the top of the
+  page after the visitor has already scrolled down, similar to reaching for
+  the browser's back button or tab switcher. It is a heuristic, not a true
+  exit signal, and will both miss some real exits and occasionally fire on a
+  visitor who just scrolled back to re-read something.
+
+  Fires at most once per browser tab (sessionStorage), and never while the
+  Calendly booking modal (snippets/calendly-modal.liquid) is open.
+
+  Answers are NOT read by any theme code. They're published via
+  Shopify.analytics.publish (exit_survey_shown / exit_survey_response /
+  exit_survey_dismissed) for a dedicated Shopify custom pixel to forward to
+  GA4 - see docs/ga4-exit-survey-pixel.js for that pixel and why it's a
+  separate, new pixel rather than a revival of the one removed 2026-09-16
+  (see CLAUDE.md). window.gtag also exists in page context (Ads only, see
+  layout/theme.liquid) and is called here too, harmlessly, as a generic
+  hook; it is not a path to GA4.
+{% endcomment %}
+
+<style>
+  .belle-exit-survey-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 60, 42, 0.55);
+    z-index: 9997;
+    animation: belleExitSurveyFadeIn 0.15s ease;
+  }
+
+  .belle-exit-survey-overlay.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .belle-exit-survey-card {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    background: var(--belle-cream, #faf9f6);
+    border: 1px solid var(--belle-border, #e0e0e0);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 32px 28px 28px;
+    font-family: 'Source Sans Pro', 'Source Sans Pro Fallback', sans-serif;
+    animation: belleExitSurveySlideUp 0.15s ease;
+  }
+
+  .belle-exit-survey-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .belle-exit-survey-close svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--belle-charcoal, #2d2d2d);
+  }
+
+  .belle-exit-survey-heading {
+    font-family: 'Bebas Neue', 'Bebas Neue Fallback', sans-serif;
+    font-size: 28px;
+    line-height: 0.95;
+    letter-spacing: 1px;
+    color: var(--belle-green, #1a3c2a);
+    margin: 0 0 8px;
+  }
+
+  .belle-exit-survey-subtext {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--belle-charcoal, #2d2d2d);
+    margin: 0 0 20px;
+  }
+
+  .belle-exit-survey-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .belle-exit-survey-option {
+    width: 100%;
+    text-align: left;
+    background: #ffffff;
+    border: 1px solid var(--belle-green, #1a3c2a);
+    color: var(--belle-green, #1a3c2a);
+    font-family: 'Source Sans Pro', 'Source Sans Pro Fallback', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 14px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .belle-exit-survey-option:hover,
+  .belle-exit-survey-option:focus-visible {
+    background: var(--belle-green, #1a3c2a);
+    color: #ffffff;
+  }
+
+  .belle-exit-survey-other {
+    display: none;
+  }
+
+  .belle-exit-survey-other textarea {
+    width: 100%;
+    min-height: 80px;
+    box-sizing: border-box;
+    border: 1px solid rgba(45, 45, 45, 0.55);
+    padding: 10px 12px;
+    font-family: 'Source Sans Pro', 'Source Sans Pro Fallback', sans-serif;
+    font-size: 14px;
+    resize: vertical;
+    margin-bottom: 12px;
+  }
+
+  .belle-exit-survey-submit {
+    background: var(--belle-gold, #c8a951);
+    color: var(--belle-green, #1a3c2a);
+    border: none;
+    font-family: 'Bebas Neue', 'Bebas Neue Fallback', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  .belle-exit-survey-no-thanks {
+    display: block;
+    margin: 16px auto 0;
+    background: none;
+    border: none;
+    color: var(--belle-charcoal, #2d2d2d);
+    font-size: 12px;
+    text-decoration: underline;
+    cursor: pointer;
+    opacity: 0.75;
+  }
+
+  .belle-exit-survey-thanks {
+    display: none;
+    font-family: 'Bebas Neue', 'Bebas Neue Fallback', sans-serif;
+    font-size: 22px;
+    color: var(--belle-green, #1a3c2a);
+    text-align: center;
+    padding: 12px 0;
+  }
+
+  @keyframes belleExitSurveyFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes belleExitSurveySlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  body.belle-exit-survey-open {
+    overflow: hidden;
+  }
+</style>
+
+<div class="belle-exit-survey-overlay" id="belleExitSurvey" role="dialog" aria-modal="true" aria-labelledby="belleExitSurveyHeading">
+  <div class="belle-exit-survey-card">
+    <button class="belle-exit-survey-close" id="belleExitSurveyClose" aria-label="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+      </svg>
+    </button>
+
+    <div id="belleExitSurveyQuestion">
+      <h2 class="belle-exit-survey-heading" id="belleExitSurveyHeading">Before you go</h2>
+      <p class="belle-exit-survey-subtext">What stopped you from booking today? I read every response myself.</p>
+
+      <div class="belle-exit-survey-options" id="belleExitSurveyOptions">
+        <button type="button" class="belle-exit-survey-option" data-reason="price">The price</button>
+        <button type="button" class="belle-exit-survey-option" data-reason="drop_off_unclear">Not sure how drop-off and pickup work</button>
+        <button type="button" class="belle-exit-survey-option" data-reason="just_browsing">Just comparing options right now</button>
+        <button type="button" class="belle-exit-survey-option" data-reason="couldnt_find_info">Couldn't find what I needed</button>
+        <button type="button" class="belle-exit-survey-option" data-reason="other">Something else</button>
+      </div>
+
+      <div class="belle-exit-survey-other" id="belleExitSurveyOtherWrap">
+        <textarea id="belleExitSurveyOtherInput" placeholder="What can I do better?"></textarea>
+        <button type="button" class="belle-exit-survey-submit" id="belleExitSurveyOtherSubmit">Send</button>
+      </div>
+
+      <button type="button" class="belle-exit-survey-no-thanks" id="belleExitSurveyNoThanks">No thanks</button>
+    </div>
+
+    <div class="belle-exit-survey-thanks" id="belleExitSurveyThanks">Thanks, this helps.</div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    var STORAGE_KEY = 'belleExitSurveySeen';
+    var ARM_DELAY_MS = 4000;
+
+    var IS_TOUCH_LAYOUT = (function () {
+      try {
+        return window.matchMedia('(pointer: coarse)').matches ||
+               window.matchMedia('(max-width: 768px)').matches;
+      } catch (err) {
+        return false;
+      }
+    })();
+
+    function alreadySeen() {
+      try {
+        return sessionStorage.getItem(STORAGE_KEY) === '1';
+      } catch (err) {
+        return false;
+      }
+    }
+
+    function markSeen() {
+      try {
+        sessionStorage.setItem(STORAGE_KEY, '1');
+      } catch (err) { /* no-op, private mode etc. */ }
+    }
+
+    var overlay = document.getElementById('belleExitSurvey');
+    if (!overlay) return;
+
+    var closeBtn = document.getElementById('belleExitSurveyClose');
+    var noThanksBtn = document.getElementById('belleExitSurveyNoThanks');
+    var optionsWrap = document.getElementById('belleExitSurveyOptions');
+    var otherWrap = document.getElementById('belleExitSurveyOtherWrap');
+    var otherInput = document.getElementById('belleExitSurveyOtherInput');
+    var otherSubmit = document.getElementById('belleExitSurveyOtherSubmit');
+    var thanksEl = document.getElementById('belleExitSurveyThanks');
+    var questionEl = document.getElementById('belleExitSurveyQuestion');
+
+    var opened = false;
+    var armed = false;
+    setTimeout(function () { armed = true; }, ARM_DELAY_MS);
+
+    function track(eventName, payload) {
+      var p = payload || {};
+      try {
+        if (window.Shopify && window.Shopify.analytics &&
+            typeof window.Shopify.analytics.publish === 'function') {
+          window.Shopify.analytics.publish(eventName, p);
+        }
+      } catch (err) { /* analytics must never break the page */ }
+      try {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', eventName, p);
+        }
+      } catch (err) { /* no-op */ }
+      try {
+        if (window.dataLayer && typeof window.dataLayer.push === 'function') {
+          var dl = { event: eventName };
+          for (var k in p) {
+            if (Object.prototype.hasOwnProperty.call(p, k)) dl[k] = p[k];
+          }
+          window.dataLayer.push(dl);
+        }
+      } catch (err) { /* no-op */ }
+    }
+
+    function openSurvey() {
+      if (opened || alreadySeen()) return;
+      if (document.body.classList.contains('calendly-modal-open')) return;
+      opened = true;
+      markSeen();
+      overlay.classList.add('active');
+      document.body.classList.add('belle-exit-survey-open');
+      track('exit_survey_shown', { page_path: window.location.pathname });
+    }
+
+    function closeSurvey() {
+      overlay.classList.remove('active');
+      document.body.classList.remove('belle-exit-survey-open');
+    }
+
+    function dismissSurvey() {
+      track('exit_survey_dismissed', { page_path: window.location.pathname });
+      closeSurvey();
+    }
+
+    function respond(reason, detail) {
+      track('exit_survey_response', {
+        reason: reason,
+        reason_detail: detail || '',
+        page_path: window.location.pathname
+      });
+      if (questionEl) questionEl.style.display = 'none';
+      if (thanksEl) thanksEl.style.display = 'block';
+      setTimeout(closeSurvey, 1800);
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', dismissSurvey);
+    if (noThanksBtn) noThanksBtn.addEventListener('click', dismissSurvey);
+
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) dismissSurvey();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('active')) dismissSurvey();
+    });
+
+    if (optionsWrap) {
+      var optionButtons = optionsWrap.querySelectorAll('[data-reason]');
+      for (var i = 0; i < optionButtons.length; i++) {
+        optionButtons[i].addEventListener('click', function (e) {
+          var reason = e.currentTarget.getAttribute('data-reason');
+          if (reason === 'other') {
+            optionsWrap.style.display = 'none';
+            if (otherWrap) otherWrap.style.display = 'block';
+            if (otherInput) otherInput.focus();
+            return;
+          }
+          respond(reason);
+        });
+      }
+    }
+
+    if (otherSubmit) {
+      otherSubmit.addEventListener('click', function () {
+        var detail = otherInput ? otherInput.value.trim() : '';
+        respond('other', detail);
+      });
+    }
+
+    if (!IS_TOUCH_LAYOUT) {
+      // Desktop exit-intent: the cursor leaves toward the browser chrome.
+      document.addEventListener('mouseout', function (e) {
+        if (!armed || alreadySeen()) return;
+        if (e.clientY > 0) return;
+        if (e.relatedTarget) return;
+        openSurvey();
+      });
+    } else {
+      // Mobile fallback heuristic: a fast upward scroll back near the top
+      // of the page, after having scrolled down first.
+      var lastY = window.scrollY;
+      var lastT = Date.now();
+      var hasScrolledDown = false;
+
+      window.addEventListener('scroll', function () {
+        var y = window.scrollY;
+        var t = Date.now();
+        if (y > 300) hasScrolledDown = true;
+
+        var scrolledUpFast = (lastY - y) > 60 && (t - lastT) < 400;
+
+        if (armed && !alreadySeen() && hasScrolledDown && y < 400 && scrolledUpFast) {
+          openSurvey();
+        }
+
+        lastY = y;
+        lastT = t;
+      }, { passive: true });
+    }
+  })();
+</script>
