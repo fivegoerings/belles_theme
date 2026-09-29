@@ -161,11 +161,13 @@ Notes on the ones that have been questioned and settled:
 
 ## Out-of-area policy (do not re-publish what was removed)
 
-Never publish a travel radius, a mileage figure, or a specific QuikTrip address as the base of operations. Both appeared in the out-of-area FAQ and were removed on 2026-08-23.
+Never publish a travel radius or a mileage figure. One appeared in the out-of-area FAQ and was removed on 2026-08-23.
 
-A published radius converts a case-by-case judgment call into an entitlement customers will negotiate against ("I'm only 14 miles out"). Naming a specific QuikTrip publishes an effective base location for a one-person business that works from home and meets strangers carrying customer property.
+A published radius converts a case-by-case judgment call into an entitlement customers will negotiate against ("I'm only 14 miles out").
 
 The settled framing: a Northland QuikTrip meetup is the normal arrangement at normal pricing; anything outside that is quoted privately before booking, is not guaranteed, and may run slower.
+
+**Naming the actual meetup QuikTrips is fine and is now done on purpose** (homepage `belle-locations-section`, the pricing FAQ, and several city pages) - as of 2026-09-29, real customer evidence showed the opposite failure: a customer in Independence almost didn't book because "Kansas City Northland" alone didn't tell her whether any meetup spot was actually convenient, and the addresses were reachable only by opening the Calendly booking flow. The list of named spots is kept in sync with the "Racquet Service" Calendly event's own location list, which is public and visible to anyone who starts booking, so publishing it on the site reveals nothing that flow doesn't already show. What stays banned is naming ONE of them as *the* base of operations with a travel radius hung off it (the removed FAQ pattern above) - that's what singles out an effective home location for a one-person, works-from-home operator. Several real spread-out spots, presented as options, does not.
 
 ## City page content standard
 

@@ -133,6 +133,71 @@
         "padding_bottom": 0
       }
     },
+    "belle_locations_section_NKCLoc": {
+      "type": "belle-locations-section",
+      "blocks": {
+        "location_nkc": {
+          "type": "location",
+          "settings": {
+            "name": "North Kansas City",
+            "address": "QuikTrip, 1401 Armour Rd, North Kansas City, MO 64116"
+          }
+        },
+        "location_staley": {
+          "type": "location",
+          "settings": {
+            "name": "Staley (N. Oak & 96th)",
+            "address": "QuikTrip, 9600 N Oak Trafficway, Kansas City, MO 64155"
+          }
+        },
+        "location_liberty": {
+          "type": "location",
+          "settings": {
+            "name": "Liberty",
+            "address": "QuikTrip, 655 Rte 291, Liberty, MO 64068"
+          }
+        },
+        "location_oakpark": {
+          "type": "location",
+          "settings": {
+            "name": "Oak Park",
+            "address": "QuikTrip, 8500 Indiana Ave, Kansas City, MO 64119"
+          }
+        },
+        "location_winnetonka": {
+          "type": "location",
+          "settings": {
+            "name": "Winnetonka",
+            "address": "QuikTrip, 5108 NE Vivion Rd, Kansas City, MO 64119"
+          }
+        },
+        "location_barry": {
+          "type": "location",
+          "settings": {
+            "name": "Barry Road",
+            "address": "QuikTrip, 7133 NW Barry Rd, Kansas City, MO 64153"
+          }
+        }
+      },
+      "block_order": [
+        "location_nkc",
+        "location_staley",
+        "location_liberty",
+        "location_oakpark",
+        "location_winnetonka",
+        "location_barry"
+      ],
+      "name": "Belle's Locations",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "heading": "Northland Drop-Off & Pickup Locations",
+        "intro": "I meet customers by appointment at convenient public locations across the Kansas City Northland, including:",
+        "footer_note": "Choose the location that works best for you when you book. Additional meeting locations may be available in the appointment calendar.",
+        "disclaimer": "These are appointment-only meeting locations, not storefronts.",
+        "cta_text": "View Locations & Book an Appointment",
+        "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=locations&utm_content=homepage_locations"
+      }
+    },
     "belle_how_it_works_CCTPpr": {
       "type": "belle-how-it-works",
       "name": "How It Works",
@@ -421,6 +486,7 @@
     "belle_hero_section_CQH4xD",
     "rich_text_rNtgTy",
     "rich_text_9kkXcB",
+    "belle_locations_section_NKCLoc",
     "belle_how_it_works_CCTPpr",
     "belle_reviews",
     "belle_new_racquet_setup_BiEEC9",

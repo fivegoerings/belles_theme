@@ -1,0 +1,280 @@
+{% comment %}
+  Belle's Performance Tennis - Northland Drop-Off & Pickup Locations
+
+  Lists the actual QuikTrip meetup spots so a visitor can tell whether
+  Belle's is convenient before committing to opening the Calendly booking
+  flow. Keep the location list in sync with the "Racquet Service" Calendly
+  event (racquet_service, the default booking link used site-wide) - that's
+  the source of truth for names/addresses, not the other way around.
+
+  This intentionally names real meetup addresses. See BRAND.md's "Out-of-
+  area policy" for the boundary: naming several real meetup spots (already
+  visible to anyone who opens the Calendly booking flow) is fine; naming
+  ONE fixed address as "the" base of operations with a travel radius is
+  not, and stays removed.
+{% endcomment %}
+
+<section class="belle-locations {{ section.settings.color_scheme }}">
+  <div class="belle-locations-container">
+    {% if section.settings.heading != blank %}
+      <h2 class="belle-locations-heading">{{ section.settings.heading }}</h2>
+    {% endif %}
+    {% if section.settings.intro != blank %}
+      <p class="belle-locations-intro">{{ section.settings.intro }}</p>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      <ul class="belle-locations-list">
+        {% for block in section.blocks %}
+          <li class="belle-locations-item" {{ block.shopify_attributes }}>
+            <svg class="belle-locations-pin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            <span>
+              <strong>{{ block.settings.name }}</strong>
+              {% if block.settings.address != blank %}<br>{{ block.settings.address }}{% endif %}
+            </span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if section.settings.footer_note != blank %}
+      <p class="belle-locations-footer-note">{{ section.settings.footer_note }}</p>
+    {% endif %}
+
+    {% if section.settings.disclaimer != blank %}
+      <p class="belle-locations-disclaimer">{{ section.settings.disclaimer }}</p>
+    {% endif %}
+
+    {% if section.settings.cta_text != blank %}
+      <a href="{{ section.settings.cta_url }}" data-calendly-modal="true" class="belle-locations-cta">
+        {{ section.settings.cta_text }}
+      </a>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .belle-locations {
+    padding: 48px 20px;
+  }
+
+  .belle-locations-container {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .belle-locations-heading {
+    font-family: 'Bebas Neue', 'Bebas Neue Fallback', sans-serif;
+    font-size: 32px;
+    letter-spacing: 1px;
+    line-height: 0.95;
+    color: var(--belle-green, #1a3c2a);
+    margin: 0 0 12px;
+  }
+
+  .belle-locations-intro {
+    font-family: 'Source Sans Pro', 'Source Sans Pro Fallback', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--belle-charcoal, #2d2d2d);
+    margin: 0 0 24px;
+  }
+
+  .belle-locations-list {
+    list-style: none;
+    margin: 0 0 24px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    text-align: left;
+  }
+
+  .belle-locations-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-family: 'Source Sans Pro', 'Source Sans Pro Fallback', sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--belle-charcoal, #2d2d2d);
+  }
+
+  .belle-locations-pin {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-top: 1px;
+    color: var(--belle-gold, #c8a951);
+  }
+
+  .belle-locations-footer-note {
+    font-family: 'Source Sans Pro', 'Source Sans Pro Fallback', sans-serif;
+    font-size: 14px;
+    color: var(--belle-charcoal, #2d2d2d);
+    margin: 0 0 6px;
+  }
+
+  .belle-locations-disclaimer {
+    font-family: 'Source Sans Pro', 'Source Sans Pro Fallback', sans-serif;
+    font-size: 12px;
+    color: var(--belle-charcoal, #2d2d2d);
+    opacity: 0.75;
+    margin: 0 0 20px;
+  }
+
+  .belle-locations-cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 28px;
+    font-family: 'Source Sans Pro', 'Source Sans Pro Fallback', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--belle-green, #1a3c2a);
+    background: var(--belle-gold, #c8a951);
+    border: 2px solid var(--belle-gold, #c8a951);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .belle-locations-cta:hover {
+    background: #d4b96a;
+    border-color: #d4b96a;
+  }
+
+  @media (max-width: 600px) {
+    .belle-locations-list {
+      grid-template-columns: 1fr;
+    }
+
+    .belle-locations-cta {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Belle's Locations",
+  "tag": "section",
+  "class": "section-belle-locations",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Northland Drop-Off & Pickup Locations"
+    },
+    {
+      "type": "textarea",
+      "id": "intro",
+      "label": "Intro text",
+      "default": "I meet customers by appointment at convenient public locations across the Kansas City Northland, including:"
+    },
+    {
+      "type": "text",
+      "id": "footer_note",
+      "label": "Footer note",
+      "default": "Choose the location that works best for you when you book. Additional meeting locations may be available in the appointment calendar."
+    },
+    {
+      "type": "text",
+      "id": "disclaimer",
+      "label": "Disclaimer",
+      "default": "These are appointment-only meeting locations, not storefronts."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "View Locations & Book an Appointment"
+    },
+    {
+      "type": "text",
+      "id": "cta_url",
+      "label": "Button link",
+      "default": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=locations&utm_content=homepage_locations"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "location",
+      "name": "Location",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "North Kansas City"
+        },
+        {
+          "type": "text",
+          "id": "address",
+          "label": "Address",
+          "default": "QuikTrip, 1401 Armour Rd, North Kansas City, MO 64116"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Belle's Locations",
+      "blocks": [
+        {
+          "type": "location",
+          "settings": {
+            "name": "North Kansas City",
+            "address": "QuikTrip, 1401 Armour Rd, North Kansas City, MO 64116"
+          }
+        },
+        {
+          "type": "location",
+          "settings": {
+            "name": "Staley (N. Oak & 96th)",
+            "address": "QuikTrip, 9600 N Oak Trafficway, Kansas City, MO 64155"
+          }
+        },
+        {
+          "type": "location",
+          "settings": {
+            "name": "Liberty",
+            "address": "QuikTrip, 655 Rte 291, Liberty, MO 64068"
+          }
+        },
+        {
+          "type": "location",
+          "settings": {
+            "name": "Oak Park",
+            "address": "QuikTrip, 8500 Indiana Ave, Kansas City, MO 64119"
+          }
+        },
+        {
+          "type": "location",
+          "settings": {
+            "name": "Winnetonka",
+            "address": "QuikTrip, 5108 NE Vivion Rd, Kansas City, MO 64119"
+          }
+        },
+        {
+          "type": "location",
+          "settings": {
+            "name": "Barry Road",
+            "address": "QuikTrip, 7133 NW Barry Rd, Kansas City, MO 64153"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -111,6 +111,14 @@
             "category": ""
           }
         },
+        "question_locations": {
+          "type": "question",
+          "settings": {
+            "question": "Where do I drop off my racquet?",
+            "answer": "<p>Choose from Northland meeting locations in North Kansas City, Staley (N. Oak & 96th), Liberty, Oak Park, Winnetonka, and Barry Road when you book. These are appointment-only meeting spots, not storefronts.</p>",
+            "category": ""
+          }
+        },
         "question_service_area": {
           "type": "question",
           "settings": {
@@ -170,6 +178,7 @@
       },
       "block_order": [
         "question_how_it_works",
+        "question_locations",
         "question_service_area",
         "question_how_to_pay",
         "question_turnaround",
