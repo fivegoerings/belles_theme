@@ -519,8 +519,12 @@
         // Mark as processed
         trigger.dataset.calendlyProcessed = 'true';
 
-        // Preserve the original Calendly URL before overwriting href
-        if (trigger.tagName === 'A' && trigger.getAttribute('href') && trigger.getAttribute('href').indexOf('calendly.com') !== -1) {
+        // Preserve the original Calendly URL before overwriting href. An
+        // explicit data-calendly-url wins: the hero buttons carry their UTM
+        // params only there, and copying the bare href over it silently
+        // dropped their attribution (booking_source "unknown", no UTMs in
+        // Calendly) until 2026-10-04.
+        if (!trigger.dataset.calendlyUrl && trigger.tagName === 'A' && trigger.getAttribute('href') && trigger.getAttribute('href').indexOf('calendly.com') !== -1) {
           trigger.dataset.calendlyUrl = trigger.getAttribute('href');
         }
 
