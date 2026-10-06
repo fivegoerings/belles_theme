@@ -116,7 +116,7 @@
         "text_dX43YV": {
           "type": "text",
           "settings": {
-            "text": "<p>Looking for tennis racquet stringing near Kansas City? Belle’s Performance Tennis Shop serves Northland players in Kansas City, North Kansas City, Gladstone, Liberty, Parkville, Platte City, Smithville, Kearney, and nearby areas.</p>"
+            "text": "<p>Looking for tennis racket stringing or restringing near Kansas City? I string racquets for Northland players in Kansas City, North Kansas City, Gladstone, Liberty, Parkville, Platte City, Smithville, Kearney, and nearby areas.</p>"
           }
         }
       },
@@ -374,6 +374,14 @@
             "answer": "<p>There is no schedule that works for everyone. Your string, your frame, your swing, and your tension all change the answer, so I measure instead of guessing. Every racquet I string gets a dynamic tension reading before it goes back to you, and that reading is your baseline. When you return, I take another reading and compare. Once it has dropped 25 to 30 percent, it is usually time to restring. Most players are playing on dead strings without realizing it, and wondering why their game feels off. <a href=\"/pages/when-to-restring-tennis-racquet-kansas-city\">More on when to restring</a>.</p>",
             "category": ""
           }
+        },
+        "question_racket_spelling": {
+          "type": "question",
+          "settings": {
+            "question": "Is it racket or racquet?",
+            "answer": "<p>Both spellings are correct, and they mean the same thing. Many tennis brands print \"racquet.\" Many people type \"racket\" when they search. I use both words on this site.</p><p>Whichever you call it, I string it by appointment for players across the Kansas City Northland. Strings are included, and most racquets are ready in 2–3 days.</p>",
+            "category": ""
+          }
         }
       },
       "block_order": [
@@ -383,7 +391,8 @@
         "question_rEDQTV",
         "question_PXt4jK",
         "question_zQz3LH",
-        "question_8jBRrx"
+        "question_8jBRrx",
+        "question_racket_spelling"
       ],
       "name": "Belle's FAQ",
       "settings": {

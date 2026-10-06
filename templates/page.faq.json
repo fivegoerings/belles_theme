@@ -99,6 +99,14 @@
             "answer": "<p>You can schedule using the booking link below.</p>",
             "category": ""
           }
+        },
+        "question_racket_spelling": {
+          "type": "question",
+          "settings": {
+            "question": "Is it racket or racquet?",
+            "answer": "<p>Both spellings are correct, and they mean the same thing. Many tennis brands print \"racquet.\" Many people type \"racket\" when they search. I use both words on this site.</p><p>Whichever you call it, I string it by appointment for players across the Kansas City Northland. Strings are included, and most racquets are ready in 2–3 days.</p>",
+            "category": ""
+          }
         }
       },
       "block_order": [
@@ -112,7 +120,8 @@
         "q3",
         "question_service_area",
         "q4",
-        "q5"
+        "q5",
+        "question_racket_spelling"
       ],
       "settings": {
         "title": "Frequently Asked Questions",
