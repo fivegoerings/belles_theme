@@ -4,11 +4,14 @@
   Or use any link with href containing calendly.com (auto-converted)
 {% endcomment %}
 
-{%- comment -%} Calendly is a third-party booking widget; preconnect is an intentional performance optimization, not a themeable asset {%- endcomment -%}
-{% # theme-check-disable RemoteAsset %}
-<link rel="preconnect" href="https://assets.calendly.com" crossorigin>
-<link rel="preconnect" href="https://calendly.com" crossorigin>
-{% # theme-check-enable RemoteAsset %}
+{%- comment -%}
+  Calendly preconnects are added by the script below on desktop only. They
+  used to be static <link> tags here, which made every phone open two TLS
+  connections it never uses (touch layouts navigate to Calendly instead of
+  loading the embed) and pushed the homepage past PSI's 4-preconnect
+  warning. theme.liquid keeps a cheap dns-prefetch for calendly.com, which
+  still helps the mobile navigation.
+{%- endcomment -%}
 <style>
   .calendly-modal-overlay {
     display: none;
@@ -198,6 +201,18 @@
         return false;
       }
     })();
+
+    // Desktop only: warm the connections the embed iframe will use. See the
+    // comment above the <style> block for why these are not static tags.
+    if (!IS_TOUCH_LAYOUT) {
+      ['https://calendly.com', 'https://assets.calendly.com'].forEach(function (origin) {
+        var link = document.createElement('link');
+        link.rel = 'preconnect';
+        link.href = origin;
+        link.crossOrigin = '';
+        document.head.appendChild(link);
+      });
+    }
 
     const modal = document.getElementById('calendlyModal');
     const iframe = document.getElementById('calendlyIframe');
