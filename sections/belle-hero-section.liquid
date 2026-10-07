@@ -277,6 +277,16 @@
         box-shadow: 0 8px 25px rgba(201, 162, 39, 0.3);
       }
 
+      /* Reassurance line under the CTA buttons */
+      .belle-hero-cta-note {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 15px;
+        line-height: 1.4;
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 520px;
+        margin: -12px auto 20px;
+      }
+
       /* Secondary/tertiary CTAs stack vertically next to the primary button */
       .belle-hero-text-links {
         display: flex;
@@ -650,6 +660,15 @@
         </a>
       </div>
 
+      {%- comment -%}
+        One-line reassurance directly under the booking buttons, at the point
+        a first-timer hesitates. Added 2026-10-06 to take the "which string
+        do I need?" decision off the visitor before they book.
+      {%- endcomment -%}
+      {%- if section.settings.cta_note != blank -%}
+        <p class="belle-hero-cta-note">{{ section.settings.cta_note }}</p>
+      {%- endif -%}
+
       {%- if section.settings.cta_tertiary_text != blank and section.settings.cta_tertiary_url != blank -%}
         <div class="belle-hero-text-links">
           <a href="{{ section.settings.cta_tertiary_url }}" class="belle-hero-text-link">
@@ -832,6 +851,12 @@
       "id": "cta_primary_text",
       "label": "Primary Button Text",
       "default": "Book Your Appointment"
+    },
+    {
+      "type": "text",
+      "id": "cta_note",
+      "label": "Note under buttons",
+      "info": "Short reassurance line shown directly under the booking buttons. Leave blank to hide it."
     },
     {
       "type": "text",
