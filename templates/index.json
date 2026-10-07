@@ -188,13 +188,13 @@
         }
       },
       "block_order": [
-        "location_nkc",
+        "location_barry",
+        "location_greenhills",
         "location_staley",
-        "location_liberty",
         "location_oakpark",
         "location_winnetonka",
-        "location_barry",
-        "location_greenhills"
+        "location_nkc",
+        "location_liberty"
       ],
       "name": "Belle's Locations",
       "settings": {
