@@ -65,7 +65,7 @@
         "meetup_maps_url": "",
         "faq_heading": "Parkville Stringing FAQ",
         "faq_1_question": "Where do we meet in Parkville?",
-        "faq_1_answer": "The QuikTrip at 8601 MO-45 in Parkville. Pick your time when you book online.",
+        "faq_1_answer": "The closest drop-off spots are the QuikTrip at 7133 NW Barry Rd (Zona Rosa) and the QuikTrip at 4380 NW 90th St (Green Hills, off Hwy 152). Pick your spot and time when you book online.",
         "faq_2_question": "Do you serve Park University players?",
         "faq_2_answer": "Yes. College players, recreational players, coaches, and USTA league players are welcome.",
         "faq_3_question": "How fast do you turn it around?",
@@ -91,7 +91,7 @@
       "name": "CTA Inline",
       "settings": {
         "cta_heading": "Book a Parkville Drop-Off",
-        "cta_description": "Parkville players can drop off at the QuikTrip at 8601 MO-45. Standard turnaround is 2\u20133 days. Next-day and same-day options are available when the schedule allows.",
+        "cta_description": "Parkville players can drop off at the Barry Road QuikTrip near Zona Rosa or the Green Hills QuikTrip off Hwy 152. Standard turnaround is 2\u20133 days. Next-day and same-day options are available when the schedule allows.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_parkville_bottom"
       }

@@ -26,7 +26,7 @@
       "disabled": true,
       "settings": {
         "community_heading": "CLAYCOMO NEXT DOOR. LIBERTY FIVE MINUTES NORTH.",
-        "community_text": "Pleasant Valley sits at a crossroads in the Northland. Claycomo is right next door. Jump on 35 north and you're in Liberty in five minutes. But tennis players here have always had to go south for stringing. Weatherby Lake players can use the Parkville QuikTrip drop-off at 8601 MO-45. Most racquets are ready in 2\u20133 days, with string and tension notes saved for next time."
+        "community_text": "Pleasant Valley sits at a crossroads in the Northland. Claycomo is right next door. Jump on 35 north and you're in Liberty in five minutes. But tennis players here have always had to go south for stringing. Pleasant Valley and Claycomo players can use the Liberty QuikTrip on Route 291 or the Winnetonka QuikTrip on NE Vivion Rd. Most racquets are ready in 2\u20133 days, with string and tension notes saved for next time."
       }
     },
     "how_it_works": {
@@ -66,7 +66,7 @@
         "meetup_maps_url": "",
         "faq_heading": "Pleasant Valley Stringing FAQ",
         "faq_1_question": "Where exactly do we meet in Pleasant Valley?",
-        "faq_1_answer": "The QuikTrip at 8600 Pleasant Valley Rd. Pick your time when you book. We'll be there.",
+        "faq_1_answer": "The closest drop-off spots are the QuikTrip at 655 Rte 291 in Liberty and the QuikTrip at 5108 NE Vivion Rd (Winnetonka). Pick your spot and time when you book. I'll be there.",
         "faq_2_question": "How fast do you turn it around?",
         "faq_2_answer": "Most jobs completed in 2\u20133 days. Need it sooner? Same-day and next-day available on request. Have a match coming up? Mention it when you book.",
         "faq_3_question": "Do you serve Liberty players too?",
@@ -92,7 +92,7 @@
       "name": "CTA Inline",
       "settings": {
         "cta_heading": "Book a Pleasant Valley Drop-Off",
-        "cta_description": "Pleasant Valley and Claycomo players can drop off at the QuikTrip at 8600 Pleasant Valley Rd. Most racquets are ready in 2\u20133 days. No drive south of the river.",
+        "cta_description": "Pleasant Valley and Claycomo players can drop off at the Liberty QuikTrip on Route 291 or the Winnetonka QuikTrip on NE Vivion Rd. Most racquets are ready in 2\u20133 days. No drive south of the river.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_pleasantvalley_bottom"
       }
