@@ -23,7 +23,7 @@
           "type": "step",
           "settings": {
             "title": "Book a Demo Meetup",
-            "description": "Schedule a time and pick a Kansas City Northland QuikTrip. We'll bring the demo racquet  to you."
+            "description": "Pick a time and a QuikTrip near you. I bring the racquet, so trying one takes less effort than a coffee run."
           }
         },
         "step_3": {
@@ -130,7 +130,7 @@
           "type": "detail",
           "settings": {
             "question": "What about the card hold?",
-            "answer": "We place a temporary hold on a credit or debit card for the racquet's retail value. It's an authorization only, not a charge, and it's released the moment you return the racquet. This is standard for any demo program and protects the equipment so we can keep offering it for free."
+            "answer": "I place a temporary hold on a credit or debit card for the racquet's retail value. It's an authorization only, never a charge, and it's released the moment you return the racquet. That's what lets me keep the program free."
           }
         },
         "detail_duration": {
