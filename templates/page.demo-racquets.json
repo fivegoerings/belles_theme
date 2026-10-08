@@ -23,7 +23,7 @@
           "type": "step",
           "settings": {
             "title": "Book a Demo Meetup",
-            "description": "Schedule a time and pick a Kansas City Northland QuikTrip. We'll bring the demo racquet  to you."
+            "description": "Pick a time and a QuikTrip near you. I bring the racquet, so trying one takes less effort than a coffee run."
           }
         },
         "step_3": {
@@ -116,21 +116,14 @@
           "type": "detail",
           "settings": {
             "question": "What does it cost?",
-            "answer": "Nothing. The demo itself is completely free. We do require a signed demo agreement and a credit card authorization hold for the retail value of the racquet, which is released as soon as you return it."
+            "answer": "Nothing. The demo is completely free, and I don't take a credit card for it. I just ask you to sign a short demo agreement at pickup."
           }
         },
         "detail_waiver": {
           "type": "detail",
           "settings": {
             "question": "Do I need to sign anything?",
-            "answer": "Yes. We ask everyone to sign a short demo agreement and liability waiver at pickup. It covers the basics: return timeline, responsibility for damage or loss, and a standard liability release. Takes about two minutes."
-          }
-        },
-        "detail_cardhold": {
-          "type": "detail",
-          "settings": {
-            "question": "What about the card hold?",
-            "answer": "We place a temporary hold on a credit or debit card for the racquet's retail value. It's an authorization only, not a charge, and it's released the moment you return the racquet. This is standard for any demo program and protects the equipment so we can keep offering it for free."
+            "answer": "Yes. I ask everyone to sign a short demo agreement and liability waiver at pickup. It covers the basics: return timeline, responsibility for damage or loss, and a standard liability release. Takes about two minutes."
           }
         },
         "detail_duration": {
@@ -180,7 +173,6 @@
         "racquet_blackout300",
         "detail_cost",
         "detail_waiver",
-        "detail_cardhold",
         "detail_duration",
         "detail_strings",
         "detail_loaner",

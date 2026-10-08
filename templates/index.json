@@ -17,7 +17,7 @@
           "settings": {
             "icon": "check",
             "title": "The same setup, next time.",
-            "description": "I keep a record of your string, tension, and racquet setup so every future restring starts from what worked last time, not a blank slate.",
+            "description": "Your racquet comes back feeling like your racquet, every time. I keep your string, tension, and setup on file, so a restring never means starting over.",
             "url": ""
           }
         },
@@ -26,7 +26,7 @@
           "settings": {
             "icon": "calendar",
             "title": "Local Pickup & Drop-off",
-            "description": "We meet at a local Northland QuikTrip. Simple drop-off and pickup by appointment.",
+            "description": "No drive across town and no shipping your racquet off. Just a 5-minute meetup at a QuikTrip you're probably already passing.",
             "url": ""
           }
         },
@@ -35,7 +35,7 @@
           "settings": {
             "icon": "badge",
             "title": "Bought Your Racquet Elsewhere?",
-            "description": "No problem. String selection and setup help is part of the service here, regardless of where you bought the frame.",
+            "description": "Didn't buy your racquet from me? Doesn't matter. I'll still dial in the right string and tension for your game.",
             "url": ""
           }
         },
@@ -44,7 +44,7 @@
           "settings": {
             "icon": "racquet",
             "title": "Borrow a Demo, Free",
-            "description": "Borrow a Solinco demo while your racquet is being strung. No charge.",
+            "description": "Never miss practice waiting on a restring. Borrow a Solinco demo free while yours is being strung.",
             "url": "shopify://pages/demo-racquet-program"
           }
         }
@@ -82,7 +82,7 @@
         "text_mAdqEm": {
           "type": "text",
           "settings": {
-            "text": "<p>When Isabelle joined the Staley High School tennis team, I started looking for someone to string her racquet in the Northland. The options weren't great. So I became a USRSA member, bought a Gamma Progression II ELS electronic stringing machine, and opened Belle's.</p>"
+            "text": "<p>When Isabelle joined the Staley High School tennis team, I started looking for someone to string her racquet in the Northland. The options weren't great. So I became a USRSA member and started stringing on a pro-grade electronic machine, because a careful string job is the difference between a racquet you trust and one you fight.</p>"
           }
         },
         "button_bQGxqB": {
