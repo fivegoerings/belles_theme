@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
+    {%- comment -%}
+      Owner request 2026-10-08: keep Shopify's automatic all-products page
+      (/collections/all, including its sort/filter variants) out of search
+      results. "follow" still lets crawlers reach the products through it.
+      Real collections are hidden from search via the seo.hidden metafield
+      in Admin instead, not here.
+    {%- endcomment -%}
+    {%- if request.page_type == 'collection' and collection.handle == 'all' -%}
+      <meta name="robots" content="noindex, follow">
+    {%- endif -%}
 
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
