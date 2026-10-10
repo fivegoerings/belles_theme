@@ -4,7 +4,8 @@
   Version: 1.1.0 - 2026-04-13 - Added optional Link URL field to reason cards
 {% endcomment %}
 
-{{ 'belle-why-section.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'belle-why-section.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'belle-why-section.css' | asset_url | stylesheet_tag }}</noscript>
 
 <style>
   a.belle-why-card {

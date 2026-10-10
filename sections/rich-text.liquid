@@ -1,4 +1,13 @@
-{{ 'section-rich-text.css' | asset_url | stylesheet_tag }}
+{%- comment -%}
+  Load blocking only when this is one of the first two sections (could be above the fold).
+  Later instances (e.g. the second rich-text on the homepage) load non-blocking.
+{%- endcomment -%}
+{%- if section.index == nil or section.index <= 2 -%}
+  {{ 'section-rich-text.css' | asset_url | stylesheet_tag }}
+{%- else -%}
+  <link rel="stylesheet" href="{{ 'section-rich-text.css' | asset_url }}" media="print" onload="this.media='all'">
+  <noscript>{{ 'section-rich-text.css' | asset_url | stylesheet_tag }}</noscript>
+{%- endif -%}
 
 {%- style -%}
   .section-{{ section.id }}-padding {

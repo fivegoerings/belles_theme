@@ -3,7 +3,8 @@
   Frequently Asked Questions with accordion-style expandable answers
 {% endcomment %}
 
-{{ 'section-belle-faq.css' | asset_url | stylesheet_tag }}
+<link rel="stylesheet" href="{{ 'section-belle-faq.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'section-belle-faq.css' | asset_url | stylesheet_tag }}</noscript>
 
 <div class="belle-faq" id="belle-faq-{{ section.id }}">
   <div class="belle-faq-container">
