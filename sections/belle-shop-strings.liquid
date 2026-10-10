@@ -4,7 +4,7 @@
   Manage strings entirely in the section settings -- no code edits needed.
 {% endcomment %}
 
-<div class="bss-wrapper">
+<div class="bss-wrapper" id="strings">
   <div class="bss-card">
     <button
       class="bss-header"
@@ -213,6 +213,13 @@
     } else {
       list.hidden = false;
     }
+  }
+
+  // Arriving from the homepage "Strings On Hand" card (#strings) opens
+  // the list, since a collapsed header alone does not answer the click.
+  if (window.location.hash === '#strings') {
+    var bssBtn = document.querySelector('.bss-header');
+    if (bssBtn && bssBtn.getAttribute('aria-expanded') !== 'true') bssToggle(bssBtn);
   }
 </script>
 
