@@ -44,7 +44,7 @@
   }
 
   /* SEO h1 — in DOM for search, visually secondary */
-  .bp-hero h1 {
+  .bp-hero .bp-hero-title {
     font-size: 13px;
     font-weight: 400;
     color: var(--bp-muted);
@@ -412,7 +412,11 @@
   <div class="bp-container">
     <!-- 1. HERO -->
     <div class="bp-hero">
-      <h1>{{ section.settings.title }}</h1>
+      {%- if section.settings.is_page_heading -%}
+        <h1 class="bp-hero-title">{{ section.settings.title }}</h1>
+      {%- else -%}
+        <h2 class="bp-hero-title">{{ section.settings.title }}</h2>
+      {%- endif -%}
 
       <p class="bp-hero-hook">Your racquet back in 2–3 days, playing the way you expect, strung by one person you can actually reach.</p>
 
@@ -579,6 +583,13 @@
       "id": "title",
       "label": "Page title",
       "default": "Racquet Stringing Prices in the Kansas City Northland"
+    },
+    {
+      "type": "checkbox",
+      "id": "is_page_heading",
+      "label": "Use this title as the page's main heading (h1)",
+      "info": "Leave on for the dedicated pricing page. Turn off when this section is added to a page that already has its own h1 (e.g. a city page).",
+      "default": true
     }
   ],
   "presets": [
