@@ -21,13 +21,49 @@
         "hero_image_alt": ""
       }
     },
-    "city_community": {
-      "type": "belle-city-community",
-      "disabled": true,
+    "city_reviews": {
+      "type": "belle-reviews",
       "settings": {
-        "community_heading": "CLAYCOMO NEXT DOOR. LIBERTY FIVE MINUTES NORTH.",
-        "community_text": "Pleasant Valley sits at a crossroads in the Northland. Claycomo is right next door. Jump on 35 north and you're in Liberty in five minutes. But tennis players here have always had to go south for stringing. Pleasant Valley and Claycomo players can use the Liberty QuikTrip on Route 291 or the Winnetonka QuikTrip on NE Vivion Rd. Most racquets are ready in 2\u20133 days, with string and tension notes saved for next time."
-      }
+        "eyebrow": "Reviews",
+        "heading": "What Players Say",
+        "subheading": "Quoted from Google, word for word.",
+        "footer_text": "Read all the reviews on Google",
+        "footer_url": "https://maps.google.com/?cid=16041235076699017420"
+      },
+      "blocks": {
+        "r_shana": {
+          "type": "review",
+          "settings": {
+            "quote": "Great service, quick turnaround on my son\u2019s new Yonex Ezone to get strung. Will use their service again! Very good communication!",
+            "name": "Shana York",
+            "detail": "Google review",
+            "show_stars": true
+          }
+        },
+        "r_nicole": {
+          "type": "review",
+          "settings": {
+            "quote": "Quickly fixed a tennis racquet over a weekend. Great, quick service!",
+            "name": "Nicole Hufty",
+            "detail": "Google review",
+            "show_stars": true
+          }
+        },
+        "r_william": {
+          "type": "review",
+          "settings": {
+            "quote": "Great experience, quick, easy, and racket is playing better than ever. Randy was great to work with, thanks!",
+            "name": "William Morehead",
+            "detail": "Google review",
+            "show_stars": true
+          }
+        }
+      },
+      "block_order": [
+        "r_shana",
+        "r_nicole",
+        "r_william"
+      ]
     },
     "how_it_works": {
       "type": "belle-how-it-works",
@@ -65,12 +101,12 @@
         "meetup_description": "",
         "meetup_maps_url": "",
         "faq_heading": "Pleasant Valley Stringing FAQ",
-        "faq_1_question": "Where exactly do we meet in Pleasant Valley?",
-        "faq_1_answer": "The closest drop-off spots are the QuikTrip at 655 Rte 291 in Liberty and the QuikTrip at 5108 NE Vivion Rd (Winnetonka). Pick your spot and time when you book. I'll be there.",
-        "faq_2_question": "How fast do you turn it around?",
-        "faq_2_answer": "Most jobs completed in 2\u20133 days. Need it sooner? Same-day and next-day available on request. Have a match coming up? Mention it when you book.",
-        "faq_3_question": "Do you serve Liberty players too?",
-        "faq_3_answer": "Yes. Liberty is five minutes north on 35. If you want to book with a neighbor and split a meetup, we can work that out.",
+        "faq_1_question": "",
+        "faq_1_answer": "",
+        "faq_2_question": "",
+        "faq_2_answer": "",
+        "faq_3_question": "",
+        "faq_3_answer": "",
         "nearby_1_label": "Gladstone",
         "nearby_1_url": "/pages/racquet-stringing-gladstone",
         "nearby_2_label": "Liberty",
@@ -96,13 +132,108 @@
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_pleasantvalley_bottom"
       }
+    },
+    "city_pricing": {
+      "type": "belle-pricing-section",
+      "settings": {
+        "title": "Racquet Stringing Prices for Pleasant Valley Players",
+        "is_page_heading": false
+      }
+    },
+    "city_faq": {
+      "type": "belle-faq-section",
+      "settings": {
+        "title": "Pleasant Valley Stringing FAQs",
+        "subtitle": "Quick answers before you book.",
+        "open_first": true,
+        "show_contact_cta": false
+      },
+      "blocks": {
+        "q_dropoff": {
+          "type": "question",
+          "settings": {
+            "question": "Where exactly do we meet in Pleasant Valley?",
+            "answer": "<p>The closest drop-off spots are the QuikTrip at 655 Rte 291 in Liberty and the QuikTrip at 5108 NE Vivion Rd (Winnetonka). Pick your spot and time when you book. I'll be there.</p>",
+            "category": ""
+          }
+        },
+        "q_turnaround": {
+          "type": "question",
+          "settings": {
+            "question": "How fast do you turn it around?",
+            "answer": "<p>Most jobs completed in 2\u20133 days. Need it sooner? Same-day and next-day available on request. Have a match coming up? Mention it when you book.</p>",
+            "category": ""
+          }
+        },
+        "q_cost": {
+          "type": "question",
+          "settings": {
+            "question": "What does it cost?",
+            "answer": "<p>You know the price before I start, there\u2019s no deposit at booking, and you pay after the job is done. See the pricing section above for the full list.</p>",
+            "category": ""
+          }
+        },
+        "q_schools": {
+          "type": "question",
+          "settings": {
+            "question": "Do you string for Pleasant Valley school players?",
+            "answer": "<p>Yes: junior players, high school players, adult league players, and tournament players. If your strings break mid-season, I'll get you back on court fast.</p>",
+            "category": ""
+          }
+        },
+        "q_extra": {
+          "type": "question",
+          "settings": {
+            "question": "Do you serve Liberty players too?",
+            "answer": "<p>Yes. Liberty is five minutes north on 35. If you want to book with a neighbor and split a meetup, we can work that out.</p>",
+            "category": ""
+          }
+        },
+        "q_strings": {
+          "type": "question",
+          "settings": {
+            "question": "Do I need to know what string I want?",
+            "answer": "<p>No. Most players do not know exactly what string they need. I can recommend synthetic gut, multifilament, polyester, or hybrid based on the player\u2019s racquet, level, style, and arm comfort.</p>",
+            "category": ""
+          }
+        },
+        "q_tension": {
+          "type": "question",
+          "settings": {
+            "question": "How do I know the tension is right?",
+            "answer": "<p>Every finished string bed is measured to confirm the tension you asked for is the tension you got. Your string, tension, and setup are logged, so the next restring starts from what worked, not a blank slate.</p>",
+            "category": ""
+          }
+        }
+      },
+      "block_order": [
+        "q_dropoff",
+        "q_turnaround",
+        "q_cost",
+        "q_schools",
+        "q_extra",
+        "q_strings",
+        "q_tension"
+      ]
+    },
+    "cta_final": {
+      "type": "cta-standard",
+      "settings": {
+        "cta_heading": "Ready When Your Strings Are",
+        "cta_description": "Book a Pleasant Valley drop-off in under a minute. Most racquets back in 2\u20133 days, playing the way you expect.",
+        "schedule_button_text": "Book Racquet Stringing",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_pleasantvalley_final"
+      }
     }
   },
   "order": [
     "city_hero",
-    "city_community",
+    "city_reviews",
     "how_it_works",
     "city_landing",
-    "cta_inline_mid"
+    "cta_inline_mid",
+    "city_pricing",
+    "city_faq",
+    "cta_final"
   ]
 }
