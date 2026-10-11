@@ -141,7 +141,8 @@
       "type": "belle-pricing-section",
       "settings": {
         "title": "Racquet Stringing Prices for North Kansas City Players",
-        "is_page_heading": false
+        "is_page_heading": false,
+        "cta_utm_content": "city_northkc_pricing"
       }
     },
     "city_faq": {

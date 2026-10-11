@@ -137,7 +137,8 @@
       "type": "belle-pricing-section",
       "settings": {
         "title": "Racquet Stringing Prices for Park Hill Players",
-        "is_page_heading": false
+        "is_page_heading": false,
+        "cta_utm_content": "city_parkhill_pricing"
       }
     },
     "city_faq": {

@@ -453,7 +453,7 @@
         </div>
 
         <a
-          href="https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=pricing_top"
+          href="https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content={{ section.settings.cta_utm_content | default: 'pricing_top' | url_encode }}"
           class="bp-cta-gold"
         >
           Book Racquet Stringing
@@ -590,6 +590,13 @@
       "label": "Use this title as the page's main heading (h1)",
       "info": "Leave on for the dedicated pricing page. Turn off when this section is added to a page that already has its own h1 (e.g. a city page).",
       "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_utm_content",
+      "label": "Booking link tracking tag (utm_content)",
+      "info": "Identifies bookings from the gold Book button in GA4 (booking_source). Keep pricing_top on the pricing page; use city_<name>_pricing on city pages.",
+      "default": "pricing_top"
     }
   ],
   "presets": [
