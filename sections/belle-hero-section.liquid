@@ -32,6 +32,9 @@
         --belle-green-dark: #0f2e1a;
         --belle-gold: #c8a951;
         --belle-gold-light: #c8a951;
+        /* Lighter gold for small text on the green overlay. #c8a951 drops
+           to about 3:1 there, this one stays above 4.5:1 (WCAG AA). */
+        --belle-gold-text: #f0dfa6;
         --belle-cream: #faf9f6;
         --belle-charcoal: #2d2d2d;
 
@@ -175,7 +178,7 @@
         gap: 8px;
         background: rgba(201, 162, 39, 0.15);
         border: 1px solid rgba(201, 162, 39, 0.4);
-        color: var(--belle-gold);
+        color: var(--belle-gold-text);
         padding: 8px 20px;
         border-radius: 50px;
         font-family: 'Source Sans Pro', 'Source Sans Pro Fallback', sans-serif;
@@ -199,7 +202,7 @@
         font-weight: 600;
         letter-spacing: 2px;
         text-transform: uppercase;
-        color: var(--belle-gold);
+        color: var(--belle-gold-text);
         margin: 0 0 12px 0;
       }
 
