@@ -140,7 +140,7 @@
 
 .belle-blog-card-meta {
   font-size: 13px;
-  color: #888;
+  color: #6b6b6b;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -314,7 +314,7 @@
 }
 
 .belle-blog-pagination-ellipsis {
-  color: #888;
+  color: #6b6b6b;
   padding: 0 8px;
 }
 
