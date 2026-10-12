@@ -296,6 +296,14 @@
         gap: 2px;
       }
 
+      /* Secondary links side by side under the Book button */
+      .belle-hero-text-links--row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px 24px;
+        margin: -8px 0 20px;
+      }
+
       /* Secondary CTA as plain text link */
       .belle-hero-text-link {
         color: rgba(255, 255, 255, 0.75);
@@ -621,32 +629,13 @@
 
       <!-- CTA Buttons -->
       {%- comment -%}
-        Three equal-weight commercial paths, in this order: free stringbed
-        check, price, book. Owner decision 2026-09-16 after a call about a
-        low-commitment lead-in offer for visitors not ready to book a full
-        restring. All three use belle-btn-primary-v2 on purpose, no button
-        is styled as more important than the others.
+        One dominant action: Book Racquet Stringing is the only gold button.
+        The free stringbed check and pricing sit underneath as text links.
+        Owner decision 2026-10-12, replacing the three equal-weight buttons
+        from 2026-09-16, after a site review flagged that three same-size
+        buttons dilute the main booking action.
       {%- endcomment -%}
       <div class="belle-cta-group-v2">
-        <a
-          href="https://calendly.com/bellesperformancetennis-sales/stringbed-measurements?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=stringbed_measurement&utm_content=homepage_hero"
-          data-calendly-modal="true"
-          data-calendly-url="https://calendly.com/bellesperformancetennis-sales/stringbed-measurements?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=stringbed_measurement&utm_content=homepage_hero"
-          class="belle-btn-v2 belle-btn-primary-v2"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-          </svg>
-          {{ section.settings.cta_check_text }}
-        </a>
-        {%- if section.settings.cta_secondary_text != blank and section.settings.cta_secondary_url != blank -%}
-          <a href="{{ section.settings.cta_secondary_url }}" class="belle-btn-v2 belle-btn-primary-v2">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
-            </svg>
-            {{ section.settings.cta_secondary_text }}
-          </a>
-        {%- endif -%}
         <a
           href="https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=homepage_hero"
           data-calendly-modal="true"
@@ -669,13 +658,28 @@
         <p class="belle-hero-cta-note">{{ section.settings.cta_note }}</p>
       {%- endif -%}
 
-      {%- if section.settings.cta_tertiary_text != blank and section.settings.cta_tertiary_url != blank -%}
-        <div class="belle-hero-text-links">
-          <a href="{{ section.settings.cta_tertiary_url }}" class="belle-hero-text-link">
-            {{ section.settings.cta_tertiary_text }}
+      <div class="belle-hero-text-links belle-hero-text-links--row">
+        {%- if section.settings.cta_check_text != blank -%}
+          <a
+            href="https://calendly.com/bellesperformancetennis-sales/stringbed-measurements?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=stringbed_measurement&utm_content=homepage_hero"
+            data-calendly-modal="true"
+            data-calendly-url="https://calendly.com/bellesperformancetennis-sales/stringbed-measurements?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=stringbed_measurement&utm_content=homepage_hero"
+            class="belle-hero-text-link"
+          >
+            {{- section.settings.cta_check_text -}}
           </a>
-        </div>
-      {%- endif -%}
+        {%- endif -%}
+        {%- if section.settings.cta_secondary_text != blank and section.settings.cta_secondary_url != blank -%}
+          <a href="{{ section.settings.cta_secondary_url }}" class="belle-hero-text-link">
+            {{- section.settings.cta_secondary_text -}}
+          </a>
+        {%- endif -%}
+        {%- if section.settings.cta_tertiary_text != blank and section.settings.cta_tertiary_url != blank -%}
+          <a href="{{ section.settings.cta_tertiary_url }}" class="belle-hero-text-link">
+            {{- section.settings.cta_tertiary_text -}}
+          </a>
+        {%- endif -%}
+      </div>
 
       {%- comment -%}
         Trust bar renders only when at least one item has text. Without this
