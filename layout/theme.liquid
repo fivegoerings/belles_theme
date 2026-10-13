@@ -33,9 +33,12 @@
       request as the single longest item in the critical path (1,375ms, entirely
       connection setup) because nothing preconnected to it. Preconnecting here
       doesn't require knowing which app it is.
+      The fonts.googleapis.com preconnect was removed 2026-10-13: PSI's dependency
+      tree shows the woff2 fetched straight from fonts.gstatic.com (via Shopify's
+      shop-js) with no googleapis stylesheet, and it pushed the page over PSI's
+      4-preconnect warning.
     {%- endcomment -%}
     {% # theme-check-disable RemoteAsset %}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     {% # theme-check-enable RemoteAsset %}
 

@@ -25,7 +25,13 @@
   endif
 -%}
 
-{% if social_icons %}
+{%- comment -%}
+  Only load the social list CSS when this bar actually shows social icons.
+  Stock Dawn loaded it whenever any social link existed, which made it a
+  render-blocking request above the hero (450ms on mobile PSI, 2026-10-13)
+  for a 504-byte file this bar wasn't using. belle-footer loads its own copy.
+{%- endcomment -%}
+{% if section.settings.show_social and social_icons %}
   {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
 {% endif %}
 
