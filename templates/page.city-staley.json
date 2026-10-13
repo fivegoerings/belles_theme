@@ -13,9 +13,9 @@
       "type": "belle-city-hero",
       "settings": {
         "city_name": "Staley",
-        "eyebrow": "Staley / KC North, MO",
+        "eyebrow": "Staley \u00b7 Gladstone \u00b7 Winnetonka \u00b7 Smithville",
         "headline": "Racquet Stringing for Staley & KC North Players",
-        "intro": "Belle\u2019s strings racquets for Staley players, including Staley High School, adult league players, tournament players, and recreational players. Drop off by appointment in the Northland. Most racquets are ready in 2\u20133 days. No shipping. No drive south of the river. Your string and tension notes are logged for next time.",
+        "intro": "I string racquets for players around Staley, Gladstone, Winnetonka and Smithville: high school players, adult league players, tournament players and recreational players. Drop off by appointment at a QuikTrip on N. Oak, Indiana Ave or NE Vivion Rd. Most racquets are ready in 2\u20133 days, and your string and tension notes are logged for next time.",
         "cta_text": "Book Racquet Stringing",
         "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_staley_hero",
         "hero_image_alt": ""
@@ -71,7 +71,7 @@
         "title": "How It Works",
         "subtitle": "Three steps. Your racquet comes back strung right.",
         "step_1_title": "Book Online",
-        "step_1_text": "Pick a time and a drop-off spot. The Staley spot is the QuikTrip at 9600 N Oak Trafficway (N. Oak & 96th). Oak Park, on Indiana Ave, is another option.",
+        "step_1_text": "Pick a time and a drop-off spot: the QuikTrip at N. Oak & 96th (Staley), 8500 Indiana Ave (Oak Park) or 5108 NE Vivion Rd (Winnetonka).",
         "step_2_title": "Meet & Drop Off",
         "step_2_text": "We meet at your chosen location. Hand off your racquet and borrow a Solinco demo, free, if you need one for practice.",
         "step_3_title": "Pick Up & Play",
@@ -82,53 +82,55 @@
       "type": "belle-city-landing",
       "settings": {
         "city_name": "Staley",
-        "values_heading": "What Staley Players Get",
+        "values_heading": "What KC North Players Get",
         "value_1_title": "Tracked Setup",
         "value_1_text": "We log your string type, tension, and preferences after every job. When you come back, we already know what you had and whether you liked it.",
         "value_2_title": "Borrow a Solinco Demo, Free",
-        "value_2_text": "Need a racquet while yours is being strung? Borrow a Solinco demo at no charge. Useful for Staley players who have practice the same day.",
+        "value_2_text": "Need a racquet while yours is being strung? Borrow a Solinco demo at no charge. Useful if you have practice the same day.",
         "value_3_title": "Pricing",
         "value_3_text": "Most restrings $40\u2013$55 total, string included. No deposit at booking. You pay after the job is done. See the pricing page for the full breakdown.",
         "value_4_title": "Gamma Progression II ELS",
         "value_4_text": "Strung on a Gamma Progression II electronic constant-pull machine. Consistent tension every time.",
-        "local_heading": "Why Staley players use Belle\u2019s",
-        "local_paragraph_1": "Not sure you need a restring yet?\n\nI check string tension for free at the QuikTrip at N. Oak & 96th. In a few minutes I'll tell you where your tension stands, whether your strings are past their useful life, and what I'd recommend for your game. If you decide to restring, I can take the racquet with me that day. <a href=\"https://calendly.com/bellesperformancetennis-sales/stringbed-measurements?utm_source=bellesperformancetennis&utm_medium=text_link&utm_campaign=stringbed_measurement&utm_content=city_staley_local\" data-calendly-modal>Book a free string tension check</a>.",
-        "local_paragraph_2": "Your setup is tracked.\n\nEvery string job is recorded by string type, tension, date, and string bed stiffness. That means when you come back, we are not starting over. We know what was in your racquet, how tight it was strung, and what worked last time.",
-        "local_paragraph_3": "Help choosing the right string\n\nNot sure whether you need synthetic gut, multifilament, polyester, or a hybrid? I will recommend a setup based on how you play, how often you break strings, your arm comfort, and your budget.",
-        "testimonial_text": "",
-        "testimonial_author": "",
-        "meetup_heading": "Drop-Off Spots Near Staley",
-        "meetup_description": "The Staley meetup spot is the QuikTrip at 9600 N Oak Trafficway (N. Oak & 96th). The QuikTrip at 8500 Indiana Ave (Oak Park) is another option. Pick the one that works for you when you book.",
+        "local_heading": "Why KC North players use Belle\u2019s",
+        "local_paragraph_1": "Where it started.\n\nBelle\u2019s started at Staley. When Isabelle joined the Staley High School tennis team, I started looking for someone to string her racquet in the Northland, and the options weren\u2019t great. So I joined the USRSA and started stringing on a pro-grade electronic machine. Isabelle still tests strings and checks every finished racquet.",
+        "local_paragraph_2": "Not sure you need a restring yet?\n\nI check string tension for free at the QuikTrip at N. Oak & 96th. In a few minutes I'll tell you where your tension stands, whether your strings are past their useful life, and what I'd recommend for your game. If you decide to restring, I can take the racquet with me that day. <a href=\"https://calendly.com/bellesperformancetennis-sales/stringbed-measurements?utm_source=bellesperformancetennis&utm_medium=text_link&utm_campaign=stringbed_measurement&utm_content=city_staley_local\" data-calendly-modal>Book a free string tension check</a>.",
+        "local_paragraph_3": "High school players and teams.\n\nI string for Staley, Oak Park, Winnetonka and Smithville High School players, plus USTA league and recreational players across Gladstone and KC North. If a team needs several racquets strung before a match, send a message before booking and I\u2019ll coordinate it.",
+        "testimonial_text": "He was readily available and was able to make accommodations based on my pickup location. You can also get your mains and crosses strung to specific tensions. Definitely recommend his services.",
+        "testimonial_author": "Jayden S., Google Review",
+        "meetup_heading": "Drop-Off Spots in KC North",
+        "meetup_description": "Pick whichever is on your way: the QuikTrip at 9600 N Oak Trafficway (Staley), 8500 Indiana Ave (Oak Park, closest to Oak Park High School) or 5108 NE Vivion Rd (Winnetonka). For Smithville players, N. Oak & 96th is the closest.",
         "meetup_maps_url": "https://www.google.com/maps/search/?api=1&query=QuikTrip+9600+N+Oak+Trafficway+Kansas+City+MO+64155",
-        "faq_heading": "Staley Stringing FAQ",
+        "faq_heading": "Staley & KC North Stringing FAQ",
         "faq_1_question": "",
         "faq_1_answer": "",
         "faq_2_question": "",
         "faq_2_answer": "",
         "faq_3_question": "",
         "faq_3_answer": "",
-        "nearby_1_label": "Liberty",
-        "nearby_1_url": "/pages/racquet-stringing-liberty",
-        "nearby_2_label": "Gladstone",
-        "nearby_2_url": "/pages/racquet-stringing-gladstone",
-        "nearby_3_label": "Winnetonka",
-        "nearby_3_url": "/pages/racquet-stringing-winnetonka",
-        "nearby_4_label": "North Kansas City",
-        "nearby_4_url": "/pages/racquet-stringing-north-kansas-city",
-        "nearby_5_label": "Kearney",
-        "nearby_5_url": "/pages/racquet-stringing-kearney",
-        "nearby_6_label": "Smithville",
-        "nearby_6_url": "/pages/racquet-stringing-smithville",
-        "nearby_7_label": "Park Hill",
-        "nearby_7_url": "/pages/tennis-racquet-stringing-parkhill"
+        "nearby_1_label": "Parkville / Platte County",
+        "nearby_1_url": "/pages/tennis-racquet-stringing-parkville-mo",
+        "nearby_2_label": "Liberty / Kearney",
+        "nearby_2_url": "/pages/racquet-stringing-liberty",
+        "nearby_3_label": "North Kansas City",
+        "nearby_3_url": "/pages/racquet-stringing-north-kansas-city",
+        "nearby_4_label": "All Kansas City Northland",
+        "nearby_4_url": "/pages/kansas-city-northland",
+        "nearby_5_label": "",
+        "nearby_5_url": "",
+        "nearby_6_label": "",
+        "nearby_6_url": "",
+        "nearby_7_label": "",
+        "nearby_7_url": "",
+        "nearby_8_label": "",
+        "nearby_8_url": ""
       }
     },
     "cta_inline_mid": {
       "type": "cta-inline",
       "name": "CTA Inline",
       "settings": {
-        "cta_heading": "Book a Staley / KC North Drop-Off",
-        "cta_description": "Staley and KC North players can drop off at the QuikTrip at N. Oak & 96th or the Oak Park QuikTrip on Indiana Ave. Most racquets are ready in 2\u20133 days, with next-day and same-day options when available.",
+        "cta_heading": "Book a KC North Drop-Off",
+        "cta_description": "Drop off at the QuikTrip at N. Oak & 96th, 8500 Indiana Ave or 5108 NE Vivion Rd. Most racquets are ready in 2\u20133 days, with next-day and same-day options when available.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_staley_bottom"
       }
@@ -136,7 +138,7 @@
     "city_pricing": {
       "type": "belle-pricing-section",
       "settings": {
-        "title": "Racquet Stringing Prices for Staley Players",
+        "title": "Racquet Stringing Prices for KC North Players",
         "is_page_heading": false,
         "cta_utm_content": "city_staley_pricing"
       }
@@ -144,7 +146,7 @@
     "city_faq": {
       "type": "belle-faq-section",
       "settings": {
-        "title": "Staley Stringing FAQs",
+        "title": "Staley & KC North Stringing FAQs",
         "subtitle": "Quick answers before you book.",
         "open_first": true,
         "show_contact_cta": false
@@ -153,8 +155,8 @@
         "q_dropoff": {
           "type": "question",
           "settings": {
-            "question": "Where do we meet near Staley?",
-            "answer": "<p>The Staley spot is the QuikTrip at 9600 N Oak Trafficway (N. Oak & 96th). The QuikTrip at 8500 Indiana Ave (Oak Park) also works. Pick your spot and time when you book, and I'll meet you there.</p>",
+            "question": "Where do we meet in Staley, Gladstone, Winnetonka or Smithville?",
+            "answer": "<p>At one of three QuikTrips: 9600 N Oak Trafficway (Staley, N. Oak & 96th), 8500 Indiana Ave (Oak Park) or 5108 NE Vivion Rd (Winnetonka). For Smithville players, N. Oak & 96th is the closest. Pick your spot and time when you book, and I\u2019ll meet you there.</p>",
             "category": ""
           }
         },
@@ -177,8 +179,8 @@
         "q_schools": {
           "type": "question",
           "settings": {
-            "question": "Do you work with the Staley High School tennis team?",
-            "answer": "<p>Yes. Staley players and parents can book online. If you need team coordination, get in touch.</p>",
+            "question": "Do you work with Staley, Oak Park, Winnetonka and Smithville High School players?",
+            "answer": "<p>Yes. Players and parents can book online. If you need team stringing coordinated, send a message before booking.</p>",
             "category": ""
           }
         },
@@ -212,7 +214,7 @@
       "type": "cta-standard",
       "settings": {
         "cta_heading": "Ready When Your Strings Are",
-        "cta_description": "Book a Staley drop-off in under a minute. Most racquets back in 2\u20133 days, playing the way you expect.",
+        "cta_description": "Book a KC North drop-off in under a minute. Most racquets back in 2\u20133 days, playing the way you expect.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_staley_final"
       }

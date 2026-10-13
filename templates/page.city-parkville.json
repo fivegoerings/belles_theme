@@ -13,9 +13,9 @@
       "type": "belle-city-hero",
       "settings": {
         "city_name": "Parkville",
-        "eyebrow": "Parkville, MO",
-        "headline": "Racquet Stringing for Parkville Tennis Players",
-        "intro": "Belle\u2019s strings racquets for Parkville players, including adult league players, tournament players, and recreational players. Drop off by appointment in the Northland. Most racquets are ready in 2\u20133 days. No shipping. No drive south of the river. Your string and tension notes are logged for next time.",
+        "eyebrow": "Parkville \u00b7 Park Hill \u00b7 Weatherby Lake \u00b7 Platte City",
+        "headline": "Racquet Stringing for Parkville & Platte County Players",
+        "intro": "I string racquets for players in Parkville, Park Hill, Weatherby Lake and Platte City: high school and college players, adult league players, tournament players and recreational players. Drop off by appointment at the Barry Road QuikTrip near Zona Rosa or the Green Hills QuikTrip off Hwy 152. Most racquets are ready in 2\u20133 days, and your string and tension notes are logged for next time.",
         "cta_text": "Book Racquet Stringing",
         "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_parkville_hero",
         "hero_image_alt": ""
@@ -71,7 +71,7 @@
         "title": "How It Works",
         "subtitle": "Three steps. Your racquet comes back strung right.",
         "step_1_title": "Book Online",
-        "step_1_text": "Pick a time and a drop-off spot. The closest for Parkville are the QuikTrips on NW Barry Rd near Zona Rosa and on NW 90th St at Green Hills Rd.",
+        "step_1_text": "Pick a time and a drop-off spot: the QuikTrip at 7133 NW Barry Rd near Zona Rosa or 4380 NW 90th St at Green Hills Rd (off Hwy 152).",
         "step_2_title": "Meet & Drop Off",
         "step_2_text": "We meet at your chosen location. Hand off your racquet and borrow a Solinco demo, free, if you need one for practice.",
         "step_3_title": "Pick Up & Play",
@@ -82,53 +82,55 @@
       "type": "belle-city-landing",
       "settings": {
         "city_name": "Parkville",
-        "values_heading": "What Parkville Players Get",
+        "values_heading": "What Platte County Players Get",
         "value_1_title": "Tracked Setup",
         "value_1_text": "We log your string type, tension, and preferences after every job. When you come back, we already know what you had and whether you liked it.",
         "value_2_title": "Borrow a Solinco Demo, Free",
-        "value_2_text": "Need a racquet while yours is being strung? Borrow a Solinco demo at no charge. Useful for Parkville players who have practice the same day.",
+        "value_2_text": "Need a racquet while yours is being strung? Borrow a Solinco demo at no charge. Useful if you have practice the same day.",
         "value_3_title": "Pricing",
         "value_3_text": "Most restrings $40\u2013$55 total, string included. No deposit at booking. You pay after the job is done. See the pricing page for the full breakdown.",
         "value_4_title": "Gamma Progression II ELS",
         "value_4_text": "Strung on a Gamma Progression II electronic constant-pull machine. Consistent tension every time.",
-        "local_heading": "Why Parkville players use Belle\u2019s",
+        "local_heading": "Why Platte County players use Belle\u2019s",
         "local_paragraph_1": "Not sure you need a restring yet?\n\nI check string tension for free at the Barry Road and Green Hills QuikTrips. In a few minutes I'll tell you where your tension stands, whether your strings are past their useful life, and what I'd recommend for your game. If you decide to restring, I can take the racquet with me that day. <a href=\"https://calendly.com/bellesperformancetennis-sales/stringbed-measurements?utm_source=bellesperformancetennis&utm_medium=text_link&utm_campaign=stringbed_measurement&utm_content=city_parkville_local\" data-calendly-modal>Book a free string tension check</a>.",
-        "local_paragraph_2": "Your setup is tracked.\n\nEvery string job is recorded by string type, tension, date, and string bed stiffness. That means when you come back, we are not starting over. We know what was in your racquet, how tight it was strung, and what worked last time.",
-        "local_paragraph_3": "Help choosing the right string\n\nNot sure whether you need synthetic gut, multifilament, polyester, or a hybrid? I will recommend a setup based on how you play, how often you break strings, your arm comfort, and your budget.",
-        "testimonial_text": "",
-        "testimonial_author": "",
-        "meetup_heading": "Drop-Off Spots Near Parkville",
-        "meetup_description": "The closest meetup spots for Parkville are the QuikTrips at 7133 NW Barry Rd (near Zona Rosa) and 4380 NW 90th St (Green Hills Rd & NW 90th). Pick the one on your way when you book.",
+        "local_paragraph_2": "Two spots cover the west side.\n\nTwo QuikTrips cover Parkville, Park Hill, Weatherby Lake and Platte City: Barry Road near Zona Rosa, and Green Hills off Hwy 152. Pick whichever is on your way. Either way, there\u2019s no drive south of the river.",
+        "local_paragraph_3": "High school, college and league players.\n\nI string for Park Hill High School and Park University players, plus USTA league, tournament and recreational players across Platte County. Not sure what string you need? I\u2019ll recommend a setup based on how you play, how often you break strings, your arm comfort and your budget.",
+        "testimonial_text": "Owner was quick to respond and met me in my town for pick up and drop off. Very detail oriented and knowledgeable. Communication was great and would recommend to anyone looking for restringing.",
+        "testimonial_author": "Tara M., Google Review",
+        "meetup_heading": "Drop-Off Spots in Platte County",
+        "meetup_description": "Pick whichever is on your way: the QuikTrip at 7133 NW Barry Rd (near Zona Rosa and Park Hill) or 4380 NW 90th St (Green Hills Rd & NW 90th, off Hwy 152).",
         "meetup_maps_url": "https://www.google.com/maps/search/?api=1&query=QuikTrip+7133+NW+Barry+Rd+Kansas+City+MO+64153",
-        "faq_heading": "Parkville Stringing FAQ",
+        "faq_heading": "Parkville & Platte County Stringing FAQ",
         "faq_1_question": "",
         "faq_1_answer": "",
         "faq_2_question": "",
         "faq_2_answer": "",
         "faq_3_question": "",
         "faq_3_answer": "",
-        "nearby_1_label": "Weatherby Lake",
-        "nearby_1_url": "/pages/tennis-stringing-weatherby-lake-mo",
-        "nearby_2_label": "Platte City",
-        "nearby_2_url": "/pages/tennis-stringing-platte-city-mo",
-        "nearby_3_label": "Park Hill",
-        "nearby_3_url": "/pages/tennis-racquet-stringing-parkhill",
-        "nearby_4_label": "Gladstone",
-        "nearby_4_url": "/pages/racquet-stringing-gladstone",
-        "nearby_5_label": "North Kansas City",
-        "nearby_5_url": "/pages/racquet-stringing-north-kansas-city",
-        "nearby_6_label": "Liberty",
-        "nearby_6_url": "/pages/racquet-stringing-liberty",
-        "nearby_7_label": "Staley / KC North",
-        "nearby_7_url": "/pages/racquet-stringing-staley-kansas-city-north"
+        "nearby_1_label": "Staley / KC North",
+        "nearby_1_url": "/pages/racquet-stringing-staley-kansas-city-north",
+        "nearby_2_label": "Liberty / Kearney",
+        "nearby_2_url": "/pages/racquet-stringing-liberty",
+        "nearby_3_label": "North Kansas City",
+        "nearby_3_url": "/pages/racquet-stringing-north-kansas-city",
+        "nearby_4_label": "All Kansas City Northland",
+        "nearby_4_url": "/pages/kansas-city-northland",
+        "nearby_5_label": "",
+        "nearby_5_url": "",
+        "nearby_6_label": "",
+        "nearby_6_url": "",
+        "nearby_7_label": "",
+        "nearby_7_url": "",
+        "nearby_8_label": "",
+        "nearby_8_url": ""
       }
     },
     "cta_inline_mid": {
       "type": "cta-inline",
       "name": "CTA Inline",
       "settings": {
-        "cta_heading": "Book a Parkville Drop-Off",
-        "cta_description": "Parkville players can drop off at the Barry Road QuikTrip near Zona Rosa or the Green Hills QuikTrip off Hwy 152. Standard turnaround is 2\u20133 days. Next-day and same-day options are available when the schedule allows.",
+        "cta_heading": "Book a Platte County Drop-Off",
+        "cta_description": "Parkville, Park Hill, Weatherby Lake and Platte City players can drop off at the Barry Road QuikTrip near Zona Rosa or the Green Hills QuikTrip off Hwy 152. Most racquets are ready in 2\u20133 days, with next-day and same-day options when the schedule allows.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_parkville_bottom"
       }
@@ -136,7 +138,7 @@
     "city_pricing": {
       "type": "belle-pricing-section",
       "settings": {
-        "title": "Racquet Stringing Prices for Parkville Players",
+        "title": "Racquet Stringing Prices for Parkville & Platte County Players",
         "is_page_heading": false,
         "cta_utm_content": "city_parkville_pricing"
       }
@@ -144,7 +146,7 @@
     "city_faq": {
       "type": "belle-faq-section",
       "settings": {
-        "title": "Parkville Stringing FAQs",
+        "title": "Parkville & Platte County Stringing FAQs",
         "subtitle": "Quick answers before you book.",
         "open_first": true,
         "show_contact_cta": false
@@ -153,8 +155,8 @@
         "q_dropoff": {
           "type": "question",
           "settings": {
-            "question": "Where do we meet in Parkville?",
-            "answer": "<p>The closest drop-off spots are the QuikTrip at 7133 NW Barry Rd (Zona Rosa) and the QuikTrip at 4380 NW 90th St (Green Hills, off Hwy 152). Pick your spot and time when you book online.</p>",
+            "question": "Where do we meet in Parkville, Park Hill, Weatherby Lake or Platte City?",
+            "answer": "<p>At the QuikTrip at 7133 NW Barry Rd (near Zona Rosa) or the QuikTrip at 4380 NW 90th St (Green Hills, off Hwy 152). Pick your spot and time when you book, and I\u2019ll meet you there.</p>",
             "category": ""
           }
         },
@@ -177,8 +179,8 @@
         "q_schools": {
           "type": "question",
           "settings": {
-            "question": "Do you serve Park University players?",
-            "answer": "<p>Yes. College players, recreational players, coaches, and USTA league players are welcome.</p>",
+            "question": "Do you work with Park Hill High School and Park University players?",
+            "answer": "<p>Yes. High school players, college players, coaches, USTA league players and recreational players are all welcome. If a team needs several racquets strung, send a message before booking.</p>",
             "category": ""
           }
         },
@@ -212,7 +214,7 @@
       "type": "cta-standard",
       "settings": {
         "cta_heading": "Ready When Your Strings Are",
-        "cta_description": "Book a Parkville drop-off in under a minute. Most racquets back in 2\u20133 days, playing the way you expect.",
+        "cta_description": "Book a Platte County drop-off in under a minute. Most racquets back in 2\u20133 days, playing the way you expect.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_parkville_final"
       }

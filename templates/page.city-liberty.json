@@ -13,9 +13,9 @@
       "type": "belle-city-hero",
       "settings": {
         "city_name": "Liberty",
-        "eyebrow": "Liberty, MO",
+        "eyebrow": "Liberty \u00b7 Kearney \u00b7 Pleasant Valley",
         "headline": "Tennis Racquet Stringing in Liberty, MO",
-        "intro": "Belle\u2019s strings racquets for Liberty, MO players, including Liberty North, Liberty High, adult league players, tournament players, and recreational players. Drop off by appointment in the Northland. Most racquets are ready in 2\u20133 days. No shipping. No drive south of the river. Your string and tension notes are logged for next time.",
+        "intro": "I string racquets for players in Liberty, Kearney and Pleasant Valley, including Liberty North, Liberty High and Kearney High School players, adult league players and recreational players. Drop off by appointment at the Liberty QuikTrip on Route 291. Most racquets are ready in 2\u20133 days, and your string and tension notes are logged for next time.",
         "cta_text": "Book Racquet Stringing",
         "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_liberty_hero",
         "hero_image_alt": ""
@@ -71,7 +71,7 @@
         "title": "How It Works",
         "subtitle": "Three steps. No confusion. Your racquet comes back strung right.",
         "step_1_title": "Book Online",
-        "step_1_text": "Pick a time and a drop-off spot. The Liberty spot is the QuikTrip at 655 Rte 291, and any other Northland spot on your way works too.",
+        "step_1_text": "Pick a time and a drop-off spot. Most Liberty, Kearney and Pleasant Valley players pick the QuikTrip at 655 Rte 291 in Liberty. Pleasant Valley players can also use the Winnetonka QuikTrip on NE Vivion Rd.",
         "step_2_title": "Meet & Drop Off",
         "step_2_text": "We meet at your chosen location. Hand off your racquet and borrow a Solinco demo, free, if you need one for practice.",
         "step_3_title": "Pick Up & Play",
@@ -82,25 +82,25 @@
       "type": "belle-city-landing",
       "settings": {
         "city_name": "Liberty",
-        "values_heading": "What Liberty Players Get",
+        "values_heading": "What Liberty-Area Players Get",
         "value_1_title": "Tracked Setup",
         "value_1_text": "We log your string type, tension, and preferences after every job. When you come back, we already know what you had and whether you liked it.",
         "value_2_title": "Borrow a Solinco Demo, Free",
-        "value_2_text": "Need a racquet while yours is being strung? Borrow a Solinco demo at no charge. Useful for Liberty players who have practice the same day.",
+        "value_2_text": "Need a racquet while yours is being strung? Borrow a Solinco demo at no charge. Useful if you have practice the same day.",
         "value_3_title": "Pricing",
         "value_3_text": "You know the cost before I start. No deposit at booking. You pay after the job is done.",
         "value_4_title": "Gamma Progression II ELS",
         "value_4_text": "Your tension stays true from the first string to the last. The number you asked for is the number you get, with no soft spots and no surprises.",
-        "local_heading": "Why Liberty players use Belle\u2019s",
+        "local_heading": "Why Liberty, Kearney and Pleasant Valley players use Belle\u2019s",
         "local_paragraph_1": "<b>Not sure you need a restring yet? </b><p>\n\nI check string tension for free at the Liberty QuikTrip on Route 291. In a few minutes I'll tell you where your tension stands, whether your strings are past their useful life, and what I'd recommend for your game. If you decide to restring, I can take the racquet with me that day. <a href=\"https://calendly.com/bellesperformancetennis-sales/stringbed-measurements?utm_source=bellesperformancetennis&utm_medium=text_link&utm_campaign=stringbed_measurement&utm_content=city_liberty_local\" data-calendly-modal>Book a free string tension check</a>.</p>",
-        "local_paragraph_2": "<b>Your setup is tracked.</b><p>\n\nEvery string job is recorded by string type, tension, date, and string bed stiffness. That means when you come back, we are not starting over. We know what was in your racquet, how tight it was strung, and what worked last time.</p>",
-        "local_paragraph_3": "<b>Help choosing the right string</b><p>\n\nNot sure whether you need synthetic gut, multifilament, polyester, or a hybrid? I will recommend a setup based on how you play, how often you break strings, your arm comfort, and your budget.</p>",
+        "local_paragraph_2": "<b>One spot on Route 291.</b><p>\n\nThe Liberty QuikTrip at 655 Rte 291 is the closest drop-off for Liberty and Kearney players. Pleasant Valley and Claycomo players can use it too, or the Winnetonka QuikTrip on NE Vivion Rd if that\u2019s more on the way.</p>",
+        "local_paragraph_3": "<b>High school and league players.</b><p>\n\nI string for Liberty North, Liberty High and Kearney High School players, plus USTA league, tournament and recreational players. I can match a player\u2019s current setup or recommend a string based on control, power, comfort, spin and durability.</p>",
         "testimonial_text": "",
         "testimonial_author": "",
         "meetup_heading": "Drop-Off Spots Near Liberty",
-        "meetup_description": "The Liberty meetup spot is the QuikTrip at 655 Rte 291. If another Northland QuikTrip is on your way, you can pick it when you book.",
+        "meetup_description": "The main spot is the QuikTrip at 655 Rte 291 in Liberty. Pleasant Valley players can also pick the QuikTrip at 5108 NE Vivion Rd (Winnetonka).",
         "meetup_maps_url": "https://www.google.com/maps/search/?api=1&query=QuikTrip+655+Rte+291+Liberty+MO+64068",
-        "faq_heading": "Liberty Stringing FAQ",
+        "faq_heading": "Liberty, Kearney & Pleasant Valley Stringing FAQ",
         "faq_1_question": "",
         "faq_1_answer": "",
         "faq_2_question": "",
@@ -109,18 +109,20 @@
         "faq_3_answer": "",
         "nearby_1_label": "Staley / KC North",
         "nearby_1_url": "/pages/racquet-stringing-staley-kansas-city-north",
-        "nearby_2_label": "Park Hill",
-        "nearby_2_url": "/pages/tennis-racquet-stringing-parkhill",
-        "nearby_3_label": "Gladstone",
-        "nearby_3_url": "/pages/racquet-stringing-gladstone",
-        "nearby_4_label": "Kearney",
-        "nearby_4_url": "/pages/racquet-stringing-kearney",
-        "nearby_5_label": "North Kansas City",
-        "nearby_5_url": "/pages/racquet-stringing-north-kansas-city",
-        "nearby_6_label": "Platte City",
-        "nearby_6_url": "/pages/tennis-stringing-platte-city-mo",
-        "nearby_7_label": "Winnetonka",
-        "nearby_7_url": "/pages/racquet-stringing-winnetonka"
+        "nearby_2_label": "Parkville / Platte County",
+        "nearby_2_url": "/pages/tennis-racquet-stringing-parkville-mo",
+        "nearby_3_label": "North Kansas City",
+        "nearby_3_url": "/pages/racquet-stringing-north-kansas-city",
+        "nearby_4_label": "All Kansas City Northland",
+        "nearby_4_url": "/pages/kansas-city-northland",
+        "nearby_5_label": "",
+        "nearby_5_url": "",
+        "nearby_6_label": "",
+        "nearby_6_url": "",
+        "nearby_7_label": "",
+        "nearby_7_url": "",
+        "nearby_8_label": "",
+        "nearby_8_url": ""
       }
     },
     "cta_inline_mid": {
@@ -128,7 +130,7 @@
       "name": "CTA Inline",
       "settings": {
         "cta_heading": "Book a Liberty Drop-Off",
-        "cta_description": "Liberty players can drop off at the QuikTrip at 655 Rte 291. Strings are included, no deposit is required, and most racquets are ready in 2\u20133 days.",
+        "cta_description": "Liberty, Kearney and Pleasant Valley players can drop off at the QuikTrip at 655 Rte 291. Strings are included, no deposit is required, and most racquets are ready in 2\u20133 days.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_liberty_bottom"
       }
@@ -136,7 +138,7 @@
     "city_pricing": {
       "type": "belle-pricing-section",
       "settings": {
-        "title": "Racquet Stringing Prices for Liberty Players",
+        "title": "Racquet Stringing Prices for Liberty, Kearney & Pleasant Valley Players",
         "is_page_heading": false,
         "cta_utm_content": "city_liberty_pricing"
       }
@@ -144,7 +146,7 @@
     "city_faq": {
       "type": "belle-faq-section",
       "settings": {
-        "title": "Liberty Stringing FAQs",
+        "title": "Liberty, Kearney & Pleasant Valley Stringing FAQs",
         "subtitle": "Quick answers before you book.",
         "open_first": true,
         "show_contact_cta": false
@@ -153,8 +155,8 @@
         "q_dropoff": {
           "type": "question",
           "settings": {
-            "question": "Where do Liberty players drop off their racquets?",
-            "answer": "<p>By appointment at the QuikTrip at 655 Rte 291 in Liberty, or any other Northland QuikTrip on your way. Pick your spot when you book. No shipping your racquet off, no drive south of the river.</p>",
+            "question": "Where do Liberty, Kearney and Pleasant Valley players drop off?",
+            "answer": "<p>At the QuikTrip at 655 Rte 291 in Liberty. Pleasant Valley players can also use the QuikTrip at 5108 NE Vivion Rd (Winnetonka). Pick your spot when you book. No shipping your racquet off, no drive south of the river.</p>",
             "category": ""
           }
         },
@@ -162,7 +164,7 @@
           "type": "question",
           "settings": {
             "question": "How long does stringing take?",
-            "answer": "<p>Most racquets are ready in 2\u20133 days. If you need it sooner, choose Express (next day) or Rush (same day) when you book. The added cost is shown in the pricing section above. You can borrow a free Solinco demo in the meantime so you never miss practice.</p>",
+            "answer": "<p>Most racquets are ready in 2\u20133 days. If you need it sooner, choose Express (next day) or Rush (same day) when you book. The added cost is shown in the pricing section above, and same-day depends on my schedule that day.</p>",
             "category": ""
           }
         },
@@ -177,8 +179,8 @@
         "q_schools": {
           "type": "question",
           "settings": {
-            "question": "Do you string for Liberty school players?",
-            "answer": "<p>Yes: Liberty North, Liberty High, junior players, adult league players, tournament players, and recreational players. If your strings break mid-season, I\u2019ll get you back on court fast.</p>",
+            "question": "Do you string for Liberty North, Liberty High and Kearney High School players?",
+            "answer": "<p>Yes, along with junior players, adult league players, tournament players and recreational players. If your strings break mid-season, I\u2019ll get you back on court fast.</p>",
             "category": ""
           }
         },
