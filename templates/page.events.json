@@ -34,6 +34,7 @@
     },
     "belle_lessons_section": {
       "type": "belle-lessons-section",
+      "disabled": true,
       "settings": {
         "section_title": "Summer Tennis Lessons",
         "section_subtitle": "Get expert instruction from a competitive college player.",
