@@ -218,6 +218,46 @@
       gtag('config', 'AW-18363133778');
     </script>
 
+    {%- comment -%}
+      Button click tracking (2026-10-13). One delegated listener sends a
+      button_click event for every link or button a visitor clicks, so GA4
+      can answer "which buttons get pushed". GA4's own outbound-click event
+      only covers links that leave the site and records no button text.
+
+      It reaches GA4 the same way calendly_modal_open does: gtag('event')
+      with no send_to goes to every Google tag on the page, which includes
+      the GA4 tag Shopify's Google channel installs. No GA4 config call here,
+      see the comment above.
+
+      Params: link_text and link_url fill GA4's built-in "Link text" and
+      "Link URL" dimensions. cta_section is the section's key from the
+      template JSON (e.g. "belle_hero", "footer") and needs the event-scoped
+      custom dimension of the same name, registered in GA4 on 2026-10-13.
+      Capture phase so handlers that stop propagation (the Calendly modal)
+      cannot hide the click. Analytics must never break a click, hence the
+      try/catch.
+    {%- endcomment -%}
+    <script>
+      document.addEventListener('click', function (e) {
+        try {
+          var el = e.target && e.target.closest && e.target.closest('a[href], button, [role="button"], input[type="submit"]');
+          if (!el || typeof window.gtag !== 'function') return;
+          var img = el.querySelector('img[alt]');
+          var text = (el.innerText || el.value || el.getAttribute('aria-label') || el.getAttribute('title') || (img && img.alt) || '').replace(/\s+/g, ' ').trim().slice(0, 100);
+          var section = el.closest('.shopify-section');
+          // "shopify-section-template--123__belle_footer_4KzAT7" -> "belle_footer".
+          // The trailing 6-character id Shopify appends to some keys is dropped
+          // only when it contains a digit or capital, so real words survive.
+          var sectionKey = section && section.id ? section.id.replace(/^shopify-section-/, '').replace(/^.*__/, '').replace(/_(?=[A-Za-z0-9]{6}$)(?=.*[0-9A-Z])[A-Za-z0-9]{6}$/, '') : '';
+          window.gtag('event', 'button_click', {
+            link_text: text || '(no text)',
+            link_url: el.href || '',
+            cta_section: sectionKey || '(none)'
+          });
+        } catch (err) { /* no-op */ }
+      }, true);
+    </script>
+
     {%- liquid
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
