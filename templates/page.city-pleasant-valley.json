@@ -71,7 +71,7 @@
         "title": "How It Works",
         "subtitle": "Three steps. No confusion. Your racquet comes back strung right.",
         "step_1_title": "Book Online",
-        "step_1_text": "Pick a time and choose a drop-off spot. QuikTrip locations near Pleasant Valley and other Northland spots are available.",
+        "step_1_text": "Pick a time and a drop-off spot. The closest for Pleasant Valley are the QuikTrips on Route 291 in Liberty and on NE Vivion Rd at Winnetonka.",
         "step_2_title": "Hand It Off",
         "step_2_text": "We meet at your chosen location. Hand off your racquet and borrow a Solinco demo, free, if you need one for practice.",
         "step_3_title": "Pick Up & Play",
@@ -92,14 +92,14 @@
         "value_4_title": "Consistent Tension",
         "value_4_text": "We string on a Gamma Progression II electronic constant-pull machine. Consistent tension from the first string to the last.",
         "local_heading": "Why Pleasant Valley players use Belle\u2019s",
-        "local_paragraph_1": "Local racquet stringing without the extra drive.\n\nPleasant Valley players should not have to drive across the metro for a basic racquet restring. Belle\u2019s serves Pleasant Valley and the Kansas City Northland with appointment-based drop-off, honest string guidance, and professional stringing for junior, high school, adult, recreational, and competitive players.",
+        "local_paragraph_1": "Not sure you need a restring yet?\n\nI check string tension for free at the Liberty and Winnetonka QuikTrips. In a few minutes I'll tell you where your tension stands, whether your strings are past their useful life, and what I'd recommend for your game. If you decide to restring, I can take the racquet with me that day. <a href=\"https://calendly.com/bellesperformancetennis-sales/stringbed-measurements?utm_source=bellesperformancetennis&utm_medium=text_link&utm_campaign=stringbed_measurement&utm_content=city_pleasantvalley_local\" data-calendly-modal>Book a free string tension check</a>.",
         "local_paragraph_2": "Your setup is tracked.\n\nEvery string job is recorded by string type, tension, date, and string bed stiffness. That means when you come back, we are not starting over. We know what was in your racquet, how tight it was strung, and what worked last time.",
         "local_paragraph_3": "Help choosing the right string\n\nNot sure whether you need synthetic gut, multifilament, polyester, or a hybrid? I will recommend a setup based on how you play, how often you break strings, your arm comfort, and your budget.",
         "testimonial_text": "He was readily available and was able to make accommodations based on my pickup location. You can also get your mains and crosses strung to specific tensions. Definitely recommend his services.",
         "testimonial_author": "Jayden S., Google Review",
-        "meetup_heading": "Find a Drop-Off Near You",
-        "meetup_description": "",
-        "meetup_maps_url": "",
+        "meetup_heading": "Drop-Off Spots Near Pleasant Valley",
+        "meetup_description": "The closest meetup spots for Pleasant Valley are the QuikTrips at 655 Rte 291 in Liberty and 5108 NE Vivion Rd (Winnetonka). Pick the one on your way when you book.",
+        "meetup_maps_url": "https://www.google.com/maps/search/?api=1&query=QuikTrip+655+Rte+291+Liberty+MO+64068",
         "faq_heading": "Pleasant Valley Stringing FAQ",
         "faq_1_question": "",
         "faq_1_answer": "",
@@ -162,7 +162,7 @@
           "type": "question",
           "settings": {
             "question": "How fast do you turn it around?",
-            "answer": "<p>Most jobs completed in 2\u20133 days. Need it sooner? Same-day and next-day available on request. Have a match coming up? Mention it when you book.</p>",
+            "answer": "<p>Most racquets are ready in 2\u20133 days. If you need it sooner, choose Express (next day) or Rush (same day) when you book. The added cost is shown in the pricing section above, and same-day depends on my schedule that day.</p>",
             "category": ""
           }
         },
@@ -177,7 +177,7 @@
         "q_schools": {
           "type": "question",
           "settings": {
-            "question": "Do you string for Pleasant Valley school players?",
+            "question": "Do you string for junior and high school players?",
             "answer": "<p>Yes: junior players, high school players, adult league players, tournament players, and recreational players. If your strings break mid-season, I'll get you back on court fast.</p>",
             "category": ""
           }

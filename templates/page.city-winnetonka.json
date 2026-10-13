@@ -71,7 +71,7 @@
         "title": "How It Works",
         "subtitle": "Three steps. Your racquet comes back strung right.",
         "step_1_title": "Book Online",
-        "step_1_text": "Pick a time and choose a drop-off spot. QuikTrip locations near Winnetonka and other Northland spots are available.",
+        "step_1_text": "Pick a time and a drop-off spot. The Winnetonka spot is the QuikTrip at 5108 NE Vivion Rd. Oak Park (Indiana Ave) and North Kansas City (Armour Rd) are other options.",
         "step_2_title": "Meet & Drop Off",
         "step_2_text": "We meet at your chosen location. Hand off your racquet and borrow a Solinco demo, free, if you need one for practice.",
         "step_3_title": "Pick Up & Play",
@@ -92,14 +92,14 @@
         "value_4_title": "Gamma Progression II ELS",
         "value_4_text": "Strung on a Gamma Progression II electronic constant-pull machine.",
         "local_heading": "Stringing for Winnetonka Players",
-        "local_paragraph_1": "Local racquet stringing without the extra drive.\n\nWinnetonka players should not have to drive across the metro for a basic racquet restring. Belle\u2019s serves Winnetonka and the Kansas City Northland with appointment-based drop-off, honest string guidance, and professional stringing for junior, high school, adult, recreational, and competitive players.",
+        "local_paragraph_1": "Not sure you need a restring yet?\n\nI check string tension for free at the Vivion Road QuikTrip. In a few minutes I'll tell you where your tension stands, whether your strings are past their useful life, and what I'd recommend for your game. If you decide to restring, I can take the racquet with me that day. <a href=\"https://calendly.com/bellesperformancetennis-sales/stringbed-measurements?utm_source=bellesperformancetennis&utm_medium=text_link&utm_campaign=stringbed_measurement&utm_content=city_winnetonka_local\" data-calendly-modal>Book a free string tension check</a>.",
         "local_paragraph_2": "Your setup is tracked.\n\nEvery string job is recorded by string type, tension, date, and string bed stiffness. That means when you come back, we are not starting over. We know what was in your racquet, how tight it was strung, and what worked last time.",
         "local_paragraph_3": "Help choosing the right string\n\nNot sure whether you need synthetic gut, multifilament, polyester, or a hybrid? I will recommend a setup based on how you play, how often you break strings, your arm comfort, and your budget.",
         "testimonial_text": "",
         "testimonial_author": "",
-        "meetup_heading": "Find a Drop-Off Near You",
-        "meetup_description": "",
-        "meetup_maps_url": "",
+        "meetup_heading": "Drop-Off Spots Near Winnetonka",
+        "meetup_description": "The Winnetonka meetup spot is the QuikTrip at 5108 NE Vivion Rd. The QuikTrips at 8500 Indiana Ave (Oak Park) and 1401 Armour Rd (North Kansas City) are other options. Pick the one that works for you when you book.",
+        "meetup_maps_url": "https://www.google.com/maps/search/?api=1&query=QuikTrip+5108+NE+Vivion+Rd+Kansas+City+MO+64119",
         "faq_heading": "Winnetonka Stringing FAQ",
         "faq_1_question": "",
         "faq_1_answer": "",
@@ -128,7 +128,7 @@
       "name": "CTA Inline",
       "settings": {
         "cta_heading": "Book a Winnetonka Drop-Off",
-        "cta_description": "Winnetonka players can book an appointment-based QuikTrip drop-off. Strings are included, no deposit is required, and most racquets are ready in 2\u20133 days.",
+        "cta_description": "Winnetonka players can drop off at the QuikTrip at 5108 NE Vivion Rd. Strings are included, no deposit is required, and most racquets are ready in 2\u20133 days.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_winnetonka_bottom"
       }
@@ -154,7 +154,7 @@
           "type": "question",
           "settings": {
             "question": "Where do we meet near Winnetonka?",
-            "answer": "<p>We meet at QuikTrip locations in the Winnetonka and KC North area. Pick your spot when you book.</p>",
+            "answer": "<p>The Winnetonka spot is the QuikTrip at 5108 NE Vivion Rd. The Oak Park QuikTrip (8500 Indiana Ave) and the North Kansas City QuikTrip (1401 Armour Rd) also work. Pick your spot and time when you book, and I'll meet you there.</p>",
             "category": ""
           }
         },
@@ -162,7 +162,7 @@
           "type": "question",
           "settings": {
             "question": "How fast do you turn it around?",
-            "answer": "<p>Most racquets ready in 2\u20133 days. Need it faster? Ask when you book.</p>",
+            "answer": "<p>Most racquets are ready in 2\u20133 days. If you need it sooner, choose Express (next day) or Rush (same day) when you book. The added cost is shown in the pricing section above, and same-day depends on my schedule that day.</p>",
             "category": ""
           }
         },
