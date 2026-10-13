@@ -71,7 +71,7 @@
         "title": "How It Works",
         "subtitle": "Three steps. Your racquet comes back strung right.",
         "step_1_title": "Book Online",
-        "step_1_text": "Pick a time and choose a drop-off spot. QuikTrip locations near Kearney and other Northland spots are available.",
+        "step_1_text": "Pick a time and a drop-off spot. The closest for Kearney is the QuikTrip on Route 291 in Liberty, and any other Northland spot on your way works too.",
         "step_2_title": "Meet & Drop Off",
         "step_2_text": "We meet at your chosen location. Hand off your racquet and borrow a Solinco demo, free, if you need one for practice.",
         "step_3_title": "Pick Up & Play",
@@ -92,14 +92,14 @@
         "value_4_title": "Gamma Progression II ELS",
         "value_4_text": "Strung on a Gamma Progression II electronic constant-pull machine. Consistent tension every time.",
         "local_heading": "Stringing for Kearney Players",
-        "local_paragraph_1": "Local racquet stringing without the extra drive.\n\nKearney players should not have to drive across the metro for a basic racquet restring. Belle\u2019s serves Kearney and the Kansas City Northland with appointment-based drop-off, honest string guidance, and professional stringing for junior, high school, adult, recreational, and competitive players.",
+        "local_paragraph_1": "Not sure you need a restring yet?\n\nI check string tension for free at the Liberty QuikTrip on Route 291. In a few minutes I'll tell you where your tension stands, whether your strings are past their useful life, and what I'd recommend for your game. If you decide to restring, I can take the racquet with me that day. <a href=\"https://calendly.com/bellesperformancetennis-sales/stringbed-measurements?utm_source=bellesperformancetennis&utm_medium=text_link&utm_campaign=stringbed_measurement&utm_content=city_kearney_local\" data-calendly-modal>Book a free string tension check</a>.",
         "local_paragraph_2": "Your setup is tracked.\n\nEvery string job is recorded by string type, tension, date, and string bed stiffness. That means when you come back, we are not starting over. We know what was in your racquet, how tight it was strung, and what worked last time.",
         "local_paragraph_3": "Help choosing the right string\n\nNot sure whether you need synthetic gut, multifilament, polyester, or a hybrid? I will recommend a setup based on how you play, how often you break strings, your arm comfort, and your budget.",
         "testimonial_text": "",
         "testimonial_author": "",
-        "meetup_heading": "Find a Drop-Off Near You",
-        "meetup_description": "",
-        "meetup_maps_url": "",
+        "meetup_heading": "Drop-Off Spots Near Kearney",
+        "meetup_description": "The closest meetup spot for Kearney is the QuikTrip at 655 Rte 291 in Liberty. If another Northland QuikTrip is on your way, you can pick it when you book.",
+        "meetup_maps_url": "https://www.google.com/maps/search/?api=1&query=QuikTrip+655+Rte+291+Liberty+MO+64068",
         "faq_heading": "Kearney Stringing FAQ",
         "faq_1_question": "",
         "faq_1_answer": "",
@@ -128,7 +128,7 @@
       "name": "CTA Inline",
       "settings": {
         "cta_heading": "Book a Kearney Drop-Off",
-        "cta_description": "Kearney players can book an appointment-based QuikTrip drop-off. Strings are included, no deposit is required, and most racquets are ready in 2\u20133 days.",
+        "cta_description": "Kearney players can drop off at the Liberty QuikTrip on Route 291. Strings are included, no deposit is required, and most racquets are ready in 2\u20133 days.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_kearney_bottom"
       }
@@ -154,7 +154,7 @@
           "type": "question",
           "settings": {
             "question": "Where do we meet near Kearney?",
-            "answer": "<p>We meet at convenient spots in and around Kearney. You pick the location and time when you book online.</p>",
+            "answer": "<p>The closest drop-off spot is the QuikTrip at 655 Rte 291 in Liberty. Pick your spot and time when you book online.</p>",
             "category": ""
           }
         },
@@ -162,7 +162,7 @@
           "type": "question",
           "settings": {
             "question": "How long does stringing take?",
-            "answer": "<p>Most racquets are ready in 2\u20133 days. Need it faster for a match? Ask when you book, and you can borrow a free Solinco demo in the meantime so you never miss practice.</p>",
+            "answer": "<p>Most racquets are ready in 2\u20133 days. If you need it sooner, choose Express (next day) or Rush (same day) when you book. The added cost is shown in the pricing section above. You can borrow a free Solinco demo in the meantime so you never miss practice.</p>",
             "category": ""
           }
         },

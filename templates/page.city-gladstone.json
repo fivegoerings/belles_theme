@@ -92,7 +92,7 @@
         "value_4_title": "Consistent Tension",
         "value_4_text": "Strung on a Gamma Progression II electronic constant-pull machine. Holds consistent tension from the first string to the last. That consistency matters when you're competing.",
         "local_heading": "Stringing for Gladstone Players",
-        "local_paragraph_1": "Local racquet stringing without the extra drive.\n\nGladstone players should not have to drive across the metro for a basic racquet restring. Belle\u2019s serves Gladstone and the Kansas City Northland with appointment-based drop-off, honest string guidance, and professional stringing for junior, high school, adult, recreational, and competitive players.",
+        "local_paragraph_1": "Not sure you need a restring yet?\n\nI check string tension for free at the Oak Park, Staley and Winnetonka QuikTrips. In a few minutes I'll tell you where your tension stands, whether your strings are past their useful life, and what I'd recommend for your game. If you decide to restring, I can take the racquet with me that day. <a href=\"https://calendly.com/bellesperformancetennis-sales/stringbed-measurements?utm_source=bellesperformancetennis&utm_medium=text_link&utm_campaign=stringbed_measurement&utm_content=city_gladstone_local\" data-calendly-modal>Book a free string tension check</a>.",
         "local_paragraph_2": "Your setup is tracked.\n\nEvery string job is recorded by string type, tension, date, and string bed stiffness. That means when you come back, we are not starting over. We know what was in your racquet, how tight it was strung, and what worked last time.",
         "local_paragraph_3": "Help choosing the right string\n\nNot sure whether you need synthetic gut, multifilament, polyester, or a hybrid? I will recommend a setup based on how you play, how often you break strings, your arm comfort, and your budget.",
         "testimonial_text": "He was readily available and was able to make accommodations based on my pickup location. You can also get your mains and crosses strung to specific tensions. Definitely recommend his services.",
@@ -128,7 +128,7 @@
       "name": "CTA Inline",
       "settings": {
         "cta_heading": "Book a Gladstone Drop-Off",
-        "cta_description": "Gladstone players can book an appointment-based QuikTrip drop-off. Strings are included, no deposit is required, and most racquets are ready in 2\u20133 days.",
+        "cta_description": "Gladstone players can drop off at the QuikTrips at 8500 Indiana Ave (Oak Park), 9600 N Oak Trafficway (Staley) or 5108 NE Vivion Rd (Winnetonka). Strings are included, no deposit is required, and most racquets are ready in 2\u20133 days.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_gladstone_bottom"
       }
@@ -154,7 +154,7 @@
           "type": "question",
           "settings": {
             "question": "Where do we meet near Gladstone?",
-            "answer": "<p>I meet Gladstone players at the Oak Park, Staley, or Winnetonka QuikTrip. You pick the spot and time when you book online.</p>",
+            "answer": "<p>I meet Gladstone players at the QuikTrips at 8500 Indiana Ave (Oak Park), 9600 N Oak Trafficway (Staley) and 5108 NE Vivion Rd (Winnetonka). You pick the spot and time when you book online.</p>",
             "category": ""
           }
         },
@@ -162,7 +162,7 @@
           "type": "question",
           "settings": {
             "question": "How fast can I get my racquet back?",
-            "answer": "<p>Standard turnaround is 2\u20133 days. Next-day and same-day service are available. Mention your timeline when you book and I'll work with you.</p>",
+            "answer": "<p>Most racquets are ready in 2\u20133 days. If you need it sooner, choose Express (next day) or Rush (same day) when you book. The added cost is shown in the pricing section above, and same-day depends on my schedule that day.</p>",
             "category": ""
           }
         },

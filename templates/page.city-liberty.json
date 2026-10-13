@@ -71,7 +71,7 @@
         "title": "How It Works",
         "subtitle": "Three steps. No confusion. Your racquet comes back strung right.",
         "step_1_title": "Book Online",
-        "step_1_text": "Pick a time and choose a drop-off spot. QuikTrip locations near Liberty and other Northland spots are available.",
+        "step_1_text": "Pick a time and a drop-off spot. The Liberty spot is the QuikTrip at 655 Rte 291, and any other Northland spot on your way works too.",
         "step_2_title": "Meet & Drop Off",
         "step_2_text": "We meet at your chosen location. Hand off your racquet and borrow a Solinco demo, free, if you need one for practice.",
         "step_3_title": "Pick Up & Play",
@@ -92,14 +92,14 @@
         "value_4_title": "Gamma Progression II ELS",
         "value_4_text": "Your tension stays true from the first string to the last. The number you asked for is the number you get, with no soft spots and no surprises.",
         "local_heading": "Why Liberty players use Belle\u2019s",
-        "local_paragraph_1": "<b>Local racquet stringing without the extra drive. </b><p>\n\nLiberty players should not have to drive across the metro for a basic racquet restring. Belle\u2019s serves Liberty and the Kansas City Northland with appointment-based drop-off, honest string guidance, and professional stringing for junior, high school, adult, recreational, and competitive players.</p>",
+        "local_paragraph_1": "<b>Not sure you need a restring yet? </b><p>\n\nI check string tension for free at the Liberty QuikTrip on Route 291. In a few minutes I'll tell you where your tension stands, whether your strings are past their useful life, and what I'd recommend for your game. If you decide to restring, I can take the racquet with me that day. <a href=\"https://calendly.com/bellesperformancetennis-sales/stringbed-measurements?utm_source=bellesperformancetennis&utm_medium=text_link&utm_campaign=stringbed_measurement&utm_content=city_liberty_local\" data-calendly-modal>Book a free string tension check</a>.</p>",
         "local_paragraph_2": "<b>Your setup is tracked.</b><p>\n\nEvery string job is recorded by string type, tension, date, and string bed stiffness. That means when you come back, we are not starting over. We know what was in your racquet, how tight it was strung, and what worked last time.</p>",
         "local_paragraph_3": "<b>Help choosing the right string</b><p>\n\nNot sure whether you need synthetic gut, multifilament, polyester, or a hybrid? I will recommend a setup based on how you play, how often you break strings, your arm comfort, and your budget.</p>",
         "testimonial_text": "",
         "testimonial_author": "",
-        "meetup_heading": "Find a Drop-Off Near You",
-        "meetup_description": "",
-        "meetup_maps_url": "",
+        "meetup_heading": "Drop-Off Spots Near Liberty",
+        "meetup_description": "The Liberty meetup spot is the QuikTrip at 655 Rte 291. If another Northland QuikTrip is on your way, you can pick it when you book.",
+        "meetup_maps_url": "https://www.google.com/maps/search/?api=1&query=QuikTrip+655+Rte+291+Liberty+MO+64068",
         "faq_heading": "Liberty Stringing FAQ",
         "faq_1_question": "",
         "faq_1_answer": "",
@@ -128,7 +128,7 @@
       "name": "CTA Inline",
       "settings": {
         "cta_heading": "Book a Liberty Drop-Off",
-        "cta_description": "Liberty players can book an appointment-based QuikTrip drop-off. Strings are included, no deposit is required, and most racquets are ready in 2\u20133 days.",
+        "cta_description": "Liberty players can drop off at the QuikTrip at 655 Rte 291. Strings are included, no deposit is required, and most racquets are ready in 2\u20133 days.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_liberty_bottom"
       }
@@ -154,7 +154,7 @@
           "type": "question",
           "settings": {
             "question": "Where do Liberty players drop off their racquets?",
-            "answer": "<p>By appointment at a Northland QuikTrip near you. Pick your spot when you book. No shipping your racquet off, no drive south of the river.</p>",
+            "answer": "<p>By appointment at the QuikTrip at 655 Rte 291 in Liberty, or any other Northland QuikTrip on your way. Pick your spot when you book. No shipping your racquet off, no drive south of the river.</p>",
             "category": ""
           }
         },
@@ -162,7 +162,7 @@
           "type": "question",
           "settings": {
             "question": "How long does stringing take?",
-            "answer": "<p>Most racquets are ready in 2\u20133 days. Need it faster for a match? Ask when you book, and you can borrow a free Solinco demo in the meantime so you never miss practice.</p>",
+            "answer": "<p>Most racquets are ready in 2\u20133 days. If you need it sooner, choose Express (next day) or Rush (same day) when you book. The added cost is shown in the pricing section above. You can borrow a free Solinco demo in the meantime so you never miss practice.</p>",
             "category": ""
           }
         },
