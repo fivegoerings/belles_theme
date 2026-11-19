@@ -58,7 +58,6 @@
       "settings": {
         "address": "Kansas City, MO 64155",
         "phone": "816-938-7622",
-        "bg_image": "shopify://shop_images/IMG_1772_4_a2d26233-fa49-4da7-8831-bb9e1422d273.webp",
         "badge_text": "",
         "byline": "Belle's Performance Tennis Shop",
         "headline_line1": "Tennis Racquet Stringing",
@@ -199,7 +198,7 @@
       "name": "Belle's Locations",
       "settings": {
         "color_scheme": "scheme-1",
-        "heading": "Northland Drop-Off & Pickup Locations",
+        "heading": "Drop off at a QuikTrip on your way",
         "intro": "I meet customers by appointment at convenient public locations across the Kansas City Northland, including:",
         "footer_note": "Choose the location that works best for you when you book. Additional meeting locations may be available in the appointment calendar.",
         "disclaimer": "These are appointment-only meeting locations, not storefronts.",
@@ -249,7 +248,7 @@
           "type": "item",
           "settings": {
             "title": "Works on any frame",
-            "description": "Doesn't matter where you bought it. Bring it in and we'll get it set up right."
+            "description": "Doesn't matter where you bought it. Book a time and I'll get it set up right."
           }
         }
       },
@@ -278,8 +277,8 @@
           "settings": {
             "image": "shopify://shop_images/IMG_1335_2.webp",
             "icon": "racquet",
-            "title": "Borrow a Solinco Demo, Free",
-            "description": "Tournaments don't wait and neither should you. Every Belle's stringing customer can borrow a Solinco demo racquet at no charge during service. Check out our Demo Racquet Program to see what's available.",
+            "title": "Keep playing while I string yours",
+            "description": "Tournaments don't wait and neither should you. Every Belle's stringing customer can borrow a Solinco demo racquet at no charge during service. Check out my Demo Racquet Program to see what's available.",
             "url": "shopify://pages/demo-racquet-program"
           }
         },
@@ -288,7 +287,7 @@
           "settings": {
             "image": "shopify://shop_images/IMG_0709_3.webp",
             "icon": "machine",
-            "title": "Strung on a Gamma Progression II ELS",
+            "title": "The tension you ask for is the tension you get",
             "description": "Your racquet is strung on a Gamma Progression II ELS electronic constant-pull machine. It pulls each string to the requested tension and keeps the job consistent from first pull to last.",
             "url": "shopify://blogs/news/why-your-stringers-machine-matters-more-than-you-think"
           }
@@ -410,7 +409,7 @@
         "open_first": true,
         "show_contact_cta": false,
         "contact_title": "Still Have Questions?",
-        "contact_text": "We're here to help! Reach out and we'll get back to you as soon as possible.",
+        "contact_text": "Questions come straight to me, Randy. I'm the one who strings your racquet.",
         "contact_link": "",
         "phone": "816-938-7622"
       }

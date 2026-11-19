@@ -6,6 +6,8 @@
 {% endcomment %}
 
 {{ 'belle-footer.css' | asset_url | stylesheet_tag }}
+{%- comment -%} The footer's social icons use Dawn's .list-social styles; the announcement bar no longer loads them site-wide. {%- endcomment -%}
+{{ 'component-list-social.css' | asset_url | stylesheet_tag }}
 
 <style>
 .belle-footer-cities-toggle {

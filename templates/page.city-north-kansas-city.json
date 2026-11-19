@@ -15,7 +15,7 @@
         "city_name": "North Kansas City",
         "eyebrow": "North Kansas City, MO",
         "headline": "Racquet Stringing for North Kansas City Players",
-        "intro": "Belle\u2019s strings racquets for North Kansas City players, including adult league players, tournament players, and recreational players. Drop off by appointment in the Northland. Most racquets are ready in 2\u20133 days. No shipping. No drive south of the river. Your string and tension notes are logged for next time.",
+        "intro": "Belle’s strings racquets for North Kansas City players, including adult league players, tournament players, and recreational players. Drop off by appointment in the Northland. Most racquets are ready in 2–3 days. No shipping. No drive south of the river. Your string and tension notes are logged for next time.",
         "cta_text": "Book Racquet Stringing",
         "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_northkc_hero",
         "hero_image_alt": "",
@@ -27,18 +27,11 @@
     },
     "city_reviews": {
       "type": "belle-reviews",
-      "settings": {
-        "eyebrow": "Reviews",
-        "heading": "What Players Say",
-        "subheading": "Quoted from Google, word for word.",
-        "footer_text": "Read all the reviews on Google",
-        "footer_url": "https://maps.google.com/?cid=16041235076699017420"
-      },
       "blocks": {
         "r_shana": {
           "type": "review",
           "settings": {
-            "quote": "Great service, quick turnaround on my son\u2019s new Yonex Ezone to get strung. Will use their service again! Very good communication!",
+            "quote": "Great service, quick turnaround on my son’s new Yonex Ezone to get strung. Will use their service again! Very good communication!",
             "name": "Shana York",
             "detail": "Google review",
             "show_stars": true
@@ -67,7 +60,14 @@
         "r_shana",
         "r_nicole",
         "r_william"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Reviews",
+        "heading": "What Players Say",
+        "subheading": "Quoted from Google, word for word.",
+        "footer_text": "Read all the reviews on Google",
+        "footer_url": "https://maps.google.com/?cid=16041235076699017420"
+      }
     },
     "how_it_works": {
       "type": "belle-how-it-works",
@@ -79,7 +79,7 @@
         "step_2_title": "Meet & Drop Off",
         "step_2_text": "We meet at your chosen location. Hand off your racquet and borrow a Solinco demo, free, if you need one for practice.",
         "step_3_title": "Pick Up & Play",
-        "step_3_text": "Your racquet comes back strung, labeled, and logged. Most racquets ready in 2\u20133 days."
+        "step_3_text": "Your racquet comes back strung, labeled, and logged. Most racquets ready in 2–3 days."
       }
     },
     "city_landing": {
@@ -92,7 +92,7 @@
         "value_2_title": "Borrow a Solinco Demo, Free",
         "value_2_text": "Need a racquet while yours is being strung? Borrow a Solinco demo at no charge. Useful for North Kansas City players who have practice the same day.",
         "value_3_title": "Pricing",
-        "value_3_text": "Most restrings $40\u2013$55 total, string included. No deposit at booking. You pay after the job is done. See the pricing page for the full breakdown.",
+        "value_3_text": "Most restrings $40–$55 total, string included. No deposit at booking. You pay after the job is done. See the pricing page for the full breakdown.",
         "value_4_title": "Gamma Progression II ELS",
         "value_4_text": "Strung on a Gamma Progression II electronic constant-pull machine.",
         "local_heading": "Stringing for North Kansas City Players",
@@ -124,9 +124,7 @@
         "nearby_6_label": "",
         "nearby_6_url": "",
         "nearby_7_label": "",
-        "nearby_7_url": "",
-        "nearby_8_label": "",
-        "nearby_8_url": ""
+        "nearby_7_url": ""
       }
     },
     "cta_inline_mid": {
@@ -134,7 +132,7 @@
       "name": "CTA Inline",
       "settings": {
         "cta_heading": "Book a North Kansas City Drop-Off",
-        "cta_description": "North Kansas City players can drop off at the QuikTrip at 1401 Armour Rd and skip the drive south of the river. Most racquets are ready in 2\u20133 days, and your setup is saved for next time.",
+        "cta_description": "North Kansas City players can drop off at the QuikTrip at 1401 Armour Rd and skip the drive south of the river. Most racquets are ready in 2–3 days, and your setup is saved for next time.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_northkc_bottom"
       }
@@ -149,12 +147,6 @@
     },
     "city_faq": {
       "type": "belle-faq-section",
-      "settings": {
-        "title": "North Kansas City Stringing FAQs",
-        "subtitle": "Quick answers before you book.",
-        "open_first": true,
-        "show_contact_cta": false
-      },
       "blocks": {
         "q_dropoff": {
           "type": "question",
@@ -168,7 +160,7 @@
           "type": "question",
           "settings": {
             "question": "How fast do you turn it around?",
-            "answer": "<p>Most racquets are ready in 2\u20133 days. If you need it sooner, choose Express (next day) or Rush (same day) when you book. The added cost is shown in the pricing section above, and same-day depends on my schedule that day.</p>",
+            "answer": "<p>Most racquets are ready in 2–3 days. If you need it sooner, choose Express (next day) or Rush (same day) when you book. The added cost is shown in the pricing section above, and same-day depends on my schedule that day.</p>",
             "category": ""
           }
         },
@@ -176,7 +168,7 @@
           "type": "question",
           "settings": {
             "question": "What does it cost?",
-            "answer": "<p>You know the price before I start, there\u2019s no deposit at booking, and you pay after the job is done. See the pricing section above for the full list.</p>",
+            "answer": "<p>You know the price before I start, there’s no deposit at booking, and you pay after the job is done. See the pricing section above for the full list.</p>",
             "category": ""
           }
         },
@@ -200,7 +192,7 @@
           "type": "question",
           "settings": {
             "question": "Do I need to know what string I want?",
-            "answer": "<p>No. Most players do not know exactly what string they need. I can recommend synthetic gut, multifilament, polyester, or hybrid based on the player\u2019s racquet, level, style, and arm comfort.</p>",
+            "answer": "<p>No. Most players do not know exactly what string they need. I can recommend synthetic gut, multifilament, polyester, or hybrid based on the player’s racquet, level, style, and arm comfort.</p>",
             "category": ""
           }
         },
@@ -221,13 +213,19 @@
         "q_extra",
         "q_strings",
         "q_tension"
-      ]
+      ],
+      "settings": {
+        "title": "North Kansas City Stringing FAQs",
+        "subtitle": "Quick answers before you book.",
+        "open_first": true,
+        "show_contact_cta": false
+      }
     },
     "cta_final": {
       "type": "cta-standard",
       "settings": {
         "cta_heading": "Ready When Your Strings Are",
-        "cta_description": "Book a North Kansas City drop-off in under a minute. Most racquets back in 2\u20133 days, playing the way you expect.",
+        "cta_description": "Book a North Kansas City drop-off in under a minute. Most racquets back in 2–3 days, playing the way you expect.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_northkc_final"
       }

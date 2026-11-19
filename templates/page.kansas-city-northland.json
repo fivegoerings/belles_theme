@@ -13,9 +13,9 @@
       "type": "belle-city-hero",
       "settings": {
         "city_name": "Kansas City Northland",
-        "eyebrow": "Kansas City, MO \u2022 North of the River",
+        "eyebrow": "Kansas City, MO • North of the River",
         "headline": "Racquet Stringing for Kansas City Northland Players",
-        "intro": "Belle\u2019s strings racquets for Kansas City Northland players, including adult league players, and tournament players. Drop off by appointment in the Northland. Most racquets are ready in 2\u20133 days. No shipping. No drive south of the river. Your string and tension notes are logged for next time.",
+        "intro": "Belle’s strings racquets for Kansas City Northland players, including adult league players, and tournament players. Drop off by appointment in the Northland. Most racquets are ready in 2–3 days. No shipping. No drive south of the river. Your string and tension notes are logged for next time.",
         "cta_text": "Book Racquet Stringing",
         "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_kcnorthland_hero",
         "hero_image_alt": ""
@@ -38,7 +38,7 @@
         "step_2_title": "Meet & Drop Off",
         "step_2_text": "We meet at your chosen location. Hand off your racquet and borrow a Solinco demo, free, if you need one for practice.",
         "step_3_title": "Pick Up & Play",
-        "step_3_text": "Your racquet comes back strung, labeled, and logged. Most racquets ready in 2\u20133 days."
+        "step_3_text": "Your racquet comes back strung, labeled, and logged. Most racquets ready in 2–3 days."
       }
     },
     "city_landing": {
@@ -51,12 +51,12 @@
         "value_2_title": "Borrow a Solinco Demo, Free",
         "value_2_text": "Need a racquet while yours is being strung? Borrow a Solinco demo at no charge. Useful for Kansas City Northland players who have practice the same day.",
         "value_3_title": "Pricing",
-        "value_3_text": "Most restrings $40\u2013$55 total, string included. No deposit at booking. You pay after the job is done. See the pricing page for the full breakdown.",
+        "value_3_text": "Most restrings $40–$55 total, string included. No deposit at booking. You pay after the job is done. See the pricing page for the full breakdown.",
         "value_4_title": "Gamma Progression II ELS",
         "value_4_text": "Strung on a Gamma Progression II electronic constant-pull machine. Consistent tension every time.",
         "local_heading": "A Kansas City Stringer, North of the River",
         "local_paragraph_1": "Not sure you need a restring yet?\n\nI check string tension for free at any of the seven Northland QuikTrips. In a few minutes I'll tell you where your tension stands, whether your strings are past their useful life, and what I'd recommend for your game. If you decide to restring, I can take the racquet with me that day. <a href=\"https://calendly.com/bellesperformancetennis-sales/stringbed-measurements?utm_source=bellesperformancetennis&utm_medium=text_link&utm_campaign=stringbed_measurement&utm_content=city_kcnorthland_local\" data-calendly-modal>Book a free string tension check</a>.",
-        "local_paragraph_2": "The Northland covers a lot of ground: Barry Road, Tiffany Springs, Zona Rosa, Shoal Creek, Staley, Winnetonka, and North Kansas City. If your Kansas City address puts you north of the Missouri River, Belle\u2019s is nearby. Same 2\u20133 day standard turnaround without the drive south.",
+        "local_paragraph_2": "The Northland covers a lot of ground: Barry Road, Tiffany Springs, Zona Rosa, Shoal Creek, Staley, Winnetonka, and North Kansas City. If your Kansas City address puts you north of the Missouri River, Belle’s is nearby. Same 2–3 day standard turnaround without the drive south.",
         "local_paragraph_3": "Help choosing the right string\n\nNot sure whether you need synthetic gut, multifilament, polyester, or a hybrid? I will recommend a setup based on how you play, how often you break strings, your arm comfort, and your budget.",
         "testimonial_text": "",
         "testimonial_author": "",
@@ -69,7 +69,7 @@
         "faq_2_question": "Where exactly do we meet?",
         "faq_2_answer": "You pick the QuikTrip when you book online. The seven spots are 7133 NW Barry Rd (Park Hill), 4380 NW 90th St (Green Hills), 9600 N Oak Trafficway (Staley), 8500 Indiana Ave (Oak Park), 5108 NE Vivion Rd (Winnetonka), 1401 Armour Rd (North Kansas City) and 655 Rte 291 (Liberty).",
         "faq_3_question": "How fast do you turn it around?",
-        "faq_3_answer": "Standard turnaround is 2\u20133 days. If you need it sooner, choose Express (next day) or Rush (same day) when you book. The added cost is shown on the pricing page, and same-day depends on my schedule that day.",
+        "faq_3_answer": "Standard turnaround is 2–3 days. If you need it sooner, choose Express (next day) or Rush (same day) when you book. The added cost is shown on the pricing page, and same-day depends on my schedule that day.",
         "nearby_1_label": "Staley / KC North",
         "nearby_1_url": "/pages/racquet-stringing-staley-kansas-city-north",
         "nearby_2_label": "Parkville / Platte County",
@@ -83,9 +83,7 @@
         "nearby_6_label": "",
         "nearby_6_url": "",
         "nearby_7_label": "",
-        "nearby_7_url": "",
-        "nearby_8_label": "",
-        "nearby_8_url": ""
+        "nearby_7_url": ""
       }
     },
     "cta_inline_mid": {
@@ -93,7 +91,7 @@
       "name": "CTA Inline",
       "settings": {
         "cta_heading": "Book a Northland Drop-Off",
-        "cta_description": "Kansas City Northland players can book an appointment-based QuikTrip drop-off. Strings are included, no deposit is required, and most racquets are ready in 2\u20133 days.",
+        "cta_description": "Kansas City Northland players can book an appointment-based QuikTrip drop-off. Strings are included, no deposit is required, and most racquets are ready in 2–3 days.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_kcnorthland_bottom"
       }

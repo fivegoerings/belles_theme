@@ -13,9 +13,9 @@
       "type": "belle-city-hero",
       "settings": {
         "city_name": "Liberty",
-        "eyebrow": "Liberty \u00b7 Kearney \u00b7 Pleasant Valley",
+        "eyebrow": "Liberty · Kearney · Pleasant Valley",
         "headline": "Tennis Racquet Stringing in Liberty, MO",
-        "intro": "I string racquets for players in Liberty, Kearney and Pleasant Valley, including Liberty North, Liberty High and Kearney High School players, adult league players and recreational players. Drop off by appointment at the Liberty QuikTrip on Route 291. Most racquets are ready in 2\u20133 days, and your string and tension notes are logged for next time.",
+        "intro": "I string racquets for players in Liberty, Kearney and Pleasant Valley, including Liberty North, Liberty High and Kearney High School players, adult league players and recreational players. Drop off by appointment at the Liberty QuikTrip on Route 291. Most racquets are ready in 2–3 days, and your string and tension notes are logged for next time.",
         "cta_text": "Book Racquet Stringing",
         "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_liberty_hero",
         "hero_image_alt": ""
@@ -23,18 +23,11 @@
     },
     "city_reviews": {
       "type": "belle-reviews",
-      "settings": {
-        "eyebrow": "Reviews",
-        "heading": "What Players Say",
-        "subheading": "Quoted from Google, word for word.",
-        "footer_text": "Read all the reviews on Google",
-        "footer_url": "https://maps.google.com/?cid=16041235076699017420"
-      },
       "blocks": {
         "r_shana": {
           "type": "review",
           "settings": {
-            "quote": "Great service, quick turnaround on my son\u2019s new Yonex Ezone to get strung. Will use their service again! Very good communication!",
+            "quote": "Great service, quick turnaround on my son’s new Yonex Ezone to get strung. Will use their service again! Very good communication!",
             "name": "Shana York",
             "detail": "Google review",
             "show_stars": true
@@ -63,7 +56,14 @@
         "r_shana",
         "r_nicole",
         "r_william"
-      ]
+      ],
+      "settings": {
+        "eyebrow": "Reviews",
+        "heading": "What Players Say",
+        "subheading": "Quoted from Google, word for word.",
+        "footer_text": "Read all the reviews on Google",
+        "footer_url": "https://maps.google.com/?cid=16041235076699017420"
+      }
     },
     "how_it_works": {
       "type": "belle-how-it-works",
@@ -75,7 +75,7 @@
         "step_2_title": "Meet & Drop Off",
         "step_2_text": "We meet at your chosen location. Hand off your racquet and borrow a Solinco demo, free, if you need one for practice.",
         "step_3_title": "Pick Up & Play",
-        "step_3_text": "Your racquet comes back strung, labeled, and logged. Most racquets ready in 2\u20133 days."
+        "step_3_text": "Your racquet comes back strung, labeled, and logged. Most racquets ready in 2–3 days."
       }
     },
     "city_landing": {
@@ -91,10 +91,10 @@
         "value_3_text": "You know the cost before I start. No deposit at booking. You pay after the job is done.",
         "value_4_title": "Gamma Progression II ELS",
         "value_4_text": "Your tension stays true from the first string to the last. The number you asked for is the number you get, with no soft spots and no surprises.",
-        "local_heading": "Why Liberty, Kearney and Pleasant Valley players use Belle\u2019s",
+        "local_heading": "Why Liberty, Kearney and Pleasant Valley players use Belle’s",
         "local_paragraph_1": "<b>Not sure you need a restring yet? </b><p>\n\nI check string tension for free at the Liberty QuikTrip on Route 291. In a few minutes I'll tell you where your tension stands, whether your strings are past their useful life, and what I'd recommend for your game. If you decide to restring, I can take the racquet with me that day. <a href=\"https://calendly.com/bellesperformancetennis-sales/stringbed-measurements?utm_source=bellesperformancetennis&utm_medium=text_link&utm_campaign=stringbed_measurement&utm_content=city_liberty_local\" data-calendly-modal>Book a free string tension check</a>.</p>",
-        "local_paragraph_2": "<b>One spot on Route 291.</b><p>\n\nThe Liberty QuikTrip at 655 Rte 291 is the closest drop-off for Liberty and Kearney players. Pleasant Valley and Claycomo players can use it too, or the Winnetonka QuikTrip on NE Vivion Rd if that\u2019s more on the way.</p>",
-        "local_paragraph_3": "<b>High school and league players.</b><p>\n\nI string for Liberty North, Liberty High and Kearney High School players, plus USTA league, tournament and recreational players. I can match a player\u2019s current setup or recommend a string based on control, power, comfort, spin and durability.</p>",
+        "local_paragraph_2": "<b>One spot on Route 291.</b><p>\n\nThe Liberty QuikTrip at 655 Rte 291 is the closest drop-off for Liberty and Kearney players. Pleasant Valley and Claycomo players can use it too, or the Winnetonka QuikTrip on NE Vivion Rd if that’s more on the way.</p>",
+        "local_paragraph_3": "<b>High school and league players.</b><p>\n\nI string for Liberty North, Liberty High and Kearney High School players, plus USTA league, tournament and recreational players. I can match a player’s current setup or recommend a string based on control, power, comfort, spin and durability.</p>",
         "testimonial_text": "",
         "testimonial_author": "",
         "meetup_heading": "Drop-Off Spots Near Liberty",
@@ -120,9 +120,7 @@
         "nearby_6_label": "",
         "nearby_6_url": "",
         "nearby_7_label": "",
-        "nearby_7_url": "",
-        "nearby_8_label": "",
-        "nearby_8_url": ""
+        "nearby_7_url": ""
       }
     },
     "cta_inline_mid": {
@@ -130,7 +128,7 @@
       "name": "CTA Inline",
       "settings": {
         "cta_heading": "Book a Liberty Drop-Off",
-        "cta_description": "Liberty, Kearney and Pleasant Valley players can drop off at the QuikTrip at 655 Rte 291. Strings are included, no deposit is required, and most racquets are ready in 2\u20133 days.",
+        "cta_description": "Liberty, Kearney and Pleasant Valley players can drop off at the QuikTrip at 655 Rte 291. Strings are included, no deposit is required, and most racquets are ready in 2–3 days.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_liberty_bottom"
       }
@@ -145,12 +143,6 @@
     },
     "city_faq": {
       "type": "belle-faq-section",
-      "settings": {
-        "title": "Liberty, Kearney & Pleasant Valley Stringing FAQs",
-        "subtitle": "Quick answers before you book.",
-        "open_first": true,
-        "show_contact_cta": false
-      },
       "blocks": {
         "q_dropoff": {
           "type": "question",
@@ -164,7 +156,7 @@
           "type": "question",
           "settings": {
             "question": "How long does stringing take?",
-            "answer": "<p>Most racquets are ready in 2\u20133 days. If you need it sooner, choose Express (next day) or Rush (same day) when you book. The added cost is shown in the pricing section above, and same-day depends on my schedule that day.</p>",
+            "answer": "<p>Most racquets are ready in 2–3 days. If you need it sooner, choose Express (next day) or Rush (same day) when you book. The added cost is shown in the pricing section above, and same-day depends on my schedule that day.</p>",
             "category": ""
           }
         },
@@ -172,7 +164,7 @@
           "type": "question",
           "settings": {
             "question": "What does it cost?",
-            "answer": "<p>You know the price before I start, there\u2019s no deposit at booking, and you pay after the job is done. See the pricing section above for the full list.</p>",
+            "answer": "<p>You know the price before I start, there’s no deposit at booking, and you pay after the job is done. See the pricing section above for the full list.</p>",
             "category": ""
           }
         },
@@ -180,7 +172,7 @@
           "type": "question",
           "settings": {
             "question": "Do you string for Liberty North, Liberty High and Kearney High School players?",
-            "answer": "<p>Yes, along with junior players, adult league players, tournament players and recreational players. If your strings break mid-season, I\u2019ll get you back on court fast.</p>",
+            "answer": "<p>Yes, along with junior players, adult league players, tournament players and recreational players. If your strings break mid-season, I’ll get you back on court fast.</p>",
             "category": ""
           }
         },
@@ -196,7 +188,7 @@
           "type": "question",
           "settings": {
             "question": "Do I need to know what string I want?",
-            "answer": "<p>No. Most players do not know exactly what string they need. I can recommend synthetic gut, multifilament, polyester, or hybrid based on the player\u2019s racquet, level, style, and arm comfort.</p>",
+            "answer": "<p>No. Most players do not know exactly what string they need. I can recommend synthetic gut, multifilament, polyester, or hybrid based on the player’s racquet, level, style, and arm comfort.</p>",
             "category": ""
           }
         }
@@ -208,13 +200,19 @@
         "q_schools",
         "q_strings",
         "q_tension"
-      ]
+      ],
+      "settings": {
+        "title": "Liberty, Kearney & Pleasant Valley Stringing FAQs",
+        "subtitle": "Quick answers before you book.",
+        "open_first": true,
+        "show_contact_cta": false
+      }
     },
     "cta_final": {
       "type": "cta-standard",
       "settings": {
         "cta_heading": "Ready When Your Strings Are",
-        "cta_description": "Book a Liberty drop-off in under a minute. Most racquets back in 2\u20133 days, playing the way you expect.",
+        "cta_description": "Book a Liberty drop-off in under a minute. Most racquets back in 2–3 days, playing the way you expect.",
         "schedule_button_text": "Book Racquet Stringing",
         "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=racquet_stringing&utm_content=city_liberty_final"
       }
