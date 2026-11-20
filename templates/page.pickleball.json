@@ -2,6 +2,7 @@
   "order": [
     "hero",
     "why",
+    "demo",
     "how",
     "faq",
     "cta",
@@ -12,8 +13,8 @@
       "settings": {
         "cta_description": "Book a meetup and I will bring the demo paddles.",
         "cta_heading": "Ready to Try a Paddle?",
-        "schedule_button_text": "Book a Meetup",
-        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=pickleball&utm_content=pickleball_bottom"
+        "schedule_button_text": "Book a Demo Meetup",
+        "schedule_link": "https://calendly.com/bellesperformancetennis-sales/racquet-pick-up-clone?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=pickleball&utm_content=pickleball_bottom"
       },
       "type": "cta-inline"
     },
@@ -24,7 +25,10 @@
         "q2",
         "q3",
         "q4",
-        "q5"
+        "q5",
+        "q6",
+        "q7",
+        "q8"
       ],
       "blocks": {
         "cat": {
@@ -73,6 +77,30 @@
             "question": "Can you get balls and accessories?"
           },
           "type": "question"
+        },
+        "q6": {
+          "type": "question",
+          "settings": {
+            "question": "How does the demo program work?",
+            "category": "Pickleball",
+            "answer": "<p>Pick one or two paddles from the demo fleet, book a meetup, and take them to your court for up to a week. It is free, and I do not take a credit card. You sign a short demo agreement at pickup. If you like one, I order yours. If not, just bring it back.</p>"
+          }
+        },
+        "q7": {
+          "type": "question",
+          "settings": {
+            "question": "Do I pay when I order a paddle?",
+            "category": "Pickleball",
+            "answer": "<p>No. There is no deposit and nothing is charged up front. I confirm the price with you before I order, and you pay when you pick the paddle up.</p>"
+          }
+        },
+        "q8": {
+          "type": "question",
+          "settings": {
+            "question": "How long does an order take?",
+            "category": "Pickleball",
+            "answer": "<p>It depends on supplier stock. I will tell you the expected timing before I place the order, and I will let you know as soon as your paddle is in.</p>"
+          }
         }
       },
       "settings": {
@@ -91,8 +119,8 @@
     "hero": {
       "settings": {
         "city_name": "Pickleball in the Kansas City Northland",
-        "cta_text": "Book a Meetup",
-        "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet_service?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=pickleball&utm_content=pickleball_hero",
+        "cta_text": "Book a Demo Meetup",
+        "cta_url": "https://calendly.com/bellesperformancetennis-sales/racquet-pick-up-clone?utm_source=bellesperformancetennis&utm_medium=cta_button&utm_campaign=pickleball&utm_content=pickleball_hero",
         "eyebrow": "Now at Belle's",
         "headline": "Pickleball Paddles, Grips and Balls",
         "hero_image_alt": "",
@@ -106,14 +134,14 @@
     },
     "how": {
       "settings": {
-        "step_1_text": "Pick a time online. We meet at the QuikTrip at 9600 N Oak Trafficway in Kansas City, or another Northland spot we arrange.",
-        "step_1_title": "Book a Meetup",
-        "step_2_text": "Hit with a demo paddle, or tell me the model you are looking at and I order it through my racquet sports supplier. Grip work is done on my bench.",
-        "step_2_title": "Try and Choose",
-        "step_3_text": "Pick up your paddle or your finished grip work at our meetup. You pay when it is in your hand.",
-        "step_3_title": "Pick Up and Play",
-        "subtitle": "Three steps. No storefront, no shipping, no pressure.",
-        "title": "How It Works"
+        "step_1_text": "Demo one from the fleet, or tell me the exact model you want. If my racquet sports supplier carries it, I can get it.",
+        "step_1_title": "Choose Your Paddle",
+        "step_2_text": "I confirm the price with you first, then place the order. There is no deposit and nothing is charged up front.",
+        "step_2_title": "I Order It",
+        "step_3_text": "When it arrives, we meet at the QuikTrip at 9600 N Oak Trafficway. I set the grip up the way you want it, and you pay when the paddle is in your hand.",
+        "step_3_title": "Pick Up and Pay",
+        "subtitle": "I stock demos and the small stuff. Your paddle is ordered for you, and you pay when it is in your hand.",
+        "title": "How Ordering a Paddle Works"
       },
       "type": "belle-how-it-works"
     },
@@ -167,8 +195,190 @@
     "scheme": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<style>\n/* Pickleball scheme: court blue and optic yellow, no tennis green or gold. Page only. */\n.belle-hero { --belle-green: #0e2f57; --belle-gold: #d8e000; }\n.belle-hero--gradient { background: linear-gradient(135deg, #0e2f57 0%, #1663b8 50%, #0e2f57 100%); }\n.belle-hero-eyebrow { background: rgba(216, 224, 0, 0.18); border-color: rgba(216, 224, 0, 0.55); }\n.belle-why { --belle-green: #0e2f57; --belle-gold: #d8e000; }\n.belle-why-icon { background: linear-gradient(135deg, #0e2f57 0%, #1663b8 100%); }\n.belle-hiw { --belle-green: #0e2f57; --belle-green-light: #1663b8; --belle-gold: #d8e000; --belle-gold-light: #e6ee6a; }\n.belle-hiw-number { box-shadow: 0 4px 16px rgba(14, 47, 87, 0.25), 0 0 0 4px var(--belle-cream), 0 0 0 6px rgba(216, 224, 0, 0.35); }\n.belle-faq { --belle-green: #0e2f57; --belle-gold: #d8e000; }\n.belle-faq-category-icon, .belle-faq-contact { background: linear-gradient(135deg, #0e2f57 0%, #1663b8 100%); }\n.cta-section-inline { border-top-color: #d8e000; }\n.cta-button-inline { background-color: #d8e000; border-color: #d8e000; color: #0e2f57; }\n.cta-button-inline:hover { background-color: #e6ee6a; border-color: #e6ee6a; }\n</style>"
+        "custom_liquid": "<style>\n/* Pickleball scheme: court blue and optic yellow, no tennis green or gold. Page only. */\n.belle-hero { --belle-green: #0e2f57; --belle-gold: #d8e000; }\n.belle-hero--gradient { background: linear-gradient(135deg, #0e2f57 0%, #1663b8 50%, #0e2f57 100%); }\n.belle-hero-eyebrow { background: rgba(216, 224, 0, 0.18); border-color: rgba(216, 224, 0, 0.55); }\n.belle-why { --belle-green: #0e2f57; --belle-gold: #d8e000; }\n.belle-why-icon { background: linear-gradient(135deg, #0e2f57 0%, #1663b8 100%); }\n.belle-hiw { --belle-green: #0e2f57; --belle-green-light: #1663b8; --belle-gold: #d8e000; --belle-gold-light: #e6ee6a; }\n.belle-hiw-number { box-shadow: 0 4px 16px rgba(14, 47, 87, 0.25), 0 0 0 4px var(--belle-cream), 0 0 0 6px rgba(216, 224, 0, 0.35); }\n.belle-faq { --belle-green: #0e2f57; --belle-gold: #d8e000; }\n.belle-pdemo { --belle-green: #0e2f57; --belle-green-light: #1663b8; --belle-gold: #d8e000; }\n.belle-faq-category-icon, .belle-faq-contact { background: linear-gradient(135deg, #0e2f57 0%, #1663b8 100%); }\n.cta-section-inline { border-top-color: #d8e000; }\n.cta-button-inline { background-color: #d8e000; border-color: #d8e000; color: #0e2f57; }\n.cta-button-inline:hover { background-color: #e6ee6a; border-color: #e6ee6a; }\n</style>"
       }
+    },
+    "demo": {
+      "type": "belle-demo-paddles-section",
+      "settings": {
+        "badge_text": "FREE PROGRAM",
+        "title": "Demo Paddle Program",
+        "subtitle": "Borrow a demo paddle at a Kansas City Northland meetup. Keep it up to a week. No cost, no obligation.",
+        "intro_content": "<p><strong>Why demo a paddle before you buy?</strong> Because the spec sheets all sound the same, and the difference between a power paddle and a control paddle is something you feel in your hand, not something you read. Price does not settle it either. A $150 paddle you like beats a $280 paddle you fight.</p><p>The program works like my tennis demo program: borrow a paddle at a Northland meetup, take it to your court for up to a week, and decide with real games behind you. No sales pitch. If you like it, I order yours. If you don't, bring it back.</p>",
+        "steps_title": "How to Request a Demo",
+        "items_title": "The Demo Fleet",
+        "items_desc": "Five paddles that cover the questions players actually ask: power or control, premium or mid-priced, and what $100 gets you.",
+        "details_title": "Program Details"
+      },
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "Pick Your Paddles",
+            "description": "Look through the fleet below and pick one, or two, that you want to try. Power against control is the comparison most players need to make."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "Book a Demo Meetup",
+            "description": "Pick a time online and I will bring the paddles to the QuikTrip at 9600 N Oak Trafficway. Then call or text me at 816-938-7622 and tell me which paddles you picked."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "title": "Hit With It for a Week",
+            "description": "Take the paddle to your court and play real games with it for up to a week. It is free, and I do not take a credit card. You sign a short demo agreement at pickup."
+          }
+        },
+        "step_4": {
+          "type": "step",
+          "settings": {
+            "title": "Decide on Your Terms",
+            "description": "Love it? I order yours, and I set the grip up before you pick it up. Not for you? Just bring it back. No pressure."
+          }
+        },
+        "paddle_joola": {
+          "type": "paddle",
+          "settings": {
+            "image": "shopify://shop_images/pickleball-demo-joola-perseus-pro-iv.jpg",
+            "badge_text": "FREE TO BORROW",
+            "brand": "JOOLA",
+            "name": "Perseus Pro IV 16mm",
+            "tagline": "The paddle players ask for by name. A power-leaning all-court paddle with a raw carbon face.",
+            "face": "Raw carbon fiber",
+            "core": "16 mm",
+            "weight": "About 8.0 oz",
+            "grip": "4 1/4 in.",
+            "best_for": "Intermediate to advanced players who hit with power and want the paddle they see on tour.",
+            "list_price": "$279.95"
+          }
+        },
+        "paddle_luxx": {
+          "type": "paddle",
+          "settings": {
+            "image": "shopify://shop_images/pickleball-demo-selkirk-luxx-control-air.jpg",
+            "badge_text": "FREE TO BORROW",
+            "brand": "Selkirk",
+            "name": "LUXX Control Air Invikta",
+            "tagline": "Selkirk's control flagship in the elongated Invikta shape. Built for resets, blocks, and touch at the net.",
+            "face": "Carbon fiber",
+            "core": "20 mm",
+            "weight": "About 8.4 oz",
+            "grip": "4 1/4 in.",
+            "best_for": "Control players, and tennis players crossing over who place the ball first and hit through it second.",
+            "list_price": "$279.99"
+          }
+        },
+        "paddle_dbd": {
+          "type": "paddle",
+          "settings": {
+            "image": "shopify://shop_images/pickleball-demo-six-zero-dbd-control.jpg",
+            "badge_text": "FREE TO BORROW",
+            "brand": "Six Zero",
+            "name": "Double Black Diamond Control 16mm",
+            "tagline": "The mid-priced benchmark. Raw carbon face, heavy spin, and controlled power. Shown in the blue colorway.",
+            "face": "Raw carbon fiber",
+            "core": "16 mm",
+            "weight": "About 8.1 oz",
+            "grip": "4 1/4 in.",
+            "best_for": "Most players. If you only demo one paddle, this is the one the others have to beat.",
+            "list_price": "$180"
+          }
+        },
+        "paddle_halo": {
+          "type": "paddle",
+          "settings": {
+            "image": "shopify://shop_images/pickleball-demo-selkirk-slk-halo-power.jpg",
+            "badge_text": "FREE TO BORROW",
+            "brand": "Selkirk",
+            "name": "SLK Halo Power",
+            "tagline": "The step down that still feels like a real paddle. A thinner 13 mm core puts more pop off the face.",
+            "face": "Raw carbon fiber",
+            "core": "13 mm",
+            "weight": "About 8.0 oz",
+            "grip": "4 1/4 in.",
+            "best_for": "Casual players becoming regulars, and anyone who wants power without the premium price.",
+            "list_price": "$150"
+          }
+        },
+        "paddle_evo": {
+          "type": "paddle",
+          "settings": {
+            "image": "shopify://shop_images/pickleball-demo-selkirk-slk-evo-control-2.jpg",
+            "badge_text": "FREE TO BORROW",
+            "brand": "Selkirk",
+            "name": "SLK Evo Control 2.0 Max",
+            "tagline": "The starter paddle that is not a toy. A wide Max face and a thick control core at a beginner price.",
+            "face": "Carbon fiber",
+            "core": "16 mm",
+            "weight": "About 7.9 oz",
+            "grip": "4 1/4 in.",
+            "best_for": "New players, and a second paddle for the family bag.",
+            "list_price": "$100"
+          }
+        },
+        "detail_cost": {
+          "type": "detail",
+          "settings": {
+            "question": "What does it cost?",
+            "answer": "Nothing. The demo is completely free, and I don't take a credit card for it. I just ask you to sign a short demo agreement at pickup."
+          }
+        },
+        "detail_waiver": {
+          "type": "detail",
+          "settings": {
+            "question": "Do I need to sign anything?",
+            "answer": "Yes. A short demo agreement and liability waiver at pickup. It covers the return timeline, responsibility for damage or loss, and a standard liability release. Takes about two minutes."
+          }
+        },
+        "detail_duration": {
+          "type": "detail",
+          "settings": {
+            "question": "How long can I keep it?",
+            "answer": "Up to one week. Long enough to play real games on your own court, not just swing it in a store."
+          }
+        },
+        "detail_howmany": {
+          "type": "detail",
+          "settings": {
+            "question": "How many paddles can I take?",
+            "answer": "One or two at a time, so you can compare a power paddle against a control paddle in the same session."
+          }
+        },
+        "detail_location": {
+          "type": "detail",
+          "settings": {
+            "question": "Where do I pick up and return?",
+            "answer": "The QuikTrip at 9600 N Oak Trafficway in Kansas City, or another Northland spot we arrange. Same meetup as my stringing service."
+          }
+        },
+        "detail_notinfleet": {
+          "type": "detail",
+          "settings": {
+            "question": "What if the paddle I want is not in the fleet?",
+            "answer": "Tell me the model. If my racquet sports supplier carries it, I will order it for you, and you pay when you pick it up. How ordering works is covered in the next section."
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4",
+        "paddle_joola",
+        "paddle_luxx",
+        "paddle_dbd",
+        "paddle_halo",
+        "paddle_evo",
+        "detail_cost",
+        "detail_waiver",
+        "detail_duration",
+        "detail_howmany",
+        "detail_location",
+        "detail_notinfleet"
+      ]
     }
   }
 }

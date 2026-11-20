@@ -1,0 +1,754 @@
+{% comment %}
+  Belle's Performance Tennis - Demo Paddle Program Page Section
+  Pickleball counterpart to belle-demo-racquets-section:
+  showcases the demo paddle lending program (fleet, steps, details).
+{% endcomment %}
+
+<style>
+
+  .belle-pdemo {
+    --belle-green: #1a3c2a;
+    --belle-green-light: #2a5a3a;
+    --belle-gold: #c8a951;
+    --belle-cream: #faf9f6;
+    --belle-charcoal: #2d2d2d;
+    --belle-light: #f8f8f8;
+    --belle-border: #e0e0e0;
+
+    font-family: 'Source Sans Pro', sans-serif;
+    padding: 60px 20px;
+    background: linear-gradient(180deg, var(--belle-cream) 0%, #fff 100%);
+  }
+
+  .belle-pdemo-container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* ── SEO geo signal (accessible, not decorative) ── */
+  .belle-pdemo-seo-geo {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* ── Header ─────────────────────────────────────── */
+  .belle-pdemo-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .belle-pdemo-badge {
+    display: inline-block;
+    background: var(--belle-gold);
+    color: var(--belle-green);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+
+  .belle-pdemo-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--belle-green);
+    margin: 0 0 12px 0;
+    letter-spacing: 2px;
+  }
+
+  .belle-pdemo-subtitle {
+    font-size: 18px;
+    color: #666;
+    margin: 0 0 8px 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+
+  /* ── Program Intro Card ─────────────────────────── */
+  .belle-pdemo-intro {
+    background: white;
+    border-radius: 16px;
+    padding: 36px 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 50px;
+    position: relative;
+  }
+
+  .belle-pdemo-intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--belle-gold);
+    border-radius: 16px 16px 0 0;
+  }
+
+  .belle-pdemo-intro-content {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+  }
+
+  .belle-pdemo-intro-content p {
+    margin: 0 0 16px 0;
+  }
+
+  .belle-pdemo-intro-content p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ── Steps ──────────────────────────────────────── */
+  .belle-pdemo-steps-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--belle-green);
+    text-align: center;
+    margin: 0 0 36px 0;
+    letter-spacing: 1px;
+  }
+
+  .belle-pdemo-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 60px;
+  }
+
+  .belle-pdemo-step {
+    background: white;
+    border-radius: 12px;
+    padding: 28px 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .belle-pdemo-step:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .belle-pdemo-step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, var(--belle-green) 0%, var(--belle-green-light) 100%);
+    color: var(--belle-gold);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    border-radius: 50%;
+    margin-bottom: 14px;
+  }
+
+  .belle-pdemo-step-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    color: var(--belle-green);
+    margin: 0 0 8px 0;
+    letter-spacing: 0.5px;
+  }
+
+  .belle-pdemo-step-text {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ── Fleet Section ──────────────────────────────── */
+  .belle-pdemo-section-header {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .belle-pdemo-section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    color: var(--belle-green);
+    margin: 0 0 8px 0;
+    letter-spacing: 1px;
+  }
+
+  .belle-pdemo-section-desc {
+    font-size: 16px;
+    color: #666;
+    margin: 0;
+  }
+
+  /* ── Paddle Cards ───────────────────────────────── */
+  .belle-pdemo-paddles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+    margin-bottom: 60px;
+  }
+
+  .belle-pdemo-paddle-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .belle-pdemo-paddle-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+
+  .belle-pdemo-paddle-image {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: var(--belle-light);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .belle-pdemo-paddle-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 16px;
+    transition: transform 0.4s ease;
+  }
+
+  .belle-pdemo-paddle-card:hover .belle-pdemo-paddle-image img {
+    transform: scale(1.05);
+  }
+
+  .belle-pdemo-paddle-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--belle-green);
+    color: var(--belle-gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 6px;
+  }
+
+  .belle-pdemo-paddle-info {
+    padding: 24px;
+    border-top: 4px solid var(--belle-gold);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .belle-pdemo-paddle-brand {
+    font-size: 12px;
+    font-weight: 700;
+    color: #7a6420;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 0 0 4px 0;
+  }
+
+  .belle-pdemo-paddle-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    color: var(--belle-green);
+    margin: 0 0 8px 0;
+    letter-spacing: 1px;
+  }
+
+  .belle-pdemo-paddle-tagline {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+  }
+
+  .belle-pdemo-paddle-specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex: 1;
+  }
+
+  .belle-pdemo-spec {
+    background: var(--belle-light);
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+
+  .belle-pdemo-spec-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b6b6b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 2px 0;
+  }
+
+  .belle-pdemo-spec-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--belle-charcoal);
+    margin: 0;
+  }
+
+  .belle-pdemo-paddle-best-for {
+    background: rgba(0, 0, 0, 0.04);
+    border-left: 3px solid var(--belle-green);
+    border-radius: 0 8px 8px 0;
+    padding: 10px 14px;
+    margin-bottom: 20px;
+  }
+
+  .belle-pdemo-paddle-best-for-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--belle-green);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 2px 0;
+  }
+
+  .belle-pdemo-paddle-best-for-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .belle-pdemo-paddle-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .belle-pdemo-paddle-price {
+    font-size: 13px;
+    color: #6b6b6b;
+  }
+
+  .belle-pdemo-paddle-free {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--belle-green), var(--belle-green-light));
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── Program Details ────────────────────────────── */
+  .belle-pdemo-details {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 50px;
+    position: relative;
+  }
+
+  .belle-pdemo-details::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--belle-gold);
+    border-radius: 16px 16px 0 0;
+  }
+
+  .belle-pdemo-details-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--belle-green);
+    margin: 0 0 24px 0;
+    letter-spacing: 1px;
+  }
+
+  .belle-pdemo-detail-item {
+    border-bottom: 1px solid var(--belle-border);
+    padding: 16px 0;
+  }
+
+  .belle-pdemo-detail-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .belle-pdemo-detail-item:first-child {
+    padding-top: 0;
+  }
+
+  .belle-pdemo-detail-q {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--belle-charcoal);
+    margin: 0 0 6px 0;
+  }
+
+  .belle-pdemo-detail-a {
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── Responsive ─────────────────────────────────── */
+  @media (max-width: 900px) {
+    .belle-pdemo-steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .belle-pdemo-paddles {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .belle-pdemo {
+      padding: 40px 16px;
+    }
+    .belle-pdemo-title {
+      font-size: 36px;
+    }
+    .belle-pdemo-steps {
+      grid-template-columns: 1fr;
+      max-width: 340px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .belle-pdemo-intro,
+    .belle-pdemo-details {
+      padding: 28px 20px;
+    }
+    .belle-pdemo-paddle-specs {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+</style>
+
+<div class="belle-pdemo">
+  <div class="belle-pdemo-container">
+
+    <!-- ── Header ──────────────────────────────────── -->
+    <div class="belle-pdemo-header">
+      <div class="belle-pdemo-badge">{{ section.settings.badge_text }}</div>
+      <h2 class="belle-pdemo-title">{{ section.settings.title }}</h2>
+      <p class="belle-pdemo-subtitle">{{ section.settings.subtitle }}</p>
+    </div>
+
+    <!-- ── SEO Geo Signal (screen-reader accessible, visually hidden) ── -->
+    <p class="belle-pdemo-seo-geo">Belle's Performance Tennis Shop offers a free demo pickleball paddle loan program serving Kansas City Northland players in Liberty, Smithville, Platte City, Kearney, Park Hill, Gladstone, Staley, Winnetonka, and North Kansas City, Missouri. Try JOOLA, Selkirk, and Six Zero demo paddles near you at a convenient local meetup before you buy.</p>
+
+    <!-- ── Program Intro ───────────────────────────── -->
+    {% if section.settings.intro_content != blank %}
+    <div class="belle-pdemo-intro">
+      <div class="belle-pdemo-intro-content">
+        {{ section.settings.intro_content }}
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- ── Steps ───────────────────────────────────── -->
+    {% assign steps = section.blocks | where: "type", "step" %}
+    {% if steps.size > 0 %}
+    <h2 class="belle-pdemo-steps-title">{{ section.settings.steps_title | default: "How to Request a Demo" }}</h2>
+    <div class="belle-pdemo-steps">
+      {% for block in steps %}
+      <div class="belle-pdemo-step" {{ block.shopify_attributes }}>
+        <div class="belle-pdemo-step-num">{{ forloop.index }}</div>
+        <h3 class="belle-pdemo-step-title">{{ block.settings.title }}</h3>
+        <p class="belle-pdemo-step-text">{{ block.settings.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- ── Demo Fleet ──────────────────────────────── -->
+    {% assign paddles = section.blocks | where: "type", "paddle" %}
+    {% if paddles.size > 0 %}
+    <div class="belle-pdemo-section-header">
+      <h2 class="belle-pdemo-section-title">{{ section.settings.items_title | default: "The Demo Fleet" }}</h2>
+      <p class="belle-pdemo-section-desc">{{ section.settings.items_desc }}</p>
+    </div>
+
+    <div class="belle-pdemo-paddles">
+      {% for block in paddles %}
+      <div class="belle-pdemo-paddle-card" {{ block.shopify_attributes }}>
+        <div class="belle-pdemo-paddle-image">
+          {% if block.settings.image != blank %}
+            {%- assign paddle_image_alt = block.settings.brand | append: ' ' | append: block.settings.name -%}
+            {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', alt: paddle_image_alt }}
+          {% endif %}
+          <div class="belle-pdemo-paddle-badge">{{ block.settings.badge_text | default: "FREE TO BORROW" }}</div>
+        </div>
+        <div class="belle-pdemo-paddle-info">
+          <p class="belle-pdemo-paddle-brand">{{ block.settings.brand }}</p>
+          <h3 class="belle-pdemo-paddle-name">{{ block.settings.name }}</h3>
+          <p class="belle-pdemo-paddle-tagline">{{ block.settings.tagline }}</p>
+
+          <div class="belle-pdemo-paddle-specs">
+            {% if block.settings.face != blank %}
+            <div class="belle-pdemo-spec">
+              <p class="belle-pdemo-spec-label">Face</p>
+              <p class="belle-pdemo-spec-value">{{ block.settings.face }}</p>
+            </div>
+            {% endif %}
+            {% if block.settings.core != blank %}
+            <div class="belle-pdemo-spec">
+              <p class="belle-pdemo-spec-label">Core</p>
+              <p class="belle-pdemo-spec-value">{{ block.settings.core }}</p>
+            </div>
+            {% endif %}
+            {% if block.settings.weight != blank %}
+            <div class="belle-pdemo-spec">
+              <p class="belle-pdemo-spec-label">Weight</p>
+              <p class="belle-pdemo-spec-value">{{ block.settings.weight }}</p>
+            </div>
+            {% endif %}
+            {% if block.settings.grip != blank %}
+            <div class="belle-pdemo-spec">
+              <p class="belle-pdemo-spec-label">Grip</p>
+              <p class="belle-pdemo-spec-value">{{ block.settings.grip }}</p>
+            </div>
+            {% endif %}
+          </div>
+
+          {% if block.settings.best_for != blank %}
+          <div class="belle-pdemo-paddle-best-for">
+            <p class="belle-pdemo-paddle-best-for-label">Best For</p>
+            <p class="belle-pdemo-paddle-best-for-text">{{ block.settings.best_for }}</p>
+          </div>
+          {% endif %}
+
+          <div class="belle-pdemo-paddle-footer">
+            <span class="belle-pdemo-paddle-price">List ~{{ block.settings.list_price }}</span>
+            <span class="belle-pdemo-paddle-free">Free to Demo</span>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- ── Program Details ─────────────────────────── -->
+    {% assign details = section.blocks | where: "type", "detail" %}
+    {% if details.size > 0 %}
+    <div class="belle-pdemo-details">
+      <h2 class="belle-pdemo-details-title">{{ section.settings.details_title | default: "Program Details" }}</h2>
+      {% for block in details %}
+      <div class="belle-pdemo-detail-item" {{ block.shopify_attributes }}>
+        <p class="belle-pdemo-detail-q">{{ block.settings.question }}</p>
+        <p class="belle-pdemo-detail-a">{{ block.settings.answer }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Belle Demo Paddles",
+  "tag": "section",
+  "class": "belle-pdemo-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "FREE PROGRAM"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Demo Paddle Program"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Borrow a demo paddle at a Kansas City Northland meetup. Keep it up to a week. No cost, no obligation."
+    },
+    {
+      "type": "header",
+      "content": "Program Introduction"
+    },
+    {
+      "type": "richtext",
+      "id": "intro_content",
+      "label": "Introduction Text"
+    },
+    {
+      "type": "header",
+      "content": "Steps"
+    },
+    {
+      "type": "text",
+      "id": "steps_title",
+      "label": "Steps Title",
+      "default": "How to Request a Demo"
+    },
+    {
+      "type": "header",
+      "content": "Fleet Section"
+    },
+    {
+      "type": "text",
+      "id": "items_title",
+      "label": "Fleet Section Title",
+      "default": "The Demo Fleet"
+    },
+    {
+      "type": "text",
+      "id": "items_desc",
+      "label": "Fleet Section Description"
+    },
+    {
+      "type": "header",
+      "content": "Program Details"
+    },
+    {
+      "type": "text",
+      "id": "details_title",
+      "label": "Details Section Title",
+      "default": "Program Details"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step Title",
+          "default": "Step Title"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Step Description"
+        }
+      ]
+    },
+    {
+      "type": "paddle",
+      "name": "Demo Paddle",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Paddle Image"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge Text",
+          "default": "FREE TO BORROW"
+        },
+        {
+          "type": "text",
+          "id": "brand",
+          "label": "Brand"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Model Name"
+        },
+        {
+          "type": "textarea",
+          "id": "tagline",
+          "label": "Short Description"
+        },
+        {
+          "type": "text",
+          "id": "face",
+          "label": "Face",
+          "placeholder": "e.g., Raw carbon fiber"
+        },
+        {
+          "type": "text",
+          "id": "core",
+          "label": "Core",
+          "placeholder": "e.g., 16 mm"
+        },
+        {
+          "type": "text",
+          "id": "weight",
+          "label": "Weight",
+          "placeholder": "e.g., About 8.0 oz"
+        },
+        {
+          "type": "text",
+          "id": "grip",
+          "label": "Grip Circumference",
+          "placeholder": "e.g., 4 1/4 in."
+        },
+        {
+          "type": "textarea",
+          "id": "best_for",
+          "label": "Best For"
+        },
+        {
+          "type": "text",
+          "id": "list_price",
+          "label": "List Price (display only)",
+          "default": "$150"
+        }
+      ]
+    },
+    {
+      "type": "detail",
+      "name": "Program Detail",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question / Label",
+          "default": "Question"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer / Detail"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Belle Demo Paddles"
+    }
+  ]
+}
+{% endschema %}
