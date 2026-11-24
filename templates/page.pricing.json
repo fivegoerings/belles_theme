@@ -12,7 +12,8 @@
     "main": {
       "type": "belle-pricing-section",
       "settings": {
-        "title": "Racquet Stringing Prices in the Kansas City Northland"
+        "title": "Racquet Stringing Prices in the Kansas City Northland",
+        "season_notice": "Winter pricing: the prices on this page are in effect for the winter season only. When winter ends, prices go back up."
       }
     },
     "belles_pricing_addons_gG9bzT": {

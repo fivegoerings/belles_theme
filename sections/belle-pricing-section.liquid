@@ -97,6 +97,21 @@
     letter-spacing: 0.02em;
   }
 
+  /* Seasonal pricing notice: renders only when the season_notice setting
+     has text (set on the pricing page only, blank on city pages). Sits
+     inside the dark price card as a light box so it cannot be missed. */
+  .bp-season-notice {
+    background: #fdf6e0;
+    border: 1px solid var(--bp-gold);
+    border-radius: 8px;
+    color: var(--bp-text);
+    font-size: 14px;
+    line-height: 1.55;
+    padding: 12px 16px;
+    margin: 0 auto 20px;
+    max-width: 640px;
+  }
+
   /* Compressed single-line bullets inside card */
   .bp-hero-checks {
     display: flex;
@@ -425,6 +440,10 @@
         <p class="bp-price-number">$30&ndash;$40</p>
         <p class="bp-price-suffix">labor &amp; strings included</p>
 
+        {%- if section.settings.season_notice != blank -%}
+          <p class="bp-season-notice">{{ section.settings.season_notice }}</p>
+        {%- endif -%}
+
         <div class="bp-hero-checks">
           <span class="bp-hero-check">
             <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -583,6 +602,12 @@
       "id": "title",
       "label": "Page title",
       "default": "Racquet Stringing Prices in the Kansas City Northland"
+    },
+    {
+      "type": "textarea",
+      "id": "season_notice",
+      "label": "Seasonal pricing notice (inside the price card)",
+      "info": "Leave blank to hide the notice. Set it only on pages where the notice applies; it is set on the pricing page and blank on the city pages."
     },
     {
       "type": "checkbox",
